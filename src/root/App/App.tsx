@@ -1,5 +1,10 @@
 import React from 'react';
+import { ThemeProvider } from 'context';
 
-const App = () => <></>;
+const App = () => (
+  <ThemeProvider>
+    <></>
+  </ThemeProvider>
+);
 
 export default App;
