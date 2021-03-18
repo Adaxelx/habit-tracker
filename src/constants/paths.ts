@@ -1,6 +1,6 @@
 const path = {
   DASHBOARD: '/',
-  CALENDAR: '/calenndar',
+  CALENDAR: '/calendar',
   LOGIN: '/login',
   REGISTER: '/register',
 };

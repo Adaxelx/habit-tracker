@@ -57,6 +57,7 @@ export const StyledNavButton = styled.button<ClicableProps>`
   padding: 0;
   ${({ open }) => open && `transform: rotate(-45deg);`}
   transition: ${({ theme }) => `${theme.time.medium}ms`};
+  z-index: ${({ theme }) => theme.zIndex.max};
   &:focus {
     outline: none;
   }
