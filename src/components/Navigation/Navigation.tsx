@@ -1,0 +1,27 @@
+import React, { useState } from 'react';
+import {
+  StyledNavButton,
+  StyledTLDot,
+  StyledTRDot,
+  StyledBLDot,
+  StyledBRDot,
+  StyledLine,
+  StyledRotatedLine,
+} from './Navigation.css';
+
+const Navigation = () => {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <StyledNavButton open={open} onClick={() => setOpen((prevState) => !prevState)}>
+      <StyledTLDot open={open} />
+      <StyledTRDot open={open} />
+      <StyledBLDot open={open} />
+      <StyledBRDot open={open} />
+      <StyledLine open={open} />
+      <StyledRotatedLine open={open} />
+    </StyledNavButton>
+  );
+};
+
+export default Navigation;

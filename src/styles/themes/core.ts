@@ -62,6 +62,8 @@ const core: CoreTheme = {
   },
   time: {
     short: 100,
+    medium: 300,
+    long: 500,
   },
   zIndex: {
     max: 3,

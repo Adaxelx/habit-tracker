@@ -22,6 +22,8 @@ declare module 'styled-components' {
     };
     time: {
       short: number;
+      medium: number;
+      long: number;
     };
     zIndex: {
       max: number;
@@ -49,6 +51,7 @@ declare module 'styled-components' {
         bottomRight: string;
         background: string;
         button: string;
+        [key: string]: string;
       };
       tile: {
         background: string;
