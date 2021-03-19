@@ -15,7 +15,11 @@ const Navigation = () => {
 
   return (
     <>
-      <StyledNavButton open={open} onClick={() => setOpen((prevState) => !prevState)}>
+      <StyledNavButton
+        open={open}
+        data-testid="navButton"
+        onClick={() => setOpen((prevState) => !prevState)}
+      >
         <StyledTLDot open={open} />
         <StyledTRDot open={open} />
         <StyledBLDot open={open} />
