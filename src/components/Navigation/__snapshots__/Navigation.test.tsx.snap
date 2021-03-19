@@ -1,0 +1,133 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navigation should match snapshot 1`] = `
+<div>
+  <button
+    class="sc-bdfBwQ hjCKah"
+    data-testid="navButton"
+  >
+    <div
+      class="sc-gsTCUz sc-dlfnbm hgojGi iNoqna"
+    />
+    <div
+      class="sc-gsTCUz sc-hKgILt hgojGi dZJXyp"
+    />
+    <div
+      class="sc-gsTCUz sc-eCssSg hgojGi eLeZFd"
+    />
+    <div
+      class="sc-gsTCUz sc-jSgupP hgojGi imevjb"
+    />
+    <div
+      class="sc-gKsewC hSLQWQ"
+    />
+    <div
+      class="sc-gKsewC sc-iBPRYJ hSLQWQ ekDqeo"
+    />
+  </button>
+  <nav
+    class="sc-fubCfw hyPNuJ"
+  >
+    <div
+      class="sc-pFZIQ jZujtU"
+    >
+      <a
+        class="sc-jrAGrp iowqqa"
+        href="/"
+      >
+        Home page
+      </a>
+      <a
+        class="sc-jrAGrp iowqqa"
+        href="/calendar"
+      >
+        Your tracker
+      </a>
+      <a
+        class="sc-jrAGrp iowqqa"
+        href="/login"
+      >
+        Login
+      </a>
+      <a
+        class="sc-jrAGrp iowqqa"
+        href="/register"
+      >
+        Register
+      </a>
+    </div>
+  </nav>
+</div>
+`;
+
+exports[`Navigation should open nav and redirect after click 1`] = `
+<div>
+  <button
+    class="sc-bdfBwQ jufWuO"
+    data-testid="navButton"
+    open=""
+  >
+    <div
+      class="sc-gsTCUz sc-dlfnbm gTLLOP iNoqna"
+      open=""
+    />
+    <div
+      class="sc-gsTCUz sc-hKgILt gTLLOP dZJXyp"
+      open=""
+    />
+    <div
+      class="sc-gsTCUz sc-eCssSg gTLLOP eLeZFd"
+      open=""
+    />
+    <div
+      class="sc-gsTCUz sc-jSgupP gTLLOP imevjb"
+      open=""
+    />
+    <div
+      class="sc-gKsewC LXqxF"
+      open=""
+    />
+    <div
+      class="sc-gKsewC sc-iBPRYJ LXqxF ekDqeo"
+      open=""
+    />
+  </button>
+  <nav
+    class="sc-fubCfw dTtIGc"
+    open=""
+  >
+    <div
+      class="sc-pFZIQ jZujtU"
+    >
+      <a
+        class="sc-jrAGrp belURR"
+        href="/"
+        open=""
+      >
+        Home page
+      </a>
+      <a
+        class="sc-jrAGrp belURR"
+        href="/calendar"
+        open=""
+      >
+        Your tracker
+      </a>
+      <a
+        class="sc-jrAGrp belURR"
+        href="/login"
+        open=""
+      >
+        Login
+      </a>
+      <a
+        class="sc-jrAGrp belURR"
+        href="/register"
+        open=""
+      >
+        Register
+      </a>
+    </div>
+  </nav>
+</div>
+`;

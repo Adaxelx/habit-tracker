@@ -8,20 +8,12 @@ interface Route {
   name: string;
 }
 
-interface Routes {
-  CALENDAR: Route;
-  DASHBOARD: Route;
-  LOGIN: Route;
-  REGISTER: Route;
-  [key: string]: Route;
-}
-
-export const routes: Routes = {
-  CALENDAR: { link: CALENDAR, name: 'Your tracker' },
-  DASHBOARD: { link: DASHBOARD, name: 'Home page' },
-  LOGIN: { link: LOGIN, name: 'Login' },
-  REGISTER: { link: REGISTER, name: 'Register' },
-};
+export const routes: Array<Route> = [
+  { link: DASHBOARD, name: 'Home page' },
+  { link: CALENDAR, name: 'Your tracker' },
+  { link: LOGIN, name: 'Login' },
+  { link: REGISTER, name: 'Register' },
+];
 
 const routesForRouter = [
   {
