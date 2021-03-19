@@ -59,6 +59,7 @@ declare module 'styled-components' {
       };
       error: string;
       modalBackground: string;
+      border: string;
     } & CoreTheme['colors'];
   }
 }

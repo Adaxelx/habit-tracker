@@ -26,12 +26,12 @@ const font: fontInterface = {
   medium: 500,
   bold: 700,
   sizes: {
-    xs: '1rem',
-    s: '1.5rem',
-    sm: '1.75rem',
-    m: '2rem',
-    ml: '3rem',
-    l: '4rem',
+    xs: '0.75rem',
+    s: '1rem',
+    sm: '1.25rem',
+    m: '1.5rem',
+    ml: '2rem',
+    l: '3rem',
   },
 };
 

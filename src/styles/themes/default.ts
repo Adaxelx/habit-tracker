@@ -31,6 +31,7 @@ const defaultTheme: DefaultTheme = {
     },
     modalBackground: lightBlue,
     error: '#FF9191',
+    border: '#707070',
   },
 };
 
