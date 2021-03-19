@@ -1,16 +1,21 @@
 import React from 'react';
 import { routes } from 'constants/routes';
-import { StyledOpenNav, StyledLink } from './OpenedNavigation.css';
+import { StyledOpenNav, StyledLink, StyledContainner } from './OpenedNavigation.css';
 
 interface OpenNavProps {
   open: boolean;
+  handleClose: Function;
 }
 
-const OpenedNavigation = ({ open }: OpenNavProps) => (
+const OpenedNavigation = ({ open, handleClose }: OpenNavProps) => (
   <StyledOpenNav open={open}>
-    {routes.map(({ name, link }) => (
-      <StyledLink to={link}>{name}</StyledLink>
-    ))}
+    <StyledContainner>
+      {routes.map(({ name, link }) => (
+        <StyledLink open={open} to={link} key={name} onClick={() => handleClose()}>
+          {name}
+        </StyledLink>
+      ))}
+    </StyledContainner>
   </StyledOpenNav>
 );
 

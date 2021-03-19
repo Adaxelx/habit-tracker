@@ -23,7 +23,7 @@ const Navigation = () => {
         <StyledLine open={open} />
         <StyledRotatedLine open={open} />
       </StyledNavButton>
-      <OpenedNavigation open={open} />
+      <OpenedNavigation open={open} handleClose={() => setOpen(false)} />
     </>
   );
 };
