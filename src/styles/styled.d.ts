@@ -1,6 +1,11 @@
 // import original module declarations
 import 'styled-components';
 
+interface MediaType {
+  s: string;
+  l: string;
+}
+
 // and extend them!
 declare module 'styled-components' {
   export interface CoreTheme {
@@ -30,6 +35,11 @@ declare module 'styled-components' {
       medium: number;
     };
     chooseFS: any;
+    media: {
+      phone: { s: string };
+      tablet: MediaType;
+      desktop: MediaType;
+    };
   }
 
   export interface DefaultTheme extends CoreTheme {

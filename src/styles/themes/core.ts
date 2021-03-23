@@ -70,6 +70,11 @@ const core: CoreTheme = {
     medium: 2,
   },
   chooseFS,
+  media: {
+    phone: { s: '320px' },
+    tablet: { s: '768px', l: '1024px' },
+    desktop: { s: '1366px', l: '1920px' },
+  },
 };
 
 export default core;
