@@ -16,6 +16,7 @@ export const StyledOpenNav = styled.nav<ClicableProps>`
   transition: ${({ theme }) => `opacity ${theme.time.medium}ms`};
   width: 100%;
   height: 100vh;
+  top: 0;
   position: fixed;
   background-color: ${({ theme }) => theme.colors.nav.background};
 `;
