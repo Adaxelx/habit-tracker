@@ -70,6 +70,10 @@ const core: CoreTheme = {
     medium: 2,
   },
   chooseFS,
+  sizes: {
+    nav: '50px',
+    dot: '20px',
+  },
   media: {
     phone: { s: '320px' },
     tablet: { s: '768px', l: '1024px' },

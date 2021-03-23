@@ -40,6 +40,10 @@ declare module 'styled-components' {
       tablet: MediaType;
       desktop: MediaType;
     };
+    sizes: {
+      nav: string;
+      dot: string;
+    };
   }
 
   export interface DefaultTheme extends CoreTheme {
