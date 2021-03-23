@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 interface ButtonProps {
   size?: string;
+  noMaxWidth?: boolean;
 }
 
 const Button = styled.button<ButtonProps>`
@@ -10,7 +11,7 @@ const Button = styled.button<ButtonProps>`
   border: 1px solid ${({ theme }) => theme.colors.border};
   padding: ${({ theme, size }) => (size ? theme.margin[size] : theme.margin.s)};
   font-size: ${({ theme, size }) => (size ? theme.font.sizes[size] : theme.font.sizes.s)};
-  min-width: 150px;
+  min-width: ${({ noMaxWidth }) => (noMaxWidth ? 'none' : '150px')};
 `;
 
 export default Button;
