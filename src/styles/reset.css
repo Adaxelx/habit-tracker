@@ -23,6 +23,7 @@ pre {
 }
 a {
   background-color: transparent;
+  text-decoration: none;
 }
 p {
   margin: 0;
