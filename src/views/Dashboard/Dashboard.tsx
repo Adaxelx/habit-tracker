@@ -2,10 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Container } from 'components';
 import paths from 'constants/paths';
+import { FlexColCenter } from 'styles';
 import {
   StyledHeader,
   StyledWrapper,
-  FlexColCenter,
   StyledDescription,
   StyledSeparator,
   StyledContentWrapper,
