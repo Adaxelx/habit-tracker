@@ -48,8 +48,8 @@ interface ClicableProps {
 
 export const StyledNavButton = styled.button<ClicableProps>`
   position: fixed;
-  height: 50px;
-  width: 50px;
+  height: ${({ theme }) => theme.sizes.nav};
+  width: ${({ theme }) => theme.sizes.nav};
   top: ${({ theme }) => theme.margin.sm};
   background-color: transparent;
   border: none;
@@ -64,8 +64,8 @@ export const StyledNavButton = styled.button<ClicableProps>`
 `;
 
 const StyledDot = styled.div<ClicableProps>`
-  width: 20px;
-  height: 20px;
+  width: ${({ theme }) => theme.sizes.dot};
+  height: ${({ theme }) => theme.sizes.dot};
   border-radius: 50%;
   position: absolute;
   opacity: ${({ open }) => (open ? '0' : '1')};
@@ -99,7 +99,7 @@ export const StyledBRDot = styled(StyledDot)`
 export const StyledLine = styled.div<ClicableProps>`
   position: absolute;
   height: 3px;
-  width: 50px;
+  width: ${({ theme }) => theme.sizes.nav};
   background-color: ${({ theme }) => theme.colors.error};
   opacity: ${({ open }) => (open ? '1' : '0')};
   transition: ${({ theme }) => `${theme.time.medium}ms`};

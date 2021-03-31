@@ -1,11 +1,11 @@
 import React from 'react';
 import { TestUtil } from 'utils';
-import App from './App';
+import Dashboard from './Dashboard';
 
-describe('App', () => {
+describe('Dashboard', () => {
   let util: TestUtil;
   beforeEach(() => {
-    util = new TestUtil(<App />);
+    util = new TestUtil(<Dashboard />);
   });
 
   it('should match snapshot', () => {

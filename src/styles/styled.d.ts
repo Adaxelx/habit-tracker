@@ -1,6 +1,29 @@
 // import original module declarations
 import 'styled-components';
 
+interface MediaType {
+  s: string;
+  l: string;
+}
+
+export interface fontInterface {
+  base: string;
+  family: string;
+  light: number;
+  regular: number;
+  medium: number;
+  bold: number;
+  sizes: {
+    xs: string;
+    s: string;
+    sm: string;
+    m: string;
+    ml: string;
+    l: string;
+    [key: string]: string;
+  };
+}
+
 // and extend them!
 declare module 'styled-components' {
   export interface CoreTheme {
@@ -10,7 +33,7 @@ declare module 'styled-components' {
         white: string;
       };
     };
-    font;
+    font: fontInterface;
     margin: {
       xs: string;
       s: string;
@@ -30,6 +53,15 @@ declare module 'styled-components' {
       medium: number;
     };
     chooseFS: any;
+    media: {
+      phone: { s: string };
+      tablet: MediaType;
+      desktop: MediaType;
+    };
+    sizes: {
+      nav: string;
+      dot: string;
+    };
   }
 
   export interface DefaultTheme extends CoreTheme {
@@ -59,6 +91,7 @@ declare module 'styled-components' {
       };
       error: string;
       modalBackground: string;
+      border: string;
     } & CoreTheme['colors'];
   }
 }

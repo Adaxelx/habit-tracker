@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dashboard should match snapshot 1`] = `
+<DocumentFragment>
+  <main
+    class="sc-dQppl JqVSi"
+  >
+    <section
+      class="sc-bqyKva sc-kstrdz cWGKA bKVolA"
+    >
+      <section
+        class="sc-bqyKva sc-hBEYos cWGKA bsnxum"
+      >
+        <h2
+          class="sc-fodVxV puTez"
+        >
+          Habbit tracker
+        </h2>
+        <p
+          class="sc-fFubgz gnPCzc"
+        >
+          Track your progress in very simple and personalized app
+        </p>
+      </section>
+      <section
+        class="sc-bqyKva cWGKA"
+      >
+        <a
+          class="sc-kEjbxe csmLQo"
+          href="/register"
+        >
+          Create account for free
+        </a>
+        <p
+          class="sc-bkzZxe fnRhj"
+        >
+          or
+        </p>
+        <a
+          class="sc-kEjbxe csmLQo"
+          href="/login"
+        >
+          Log in
+        </a>
+      </section>
+    </section>
+  </main>
+</DocumentFragment>
+`;

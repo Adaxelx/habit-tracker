@@ -11,10 +11,12 @@ interface LinkProps {
 }
 
 export const StyledOpenNav = styled.nav<ClicableProps>`
+  transform: ${({ open }) => `scale(${open ? '1' : '0'})`};
   opacity: ${({ open }) => (open ? '1' : '0')};
-  transition: ${({ theme }) => `${theme.time.medium}ms`};
+  transition: ${({ theme }) => `opacity ${theme.time.medium}ms`};
   width: 100%;
   height: 100vh;
+  top: 0;
   position: fixed;
   background-color: ${({ theme }) => theme.colors.nav.background};
 `;

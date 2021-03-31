@@ -1,8 +1,8 @@
 import React from 'react';
-import { render, fireEvent, wait } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import { ThemeProvider } from 'context';
 import { BrowserRouter } from 'react-router-dom';
-import { RenderWithRouter } from 'components';
+import { RenderWithRouter } from 'utils';
 import Navigation from './Navigation';
 
 describe('Navigation', () => {

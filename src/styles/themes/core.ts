@@ -1,22 +1,5 @@
 import { CoreTheme } from 'styled-components';
-
-interface fontInterface {
-  base: string;
-  family: string;
-  light: number;
-  regular: number;
-  medium: number;
-  bold: number;
-  sizes: {
-    xs: string;
-    s: string;
-    sm: string;
-    m: string;
-    ml: string;
-    l: string;
-    [key: string]: string;
-  };
-}
+import { fontInterface } from 'styles/styled.d';
 
 const font: fontInterface = {
   base: '10px',
@@ -26,12 +9,12 @@ const font: fontInterface = {
   medium: 500,
   bold: 700,
   sizes: {
-    xs: '1rem',
-    s: '1.5rem',
-    sm: '1.75rem',
-    m: '2rem',
-    ml: '3rem',
-    l: '4rem',
+    xs: '0.75rem',
+    s: '1rem',
+    sm: '1.25rem',
+    m: '1.5rem',
+    ml: '2rem',
+    l: '3rem',
   },
 };
 
@@ -70,6 +53,15 @@ const core: CoreTheme = {
     medium: 2,
   },
   chooseFS,
+  sizes: {
+    nav: '50px',
+    dot: '20px',
+  },
+  media: {
+    phone: { s: '320px' },
+    tablet: { s: '768px', l: '1024px' },
+    desktop: { s: '1366px', l: '1920px' },
+  },
 };
 
 export default core;
