@@ -1,22 +1,5 @@
 import { CoreTheme } from 'styled-components';
-
-interface fontInterface {
-  base: string;
-  family: string;
-  light: number;
-  regular: number;
-  medium: number;
-  bold: number;
-  sizes: {
-    xs: string;
-    s: string;
-    sm: string;
-    m: string;
-    ml: string;
-    l: string;
-    [key: string]: string;
-  };
-}
+import { fontInterface } from 'styles/styled.d';
 
 const font: fontInterface = {
   base: '10px',

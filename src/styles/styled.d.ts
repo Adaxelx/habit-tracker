@@ -6,6 +6,24 @@ interface MediaType {
   l: string;
 }
 
+export interface fontInterface {
+  base: string;
+  family: string;
+  light: number;
+  regular: number;
+  medium: number;
+  bold: number;
+  sizes: {
+    xs: string;
+    s: string;
+    sm: string;
+    m: string;
+    ml: string;
+    l: string;
+    [key: string]: string;
+  };
+}
+
 // and extend them!
 declare module 'styled-components' {
   export interface CoreTheme {
@@ -15,7 +33,7 @@ declare module 'styled-components' {
         white: string;
       };
     };
-    font;
+    font: fontInterface;
     margin: {
       xs: string;
       s: string;
