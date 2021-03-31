@@ -1,0 +1,116 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should match snapshot 1`] = `
+<DocumentFragment>
+  <header
+    class="sc-fodVxV fQhdkm"
+  >
+    <a
+      class="sc-fFubgz eGPbyR"
+      href="/"
+    >
+      <h1>
+        Habbit tracker
+      </h1>
+    </a>
+  </header>
+  <button
+    class="sc-bdfBwQ sdFZx"
+    data-testid="navButton"
+  >
+    <div
+      class="sc-gsTCUz sc-dlfnbm bytOLq iNoqna"
+    />
+    <div
+      class="sc-gsTCUz sc-hKgILt bytOLq dZJXyp"
+    />
+    <div
+      class="sc-gsTCUz sc-eCssSg bytOLq eLeZFd"
+    />
+    <div
+      class="sc-gsTCUz sc-jSgupP bytOLq imevjb"
+    />
+    <div
+      class="sc-gKsewC wEEon"
+    />
+    <div
+      class="sc-gKsewC sc-iBPRYJ wEEon ekDqeo"
+    />
+  </button>
+  <nav
+    class="sc-dQppl bZRlYz"
+  >
+    <div
+      class="sc-bqyKva ddRQje"
+    >
+      <a
+        class="sc-kstrdz htqZza"
+        href="/"
+      >
+        Home page
+      </a>
+      <a
+        class="sc-kstrdz htqZza"
+        href="/calendar"
+      >
+        Your tracker
+      </a>
+      <a
+        class="sc-kstrdz htqZza"
+        href="/login"
+      >
+        Login
+      </a>
+      <a
+        class="sc-kstrdz htqZza"
+        href="/register"
+      >
+        Register
+      </a>
+    </div>
+  </nav>
+  <main
+    class="sc-bkzZxe kOrmUn"
+  >
+    <section
+      class="sc-fubCfw sc-pFZIQ coTwup duzCUk"
+    >
+      <section
+        class="sc-fubCfw sc-jrAGrp coTwup jTzKYY"
+      >
+        <h2
+          class="sc-kEjbxe kuoOzJ"
+        >
+          Habbit tracker
+        </h2>
+        <p
+          class="sc-iqHYGH Bmlak"
+        >
+          Track your progress in very simple and personalized app
+        </p>
+      </section>
+      <section
+        class="sc-fubCfw coTwup"
+      >
+        <a
+          class="sc-hBEYos joPfgp"
+          href="/register"
+        >
+          Create account for free
+        </a>
+        <p
+          class="sc-crrsfI iEQQOU"
+        >
+          or
+        </p>
+        <a
+          class="sc-hBEYos joPfgp"
+          href="/login"
+        >
+          Log in
+        </a>
+      </section>
+    </section>
+  </main>
+</DocumentFragment>
+`;

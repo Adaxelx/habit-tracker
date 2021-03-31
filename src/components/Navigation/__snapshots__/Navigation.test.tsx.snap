@@ -3,54 +3,54 @@
 exports[`Navigation should match snapshot 1`] = `
 <div>
   <button
-    class="sc-bdfBwQ hjCKah"
+    class="sc-bdfBwQ sdFZx"
     data-testid="navButton"
   >
     <div
-      class="sc-gsTCUz sc-dlfnbm hgojGi iNoqna"
+      class="sc-gsTCUz sc-dlfnbm bytOLq iNoqna"
     />
     <div
-      class="sc-gsTCUz sc-hKgILt hgojGi dZJXyp"
+      class="sc-gsTCUz sc-hKgILt bytOLq dZJXyp"
     />
     <div
-      class="sc-gsTCUz sc-eCssSg hgojGi eLeZFd"
+      class="sc-gsTCUz sc-eCssSg bytOLq eLeZFd"
     />
     <div
-      class="sc-gsTCUz sc-jSgupP hgojGi imevjb"
+      class="sc-gsTCUz sc-jSgupP bytOLq imevjb"
     />
     <div
-      class="sc-gKsewC hSLQWQ"
+      class="sc-gKsewC wEEon"
     />
     <div
-      class="sc-gKsewC sc-iBPRYJ hSLQWQ ekDqeo"
+      class="sc-gKsewC sc-iBPRYJ wEEon ekDqeo"
     />
   </button>
   <nav
-    class="sc-fubCfw hyPNuJ"
+    class="sc-fodVxV iYzKGD"
   >
     <div
-      class="sc-pFZIQ jZujtU"
+      class="sc-fFubgz fTHQZi"
     >
       <a
-        class="sc-jrAGrp iowqqa"
+        class="sc-bkzZxe ddUFlK"
         href="/"
       >
         Home page
       </a>
       <a
-        class="sc-jrAGrp iowqqa"
+        class="sc-bkzZxe ddUFlK"
         href="/calendar"
       >
         Your tracker
       </a>
       <a
-        class="sc-jrAGrp iowqqa"
+        class="sc-bkzZxe ddUFlK"
         href="/login"
       >
         Login
       </a>
       <a
-        class="sc-jrAGrp iowqqa"
+        class="sc-bkzZxe ddUFlK"
         href="/register"
       >
         Register
@@ -63,65 +63,65 @@ exports[`Navigation should match snapshot 1`] = `
 exports[`Navigation should open nav and redirect after click 1`] = `
 <div>
   <button
-    class="sc-bdfBwQ jufWuO"
+    class="sc-bdfBwQ kMWbBq"
     data-testid="navButton"
     open=""
   >
     <div
-      class="sc-gsTCUz sc-dlfnbm gTLLOP iNoqna"
+      class="sc-gsTCUz sc-dlfnbm fHaXLb iNoqna"
       open=""
     />
     <div
-      class="sc-gsTCUz sc-hKgILt gTLLOP dZJXyp"
+      class="sc-gsTCUz sc-hKgILt fHaXLb dZJXyp"
       open=""
     />
     <div
-      class="sc-gsTCUz sc-eCssSg gTLLOP eLeZFd"
+      class="sc-gsTCUz sc-eCssSg fHaXLb eLeZFd"
       open=""
     />
     <div
-      class="sc-gsTCUz sc-jSgupP gTLLOP imevjb"
+      class="sc-gsTCUz sc-jSgupP fHaXLb imevjb"
       open=""
     />
     <div
-      class="sc-gKsewC LXqxF"
+      class="sc-gKsewC JhcfG"
       open=""
     />
     <div
-      class="sc-gKsewC sc-iBPRYJ LXqxF ekDqeo"
+      class="sc-gKsewC sc-iBPRYJ JhcfG ekDqeo"
       open=""
     />
   </button>
   <nav
-    class="sc-fubCfw dTtIGc"
+    class="sc-fodVxV eLNwrj"
     open=""
   >
     <div
-      class="sc-pFZIQ jZujtU"
+      class="sc-fFubgz fTHQZi"
     >
       <a
-        class="sc-jrAGrp belURR"
+        class="sc-bkzZxe kEFHMp"
         href="/"
         open=""
       >
         Home page
       </a>
       <a
-        class="sc-jrAGrp belURR"
+        class="sc-bkzZxe kEFHMp"
         href="/calendar"
         open=""
       >
         Your tracker
       </a>
       <a
-        class="sc-jrAGrp belURR"
+        class="sc-bkzZxe kEFHMp"
         href="/login"
         open=""
       >
         Login
       </a>
       <a
-        class="sc-jrAGrp belURR"
+        class="sc-bkzZxe kEFHMp"
         href="/register"
         open=""
       >
