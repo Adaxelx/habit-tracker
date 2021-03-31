@@ -8,17 +8,18 @@ import {
   FlexColCenter,
   StyledDescription,
   StyledSeparator,
+  StyledContentWrapper,
 } from './Dashboard.css';
 
 const Dashboard = () => (
   <Container>
     <StyledWrapper>
-      <FlexColCenter>
+      <StyledContentWrapper>
         <StyledHeader>Habbit tracker</StyledHeader>
         <StyledDescription>
           Track your progress in very simple and personalized app
         </StyledDescription>
-      </FlexColCenter>
+      </StyledContentWrapper>
       <FlexColCenter>
         <Button as={Link} to={paths.REGISTER} size="m">
           Create account for free

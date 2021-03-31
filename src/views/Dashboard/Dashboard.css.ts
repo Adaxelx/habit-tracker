@@ -10,11 +10,19 @@ export const FlexColCenter = styled.section`
 export const StyledWrapper = styled(FlexColCenter)`
   height: 100vh;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   padding: 0 1rem;
+  @media (min-width: ${({ theme }) => theme.media.tablet.s}) {
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+`;
+
+export const StyledContentWrapper = styled(FlexColCenter)`
+  @media (min-width: ${({ theme }) => theme.media.tablet.s}) {
+    margin-right: ${({ theme }) => theme.margin.l};
+  }
 `;
 
 export const StyledHeader = styled.h2`
