@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginPage should match snapshot 1`] = `
+<DocumentFragment>
+  <main
+    class="sc-bkzZxe kOrmUn"
+  >
+    <form
+      class="sc-fubCfw sc-bBXqnf coTwup kjxsHJ"
+      novalidate=""
+    >
+      <div
+        class="sc-idOhPF jPrFiv"
+      >
+        <label
+          class="sc-dIUggk bMdBRg"
+          for="login"
+        >
+          Login
+        </label>
+        <input
+          class="sc-hHftDr jYjNCB"
+          data-testid="login"
+          id="login"
+          maxlength="30"
+          minlength="6"
+          name="login"
+          type="text"
+        />
+      </div>
+      <div
+        class="sc-idOhPF jPrFiv"
+      >
+        <label
+          class="sc-dIUggk bMdBRg"
+          for="password"
+        >
+          Password
+        </label>
+        <input
+          autocomplete="on"
+          class="sc-hHftDr jYjNCB"
+          data-testid="password"
+          id="password"
+          maxlength="30"
+          minlength="6"
+          name="password"
+          type="password"
+        />
+      </div>
+      <button
+        class="sc-hBEYos joPfgp"
+        data-testid="submit"
+        type="submit"
+      >
+        Log in
+      </button>
+    </form>
+  </main>
+</DocumentFragment>
+`;

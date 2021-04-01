@@ -100,7 +100,7 @@ export const StyledLine = styled.div<ClicableProps>`
   position: absolute;
   height: 3px;
   width: ${({ theme }) => theme.sizes.nav};
-  background-color: ${({ theme }) => theme.colors.error};
+  background-color: ${({ theme }) => theme.colors.error.main};
   opacity: ${({ open }) => (open ? '1' : '0')};
   transition: ${({ theme }) => `${theme.time.medium}ms`};
 `;

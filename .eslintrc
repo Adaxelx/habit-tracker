@@ -1,20 +1,32 @@
 {
-  "extends": ["airbnb", "prettier"],
-  "parser": "babel-eslint",
+  "extends": ["airbnb", "prettier", "plugin:react/recommended"],
+  "parser": "@typescript-eslint/parser",
   "env": {
-    "jest": true
+    "jest": true,
+    "browser": true
   },
   "globals": {
     "window": true,
     "document": true
   },
+  "plugins": ["@typescript-eslint"],
   "rules": {
     "import/no-extraneous-dependencies": 0,
     "import/prefer-default-export": 0,
     "import/no-named-as-default": 0,
     "import/no-named-as-default-member": 0,
     "react/prop-types": 0,
+    "react/jsx-props-no-spreading": 0,
     "react/destructuring-assignment": 0,
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": ["error"],
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": ["error"],
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "error",
+    "react/require-default-props": 0,
+    "react/no-noused-prop-types": 0,
+    "no-nested-ternary": 0,
     "react/jsx-filename-extension": [
       1,
       {
