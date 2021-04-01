@@ -30,7 +30,16 @@ const defaultTheme: DefaultTheme = {
       backgroundActive: lightBlue,
     },
     modalBackground: lightBlue,
-    error: '#FF9191',
+    error: {
+      main: '#FF9191',
+      border: '#730000',
+      text: '#730000',
+    },
+    loading: {
+      main: '#a6fff9',
+      border: '#1b968e',
+      text: '#1b968e',
+    },
     border: '#707070',
   },
 };

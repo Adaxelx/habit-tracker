@@ -6,6 +6,12 @@ interface MediaType {
   l: string;
 }
 
+interface AlertType {
+  main: string;
+  border: string;
+  text: string;
+}
+
 export interface fontInterface {
   base: string;
   family: string;
@@ -89,7 +95,8 @@ declare module 'styled-components' {
         background: string;
         backgroundActive: string;
       };
-      error: string;
+      error: AlertType;
+      loading: AlertType;
       modalBackground: string;
       border: string;
     } & CoreTheme['colors'];

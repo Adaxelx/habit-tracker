@@ -21,7 +21,7 @@ export const StyledInput = styled.input<InputProps>`
   font-size: ${({ theme }) => theme.font.sizes.sm};
   width: 100%;
   max-width: 300px;
-  border: ${({ error, theme }) => error && `1px solid ${theme.colors.error}`};
+  border: ${({ error, theme }) => error && `1px solid ${theme.colors.error.main}`};
   &:focus {
     outline: thin dotted;
   }
@@ -29,6 +29,6 @@ export const StyledInput = styled.input<InputProps>`
 
 export const StyledMessage = styled.p`
   margin-top: ${({ theme }) => theme.margin.xs};
-  color: ${({ theme }) => theme.colors.error};
+  color: ${({ theme }) => theme.colors.error.main};
   text-align: justify;
 `;
