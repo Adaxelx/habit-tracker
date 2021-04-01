@@ -5,11 +5,14 @@ import { StyledAlert, StyledWrapper } from './Alert.css';
 type AlertProps = {
   children?: string;
   type?: AlertTypes;
+  rest?: { [prop: string]: string };
 };
 
 const Alert = ({ children = 'Ładowanie...', type = AlertTypes.ERROR }: AlertProps) => (
   <StyledWrapper>
-    <StyledAlert type={type}>{children}</StyledAlert>
+    <StyledAlert data-testid="alert" type={type}>
+      {children}
+    </StyledAlert>
   </StyledWrapper>
 );
 
@@ -18,7 +21,11 @@ type MessageProps = {
   loading: boolean;
 };
 
-const AlertMessage = ({ error, loading }: MessageProps) =>
-  error ? <Alert>{error}</Alert> : loading ? <Alert type={AlertTypes.LOADING} /> : null;
+const AlertMessage = ({ error, loading, ...rest }: MessageProps) =>
+  error ? (
+    <Alert {...rest}>{error}</Alert>
+  ) : loading ? (
+    <Alert {...rest} type={AlertTypes.LOADING} />
+  ) : null;
 
 export default AlertMessage;

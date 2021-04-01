@@ -7,9 +7,8 @@ export type LoginInputs = {
 
 export const loginUser = async (data: LoginInputs) => {
   const response = await fetch(APIpaths.LOGIN, { method: 'POST', body: JSON.stringify(data) });
-
   if (response.status === 200) {
     return response.json();
   }
-  throw new Error('Coś poszło nie tak');
+  throw new Error('Something went wrong.');
 };

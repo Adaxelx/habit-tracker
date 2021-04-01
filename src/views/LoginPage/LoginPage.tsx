@@ -48,6 +48,7 @@ const LoginPage = () => {
           minLength={6}
           maxLength={30}
           error={errors.login}
+          data-testid="login"
         />
         <Input
           name="password"
@@ -59,9 +60,10 @@ const LoginPage = () => {
           minLength={6}
           maxLength={30}
           error={errors.password}
+          data-testid="password"
         />
         <Alert error={error} loading={loading} />
-        <Button size="m" type="submit">
+        <Button size="m" type="submit" data-testid="submit">
           Log in
         </Button>
       </StyledWrapper>
