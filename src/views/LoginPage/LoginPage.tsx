@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Input, Container, Button } from 'components';
+import { Input, Container, Button, Alert } from 'components';
 import { useForm } from 'react-hook-form';
 import { useHistory } from 'react-router-dom';
 import paths from 'constants/paths';
@@ -19,21 +19,23 @@ const createRegisterObject = (name: string) => ({
 });
 
 const LoginPage = () => {
-  const [error, setError] = useState(false);
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const { register, handleSubmit, errors } = useForm<LoginInputs>();
   const history = useHistory();
 
   const onSubmit = async (data: LoginInputs) => {
+    setLoading(true);
     try {
       await loginUser(data);
+      setLoading(false);
       history.push(paths.CALENDAR);
     } catch (err) {
       setError(err.message);
+      setLoading(false);
     }
   };
-
-  const message = error || null;
 
   return (
     <Container>
@@ -58,7 +60,7 @@ const LoginPage = () => {
           maxLength={30}
           error={errors.password}
         />
-        {message}
+        <Alert error={error} loading={loading} />
         <Button size="m" type="submit">
           Log in
         </Button>
