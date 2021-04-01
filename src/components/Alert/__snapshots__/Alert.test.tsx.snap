@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Alert should match snapshot - error 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bdfBwQ dEQyqJ"
+  >
+    <div
+      class="sc-gsTCUz icPFpp"
+      type="error"
+    >
+      błąd
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Alert should match snapshot - loading 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bdfBwQ dEQyqJ"
+  >
+    <div
+      class="sc-gsTCUz dOLhYR"
+      type="loading"
+    >
+      Ładowanie...
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Alert should match snapshot - null 1`] = `<DocumentFragment />`;
