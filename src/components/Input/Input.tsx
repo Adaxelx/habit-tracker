@@ -1,16 +1,31 @@
-import React from 'react';
-import { StyledInputWrapper, StyledInput, StyledLabel } from './Input.css';
+/* eslint-disable react/require-default-props */
+import React, { InputHTMLAttributes } from 'react';
+import { FieldError } from 'react-hook-form';
+import { StyledInputWrapper, StyledInput, StyledLabel, StyledMessage } from './Input.css';
 
 interface InputProps {
   label: string;
-  id: string;
-  [prop: string]: string;
+  refVal: any;
+  error?: FieldError;
+  rest?: Rest;
 }
 
-const Input = ({ label, id, ...rest }: InputProps) => (
+type Rest = {
+  [prop: string]: string;
+};
+
+const Input = ({
+  label,
+  id,
+  refVal,
+  error,
+  type = 'text',
+  ...rest
+}: InputProps & InputHTMLAttributes<HTMLInputElement>) => (
   <StyledInputWrapper>
     <StyledLabel htmlFor={id}>{label}</StyledLabel>
-    <StyledInput id={id} {...rest} />
+    <StyledInput error={!!error} id={id} type={type} {...rest} ref={refVal} />
+    {error && <StyledMessage>{error?.message}</StyledMessage>}
   </StyledInputWrapper>
 );
 
