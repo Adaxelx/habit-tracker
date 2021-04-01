@@ -26,31 +26,31 @@ exports[`Navigation should match snapshot 1`] = `
     />
   </button>
   <nav
-    class="sc-fodVxV iYzKGD"
+    class="sc-kfzAmx cjFgmB"
   >
     <div
-      class="sc-fFubgz fTHQZi"
+      class="sc-fKFyDc hnfyUJ"
     >
       <a
-        class="sc-bkzZxe ddUFlK"
+        class="sc-bBXqnf fsdZFj"
         href="/"
       >
         Home page
       </a>
       <a
-        class="sc-bkzZxe ddUFlK"
+        class="sc-bBXqnf fsdZFj"
         href="/calendar"
       >
         Your tracker
       </a>
       <a
-        class="sc-bkzZxe ddUFlK"
+        class="sc-bBXqnf fsdZFj"
         href="/login"
       >
         Login
       </a>
       <a
-        class="sc-bkzZxe ddUFlK"
+        class="sc-bBXqnf fsdZFj"
         href="/register"
       >
         Register
@@ -93,35 +93,35 @@ exports[`Navigation should open nav and redirect after click 1`] = `
     />
   </button>
   <nav
-    class="sc-fodVxV eLNwrj"
+    class="sc-kfzAmx boffQt"
     open=""
   >
     <div
-      class="sc-fFubgz fTHQZi"
+      class="sc-fKFyDc hnfyUJ"
     >
       <a
-        class="sc-bkzZxe kEFHMp"
+        class="sc-bBXqnf ljtnys"
         href="/"
         open=""
       >
         Home page
       </a>
       <a
-        class="sc-bkzZxe kEFHMp"
+        class="sc-bBXqnf ljtnys"
         href="/calendar"
         open=""
       >
         Your tracker
       </a>
       <a
-        class="sc-bkzZxe kEFHMp"
+        class="sc-bBXqnf ljtnys"
         href="/login"
         open=""
       >
         Login
       </a>
       <a
-        class="sc-bkzZxe kEFHMp"
+        class="sc-bBXqnf ljtnys"
         href="/register"
         open=""
       >

@@ -6,9 +6,9 @@ import LoginPage from './LoginPage';
 
 describe('LoginPage', () => {
   let util: TestUtil;
-  let fail;
+  let fail: boolean;
 
-  const mockedFetch = (input, init) => {
+  const mockedFetch = (input: string, init: object) => {
     if (fail) {
       return Promise.resolve({
         status: 500,
@@ -58,5 +58,11 @@ describe('LoginPage', () => {
     util.click('submit');
     await waitFor(() => expect(fetch).toHaveBeenCalled());
     expect(util.get('alert').textContent).toBe('Something went wrong.');
+  });
+
+  it('should not call fetch if validation fails', async () => {
+    util.setValue('login', 'log');
+    util.click('submit');
+    await waitFor(() => expect(fetch).not.toHaveBeenCalled());
   });
 });

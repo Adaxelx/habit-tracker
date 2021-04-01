@@ -7,6 +7,7 @@ exports[`Alert should match snapshot - error 1`] = `
   >
     <div
       class="sc-gsTCUz icPFpp"
+      data-testid="alert"
       type="error"
     >
       błąd
@@ -22,6 +23,7 @@ exports[`Alert should match snapshot - loading 1`] = `
   >
     <div
       class="sc-gsTCUz dOLhYR"
+      data-testid="alert"
       type="loading"
     >
       Ładowanie...

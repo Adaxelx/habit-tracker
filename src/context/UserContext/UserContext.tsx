@@ -9,7 +9,11 @@ interface UserProviderProps {
   logout: Function;
 }
 
-const UserContext = createContext<Partial<UserProviderProps>>({ token: undefined });
+const UserContext = createContext<UserProviderProps>({
+  token: undefined,
+  login: () => {},
+  logout: () => {},
+});
 
 const { Provider } = UserContext;
 

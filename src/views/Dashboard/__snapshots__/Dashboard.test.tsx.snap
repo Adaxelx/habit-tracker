@@ -3,41 +3,41 @@
 exports[`Dashboard should match snapshot 1`] = `
 <DocumentFragment>
   <main
-    class="sc-dQppl JqVSi"
+    class="sc-kstrdz eVYGoz"
   >
     <section
-      class="sc-bqyKva sc-kstrdz cWGKA bKVolA"
+      class="sc-fubCfw sc-hHftDr coTwup fiJjeY"
     >
       <section
-        class="sc-bqyKva sc-hBEYos cWGKA bsnxum"
+        class="sc-fubCfw sc-dmlrTW coTwup ifDKmc"
       >
         <h2
-          class="sc-fodVxV puTez"
+          class="sc-kfzAmx ljqCVd"
         >
           Habbit tracker
         </h2>
         <p
-          class="sc-fFubgz gnPCzc"
+          class="sc-fKFyDc ejomLL"
         >
           Track your progress in very simple and personalized app
         </p>
       </section>
       <section
-        class="sc-bqyKva cWGKA"
+        class="sc-fubCfw coTwup"
       >
         <a
-          class="sc-kEjbxe csmLQo"
+          class="sc-crrsfI jESxQQ"
           href="/register"
         >
           Create account for free
         </a>
         <p
-          class="sc-bkzZxe fnRhj"
+          class="sc-bBXqnf glVbFu"
         >
           or
         </p>
         <a
-          class="sc-kEjbxe csmLQo"
+          class="sc-crrsfI jESxQQ"
           href="/login"
         >
           Log in

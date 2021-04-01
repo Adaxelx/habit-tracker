@@ -3,10 +3,10 @@
 exports[`App should match snapshot 1`] = `
 <DocumentFragment>
   <header
-    class="sc-fodVxV fQhdkm"
+    class="sc-fFubgz eDtQMJ"
   >
     <a
-      class="sc-fFubgz eGPbyR"
+      class="sc-bkzZxe lhJrOv"
       href="/"
     >
       <h1>
@@ -38,31 +38,31 @@ exports[`App should match snapshot 1`] = `
     />
   </button>
   <nav
-    class="sc-dQppl bZRlYz"
+    class="sc-bqyKva gKxghs"
   >
     <div
-      class="sc-bqyKva ddRQje"
+      class="sc-kstrdz lcOhwM"
     >
       <a
-        class="sc-kstrdz htqZza"
+        class="sc-hBEYos hCqcUw"
         href="/"
       >
         Home page
       </a>
       <a
-        class="sc-kstrdz htqZza"
+        class="sc-hBEYos hCqcUw"
         href="/calendar"
       >
         Your tracker
       </a>
       <a
-        class="sc-kstrdz htqZza"
+        class="sc-hBEYos hCqcUw"
         href="/login"
       >
         Login
       </a>
       <a
-        class="sc-kstrdz htqZza"
+        class="sc-hBEYos hCqcUw"
         href="/register"
       >
         Register
@@ -70,7 +70,7 @@ exports[`App should match snapshot 1`] = `
     </div>
   </nav>
   <main
-    class="sc-bkzZxe kOrmUn"
+    class="sc-idOhPF kHsxgf"
   >
     <section
       class="sc-fubCfw sc-pFZIQ coTwup duzCUk"
@@ -93,7 +93,7 @@ exports[`App should match snapshot 1`] = `
         class="sc-fubCfw coTwup"
       >
         <a
-          class="sc-hBEYos joPfgp"
+          class="sc-fodVxV bTXuoq"
           href="/register"
         >
           Create account for free
@@ -104,7 +104,7 @@ exports[`App should match snapshot 1`] = `
           or
         </p>
         <a
-          class="sc-hBEYos joPfgp"
+          class="sc-fodVxV bTXuoq"
           href="/login"
         >
           Log in

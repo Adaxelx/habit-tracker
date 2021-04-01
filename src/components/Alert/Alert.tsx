@@ -5,7 +5,6 @@ import { StyledAlert, StyledWrapper } from './Alert.css';
 type AlertProps = {
   children?: string;
   type?: AlertTypes;
-  rest?: { [prop: string]: string };
 };
 
 const Alert = ({ children = 'Ładowanie...', type = AlertTypes.ERROR }: AlertProps) => (
@@ -19,6 +18,7 @@ const Alert = ({ children = 'Ładowanie...', type = AlertTypes.ERROR }: AlertPro
 type MessageProps = {
   error: string;
   loading: boolean;
+  rest?: { [prop: string]: string };
 };
 
 const AlertMessage = ({ error, loading, ...rest }: MessageProps) =>

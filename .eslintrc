@@ -25,6 +25,7 @@
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": "error",
     "react/require-default-props": 0,
+    "react/no-noused-prop-types": 0,
     "no-nested-ternary": 0,
     "react/jsx-filename-extension": [
       1,

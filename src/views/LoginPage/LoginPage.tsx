@@ -3,6 +3,7 @@ import { Input, Container, Button, Alert } from 'components';
 import { useForm } from 'react-hook-form';
 import { useHistory } from 'react-router-dom';
 import paths from 'constants/paths';
+import { useUserContext } from 'context';
 import { StyledWrapper } from './LoginPage.css';
 import { loginUser, LoginInputs } from './LoginPage.api';
 
@@ -21,6 +22,7 @@ const createRegisterObject = (name: string) => ({
 const LoginPage = () => {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const user = useUserContext();
 
   const { register, handleSubmit, errors } = useForm<LoginInputs>();
   const history = useHistory();
@@ -28,8 +30,9 @@ const LoginPage = () => {
   const onSubmit = async (data: LoginInputs) => {
     setLoading(true);
     try {
-      await loginUser(data);
+      const response = await loginUser(data);
       setLoading(false);
+      user.login(response.token);
       history.push(paths.CALENDAR);
     } catch (err) {
       setError(err.message);
