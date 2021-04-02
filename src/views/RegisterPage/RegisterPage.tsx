@@ -17,15 +17,19 @@ const RegisterPage = () => {
   const history = useHistory();
 
   const onSubmit = async (data: RegisterFormInputs) => {
-    setLoading(true);
-    try {
-      const response = await registerUser(data);
-      setLoading(false);
-      user.login(response.token);
-      history.push(paths.CALENDAR);
-    } catch (err) {
-      setError(err.message);
-      setLoading(false);
+    if (data.password === data.passwordRepeat) {
+      setLoading(true);
+      try {
+        const response = await registerUser(data);
+        setLoading(false);
+        user.login(response.token);
+        history.push(paths.CALENDAR);
+      } catch (err) {
+        setError(err.message);
+        setLoading(false);
+      }
+    } else {
+      setError('Passwords must be equal.');
     }
   };
 

@@ -11,7 +11,11 @@ export interface RegisterFormInputs extends RegisterInputs {
 }
 
 export const registerUser = async (data: RegisterInputs) => {
-  const response = await fetch(APIpaths.REGISTER, { method: 'POST', body: JSON.stringify(data) });
+  const response = await fetch(APIpaths.REGISTER, {
+    headers: { 'Content-Type': 'application/json' },
+    method: 'POST',
+    body: JSON.stringify(data),
+  });
   if (response.status === 200) {
     return response.json();
   }

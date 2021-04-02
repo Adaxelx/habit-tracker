@@ -70,4 +70,14 @@ describe('RegisterPage', () => {
     util.click('submit');
     await waitFor(() => expect(fetch).not.toHaveBeenCalled());
   });
+
+  it('should display alert when passwords are not equal', async () => {
+    util.setValue('login', 'login1234');
+    util.setValue('email', 'password@test.com');
+    util.setValue('password', 'password123');
+    util.setValue('passwordRepeat', 'password1234');
+    util.click('submit');
+    await waitFor(() => util.get('alert'));
+    expect(util.get('alert').textContent).toBe('Passwords must be equal.');
+  });
 });
