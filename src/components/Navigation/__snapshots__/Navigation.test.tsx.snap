@@ -1,56 +1,173 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Navigation should match snapshot 1`] = `
+.c0 {
+  position: fixed;
+  height: 50px;
+  width: 50px;
+  top: 1rem;
+  background-color: transparent;
+  border: none;
+  right: 1rem;
+  padding: 0;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+  z-index: 3;
+}
+
+.c0:focus {
+  outline: none;
+}
+
+.c1 {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  opacity: 1;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+
+.c2 {
+  background-color: #B7FF96;
+  top: 0;
+  left: 0;
+}
+
+.c3 {
+  background-color: #89FFED;
+  top: 0;
+  right: 0;
+}
+
+.c4 {
+  background-color: #FDF194;
+  bottom: 0;
+  left: 0;
+}
+
+.c5 {
+  background-color: #FFADFC;
+  bottom: 0;
+  right: 0;
+}
+
+.c6 {
+  position: absolute;
+  height: 3px;
+  width: 50px;
+  background-color: #FF9191;
+  opacity: 0;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+
+.c7 {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  top: 50%;
+}
+
+.c8 {
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  opacity: 0;
+  -webkit-transition: opacity 300ms;
+  transition: opacity 300ms;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  position: fixed;
+  background-color: #A4FF9D;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+
+.c10 {
+  color: #A5A5A5;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+  -webkit-transform: scale(2) translateY(-50px);
+  -ms-transform: scale(2) translateY(-50px);
+  transform: scale(2) translateY(-50px);
+  opacity: 0;
+  -webkit-transition: 0;
+  transition: 0;
+}
+
 <div>
   <button
-    class="sc-bdfBwQ sdFZx"
+    class="c0"
     data-testid="navButton"
   >
     <div
-      class="sc-gsTCUz sc-dlfnbm bytOLq iNoqna"
+      class="c1 c2"
     />
     <div
-      class="sc-gsTCUz sc-hKgILt bytOLq dZJXyp"
+      class="c1 c3"
     />
     <div
-      class="sc-gsTCUz sc-eCssSg bytOLq eLeZFd"
+      class="c1 c4"
     />
     <div
-      class="sc-gsTCUz sc-jSgupP bytOLq imevjb"
+      class="c1 c5"
     />
     <div
-      class="sc-gKsewC wEEon"
+      class="c6"
     />
     <div
-      class="sc-gKsewC sc-iBPRYJ wEEon ekDqeo"
+      class="c6 c7"
     />
   </button>
   <nav
-    class="sc-kfzAmx cjFgmB"
+    class="c8"
   >
     <div
-      class="sc-fKFyDc hnfyUJ"
+      class="c9"
     >
       <a
-        class="sc-bBXqnf fsdZFj"
+        class="c10"
         href="/"
       >
         Home page
       </a>
       <a
-        class="sc-bBXqnf fsdZFj"
+        class="c10"
         href="/calendar"
       >
         Your tracker
       </a>
       <a
-        class="sc-bBXqnf fsdZFj"
+        class="c10"
         href="/login"
       >
         Login
       </a>
       <a
-        class="sc-bBXqnf fsdZFj"
+        class="c10"
         href="/register"
       >
         Register
@@ -61,67 +178,187 @@ exports[`Navigation should match snapshot 1`] = `
 `;
 
 exports[`Navigation should open nav and redirect after click 1`] = `
+.c0 {
+  position: fixed;
+  height: 50px;
+  width: 50px;
+  top: 1rem;
+  background-color: transparent;
+  border: none;
+  right: 1rem;
+  padding: 0;
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-transition: 300ms;
+  transition: 300ms;
+  z-index: 3;
+}
+
+.c0:focus {
+  outline: none;
+}
+
+.c1 {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  opacity: 0;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+
+.c2 {
+  background-color: #B7FF96;
+  top: 0;
+  left: 0;
+}
+
+.c3 {
+  background-color: #89FFED;
+  top: 0;
+  right: 0;
+}
+
+.c4 {
+  background-color: #FDF194;
+  bottom: 0;
+  left: 0;
+}
+
+.c5 {
+  background-color: #FFADFC;
+  bottom: 0;
+  right: 0;
+}
+
+.c6 {
+  position: absolute;
+  height: 3px;
+  width: 50px;
+  background-color: #FF9191;
+  opacity: 1;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+
+.c7 {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  top: 50%;
+}
+
+.c8 {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+  -webkit-transition: opacity 300ms;
+  transition: opacity 300ms;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  position: fixed;
+  background-color: #A4FF9D;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+
+.c10 {
+  color: #A5A5A5;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+  -webkit-transform: scale(1) translateY(0px);
+  -ms-transform: scale(1) translateY(0px);
+  transform: scale(1) translateY(0px);
+  opacity: 1;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+
 <div>
   <button
-    class="sc-bdfBwQ kMWbBq"
+    class="c0"
     data-testid="navButton"
     open=""
   >
     <div
-      class="sc-gsTCUz sc-dlfnbm fHaXLb iNoqna"
+      class="c1 c2"
       open=""
     />
     <div
-      class="sc-gsTCUz sc-hKgILt fHaXLb dZJXyp"
+      class="c1 c3"
       open=""
     />
     <div
-      class="sc-gsTCUz sc-eCssSg fHaXLb eLeZFd"
+      class="c1 c4"
       open=""
     />
     <div
-      class="sc-gsTCUz sc-jSgupP fHaXLb imevjb"
+      class="c1 c5"
       open=""
     />
     <div
-      class="sc-gKsewC JhcfG"
+      class="c6"
       open=""
     />
     <div
-      class="sc-gKsewC sc-iBPRYJ JhcfG ekDqeo"
+      class="c6 c7"
       open=""
     />
   </button>
   <nav
-    class="sc-kfzAmx boffQt"
+    class="c8"
     open=""
   >
     <div
-      class="sc-fKFyDc hnfyUJ"
+      class="c9"
     >
       <a
-        class="sc-bBXqnf ljtnys"
+        class="c10"
         href="/"
         open=""
       >
         Home page
       </a>
       <a
-        class="sc-bBXqnf ljtnys"
+        class="c10"
         href="/calendar"
         open=""
       >
         Your tracker
       </a>
       <a
-        class="sc-bBXqnf ljtnys"
+        class="c10"
         href="/login"
         open=""
       >
         Login
       </a>
       <a
-        class="sc-bBXqnf ljtnys"
+        class="c10"
         href="/register"
         open=""
       >

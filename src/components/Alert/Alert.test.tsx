@@ -1,10 +1,11 @@
 import React from 'react';
 import { TestUtil } from 'utils';
 import Alert from './Alert';
+import 'jest-styled-components';
 
 describe('Alert', () => {
   let util: TestUtil;
-  let props;
+  let props: { error: string; loading: boolean };
 
   beforeEach(() => {
     props = { error: '', loading: false };

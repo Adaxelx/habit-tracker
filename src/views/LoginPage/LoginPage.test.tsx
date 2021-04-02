@@ -1,4 +1,5 @@
 import React from 'react';
+import 'jest-styled-components';
 import { waitFor } from '@testing-library/react';
 import paths from 'constants/paths';
 import { TestUtil } from 'utils';
@@ -8,7 +9,7 @@ describe('LoginPage', () => {
   let util: TestUtil;
   let fail: boolean;
 
-  const mockedFetch = (input: string, init: object) => {
+  const mockedFetch = (input: string, init: { method: string }) => {
     if (fail) {
       return Promise.resolve({
         status: 500,

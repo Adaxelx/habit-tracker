@@ -2,11 +2,37 @@
 
 exports[`Alert should match snapshot - error 1`] = `
 <DocumentFragment>
-  <div
-    class="sc-bdfBwQ dEQyqJ"
+  .c0 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c1 {
+  border: 1px solid #730000;
+  background-color: #FF9191;
+  color: #730000;
+  border-radius: 5px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+<div
+    class="c0"
   >
     <div
-      class="sc-gsTCUz icPFpp"
+      class="c1"
       data-testid="alert"
       type="error"
     >
@@ -18,11 +44,37 @@ exports[`Alert should match snapshot - error 1`] = `
 
 exports[`Alert should match snapshot - loading 1`] = `
 <DocumentFragment>
-  <div
-    class="sc-bdfBwQ dEQyqJ"
+  .c0 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c1 {
+  border: 1px solid #1b968e;
+  background-color: #a6fff9;
+  color: #1b968e;
+  border-radius: 5px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+<div
+    class="c0"
   >
     <div
-      class="sc-gsTCUz dOLhYR"
+      class="c1"
       data-testid="alert"
       type="loading"
     >

@@ -1,6 +1,7 @@
 import React from 'react';
 import { TestUtil } from 'utils';
 import Dashboard from './Dashboard';
+import 'jest-styled-components';
 
 describe('Dashboard', () => {
   let util: TestUtil;
