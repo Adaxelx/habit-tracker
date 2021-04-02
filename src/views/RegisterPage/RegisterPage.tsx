@@ -4,15 +4,9 @@ import { useForm } from 'react-hook-form';
 import { useHistory } from 'react-router-dom';
 import paths from 'constants/paths';
 import { useUserContext } from 'context';
-import styled from 'styled-components';
-import { FlexColCenter } from 'styles';
 import { createRequiredObject, createRestrictedLengthObject, emailValidation } from 'utils';
+import { StyledWrapper } from 'views/LoginPage/LoginPage.css';
 import { registerUser, RegisterFormInputs } from './RegisterPage.api';
-
-const StyledWrapper = styled(FlexColCenter)`
-  height: 100vh;
-  width: 100%;
-`;
 
 const RegisterPage = () => {
   const [error, setError] = useState('');
@@ -38,6 +32,7 @@ const RegisterPage = () => {
   return (
     <Container>
       <StyledWrapper as="form" onSubmit={handleSubmit(onSubmit)} noValidate>
+        <h2>Create new account</h2>
         <Input
           name="login"
           label="Login"
