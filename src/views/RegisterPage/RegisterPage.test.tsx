@@ -3,9 +3,9 @@ import 'jest-styled-components';
 import { waitFor } from '@testing-library/react';
 import paths from 'constants/paths';
 import { TestUtil } from 'utils';
-import LoginPage from './LoginPage';
+import RegisterPage from './RegisterPage';
 
-describe('LoginPage', () => {
+describe('RegisterPage', () => {
   let util: TestUtil;
   let fail: boolean;
 
@@ -36,7 +36,7 @@ describe('LoginPage', () => {
   beforeEach(() => {
     jest.clearAllMocks();
     window.fetch.mockImplementation(mockedFetch);
-    util = new TestUtil(<LoginPage />);
+    util = new TestUtil(<RegisterPage />);
     fail = false;
   });
 
@@ -46,7 +46,9 @@ describe('LoginPage', () => {
 
   it('should send login data', async () => {
     util.setValue('login', 'login1234');
+    util.setValue('email', 'password@test.com');
     util.setValue('password', 'password123');
+    util.setValue('passwordRepeat', 'password123');
     util.click('submit');
     await waitFor(() => expect(fetch).toHaveBeenCalled());
     await waitFor(() => expect(util.render.history.location.pathname).toEqual(paths.CALENDAR));
@@ -55,7 +57,9 @@ describe('LoginPage', () => {
   it('should log alert on error', async () => {
     fail = true;
     util.setValue('login', 'login1234');
+    util.setValue('email', 'password@test.com');
     util.setValue('password', 'password123');
+    util.setValue('passwordRepeat', 'password123');
     util.click('submit');
     await waitFor(() => expect(fetch).toHaveBeenCalled());
     expect(util.get('alert').textContent).toBe('Something went wrong.');

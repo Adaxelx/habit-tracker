@@ -1,4 +1,5 @@
 import React from 'react';
+import 'jest-styled-components';
 import { render, fireEvent } from '@testing-library/react';
 import { ThemeProvider } from 'context';
 import { BrowserRouter } from 'react-router-dom';

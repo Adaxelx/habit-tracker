@@ -2,42 +2,131 @@
 
 exports[`Dashboard should match snapshot 1`] = `
 <DocumentFragment>
-  <main
-    class="sc-kstrdz eVYGoz"
+  .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c6 {
+  color: #fff;
+  background-color: #FFC136;
+  border: 1px solid #707070;
+  padding: 1.25rem;
+  font-size: 1.5rem;
+  min-width: 150px;
+  display: inline-block;
+  text-align: center;
+}
+
+.c0 {
+  min-height: 100vh;
+  width: 100%;
+}
+
+.c2 {
+  height: 100vh;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.c4 {
+  font-size: 3rem;
+  margin: 1rem 0;
+}
+
+.c5 {
+  color: #808080;
+  text-align: justify;
+  font-size: 1.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.c7 {
+  font-size: 1.25rem;
+  margin: 0.75rem;
+}
+
+@media (min-width:768px) {
+  .c2 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width:768px) {
+  .c3 {
+    margin-right: 1.75rem;
+  }
+}
+
+@media (max-width:320px) {
+  .c4 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width:320px) {
+  .c5 {
+    font-size: 1.25rem;
+  }
+}
+
+<main
+    class="c0"
   >
     <section
-      class="sc-fubCfw sc-hHftDr coTwup fiJjeY"
+      class="c1 c2"
     >
       <section
-        class="sc-fubCfw sc-dmlrTW coTwup ifDKmc"
+        class="c1 c3"
       >
         <h2
-          class="sc-kfzAmx ljqCVd"
+          class="c4"
         >
           Habbit tracker
         </h2>
         <p
-          class="sc-fKFyDc ejomLL"
+          class="c5"
         >
           Track your progress in very simple and personalized app
         </p>
       </section>
       <section
-        class="sc-fubCfw coTwup"
+        class="c1"
       >
         <a
-          class="sc-crrsfI jESxQQ"
+          class="c6"
           href="/register"
         >
           Create account for free
         </a>
         <p
-          class="sc-bBXqnf glVbFu"
+          class="c7"
         >
           or
         </p>
         <a
-          class="sc-crrsfI jESxQQ"
+          class="c6"
           href="/login"
         >
           Log in

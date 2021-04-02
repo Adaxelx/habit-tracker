@@ -1,4 +1,5 @@
 import React from 'react';
+import 'jest-styled-components';
 import { TestUtil } from 'utils';
 import App from './App';
 

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LoginPage should match snapshot 1`] = `
+exports[`RegisterPage should match snapshot 1`] = `
 <DocumentFragment>
   .c1 {
   display: -webkit-box;
@@ -76,6 +76,9 @@ exports[`LoginPage should match snapshot 1`] = `
       class="c1 c2"
       novalidate=""
     >
+      <h2>
+        Create new account
+      </h2>
       <div
         class="c3"
       >
@@ -100,6 +103,23 @@ exports[`LoginPage should match snapshot 1`] = `
       >
         <label
           class="c4"
+          for="email"
+        >
+          Email
+        </label>
+        <input
+          class="c5"
+          data-testid="email"
+          id="email"
+          name="email"
+          type="email"
+        />
+      </div>
+      <div
+        class="c3"
+      >
+        <label
+          class="c4"
           for="password"
         >
           Password
@@ -115,12 +135,32 @@ exports[`LoginPage should match snapshot 1`] = `
           type="password"
         />
       </div>
+      <div
+        class="c3"
+      >
+        <label
+          class="c4"
+          for="passwordRepeat"
+        >
+          Repeat password
+        </label>
+        <input
+          autocomplete="on"
+          class="c5"
+          data-testid="passwordRepeat"
+          id="passwordRepeat"
+          maxlength="30"
+          minlength="6"
+          name="passwordRepeat"
+          type="password"
+        />
+      </div>
       <button
         class="c6"
         data-testid="submit"
         type="submit"
       >
-        Log in
+        Create account
       </button>
     </form>
   </main>
