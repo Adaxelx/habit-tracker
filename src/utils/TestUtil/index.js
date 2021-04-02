@@ -1,1 +1,1 @@
-export { default } from './TestUtil.ts';
+export { default } from './TestUtil';

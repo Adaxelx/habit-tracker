@@ -4,20 +4,9 @@ import { useForm } from 'react-hook-form';
 import { useHistory } from 'react-router-dom';
 import paths from 'constants/paths';
 import { useUserContext } from 'context';
+import { createRestrictedLengthObject } from 'utils';
 import { StyledWrapper } from './LoginPage.css';
 import { loginUser, LoginInputs } from './LoginPage.api';
-
-const createRegisterObject = (name: string) => ({
-  required: `Field ${name} is required.`,
-  minLength: {
-    value: 6,
-    message: `Field ${name} must have at least 6 characters.`,
-  },
-  maxLength: {
-    value: 30,
-    message: `Field ${name} must have maximum 30 characters.`,
-  },
-});
 
 const LoginPage = () => {
   const [error, setError] = useState('');
@@ -47,7 +36,7 @@ const LoginPage = () => {
           name="login"
           label="Login"
           id="login"
-          refVal={register(createRegisterObject('login'))}
+          refVal={register(createRestrictedLengthObject('login'))}
           minLength={6}
           maxLength={30}
           error={errors.login}
@@ -58,7 +47,7 @@ const LoginPage = () => {
           label="Password"
           id="password"
           type="password"
-          refVal={register(createRegisterObject('password'))}
+          refVal={register(createRestrictedLengthObject('password'))}
           autoComplete="on"
           minLength={6}
           maxLength={30}
