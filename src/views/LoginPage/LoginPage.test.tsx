@@ -4,10 +4,17 @@ import { waitFor } from '@testing-library/react';
 import paths from 'constants/paths';
 import { TestUtil } from 'utils';
 import LoginPage from './LoginPage';
+import { LoginInputs } from './LoginPage.api';
+
+const generateDummyData = () => ({
+  login: 'login123',
+  password: 'password123',
+});
 
 describe('LoginPage', () => {
   let util: TestUtil;
   let fail: boolean;
+  let dummyData: LoginInputs;
 
   const mockedFetch = (input: string, init: { method: string }) => {
     if (fail) {
@@ -35,6 +42,7 @@ describe('LoginPage', () => {
   });
   beforeEach(() => {
     jest.clearAllMocks();
+    dummyData = generateDummyData();
     window.fetch.mockImplementation(mockedFetch);
     util = new TestUtil(<LoginPage />);
     fail = false;
@@ -45,8 +53,7 @@ describe('LoginPage', () => {
   });
 
   it('should send login data', async () => {
-    util.setValue('login', 'login1234');
-    util.setValue('password', 'password123');
+    Object.keys(dummyData).forEach((key) => util.setValue(key, dummyData[key]));
     util.click('submit');
     await waitFor(() => expect(fetch).toHaveBeenCalled());
     await waitFor(() => expect(util.render.history.location.pathname).toEqual(paths.CALENDAR));
@@ -54,8 +61,7 @@ describe('LoginPage', () => {
 
   it('should log alert on error', async () => {
     fail = true;
-    util.setValue('login', 'login1234');
-    util.setValue('password', 'password123');
+    Object.keys(dummyData).forEach((key) => util.setValue(key, dummyData[key]));
     util.click('submit');
     await waitFor(() => expect(fetch).toHaveBeenCalled());
     expect(util.get('alert').textContent).toBe('Something went wrong.');

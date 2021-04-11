@@ -3,6 +3,7 @@ import APIpaths from 'constants/APIpaths';
 export type LoginInputs = {
   login: string;
   password: string;
+  [key: string]: string;
 };
 
 export const loginUser = async (data: LoginInputs) => {

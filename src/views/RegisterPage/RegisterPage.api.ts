@@ -8,6 +8,7 @@ export interface RegisterInputs {
 
 export interface RegisterFormInputs extends RegisterInputs {
   passwordRepeat: string;
+  [key: string]: string;
 }
 
 export const registerUser = async (data: RegisterInputs) => {

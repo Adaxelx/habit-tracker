@@ -4,11 +4,19 @@ import { waitFor } from '@testing-library/react';
 import paths from 'constants/paths';
 import { TestUtil } from 'utils';
 import RegisterPage from './RegisterPage';
+import { RegisterFormInputs } from './RegisterPage.api';
+
+const generateLoginData = (repeat = 'password123') => ({
+  login: 'login123',
+  email: 'email@gmail.com',
+  password: 'password123',
+  passwordRepeat: repeat,
+});
 
 describe('RegisterPage', () => {
   let util: TestUtil;
   let fail: boolean;
-
+  let dummyData: RegisterFormInputs;
   const mockedFetch = (input: string, init: { method: string }) => {
     if (fail) {
       return Promise.resolve({
@@ -35,6 +43,7 @@ describe('RegisterPage', () => {
   });
   beforeEach(() => {
     jest.clearAllMocks();
+    dummyData = generateLoginData();
     window.fetch.mockImplementation(mockedFetch);
     util = new TestUtil(<RegisterPage />);
     fail = false;
@@ -45,10 +54,7 @@ describe('RegisterPage', () => {
   });
 
   it('should send login data', async () => {
-    util.setValue('login', 'login1234');
-    util.setValue('email', 'password@test.com');
-    util.setValue('password', 'password123');
-    util.setValue('passwordRepeat', 'password123');
+    Object.keys(dummyData).forEach((key) => util.setValue(key, dummyData[key]));
     util.click('submit');
     await waitFor(() => expect(fetch).toHaveBeenCalled());
     await waitFor(() => expect(util.render.history.location.pathname).toEqual(paths.CALENDAR));
@@ -56,10 +62,7 @@ describe('RegisterPage', () => {
 
   it('should log alert on error', async () => {
     fail = true;
-    util.setValue('login', 'login1234');
-    util.setValue('email', 'password@test.com');
-    util.setValue('password', 'password123');
-    util.setValue('passwordRepeat', 'password123');
+    Object.keys(dummyData).forEach((key) => util.setValue(key, dummyData[key]));
     util.click('submit');
     await waitFor(() => expect(fetch).toHaveBeenCalled());
     expect(util.get('alert').textContent).toBe('Something went wrong.');
@@ -72,10 +75,8 @@ describe('RegisterPage', () => {
   });
 
   it('should display alert when passwords are not equal', async () => {
-    util.setValue('login', 'login1234');
-    util.setValue('email', 'password@test.com');
-    util.setValue('password', 'password123');
-    util.setValue('passwordRepeat', 'password1234');
+    dummyData = generateLoginData('badrepeat123');
+    Object.keys(dummyData).forEach((key) => util.setValue(key, dummyData[key]));
     util.click('submit');
     await waitFor(() => util.get('alert'));
     expect(util.get('alert').textContent).toBe('Passwords must be equal.');
