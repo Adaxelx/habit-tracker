@@ -11,6 +11,9 @@ const defaultTheme: DefaultTheme = {
   colors: {
     ...core.colors,
     body: '#F3FFF2',
+    calendar: {
+      navigation: '#EDEFFF',
+    },
     text: {
       primary: core.colors.common.black,
       secondary: '#808080',

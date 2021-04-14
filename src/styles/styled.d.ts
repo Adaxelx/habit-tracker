@@ -75,6 +75,7 @@ declare module 'styled-components' {
     gridTile: { size: number };
     colors: {
       body: string;
+      calendar: { navigation: string };
       text: {
         primary: string;
         secondary: string;

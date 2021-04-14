@@ -5,6 +5,7 @@ export const StyledTile = styled.div`
   height: ${({ theme }) => `${theme.gridTile.size}px`};
   position: relative;
   overflow: hidden;
+  background-color: ${({ theme }) => theme.colors.common.white};
 `;
 
 type CirlcleProps = {
@@ -17,8 +18,8 @@ type CirlcleProps = {
 export const StyledCircle = styled.div<CirlcleProps>`
   position: absolute;
   border-radius: 50%;
-  width: ${({ size }) => `${size}px`};
-  height: ${({ size }) => `${size}px`};
+  width: ${({ size, alone }) => (alone ? `${size / 1.3}px` : `${size}px`)};
+  height: ${({ size, alone }) => (alone ? `${size / 1.3}px` : `${size}px`)};
   background-color: ${({ color }) => color};
   top: ${({ position }) => `${position}px`};
   left: ${({ position }) => `${position}px`};
