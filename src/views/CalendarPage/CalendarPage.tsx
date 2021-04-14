@@ -1,8 +1,6 @@
 import React from 'react';
 import { Container } from 'components';
-import { CalendarTile } from './components';
-
-const colors = ['#4fce23', '#f4ec32'];
+import { CalendarGrid } from './components';
 
 // const dummyData = [
 //   {
@@ -27,10 +25,10 @@ const colors = ['#4fce23', '#f4ec32'];
 //   },
 // ];
 
-const Calendar = () => (
+const CalendarPage = () => (
   <Container>
-    <CalendarTile colors={colors} day={1} />
+    <CalendarGrid />
   </Container>
 );
 
-export default Calendar;
+export default CalendarPage;
