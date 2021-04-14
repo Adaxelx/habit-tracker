@@ -71,6 +71,7 @@ declare module 'styled-components' {
   }
 
   export interface DefaultTheme extends CoreTheme {
+    gridTile: { size: number };
     colors: {
       body: string;
       text: {

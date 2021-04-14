@@ -1,4 +1,5 @@
 import React from 'react';
+import { Container } from 'components';
 import { CalendarTile } from './components';
 
 const colors = ['#4fce23', '#f4ec32'];
@@ -27,9 +28,9 @@ const colors = ['#4fce23', '#f4ec32'];
 // ];
 
 const Calendar = () => (
-  <>
-    <CalendarTile colors={colors} />
-  </>
+  <Container>
+    <CalendarTile colors={colors} day={1} />
+  </Container>
 );
 
 export default Calendar;
