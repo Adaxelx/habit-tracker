@@ -57,6 +57,7 @@ declare module 'styled-components' {
     zIndex: {
       max: number;
       medium: number;
+      low: number;
     };
     chooseFS: any;
     media: {

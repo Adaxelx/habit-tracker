@@ -3,9 +3,7 @@ import styled from 'styled-components';
 export const StyledTile = styled.div`
   width: ${({ theme }) => `${theme.gridTile.size}px`};
   height: ${({ theme }) => `${theme.gridTile.size}px`};
-
   position: relative;
-  margin-top: 20%;
   overflow: hidden;
 `;
 
@@ -32,5 +30,5 @@ export const StyledDay = styled.p`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: ${({ theme }) => theme.zIndex.medium};
+  z-index: ${({ theme }) => theme.zIndex.low};
 `;

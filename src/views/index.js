@@ -1,4 +1,4 @@
 export { default as Dashboard } from './Dashboard';
-export { default as Calendar } from './Calendar';
+export { default as CalendarPage } from './CalendarPage';
 export { default as LoginPage } from './LoginPage';
 export { default as RegisterPage } from './RegisterPage';
