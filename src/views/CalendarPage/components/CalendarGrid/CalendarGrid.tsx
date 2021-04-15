@@ -1,110 +1,13 @@
 import React from 'react';
-import { weekDays } from 'constants/calendar';
+import { weekDays, Event } from 'constants/calendar';
 import { CalendarTile, CalendarNavigation } from '..';
 import { StyledGrid, StyledDay, StyledDayGrid } from './CalendarGrid.css';
 
-// const colors = ['#4fce23', '#f4ec32'];
+type GridProps = {
+  events: Event[];
+};
 
-const dummyColors = [
-  {
-    colors: ['#4fce23'],
-  },
-  {
-    colors: ['#4fce23', '#f4ec32'],
-  },
-  {
-    colors: ['#4fce23', '#f4ec32'],
-  },
-  {
-    colors: ['#4fce23', '#f4ec32'],
-  },
-  {
-    colors: ['#4fce23', '#f4ec32'],
-  },
-  {
-    colors: ['#4fce23', '#f4ec32'],
-  },
-  {
-    colors: ['#4fce23', '#f4ec32'],
-  },
-  {
-    colors: ['#4fce23', '#f4ec32'],
-  },
-  {
-    colors: ['#4fce23', '#f4ec32'],
-  },
-  {
-    colors: ['#4fce23', '#f4ec32'],
-  },
-
-  {
-    colors: ['#4fce23', '#f4ec32'],
-  },
-  {
-    colors: ['#4fce23', '#f4ec32'],
-  },
-  {
-    colors: ['#4fce23', '#f4ec32'],
-  },
-  {
-    colors: ['#4fce23', '#f4ec32'],
-  },
-  {
-    colors: ['#4fce23', '#f4ec32'],
-  },
-  {
-    colors: ['#4fce23', '#f4ec32'],
-  },
-  {
-    colors: ['#4fce23', '#f4ec32'],
-  },
-  {
-    colors: ['#4fce23', '#f4ec32'],
-  },
-  {
-    colors: ['#4fce23', '#f4ec32'],
-  },
-  {
-    colors: ['#4fce23', '#f4ec32', '#f0d322'],
-  },
-  {
-    colors: ['#4fce23', '#f4ec32', '#f0d322'],
-  },
-  {
-    colors: ['#4fce23', '#f4ec32', '#f0d322'],
-  },
-  {
-    colors: ['#4fce23', '#f4ec32', '#f0d322'],
-  },
-  {
-    colors: ['#4fce23', '#f4ec32', '#f0d322'],
-  },
-  {
-    colors: ['#4fce23', '#f4ec32', '#f0d322', '#4fce23', '#f4ec32', '#f0d322'],
-  },
-  {
-    colors: ['#4fce23', '#f4ec32', '#f0d322'],
-  },
-  {
-    colors: ['#4fce23', '#f4ec32', '#f0d322'],
-  },
-  {
-    colors: ['#4fce23', '#f4ec32', '#f0d322'],
-  },
-  {
-    colors: ['#4fce23', '#f4ec32', '#f0d322'],
-  },
-  {
-    colors: ['#4fce23', '#f4ec32', '#f0d322'],
-  },
-];
-
-// type GridProps = {
-//   handleMonth: MouseEventHandler<HTMLButtonElement>;
-//   handleYear: MouseEventHandler<HTMLButtonElement>;
-// };
-
-const CalendarGrid = () => (
+const CalendarGrid = ({ events }: GridProps) => (
   <>
     <CalendarNavigation />
     <StyledDayGrid>
@@ -113,8 +16,8 @@ const CalendarGrid = () => (
       ))}
     </StyledDayGrid>
     <StyledGrid>
-      {dummyColors.map(({ colors }, i) => (
-        <CalendarTile key={colors[0]} colors={colors} day={i + 1} />
+      {events.map(({ _id }) => (
+        <CalendarTile key={_id} colors={['#fff']} day={1} />
       ))}
     </StyledGrid>
   </>
