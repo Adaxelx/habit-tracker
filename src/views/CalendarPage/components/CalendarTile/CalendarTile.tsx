@@ -2,26 +2,29 @@ import React from 'react';
 import { useThemeContext } from 'context';
 import { StyledCircle, StyledTile, StyledDay } from './CalendarTile.css';
 
-const generateCircles = (colors: string[], edge: number) => {
+const generateCircles = (colors: (string | undefined)[], edge: number) => {
   const size = (edge * (1.3 + (colors.length - 2) * 0.1)) / colors.length;
   const shift = (edge - size) / (colors.length - 1);
   let position = -shift;
   return colors.map((color) => {
-    position += shift;
-    return (
-      <StyledCircle
-        key={color}
-        position={position}
-        alone={colors.length === 1}
-        color={color}
-        size={size}
-      />
-    );
+    if (color) {
+      position += shift;
+      return (
+        <StyledCircle
+          key={color}
+          position={position}
+          alone={colors.length === 1}
+          color={color}
+          size={size}
+        />
+      );
+    }
+    return null;
   });
 };
 
 type TileProps = {
-  colors: string[];
+  colors?: (string | undefined)[];
   day: number;
 };
 
@@ -32,8 +35,12 @@ const CalendarTile = ({ colors, day }: TileProps) => {
 
   return (
     <StyledTile>
-      {generateCircles(colors, size)}
-      <StyledDay>{day}</StyledDay>
+      {day === -1 ? null : (
+        <>
+          {colors && generateCircles(colors, size)}
+          <StyledDay>{day}</StyledDay>
+        </>
+      )}
     </StyledTile>
   );
 };

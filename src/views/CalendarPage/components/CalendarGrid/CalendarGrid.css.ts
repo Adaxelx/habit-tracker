@@ -7,6 +7,7 @@ export const StyledGrid = styled.div`
   max-width: 100%;
   border: 1px solid ${({ theme }) => theme.colors.border};
   border-top: none;
+  background-color: #fff;
 `;
 
 export const StyledDayGrid = styled(StyledGrid)`

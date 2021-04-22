@@ -14,23 +14,12 @@ export const months = [
   'December',
 ];
 
-export type Event = {
-  _id: string;
-  daysOfWeek: number[];
-  title: string;
-  timeStart?: string;
-  timeEnd?: string;
-  dateStart: string;
-  dateEnd: string;
-  label?: string;
-  description?: string;
-  userId: string;
-};
-
-export type Label = {
-  _id: string;
-  title: string;
-  color: string;
+export const calculateDayInYear = (date: string) => {
+  const now: any = new Date(date);
+  const start: any = new Date(now.getFullYear(), 0, 0);
+  const diff = now - start + (start.getTimezoneOffset() - now.getTimezoneOffset()) * 60 * 1000;
+  const oneDay = 1000 * 60 * 60 * 24;
+  return Math.floor(diff / oneDay);
 };
 
 export const getISODate = (date: Date) => date.toISOString().match(/\d{4}-\d{2}-\d{2}/)![0];
