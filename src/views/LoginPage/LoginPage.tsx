@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Input, Container, Button, Alert } from 'components';
 import { useForm } from 'react-hook-form';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Redirect } from 'react-router-dom';
 import paths from 'constants/paths';
 import { useUserContext } from 'context';
 import { createRestrictedLengthObject } from 'utils';
@@ -29,7 +29,9 @@ const LoginPage = () => {
     }
   };
 
-  return (
+  return user.token ? (
+    <Redirect to={paths.CALENDAR} />
+  ) : (
     <Container>
       <StyledWrapper as="form" onSubmit={handleSubmit(onSubmit)} noValidate>
         <Input

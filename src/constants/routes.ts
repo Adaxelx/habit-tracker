@@ -24,6 +24,7 @@ const routesForRouter = [
   {
     path: CALENDAR,
     Component: CalendarPage,
+    isPrivate: true,
   },
   { path: LOGIN, Component: LoginPage },
   { path: REGISTER, Component: RegisterPage },
