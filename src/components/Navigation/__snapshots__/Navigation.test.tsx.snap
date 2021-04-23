@@ -12,7 +12,7 @@ exports[`Navigation should match snapshot 1`] = `
   padding: 0;
   -webkit-transition: 300ms;
   transition: 300ms;
-  z-index: 3;
+  z-index: 1000;
 }
 
 .c0:focus {
@@ -82,6 +82,7 @@ exports[`Navigation should match snapshot 1`] = `
   top: 0;
   position: fixed;
   background-color: #A4FF9D;
+  z-index: 500;
 }
 
 .c9 {
@@ -192,7 +193,7 @@ exports[`Navigation should open nav and redirect after click 1`] = `
   transform: rotate(-45deg);
   -webkit-transition: 300ms;
   transition: 300ms;
-  z-index: 3;
+  z-index: 1000;
 }
 
 .c0:focus {
@@ -262,6 +263,7 @@ exports[`Navigation should open nav and redirect after click 1`] = `
   top: 0;
   position: fixed;
   background-color: #A4FF9D;
+  z-index: 500;
 }
 
 .c9 {

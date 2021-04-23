@@ -53,13 +53,6 @@ describe('RegisterPage', () => {
     expect(util.render.asFragment()).toMatchSnapshot();
   });
 
-  it('should send login data', async () => {
-    Object.keys(dummyData).forEach((key) => util.setValue(key, dummyData[key]));
-    util.click('submit');
-    await waitFor(() => expect(fetch).toHaveBeenCalled());
-    await waitFor(() => expect(util.render.history.location.pathname).toEqual(paths.CALENDAR));
-  });
-
   it('should log alert on error', async () => {
     fail = true;
     Object.keys(dummyData).forEach((key) => util.setValue(key, dummyData[key]));
@@ -80,5 +73,12 @@ describe('RegisterPage', () => {
     util.click('submit');
     await waitFor(() => util.get('alert'));
     expect(util.get('alert').textContent).toBe('Passwords must be equal.');
+  });
+
+  it('should send login data', async () => {
+    Object.keys(dummyData).forEach((key) => util.setValue(key, dummyData[key]));
+    util.click('submit');
+    await waitFor(() => expect(fetch).toHaveBeenCalled());
+    await waitFor(() => expect(util.render.history.location.pathname).toEqual(paths.CALENDAR));
   });
 });

@@ -52,13 +52,6 @@ describe('LoginPage', () => {
     expect(util.render.asFragment()).toMatchSnapshot();
   });
 
-  it('should send login data', async () => {
-    Object.keys(dummyData).forEach((key) => util.setValue(key, dummyData[key]));
-    util.click('submit');
-    await waitFor(() => expect(fetch).toHaveBeenCalled());
-    await waitFor(() => expect(util.render.history.location.pathname).toEqual(paths.CALENDAR));
-  });
-
   it('should log alert on error', async () => {
     fail = true;
     Object.keys(dummyData).forEach((key) => util.setValue(key, dummyData[key]));
@@ -71,5 +64,12 @@ describe('LoginPage', () => {
     util.setValue('login', 'log');
     util.click('submit');
     await waitFor(() => expect(fetch).not.toHaveBeenCalled());
+  });
+
+  it('should send login data', async () => {
+    Object.keys(dummyData).forEach((key) => util.setValue(key, dummyData[key]));
+    util.click('submit');
+    await waitFor(() => expect(fetch).toHaveBeenCalled());
+    await waitFor(() => expect(util.render.history.location.pathname).toEqual(paths.CALENDAR));
   });
 });
