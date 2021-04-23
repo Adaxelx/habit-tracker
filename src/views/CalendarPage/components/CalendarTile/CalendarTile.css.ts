@@ -12,7 +12,7 @@ type CirlcleProps = {
   size: number;
   alone: boolean;
   position: number;
-  color: string;
+  color: string | undefined;
 };
 
 export const StyledCircle = styled.div<CirlcleProps>`

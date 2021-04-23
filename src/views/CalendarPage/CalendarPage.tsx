@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useUserContext } from 'context';
 import { getISODate } from 'constants/calendar';
-import { Event, Label } from 'utils';
+import { Event, Label, SIDES } from 'utils';
 import { StyledCenter } from './CalendarPage.css';
 import { CalendarGrid } from './components';
 import { getEvents, getLabels } from './CalendarPage.api';
@@ -37,11 +37,29 @@ const CalendarPage = () => {
       }
     };
     fetchEvents();
-  }, []);
+  }, [actualYear, actualMonth]);
+
+  const moveDate = (side: SIDES) => {
+    if (side === SIDES.LEFT) {
+      if (actualMonth === 0) {
+        setActualMonth(11);
+        setActualYear((prevYear) => prevYear - 1);
+      } else {
+        setActualMonth((prevMonth) => prevMonth + side);
+      }
+    } else {
+      if (actualMonth === 11) {
+        setActualMonth(0);
+        setActualYear((prevYear) => prevYear + 1);
+      } else {
+        setActualMonth((prevMonth) => prevMonth + side);
+      }
+    }
+  };
 
   return (
     <StyledCenter>
-      <CalendarGrid events={events} month={actualMonth} year={actualYear} />
+      <CalendarGrid events={events} month={actualMonth} moveDate={moveDate} year={actualYear} />
     </StyledCenter>
   );
 };

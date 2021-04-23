@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus */
 /* eslint-disable no-loop-func */
 import { useEffect, useState } from 'react';
 import { Event, EventLoop, CalendarTile } from 'utils';
@@ -24,10 +25,10 @@ const useCalendar = (events: Event[], month: number, year: number) => {
     const daysArray: CalendarTile[] = [];
     let dayInYear = calculateDayInYear(`${year}-${month + 1}-1`);
 
-    for (let i = 0; i < 6; i += 1) {
-      for (let j = 0; j < 7; j += 1) {
+    for (let i = 0; i < 6; i++) {
+      for (let j = 0; j < 7; j++) {
         if (i === 0 && j < firstDay) {
-          daysArray.push({ day: -1, events: [] });
+          daysArray.push({ id: i * 13 + j * 17 + i * j, day: -1, events: [] });
         } else {
           eventsArray = eventsArray.filter(
             (event) => event.numericEnd > dayInYear && event.daysOfWeek.includes(j),
@@ -50,7 +51,7 @@ const useCalendar = (events: Event[], month: number, year: number) => {
             return dayInYear <= event.numericEnd;
           });
 
-          daysArray.push({ day, events: eventsArray });
+          daysArray.push({ id: i * 13 + j * 17, day, events: eventsArray });
 
           dayInYear += 1;
         }

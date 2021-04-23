@@ -2,6 +2,7 @@ export type GridProps = {
   events: Event[];
   month: number;
   year: number;
+  moveDate: Function;
 };
 
 export interface Event {
@@ -32,4 +33,10 @@ export type Label = {
 export type CalendarTile = {
   day: number;
   events: EventLoop[];
+  id: number;
 };
+
+export enum SIDES {
+  LEFT = -1,
+  RIGHT = 1,
+}

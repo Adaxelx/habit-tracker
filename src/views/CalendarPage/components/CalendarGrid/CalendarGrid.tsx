@@ -5,22 +5,24 @@ import { GridProps } from 'utils';
 import { CalendarTile, CalendarNavigation } from '..';
 import { StyledGrid, StyledDay, StyledDayGrid } from './CalendarGrid.css';
 
-const CalendarGrid = ({ events, month, year }: GridProps) => {
+const CalendarGrid = ({ events, month, year, moveDate }: GridProps) => {
   const [days] = useCalendar(events, month, year);
 
   return (
     <>
-      <CalendarNavigation />
+      <CalendarNavigation moveDate={moveDate} month={month} year={year} />
       <StyledDayGrid>
         {weekDays.map((day) => (
           <StyledDay key={day}>{day}</StyledDay>
         ))}
       </StyledDayGrid>
       <StyledGrid>
-        {days.map(({ day, events: eventsArr }) => (
+        {days.map(({ id, day, events: eventsArr }) => (
           <CalendarTile
-            key={day}
-            colors={eventsArr.map(({ label }) => (typeof label === 'object' ? label?.color : ''))}
+            key={id}
+            colors={eventsArr.map(({ label }, i) =>
+              typeof label === 'object' ? { color: label?.color, id: i } : {},
+            )}
             day={day}
           />
         ))}

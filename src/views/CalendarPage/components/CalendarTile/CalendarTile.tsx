@@ -2,7 +2,7 @@ import React from 'react';
 import { useThemeContext } from 'context';
 import { StyledCircle, StyledTile, StyledDay } from './CalendarTile.css';
 
-const generateCircles = (colors: (string | undefined)[], edge: number) => {
+const generateCircles = (colors: Color[], edge: number) => {
   const size = (edge * (1.3 + (colors.length - 2) * 0.1)) / colors.length;
   const shift = (edge - size) / (colors.length - 1);
   let position = -shift;
@@ -11,10 +11,10 @@ const generateCircles = (colors: (string | undefined)[], edge: number) => {
       position += shift;
       return (
         <StyledCircle
-          key={color}
+          key={color.id}
           position={position}
           alone={colors.length === 1}
-          color={color}
+          color={color.color}
           size={size}
         />
       );
@@ -23,8 +23,10 @@ const generateCircles = (colors: (string | undefined)[], edge: number) => {
   });
 };
 
+type Color = { color?: string; id?: number };
+
 type TileProps = {
-  colors?: (string | undefined)[];
+  colors?: Color[];
   day: number;
 };
 
