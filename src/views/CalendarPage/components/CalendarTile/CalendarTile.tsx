@@ -1,5 +1,6 @@
 import React from 'react';
 import { useThemeContext } from 'context';
+import { Color } from 'utils';
 import { StyledCircle, StyledTile, StyledDay } from './CalendarTile.css';
 
 const generateCircles = (colors: Color[], edge: number) => {
@@ -7,23 +8,18 @@ const generateCircles = (colors: Color[], edge: number) => {
   const shift = (edge - size) / (colors.length - 1);
   let position = -shift;
   return colors.map((color) => {
-    if (color) {
-      position += shift;
-      return (
-        <StyledCircle
-          key={color.id}
-          position={position}
-          alone={colors.length === 1}
-          color={color.color}
-          size={size}
-        />
-      );
-    }
-    return null;
+    position += shift;
+    return (
+      <StyledCircle
+        key={color.id}
+        position={position}
+        alone={colors.length === 1}
+        color={color.color}
+        size={size}
+      />
+    );
   });
 };
-
-type Color = { color?: string; id?: number };
 
 type TileProps = {
   colors?: Color[];
@@ -40,7 +36,7 @@ const CalendarTile = ({ colors, day }: TileProps) => {
       {day === -1 ? null : (
         <>
           {colors && generateCircles(colors, size)}
-          <StyledDay>{day}</StyledDay>
+          <StyledDay data-testid="day">{day}</StyledDay>
         </>
       )}
     </StyledTile>
