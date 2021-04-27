@@ -42,3 +42,9 @@ export enum SIDES {
 }
 
 export type Color = { color?: string; id?: number };
+
+export type NavProps = {
+  month: number;
+  year: number;
+  moveDate: Function;
+};
