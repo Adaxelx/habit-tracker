@@ -16,7 +16,14 @@ export interface Event {
   label?: string | Label;
   description?: string;
   userId: string;
-  checked?: boolean;
+  checked?: [
+    {
+      day: number;
+      month: number;
+      year: number;
+      _id: string;
+    },
+  ];
 }
 
 export interface EventLoop extends Event {
@@ -28,6 +35,7 @@ export type Label = {
   _id: string;
   title: string;
   color: string;
+  userId: string;
 };
 
 export type CalendarTile = {
