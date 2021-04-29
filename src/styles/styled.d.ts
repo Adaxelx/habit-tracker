@@ -57,6 +57,7 @@ declare module 'styled-components' {
     zIndex: {
       max: number;
       medium: number;
+      low: number;
     };
     chooseFS: any;
     media: {
@@ -71,8 +72,10 @@ declare module 'styled-components' {
   }
 
   export interface DefaultTheme extends CoreTheme {
+    gridTile: { size: number };
     colors: {
       body: string;
+      calendar: { navigation: string };
       text: {
         primary: string;
         secondary: string;

@@ -9,7 +9,7 @@ exports[`App should match snapshot 1`] = `
   text-align: center;
   height: 50px;
   line-height: 50px;
-  z-index: 3;
+  z-index: 1000;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -53,7 +53,7 @@ exports[`App should match snapshot 1`] = `
   >
     <a
       class="c1"
-      href="/"
+      href="#/"
     >
       <h1>
         Habbit tracker
@@ -71,7 +71,7 @@ exports[`App should match snapshot 1`] = `
   padding: 0;
   -webkit-transition: 300ms;
   transition: 300ms;
-  z-index: 3;
+  z-index: 1000;
 }
 
 .c0:focus {
@@ -184,6 +184,7 @@ exports[`App should match snapshot 1`] = `
   top: 0;
   position: fixed;
   background-color: #A4FF9D;
+  z-index: 500;
 }
 
 .c1 {
@@ -248,25 +249,25 @@ exports[`App should match snapshot 1`] = `
     >
       <a
         class="c2"
-        href="/"
+        href="#/"
       >
         Home page
       </a>
       <a
         class="c2"
-        href="/calendar"
+        href="#/calendar"
       >
         Your tracker
       </a>
       <a
         class="c2"
-        href="/login"
+        href="#/login"
       >
         Login
       </a>
       <a
         class="c2"
-        href="/register"
+        href="#/register"
       >
         Register
       </a>
@@ -390,7 +391,7 @@ exports[`App should match snapshot 1`] = `
       >
         <a
           class="c6"
-          href="/register"
+          href="#/register"
         >
           Create account for free
         </a>
@@ -401,7 +402,7 @@ exports[`App should match snapshot 1`] = `
         </p>
         <a
           class="c6"
-          href="/login"
+          href="#/login"
         >
           Log in
         </a>

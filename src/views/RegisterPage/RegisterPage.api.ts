@@ -20,5 +20,6 @@ export const registerUser = async (data: RegisterInputs) => {
   if (response.status === 200) {
     return response.json();
   }
-  throw new Error('Something went wrong.');
+  const { message } = await response.json();
+  throw new Error(message || 'Something went wrong');
 };

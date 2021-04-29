@@ -49,8 +49,9 @@ const core: CoreTheme = {
     long: 500,
   },
   zIndex: {
-    max: 3,
-    medium: 2,
+    max: 1000,
+    medium: 500,
+    low: 100,
   },
   chooseFS,
   sizes: {

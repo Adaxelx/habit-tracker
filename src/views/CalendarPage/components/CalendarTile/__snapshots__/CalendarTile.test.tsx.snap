@@ -1,0 +1,133 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CalendarTile it change styles when two colors appear 1`] = `
+<DocumentFragment>
+  .c0 {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  overflow: hidden;
+  background-color: #FFFFFF;
+}
+
+.c1 {
+  position: absolute;
+  border-radius: 50%;
+  width: 32.5px;
+  height: 32.5px;
+  background-color: #fff;
+  top: 0px;
+  left: 0px;
+}
+
+.c2 {
+  position: absolute;
+  border-radius: 50%;
+  width: 32.5px;
+  height: 32.5px;
+  background-color: #ddd;
+  top: 17.5px;
+  left: 17.5px;
+}
+
+.c3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  z-index: 100;
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1"
+      color="#fff"
+      size="32.5"
+    />
+    <div
+      class="c2"
+      color="#ddd"
+      size="32.5"
+    />
+    <p
+      class="c3"
+      data-testid="day"
+    >
+      1
+    </p>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`CalendarTile it should render empty tile when day is -1 1`] = `
+<DocumentFragment>
+  .c0 {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  overflow: hidden;
+  background-color: #FFFFFF;
+}
+
+<div
+    class="c0"
+  />
+</DocumentFragment>
+`;
+
+exports[`CalendarTile should match snapshot 1`] = `
+<DocumentFragment>
+  .c0 {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  overflow: hidden;
+  background-color: #FFFFFF;
+}
+
+.c1 {
+  position: absolute;
+  border-radius: 50%;
+  width: 46.15384615384615px;
+  height: 46.15384615384615px;
+  background-color: #fff;
+  top: NaNpx;
+  left: NaNpx;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  top: 50%;
+  left: 50%;
+}
+
+.c2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  z-index: 100;
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1"
+      color="#fff"
+      size="60"
+    />
+    <p
+      class="c2"
+      data-testid="day"
+    >
+      1
+    </p>
+  </div>
+</DocumentFragment>
+`;

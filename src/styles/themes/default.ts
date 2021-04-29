@@ -5,9 +5,15 @@ const lightBlue = '#AFE9FF';
 
 const defaultTheme: DefaultTheme = {
   ...core,
+  gridTile: {
+    size: 50,
+  },
   colors: {
     ...core.colors,
     body: '#F3FFF2',
+    calendar: {
+      navigation: '#EDEFFF',
+    },
     text: {
       primary: core.colors.common.black,
       secondary: '#808080',

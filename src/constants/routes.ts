@@ -1,4 +1,4 @@
-import { Dashboard, LoginPage, Calendar, RegisterPage } from 'views';
+import { Dashboard, LoginPage, CalendarPage, RegisterPage } from 'views';
 import paths from './paths';
 
 const { DASHBOARD, CALENDAR, LOGIN, REGISTER } = paths;
@@ -23,7 +23,8 @@ const routesForRouter = [
   },
   {
     path: CALENDAR,
-    Component: Calendar,
+    Component: CalendarPage,
+    isPrivate: true,
   },
   { path: LOGIN, Component: LoginPage },
   { path: REGISTER, Component: RegisterPage },

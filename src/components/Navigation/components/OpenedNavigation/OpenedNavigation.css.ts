@@ -19,6 +19,7 @@ export const StyledOpenNav = styled.nav<ClicableProps>`
   top: 0;
   position: fixed;
   background-color: ${({ theme }) => theme.colors.nav.background};
+  z-index: ${({ theme }) => theme.zIndex.medium};
 `;
 
 export const StyledContainner = styled.div`

@@ -1,16 +1,16 @@
 const APIurl = process.env.REACT_APP_BACKEND;
 
 const DASHBOARD = `${APIurl}/`;
-const USER = `${APIurl}/users/`;
-const CALENDAR = `${DASHBOARD}calendar/`;
+const USER = `${DASHBOARD}users/`;
+const EVENTS = `${DASHBOARD}events/`;
+const LABELS = `${DASHBOARD}labels/`;
 
 const APIpaths = {
   LOGIN: `${USER}login/`,
   REGISTER: `${USER}register/`,
   LOGOUT: `${USER}logout/`,
-  CALENDAR,
-  LABEL: `${CALENDAR}label/`,
-  EVENT: `${CALENDAR}event/`,
+  EVENTS,
+  LABELS,
 };
 
 export default APIpaths;
