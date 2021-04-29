@@ -49,7 +49,7 @@ export enum SIDES {
   RIGHT = 1,
 }
 
-export type Color = { color?: string; id?: number };
+export type Color = { color?: string; id?: string };
 
 export type NavProps = {
   month: number;

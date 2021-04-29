@@ -28,12 +28,14 @@ const CalendarPage = () => {
   const [labels, loadingL, errorL] = useQuery<Label>([token], () => getLabels(token));
 
   useEffect(() => {
-    const mappedResponse: Event[] = eventsF?.map((event: Event) => {
-      const label = labels?.filter((label: Label) => event?.label === label?._id)[0];
-      return { ...event, label };
-    });
-    setEvents(mappedResponse);
-  }, [eventsF]);
+    if (labels.length !== 0) {
+      const mappedResponse: Event[] = eventsF?.map((event: Event) => {
+        const label = labels?.filter((label: Label) => event?.label === label?._id)[0];
+        return { ...event, label };
+      });
+      setEvents(mappedResponse);
+    }
+  }, [eventsF, labels]);
 
   const moveDate = (side: SIDES) => {
     if (side === SIDES.LEFT) {

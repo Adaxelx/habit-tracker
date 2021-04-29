@@ -20,8 +20,8 @@ const CalendarGrid = ({ events, month, year, moveDate }: GridProps) => {
         {days.map(({ id, day, events: eventsArr }) => (
           <CalendarTile
             key={id}
-            colors={eventsArr.map(({ label }, i) =>
-              typeof label === 'object' ? { color: label?.color, id: i } : {},
+            colors={eventsArr.map(({ label, _id: idEvent }) =>
+              typeof label === 'object' ? { color: label?.color, id: `${idEvent}${id}` } : {},
             )}
             day={day}
           />
