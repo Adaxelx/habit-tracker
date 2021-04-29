@@ -8,7 +8,9 @@ export const getEvents = async (token: string | undefined, from: string, to: str
   if (response.status === 200) {
     return response.json();
   }
-  throw new Error('Something went wrong.');
+
+  const { message } = await response.json();
+  throw new Error(message);
 };
 
 export const getLabels = async (token: string | undefined) => {
@@ -19,5 +21,6 @@ export const getLabels = async (token: string | undefined) => {
   if (response.status === 200) {
     return response.json();
   }
-  throw new Error('Something went wrong.');
+  const { message } = await response.json();
+  throw new Error(message);
 };

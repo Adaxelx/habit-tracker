@@ -7,11 +7,11 @@ import { StyledNavigation, StyledButton, StyledTitle } from './CalendarNavigatio
 
 const CalendarNavigation = ({ month, year, moveDate }: NavProps) => (
   <StyledNavigation>
-    <StyledButton onClick={() => moveDate(SIDES.LEFT)}>
+    <StyledButton data-testid="moveLeft" onClick={() => moveDate(SIDES.LEFT)}>
       <FontAwesomeIcon icon={faCaretLeft} />
     </StyledButton>
-    <StyledTitle>{`${months[month]} ${year}`}</StyledTitle>
-    <StyledButton onClick={() => moveDate(SIDES.RIGHT)}>
+    <StyledTitle data-testid="dateCalendar">{`${months[month]} ${year}`}</StyledTitle>
+    <StyledButton data-testid="moveRight" onClick={() => moveDate(SIDES.RIGHT)}>
       <FontAwesomeIcon icon={faCaretRight} />
     </StyledButton>
   </StyledNavigation>
