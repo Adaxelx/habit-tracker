@@ -73,12 +73,15 @@ describe('CalendarPage', () => {
   });
 
   it('should match snapshot', async () => {
+    const mockDate = new Date('2022-01-01');
+    const spy = jest.spyOn(global, 'Date').mockImplementation(() => mockDate);
     act(() => {
       util = new TestUtil(<CalendarPage />);
     });
 
     await waitFor(() => expect(fetch).toHaveBeenCalledTimes(2));
     expect(util.render.asFragment()).toMatchSnapshot();
+    spy.mockRestore();
   });
 
   it('should show error message event', async () => {

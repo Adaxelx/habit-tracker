@@ -28,20 +28,6 @@ exports[`CalendarPage should match snapshot 1`] = `
   background-color: #FFFFFF;
 }
 
-.c9 {
-  position: absolute;
-  border-radius: 50%;
-  width: 46.15384615384615px;
-  height: 46.15384615384615px;
-  top: NaNpx;
-  left: NaNpx;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-  top: 50%;
-  left: 50%;
-}
-
 .c8 {
   position: absolute;
   top: 50%;
@@ -131,7 +117,7 @@ exports[`CalendarPage should match snapshot 1`] = `
         class="c3"
         data-testid="dateCalendar"
       >
-        April 2021
+        January 2022
       </h3>
       <button
         class="c2"
@@ -207,6 +193,12 @@ exports[`CalendarPage should match snapshot 1`] = `
       />
       <div
         class="c7"
+      />
+      <div
+        class="c7"
+      />
+      <div
+        class="c7"
       >
         <p
           class="c8"
@@ -248,10 +240,6 @@ exports[`CalendarPage should match snapshot 1`] = `
       <div
         class="c7"
       >
-        <div
-          class="c9"
-          size="60"
-        />
         <p
           class="c8"
           data-testid="day"
@@ -262,10 +250,6 @@ exports[`CalendarPage should match snapshot 1`] = `
       <div
         class="c7"
       >
-        <div
-          class="c9"
-          size="60"
-        />
         <p
           class="c8"
           data-testid="day"
@@ -286,10 +270,6 @@ exports[`CalendarPage should match snapshot 1`] = `
       <div
         class="c7"
       >
-        <div
-          class="c9"
-          size="60"
-        />
         <p
           class="c8"
           data-testid="day"
@@ -330,10 +310,6 @@ exports[`CalendarPage should match snapshot 1`] = `
       <div
         class="c7"
       >
-        <div
-          class="c9"
-          size="60"
-        />
         <p
           class="c8"
           data-testid="day"
@@ -344,10 +320,6 @@ exports[`CalendarPage should match snapshot 1`] = `
       <div
         class="c7"
       >
-        <div
-          class="c9"
-          size="60"
-        />
         <p
           class="c8"
           data-testid="day"
@@ -368,10 +340,6 @@ exports[`CalendarPage should match snapshot 1`] = `
       <div
         class="c7"
       >
-        <div
-          class="c9"
-          size="60"
-        />
         <p
           class="c8"
           data-testid="day"
@@ -412,10 +380,6 @@ exports[`CalendarPage should match snapshot 1`] = `
       <div
         class="c7"
       >
-        <div
-          class="c9"
-          size="60"
-        />
         <p
           class="c8"
           data-testid="day"
@@ -426,10 +390,6 @@ exports[`CalendarPage should match snapshot 1`] = `
       <div
         class="c7"
       >
-        <div
-          class="c9"
-          size="60"
-        />
         <p
           class="c8"
           data-testid="day"
@@ -450,10 +410,6 @@ exports[`CalendarPage should match snapshot 1`] = `
       <div
         class="c7"
       >
-        <div
-          class="c9"
-          size="60"
-        />
         <p
           class="c8"
           data-testid="day"
@@ -494,10 +450,6 @@ exports[`CalendarPage should match snapshot 1`] = `
       <div
         class="c7"
       >
-        <div
-          class="c9"
-          size="60"
-        />
         <p
           class="c8"
           data-testid="day"
@@ -508,10 +460,6 @@ exports[`CalendarPage should match snapshot 1`] = `
       <div
         class="c7"
       >
-        <div
-          class="c9"
-          size="60"
-        />
         <p
           class="c8"
           data-testid="day"
@@ -532,10 +480,6 @@ exports[`CalendarPage should match snapshot 1`] = `
       <div
         class="c7"
       >
-        <div
-          class="c9"
-          size="60"
-        />
         <p
           class="c8"
           data-testid="day"
@@ -551,6 +495,16 @@ exports[`CalendarPage should match snapshot 1`] = `
           data-testid="day"
         >
           30
+        </p>
+      </div>
+      <div
+        class="c7"
+      >
+        <p
+          class="c8"
+          data-testid="day"
+        >
+          31
         </p>
       </div>
     </div>
