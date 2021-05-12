@@ -43,7 +43,7 @@ exports[`CalendarNavigation should match snapshot 1`] = `
   >
     <button
       class="c1"
-      data-testid="moveLeft"
+      data-testid="moveLeft-undefined"
     >
       <svg
         aria-hidden="true"
@@ -63,13 +63,13 @@ exports[`CalendarNavigation should match snapshot 1`] = `
     </button>
     <h3
       class="c2"
-      data-testid="dateCalendar"
+      data-testid="dateCalendar-undefined"
     >
       April 2021
     </h3>
     <button
       class="c1"
-      data-testid="moveRight"
+      data-testid="moveRight-undefined"
     >
       <svg
         aria-hidden="true"

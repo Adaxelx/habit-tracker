@@ -129,6 +129,7 @@ const CalendarPage = () => {
         <>
           {CalendarGridView}
           <CalendarNavigation
+            navId="desktopDay"
             header={`${dayNumber} ${months[parseInt(month, 10)]} ${year}`}
             moveDate={moveDateDay}
           />
@@ -139,6 +140,7 @@ const CalendarPage = () => {
       ) : (
         <>
           <CalendarNavigation
+            navId="mobileDay"
             header={`${dayNumber} ${months[parseInt(month, 10)]} ${year}`}
             moveDate={moveDateDay}
           />

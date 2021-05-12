@@ -12,8 +12,7 @@ describe('CalendarNavigation', () => {
     jest.clearAllMocks();
 
     props = {
-      month: 3,
-      year: 2021,
+      header: 'April 2021',
       moveDate: jest.fn(),
     };
     util = new TestUtil(<CalendarNavigation {...props} />);

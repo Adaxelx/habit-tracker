@@ -10,7 +10,7 @@ const CalendarGrid = ({ events, month, year, moveDate, handleDayChange }: GridPr
 
   return (
     <StyledCalendar>
-      <CalendarNavigation header={`${months[month]} ${year}`} moveDate={moveDate} />
+      <CalendarNavigation navId="main" header={`${months[month]} ${year}`} moveDate={moveDate} />
       <StyledDayGrid>
         {weekDays.map((day) => (
           <StyledDay key={day}>{day}</StyledDay>

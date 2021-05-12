@@ -79,7 +79,7 @@ describe('CalendarPage', () => {
       util = new TestUtil(<CalendarPage />);
     });
 
-    await waitFor(() => expect(fetch).toHaveBeenCalledTimes(2));
+    await waitFor(() => expect(fetch).toHaveBeenCalledTimes(3));
     expect(util.render.asFragment()).toMatchSnapshot();
     spy.mockRestore();
   });
@@ -90,7 +90,7 @@ describe('CalendarPage', () => {
       util = new TestUtil(<CalendarPage />);
     });
 
-    await waitFor(() => expect(fetch).toHaveBeenCalledTimes(2));
+    await waitFor(() => expect(fetch).toHaveBeenCalledTimes(3));
     expect(util.get('alert').textContent).toBe('failEvent');
   });
 
@@ -100,7 +100,7 @@ describe('CalendarPage', () => {
       util = new TestUtil(<CalendarPage />);
     });
 
-    await waitFor(() => expect(fetch).toHaveBeenCalledTimes(2));
+    await waitFor(() => expect(fetch).toHaveBeenCalledTimes(3));
     expect(util.get('alert').textContent).toBe('failLabel');
   });
 
@@ -109,17 +109,20 @@ describe('CalendarPage', () => {
       util = new TestUtil(<CalendarPage />);
     });
 
-    await waitFor(() => expect(fetch).toHaveBeenCalledTimes(2));
-    const [month, year] = util.get('dateCalendar')?.textContent?.split(' ') as [string, string];
+    await waitFor(() => expect(fetch).toHaveBeenCalledTimes(3));
+    const [month, year] = util.get('dateCalendar-main')?.textContent?.split(' ') as [
+      string,
+      string,
+    ];
     const index = months.findIndex((monthArr) => monthArr === month);
     const prevIndex = index - 1 < 0 ? 11 : index - 1;
     const prevYear = index - 1 < 0 ? year - 1 : year;
 
-    util.click('moveLeft');
-    expect(util.get('dateCalendar').textContent).toBe(`${months[prevIndex]} ${prevYear}`);
+    util.click('moveLeft-main');
+    expect(util.get('dateCalendar-main').textContent).toBe(`${months[prevIndex]} ${prevYear}`);
 
-    util.click('moveRight');
-    expect(util.get('dateCalendar').textContent).toBe(`${month} ${year}`);
+    util.click('moveRight-main');
+    expect(util.get('dateCalendar-main').textContent).toBe(`${month} ${year}`);
   });
 
   it('should move dates on border', async () => {
@@ -129,17 +132,20 @@ describe('CalendarPage', () => {
       util = new TestUtil(<CalendarPage />);
     });
 
-    await waitFor(() => expect(fetch).toHaveBeenCalledTimes(2));
-    const [month, year] = util.get('dateCalendar')?.textContent?.split(' ') as [string, string];
+    await waitFor(() => expect(fetch).toHaveBeenCalledTimes(3));
+    const [month, year] = util.get('dateCalendar-main')?.textContent?.split(' ') as [
+      string,
+      string,
+    ];
     const index = months.findIndex((monthArr) => monthArr === month);
     const prevIndex = index - 1 < 0 ? 11 : index - 1;
     const prevYear = index - 1 < 0 ? year - 1 : year;
 
-    util.click('moveLeft');
-    expect(util.get('dateCalendar').textContent).toBe(`${months[prevIndex]} ${prevYear}`);
+    util.click('moveLeft-main');
+    expect(util.get('dateCalendar-main').textContent).toBe(`${months[prevIndex]} ${prevYear}`);
 
-    util.click('moveRight');
-    expect(util.get('dateCalendar').textContent).toBe(`${month} ${year}`);
+    util.click('moveRight-main');
+    expect(util.get('dateCalendar-main').textContent).toBe(`${month} ${year}`);
 
     spy.mockRestore();
   });
