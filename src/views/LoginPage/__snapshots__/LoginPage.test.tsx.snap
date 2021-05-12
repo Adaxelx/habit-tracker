@@ -25,6 +25,10 @@ exports[`LoginPage should match snapshot 1`] = `
   width: 100%;
 }
 
+.c2::last-child {
+  margin-bottom: 0;
+}
+
 .c6 {
   color: #fff;
   background-color: #FFC136;
@@ -34,6 +38,13 @@ exports[`LoginPage should match snapshot 1`] = `
   min-width: 150px;
   display: inline-block;
   text-align: center;
+  margin-top: 16px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.c6:hover {
+  cursor: pointer;
 }
 
 .c0 {

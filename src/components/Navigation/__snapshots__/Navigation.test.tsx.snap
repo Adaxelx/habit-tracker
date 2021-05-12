@@ -98,7 +98,7 @@ exports[`Navigation should match snapshot 1`] = `
   -ms-flex-align: center;
   align-items: center;
   position: absolute;
-  top: 40%;
+  top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
@@ -279,7 +279,7 @@ exports[`Navigation should open nav and redirect after click 1`] = `
   -ms-flex-align: center;
   align-items: center;
   position: absolute;
-  top: 40%;
+  top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);

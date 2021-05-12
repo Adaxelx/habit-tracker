@@ -16,6 +16,7 @@ exports[`Alert should match snapshot - error 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  margin-top: 0.75rem;
 }
 
 .c1 {
@@ -25,7 +26,6 @@ exports[`Alert should match snapshot - error 1`] = `
   border-radius: 5px;
   padding: 0.5rem;
   font-size: 1rem;
-  margin-bottom: 1rem;
 }
 
 <div
@@ -58,6 +58,7 @@ exports[`Alert should match snapshot - loading 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  margin-top: 0.75rem;
 }
 
 .c1 {
@@ -67,7 +68,6 @@ exports[`Alert should match snapshot - loading 1`] = `
   border-radius: 5px;
   padding: 0.5rem;
   font-size: 1rem;
-  margin-bottom: 1rem;
 }
 
 <div

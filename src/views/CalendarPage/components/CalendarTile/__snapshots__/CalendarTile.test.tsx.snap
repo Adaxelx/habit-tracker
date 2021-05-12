@@ -3,6 +3,7 @@
 exports[`CalendarTile it change styles when two colors appear 1`] = `
 <DocumentFragment>
   .c0 {
+  border: none;
   width: 50px;
   height: 50px;
   position: relative;
@@ -10,11 +11,15 @@ exports[`CalendarTile it change styles when two colors appear 1`] = `
   background-color: #FFFFFF;
 }
 
+.c0:hover {
+  cursor: pointer;
+}
+
 .c1 {
   position: absolute;
   border-radius: 50%;
-  width: 32.5px;
-  height: 32.5px;
+  width: 65px;
+  height: 65px;
   background-color: #fff;
   top: 0px;
   left: 0px;
@@ -23,11 +28,11 @@ exports[`CalendarTile it change styles when two colors appear 1`] = `
 .c2 {
   position: absolute;
   border-radius: 50%;
-  width: 32.5px;
-  height: 32.5px;
+  width: 65px;
+  height: 65px;
   background-color: #ddd;
-  top: 17.5px;
-  left: 17.5px;
+  top: 35px;
+  left: 35px;
 }
 
 .c3 {
@@ -40,18 +45,25 @@ exports[`CalendarTile it change styles when two colors appear 1`] = `
   z-index: 100;
 }
 
-<div
+@media (min-width:768px) {
+  .c0 {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+<button
     class="c0"
   >
     <div
       class="c1"
       color="#fff"
-      size="32.5"
+      size="65"
     />
     <div
       class="c2"
       color="#ddd"
-      size="32.5"
+      size="65"
     />
     <p
       class="c3"
@@ -59,13 +71,14 @@ exports[`CalendarTile it change styles when two colors appear 1`] = `
     >
       1
     </p>
-  </div>
+  </button>
 </DocumentFragment>
 `;
 
 exports[`CalendarTile it should render empty tile when day is -1 1`] = `
 <DocumentFragment>
   .c0 {
+  border: none;
   width: 50px;
   height: 50px;
   position: relative;
@@ -73,7 +86,18 @@ exports[`CalendarTile it should render empty tile when day is -1 1`] = `
   background-color: #FFFFFF;
 }
 
-<div
+.c0:hover {
+  cursor: pointer;
+}
+
+@media (min-width:768px) {
+  .c0 {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+<button
     class="c0"
   />
 </DocumentFragment>
@@ -82,6 +106,7 @@ exports[`CalendarTile it should render empty tile when day is -1 1`] = `
 exports[`CalendarTile should match snapshot 1`] = `
 <DocumentFragment>
   .c0 {
+  border: none;
   width: 50px;
   height: 50px;
   position: relative;
@@ -89,11 +114,15 @@ exports[`CalendarTile should match snapshot 1`] = `
   background-color: #FFFFFF;
 }
 
+.c0:hover {
+  cursor: pointer;
+}
+
 .c1 {
   position: absolute;
   border-radius: 50%;
-  width: 46.15384615384615px;
-  height: 46.15384615384615px;
+  width: 92.3076923076923px;
+  height: 92.3076923076923px;
   background-color: #fff;
   top: NaNpx;
   left: NaNpx;
@@ -114,13 +143,20 @@ exports[`CalendarTile should match snapshot 1`] = `
   z-index: 100;
 }
 
-<div
+@media (min-width:768px) {
+  .c0 {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+<button
     class="c0"
   >
     <div
       class="c1"
       color="#fff"
-      size="60"
+      size="120"
     />
     <p
       class="c2"
@@ -128,6 +164,6 @@ exports[`CalendarTile should match snapshot 1`] = `
     >
       1
     </p>
-  </div>
+  </button>
 </DocumentFragment>
 `;
