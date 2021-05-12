@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Alert } from 'components';
+import { Alert, Button } from 'components';
 import { useUserContext } from 'context';
 import { getISODate } from 'constants/calendar';
 import { useQuery } from 'hooks';
 import { Label, SIDES } from 'utils';
 import { Event } from 'utils/types';
-import { StyledCenter } from './CalendarPage.css';
+import { StyledButtonWrapper, StyledCenter } from './CalendarPage.css';
 import { CalendarGrid } from './components';
 import { getEvents, getLabels } from './CalendarPage.api';
 
@@ -59,6 +59,17 @@ const CalendarPage = () => {
     <StyledCenter>
       <CalendarGrid events={events} month={actualMonth} moveDate={moveDate} year={actualYear} />
       <Alert loading={loadingE || loadingL} error={errorE || errorL} />
+      <StyledButtonWrapper>
+        <Button size="s" noMaxWidth mt="16px" type="submit" data-testid="submit">
+          Add habbit
+        </Button>
+        <Button size="s" noMaxWidth mt="16px" my="16px" type="submit" data-testid="submit">
+          Add label
+        </Button>
+        <Button size="s" noMaxWidth mt="16px" type="submit" data-testid="submit">
+          Label list
+        </Button>
+      </StyledButtonWrapper>
     </StyledCenter>
   );
 };

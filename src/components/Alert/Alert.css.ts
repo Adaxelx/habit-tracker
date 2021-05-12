@@ -6,6 +6,7 @@ const StyledWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: ${({ theme }) => theme.margin.s};
 `;
 
 type AlertProps = { type: AlertTypes };
@@ -17,7 +18,6 @@ const StyledAlert = styled.div<AlertProps>`
   border-radius: 5px;
   padding: ${({ theme }) => theme.margin.xs};
   font-size: ${({ theme }) => theme.font.sizes.s};
-  margin-bottom: ${({ theme }) => theme.margin.sm};
 `;
 
 export { StyledAlert, StyledWrapper };

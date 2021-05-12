@@ -4,6 +4,8 @@ interface ButtonProps {
   size?: string;
   noMaxWidth?: boolean;
   as?: any;
+  mt?: string;
+  my?: string;
 }
 
 const Button = styled.button<ButtonProps>`
@@ -15,6 +17,12 @@ const Button = styled.button<ButtonProps>`
   min-width: ${({ noMaxWidth }) => (noMaxWidth ? 'none' : '150px')};
   display: inline-block;
   text-align: center;
+  margin-top: ${({ mt }) => mt || 0};
+  margin-left: ${({ my }) => my || 0};
+  margin-right: ${({ my }) => my || 0};
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export default Button;

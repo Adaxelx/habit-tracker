@@ -1,5 +1,11 @@
 import styled from 'styled-components';
 
+export const StyledCalendar = styled.div`
+  @media (min-width: ${({ theme }) => theme.media.tablet.s}) {
+    margin-top: 5rem;
+  }
+`;
+
 export const StyledGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(7, minmax(0, 1fr));

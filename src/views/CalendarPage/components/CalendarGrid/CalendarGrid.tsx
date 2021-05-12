@@ -3,13 +3,13 @@ import { weekDays } from 'constants/calendar';
 import { useCalendar } from 'hooks';
 import { GridProps } from 'utils';
 import { CalendarTile, CalendarNavigation } from '..';
-import { StyledGrid, StyledDay, StyledDayGrid } from './CalendarGrid.css';
+import { StyledGrid, StyledDay, StyledDayGrid, StyledCalendar } from './CalendarGrid.css';
 
 const CalendarGrid = ({ events, month, year, moveDate }: GridProps) => {
   const [days] = useCalendar(events, month, year);
 
   return (
-    <>
+    <StyledCalendar>
       <CalendarNavigation moveDate={moveDate} month={month} year={year} />
       <StyledDayGrid>
         {weekDays.map((day) => (
@@ -27,7 +27,7 @@ const CalendarGrid = ({ events, month, year, moveDate }: GridProps) => {
           />
         ))}
       </StyledGrid>
-    </>
+    </StyledCalendar>
   );
 };
 

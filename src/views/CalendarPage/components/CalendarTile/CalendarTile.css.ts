@@ -6,6 +6,13 @@ export const StyledTile = styled.div`
   position: relative;
   overflow: hidden;
   background-color: ${({ theme }) => theme.colors.common.white};
+  @media (min-width: ${({ theme }) => theme.media.tablet.s}) {
+    width: ${({ theme }) => `${theme.gridTile.size * 2}px`};
+    height: ${({ theme }) => `${theme.gridTile.size * 2}px`};
+  }
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 type CirlcleProps = {

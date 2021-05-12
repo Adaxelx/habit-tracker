@@ -57,7 +57,7 @@ const LoginPage = () => {
           data-testid="password"
         />
         <Alert error={error} loading={loading} />
-        <Button size="m" type="submit" data-testid="submit">
+        <Button size="m" mt="16px" type="submit" data-testid="submit">
           Log in
         </Button>
       </StyledWrapper>

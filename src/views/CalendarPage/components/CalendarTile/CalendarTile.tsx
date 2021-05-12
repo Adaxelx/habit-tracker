@@ -1,6 +1,7 @@
 import React from 'react';
 import { useThemeContext } from 'context';
 import { Color } from 'utils';
+import { useWindowSize } from 'hooks';
 import { StyledCircle, StyledTile, StyledDay } from './CalendarTile.css';
 
 const generateCircles = (colors: Color[], edge: number) => {
@@ -30,12 +31,13 @@ const CalendarTile = ({ colors, day }: TileProps) => {
   const {
     gridTile: { size },
   } = useThemeContext();
+  const [width] = useWindowSize();
 
   return (
     <StyledTile>
       {day === -1 ? null : (
         <>
-          {colors && generateCircles(colors, size)}
+          {colors && generateCircles(colors, width > 768 ? size * 2 : size)}
           <StyledDay data-testid="day">{day}</StyledDay>
         </>
       )}
