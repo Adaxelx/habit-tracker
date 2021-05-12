@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
-export const StyledTile = styled.div`
+export const StyledTile = styled.button`
+  border: none;
   width: ${({ theme }) => `${theme.gridTile.size}px`};
   height: ${({ theme }) => `${theme.gridTile.size}px`};
   position: relative;

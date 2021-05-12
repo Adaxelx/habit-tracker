@@ -6,7 +6,7 @@ import { useQuery } from 'hooks';
 import { Label, SIDES } from 'utils';
 import { Event } from 'utils/types';
 import { StyledButtonWrapper, StyledCenter } from './CalendarPage.css';
-import { CalendarGrid } from './components';
+import { CalendarGrid, DayCard } from './components';
 import { getEvents, getLabels } from './CalendarPage.api';
 
 /* eslint-disable */
@@ -21,6 +21,9 @@ const CalendarPage = () => {
   const to = getISODate(new Date(actualYear, actualMonth, daysInMonth));
   const { token } = useUserContext();
   const [events, setEvents] = useState<Event[]>([]);
+
+  const [openCard, setOpenCard] = useState(false);
+  const [day, setDay] = useState(0);
 
   const [eventsF, loadingE, errorE] = useQuery<Event>([from, to, token], () =>
     getEvents(token, from, to),
@@ -55,21 +58,41 @@ const CalendarPage = () => {
     }
   };
 
+  const handleChangeView = (day?: number) => {
+    console.log(day);
+    setOpenCard((prevState) => !prevState);
+    if (day) {
+      setDay(day);
+    }
+  };
+
   return (
     <StyledCenter>
-      <CalendarGrid events={events} month={actualMonth} moveDate={moveDate} year={actualYear} />
-      <Alert loading={loadingE || loadingL} error={errorE || errorL} />
-      <StyledButtonWrapper>
-        <Button size="s" noMaxWidth mt="16px" type="submit" data-testid="submit">
-          Add habbit
-        </Button>
-        <Button size="s" noMaxWidth mt="16px" my="16px" type="submit" data-testid="submit">
-          Add label
-        </Button>
-        <Button size="s" noMaxWidth mt="16px" type="submit" data-testid="submit">
-          Label list
-        </Button>
-      </StyledButtonWrapper>
+      {!openCard ? (
+        <>
+          <CalendarGrid
+            events={events}
+            month={actualMonth}
+            moveDate={moveDate}
+            year={actualYear}
+            handleDayChange={handleChangeView}
+          />
+          <Alert loading={loadingE || loadingL} error={errorE || errorL} />
+          <StyledButtonWrapper>
+            <Button size="s" noMaxWidth mt="16px" data-testid="addh">
+              Add habbit
+            </Button>
+            <Button size="s" noMaxWidth mt="16px" my="16px" data-testid="addl">
+              Add label
+            </Button>
+            <Button size="s" noMaxWidth mt="16px" data-testid="labell">
+              Label list
+            </Button>
+          </StyledButtonWrapper>
+        </>
+      ) : (
+        <DayCard day={day} actualMonth={actualMonth} actualYear={actualYear} token={token} />
+      )}
     </StyledCenter>
   );
 };

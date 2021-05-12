@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { MouseEventHandler } from 'react';
 import { useThemeContext } from 'context';
 import { Color } from 'utils';
 import { useWindowSize } from 'hooks';
@@ -25,16 +25,17 @@ const generateCircles = (colors: Color[], edge: number) => {
 type TileProps = {
   colors?: Color[];
   day: number;
+  handleDayChange: Function;
 };
 
-const CalendarTile = ({ colors, day }: TileProps) => {
+const CalendarTile = ({ colors, day, handleDayChange }: TileProps) => {
   const {
     gridTile: { size },
   } = useThemeContext();
   const [width] = useWindowSize();
 
   return (
-    <StyledTile>
+    <StyledTile onClick={handleDayChange as MouseEventHandler<HTMLButtonElement>}>
       {day === -1 ? null : (
         <>
           {colors && generateCircles(colors, width > 768 ? size * 2 : size)}

@@ -97,6 +97,7 @@ declare module 'styled-components' {
       tile: {
         background: string;
         backgroundActive: string;
+        border: string;
       };
       error: AlertType;
       loading: AlertType;

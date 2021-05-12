@@ -3,6 +3,7 @@ export type GridProps = {
   month: number;
   year: number;
   moveDate: Function;
+  handleDayChange: Function;
 };
 
 export interface Event {
@@ -56,3 +57,10 @@ export type NavProps = {
   year: number;
   moveDate: Function;
 };
+
+export interface DayCardProps {
+  day: number;
+  actualMonth: number;
+  actualYear: number;
+  token: string | undefined;
+}

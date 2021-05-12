@@ -34,6 +34,7 @@ const defaultTheme: DefaultTheme = {
     tile: {
       background: '#FFFCAF',
       backgroundActive: lightBlue,
+      border: '#77CBFF',
     },
     modalBackground: lightBlue,
     error: {
