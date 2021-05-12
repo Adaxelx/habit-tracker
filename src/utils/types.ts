@@ -53,14 +53,11 @@ export enum SIDES {
 export type Color = { color?: string; id?: string };
 
 export type NavProps = {
-  month: number;
-  year: number;
+  header: string;
   moveDate: Function;
 };
 
 export interface DayCardProps {
-  day: number;
-  actualMonth: number;
-  actualYear: number;
+  day: string;
   token: string | undefined;
 }

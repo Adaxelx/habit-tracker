@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import { Alert, Button } from 'components';
 import { useUserContext } from 'context';
-import { getISODate } from 'constants/calendar';
-import { useQuery } from 'hooks';
+import { getISODate, months } from 'constants/calendar';
+import { useQuery, useWindowSize } from 'hooks';
 import { Label, SIDES } from 'utils';
 import { Event } from 'utils/types';
 import { StyledButtonWrapper, StyledCenter } from './CalendarPage.css';
-import { CalendarGrid, DayCard } from './components';
+import { CalendarGrid, DayCard, CalendarNavigation } from './components';
 import { getEvents, getLabels } from './CalendarPage.api';
 
 /* eslint-disable */
@@ -21,9 +21,11 @@ const CalendarPage = () => {
   const to = getISODate(new Date(actualYear, actualMonth, daysInMonth));
   const { token } = useUserContext();
   const [events, setEvents] = useState<Event[]>([]);
+  const [width] = useWindowSize();
 
   const [openCard, setOpenCard] = useState(false);
-  const [day, setDay] = useState(0);
+  const [day, setDay] = useState(`${actualYear}-${actualMonth}-${date.getDate()}`);
+  const [year, month, dayNumber] = day.split('-');
 
   const [eventsF, loadingE, errorE] = useQuery<Event>([from, to, token], () =>
     getEvents(token, from, to),
@@ -58,40 +60,90 @@ const CalendarPage = () => {
     }
   };
 
-  const handleChangeView = (day?: number) => {
-    console.log(day);
+  const moveDateDay = (side: SIDES) => {
+    const [year, month, dayNumber] = day.split('-');
+    const numericYear = parseInt(year, 10);
+    const numericMonth = parseInt(month, 10);
+    const numericDay = parseInt(dayNumber, 10);
+    const daysInMonth = new Date(numericYear, numericMonth + 1, 0).getDate();
+    if (side === SIDES.RIGHT) {
+      if (numericDay === daysInMonth) {
+        if (numericMonth === 11) {
+          setDay(`${numericYear + 1}-0-1`);
+        } else {
+          setDay(`${numericYear}-${numericMonth + 1}-1`);
+        }
+      } else {
+        setDay(`${numericYear}-${numericMonth}-${numericDay + 1}`);
+      }
+    } else {
+      if (numericDay === 1) {
+        if (numericMonth === 0) {
+          setDay(`${numericYear - 1}-11-31`);
+        } else {
+          const daysInMonth = new Date(numericYear, numericMonth, 0).getDate();
+          setDay(`${numericYear}-${numericMonth - 1}-${daysInMonth}`);
+        }
+      } else {
+        setDay(`${numericYear}-${numericMonth}-${numericDay - 1}`);
+      }
+    }
+  };
+
+  const handleChangeView = (day?: string) => {
     setOpenCard((prevState) => !prevState);
     if (day) {
       setDay(day);
     }
   };
 
+  const CalendarGridView = useMemo(() => {
+    return (
+      <>
+        <CalendarGrid
+          events={events}
+          month={actualMonth}
+          moveDate={moveDate}
+          year={actualYear}
+          handleDayChange={handleChangeView}
+        />
+        <Alert loading={loadingE || loadingL} error={errorE || errorL} />
+        <StyledButtonWrapper>
+          <Button size="s" noMaxWidth mt="16px" data-testid="addh">
+            Add habbit
+          </Button>
+          <Button size="s" noMaxWidth mt="16px" my="16px" data-testid="addl">
+            Add label
+          </Button>
+          <Button size="s" noMaxWidth mt="16px" data-testid="labell">
+            Label list
+          </Button>
+        </StyledButtonWrapper>
+      </>
+    );
+  }, [events, actualMonth, actualYear, loadingE, loadingL, errorE, errorL]);
+
   return (
     <StyledCenter>
-      {!openCard ? (
+      {width >= 768 ? (
         <>
-          <CalendarGrid
-            events={events}
-            month={actualMonth}
-            moveDate={moveDate}
-            year={actualYear}
-            handleDayChange={handleChangeView}
+          {CalendarGridView}
+          <CalendarNavigation
+            header={`${dayNumber} ${months[parseInt(month, 10)]} ${year}`}
+            moveDate={moveDateDay}
           />
-          <Alert loading={loadingE || loadingL} error={errorE || errorL} />
-          <StyledButtonWrapper>
-            <Button size="s" noMaxWidth mt="16px" data-testid="addh">
-              Add habbit
-            </Button>
-            <Button size="s" noMaxWidth mt="16px" my="16px" data-testid="addl">
-              Add label
-            </Button>
-            <Button size="s" noMaxWidth mt="16px" data-testid="labell">
-              Label list
-            </Button>
-          </StyledButtonWrapper>
+          <DayCard day={day} token={token} />
         </>
+      ) : !openCard ? (
+        CalendarGridView
       ) : (
-        <DayCard day={day} actualMonth={actualMonth} actualYear={actualYear} token={token} />
+        <>
+          <CalendarNavigation
+            header={`${dayNumber} ${months[parseInt(month, 10)]} ${year}`}
+            moveDate={moveDateDay}
+          />
+          <DayCard day={day} token={token} />
+        </>
       )}
     </StyledCenter>
   );

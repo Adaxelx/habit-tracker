@@ -1,5 +1,5 @@
 import React from 'react';
-import { weekDays } from 'constants/calendar';
+import { weekDays, months } from 'constants/calendar';
 import { useCalendar } from 'hooks';
 import { GridProps } from 'utils';
 import { CalendarTile, CalendarNavigation } from '..';
@@ -10,7 +10,7 @@ const CalendarGrid = ({ events, month, year, moveDate, handleDayChange }: GridPr
 
   return (
     <StyledCalendar>
-      <CalendarNavigation moveDate={moveDate} month={month} year={year} />
+      <CalendarNavigation header={`${months[month]} ${year}`} moveDate={moveDate} />
       <StyledDayGrid>
         {weekDays.map((day) => (
           <StyledDay key={day}>{day}</StyledDay>
@@ -20,7 +20,7 @@ const CalendarGrid = ({ events, month, year, moveDate, handleDayChange }: GridPr
         {days.map(({ id, day, events: eventsArr }) => (
           <CalendarTile
             key={id}
-            handleDayChange={() => handleDayChange(day)}
+            handleDayChange={() => handleDayChange(`${year}-${month}-${day}`)}
             colors={eventsArr.map(({ label, _id: idEvent }) =>
               typeof label === 'object' ? { color: label?.color, id: `${idEvent}${id}` } : {},
             )}

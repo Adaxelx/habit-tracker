@@ -7,6 +7,9 @@ export const StyledHabbit = styled.div`
   border-left: 1px solid ${({ theme }) => theme.colors.tile.border};
   margin: 0 ${({ theme }) => theme.margin.s};
   margin-top: ${({ theme }) => theme.margin.xs};
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const StyledTitle = styled.h2`
