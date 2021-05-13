@@ -1,13 +1,13 @@
-import React, { useEffect, useState, useMemo } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Alert, Button } from 'components';
 import { useUserContext } from 'context';
 import { getISODate, months } from 'constants/calendar';
 import { useQuery, useWindowSize } from 'hooks';
-import { Label, SIDES } from 'utils';
+import { SIDES } from 'utils';
 import { Event } from 'utils/types';
 import { StyledButtonWrapper, StyledCenter } from './CalendarPage.css';
 import { CalendarGrid, DayCard, CalendarNavigation } from './components';
-import { getEvents, getLabels } from './CalendarPage.api';
+import { getEvents } from './CalendarPage.api';
 
 /* eslint-disable */
 
@@ -15,32 +15,20 @@ const CalendarPage = () => {
   const [date, setDate] = useState(new Date());
   const [actualMonth, setActualMonth] = useState(date.getMonth());
   const [actualYear, setActualYear] = useState(date.getFullYear());
-
   const from = getISODate(new Date(actualYear, actualMonth, 2));
   const daysInMonth = 33 - new Date(actualYear, actualMonth, 32).getDate();
   const to = getISODate(new Date(actualYear, actualMonth, daysInMonth));
   const { token } = useUserContext();
-  const [events, setEvents] = useState<Event[]>([]);
+
   const [width] = useWindowSize();
 
   const [openCard, setOpenCard] = useState(false);
   const [day, setDay] = useState(`${actualYear}-${actualMonth}-${date.getDate()}`);
   const [year, month, dayNumber] = day.split('-');
 
-  const [eventsF, loadingE, errorE] = useQuery<Event>([from, to, token], () =>
+  const [events, loadingE, errorE] = useQuery<Event>([from, to, token], () =>
     getEvents(token, from, to),
   );
-  const [labels, loadingL, errorL] = useQuery<Label>([token], () => getLabels(token));
-
-  useEffect(() => {
-    if (labels.length !== 0) {
-      const mappedResponse: Event[] = eventsF?.map((event: Event) => {
-        const label = labels?.filter((label: Label) => event?.label === label?._id)[0];
-        return { ...event, label };
-      });
-      setEvents(mappedResponse);
-    }
-  }, [eventsF, labels]);
 
   const moveDate = (side: SIDES) => {
     if (side === SIDES.LEFT) {
@@ -107,7 +95,7 @@ const CalendarPage = () => {
           year={actualYear}
           handleDayChange={handleChangeView}
         />
-        <Alert loading={loadingE || loadingL} error={errorE || errorL} />
+        <Alert loading={loadingE} error={errorE} />
         <StyledButtonWrapper>
           <Button size="s" noMaxWidth mt="16px" data-testid="addh">
             Add habbit
@@ -121,7 +109,7 @@ const CalendarPage = () => {
         </StyledButtonWrapper>
       </>
     );
-  }, [events, actualMonth, actualYear, loadingE, loadingL, errorE, errorL]);
+  }, [events, actualMonth, actualYear, loadingE, errorE]);
 
   return (
     <StyledCenter>
@@ -143,6 +131,7 @@ const CalendarPage = () => {
             navId="mobileDay"
             header={`${dayNumber} ${months[parseInt(month, 10)]} ${year}`}
             moveDate={moveDateDay}
+            backToCalendar={() => setOpenCard(false)}
           />
           <DayCard day={day} token={token} />
         </>

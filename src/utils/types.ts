@@ -1,3 +1,5 @@
+import { MouseEventHandler } from 'react';
+
 export type GridProps = {
   events: Event[];
   month: number;
@@ -14,7 +16,7 @@ export interface Event {
   timeEnd?: string;
   dateStart: string;
   dateEnd: string;
-  label?: string | Label;
+  label?: Label;
   description?: string;
   userId: string;
   checked?: [
@@ -56,6 +58,7 @@ export type NavProps = {
   navId: string;
   header: string;
   moveDate: Function;
+  backToCalendar?: MouseEventHandler<HTMLHeadingElement>;
 };
 
 export interface DayCardProps {

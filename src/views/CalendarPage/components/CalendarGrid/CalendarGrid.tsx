@@ -22,7 +22,7 @@ const CalendarGrid = ({ events, month, year, moveDate, handleDayChange }: GridPr
             key={id}
             handleDayChange={() => handleDayChange(`${year}-${month}-${day}`)}
             colors={eventsArr.map(({ label, _id: idEvent }) =>
-              typeof label === 'object' ? { color: label?.color, id: `${idEvent}${id}` } : {},
+              label ? { color: label?.color, id: `${idEvent}${id}` } : {},
             )}
             day={day}
           />
