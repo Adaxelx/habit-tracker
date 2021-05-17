@@ -39,6 +39,7 @@ const DayCardWrapper = ({ from, to, token }: DayCardWrapperProps) => {
   const today = new Date();
   today.setHours(0, 0, 0, 0);
   const todayTime = today.getTime();
+
   return (
     <StyledWrapper ref={wrapper}>
       {days.map(({ events: eventsArr, id }, i) => {

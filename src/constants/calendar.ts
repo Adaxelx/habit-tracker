@@ -120,6 +120,7 @@ export const generateWeek = (day: DateTuple): [DateTuple, DateTuple] => {
     const returnedDay = dayNumber + 3 - daysInMonth;
     if (month === 11) {
       monthTo = 0;
+      yearTo += 1;
     } else {
       monthTo = month + 1;
     }
@@ -132,6 +133,7 @@ export const generateWeek = (day: DateTuple): [DateTuple, DateTuple] => {
     const returnedDay = dayNumber - 3 + daysInPrevMonth;
     if (month === 0) {
       monthFrom = 11;
+      yearFrom -= 1;
     } else {
       monthFrom = month - 1;
     }
@@ -158,3 +160,11 @@ export const getDayOfYear = (date: DateTuple) => {
   const day = Math.floor(diff / oneDay);
   return day;
 };
+
+function isLeapYear(year: number) {
+  return year % 400 === 0 || (year % 100 !== 0 && year % 4 === 0);
+}
+
+export function daysOfYear(year: number) {
+  return isLeapYear(year) ? 366 : 365;
+}

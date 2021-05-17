@@ -7,10 +7,11 @@ import {
   StyledDescription,
   StyledTitle,
   StyledContainer,
+  StyledLabel,
 } from './Habbit.css';
 
 const Habbit = ({ habbit }: { habbit: Event }) => {
-  const { title, timeEnd, timeStart, description } = habbit;
+  const { title, timeEnd, timeStart, description, label } = habbit;
   return (
     <StyledContainer>
       <Button size="s" my="0.75rem" noMaxWidth data-testid="edit">
@@ -20,6 +21,7 @@ const Habbit = ({ habbit }: { habbit: Event }) => {
         X
       </Button>
       <StyledHabbit>
+        {label && <StyledLabel color={label.color}>{label.title}</StyledLabel>}
         <StyledTitle>{title}</StyledTitle>
         <StyledTime>{`${timeStart}-${timeEnd}`}</StyledTime>
         <StyledDescription>{description}</StyledDescription>

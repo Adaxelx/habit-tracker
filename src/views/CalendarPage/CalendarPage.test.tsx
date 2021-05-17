@@ -66,7 +66,21 @@ describe('CalendarPage', () => {
     ];
   });
 
-  it('should match snapshot', async () => {
+  it('should match snapshot (mobile)', async () => {
+    global.innerWidth = 375;
+    const mockDate = new Date('2022-01-01');
+    const spy = jest.spyOn(global, 'Date').mockImplementation(() => mockDate);
+    act(() => {
+      util = new TestUtil(<CalendarPage />);
+    });
+
+    await waitFor(() => expect(fetch).toHaveBeenCalledTimes(1));
+    expect(util.render.asFragment()).toMatchSnapshot();
+    spy.mockRestore();
+  });
+
+  it('should match snapshot (desktop)', async () => {
+    global.innerWidth = 1024;
     const mockDate = new Date('2022-01-01');
     const spy = jest.spyOn(global, 'Date').mockImplementation(() => mockDate);
     act(() => {
