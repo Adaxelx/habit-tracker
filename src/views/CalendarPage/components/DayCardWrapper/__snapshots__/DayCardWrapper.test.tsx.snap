@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DayCardWrapper should match snapshot 1`] = `
+<DocumentFragment>
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 100%;
+  overflow-x: scroll;
+}
+
+.c1 {
+  background-color: #FFFCAF;
+  min-width: 275px;
+  height: 500px;
+}
+
+.c2 {
+  font-size: 1.5rem;
+  margin: 1.25rem 0;
+  text-align: center;
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <h3
+        class="c2"
+      >
+        Friday
+      </h3>
+    </div>
+    <div
+      class="c1"
+    >
+      <h3
+        class="c2"
+      >
+        Saturday
+      </h3>
+    </div>
+    <div
+      class="c1"
+    >
+      <h3
+        class="c2"
+      >
+        Sunday
+      </h3>
+    </div>
+    <div
+      class="c1"
+    >
+      <h3
+        class="c2"
+      >
+        Monday
+      </h3>
+    </div>
+    <div
+      class="c1"
+    >
+      <h3
+        class="c2"
+      >
+        Tuesday
+      </h3>
+    </div>
+    <div
+      class="c1"
+    >
+      <h3
+        class="c2"
+      >
+        Wednesday
+      </h3>
+    </div>
+    <div
+      class="c1"
+    >
+      <h3
+        class="c2"
+      >
+        Thursday
+      </h3>
+    </div>
+  </div>
+</DocumentFragment>
+`;

@@ -32,3 +32,13 @@ export const calculateDayInYear = (date: string) => {
 };
 
 export const getISODate = (date: Date) => date.toISOString().match(/\d{4}-\d{2}-\d{2}/)![0];
+
+export const getDayParsed = (date: Date) => {
+  let firstDay = date.getDay();
+
+  if (firstDay === 0) {
+    firstDay = 7;
+  }
+  firstDay -= 1;
+  return firstDay;
+};

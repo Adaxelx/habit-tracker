@@ -38,42 +38,6 @@ exports[`CalendarPage should match snapshot 1`] = `
   cursor: pointer;
 }
 
-.c15 {
-  color: #fff;
-  background-color: #FFC136;
-  border: 1px solid #707070;
-  padding: 0.75rem;
-  font-size: 1rem;
-  min-width: none;
-  display: inline-block;
-  text-align: center;
-  margin-top: 0;
-  margin-left: 0.75rem;
-  margin-right: 0.75rem;
-}
-
-.c15:hover {
-  cursor: pointer;
-}
-
-.c16 {
-  color: #000000;
-  background-color: #FF9191;
-  border: 1px solid #707070;
-  padding: 0.75rem;
-  font-size: 1rem;
-  min-width: none;
-  display: inline-block;
-  text-align: center;
-  margin-top: 0;
-  margin-left: 0;
-  margin-right: 0;
-}
-
-.c16:hover {
-  cursor: pointer;
-}
-
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -91,6 +55,7 @@ exports[`CalendarPage should match snapshot 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   min-height: 100vh;
+  max-width: 100%;
 }
 
 .c10 {
@@ -180,49 +145,25 @@ exports[`CalendarPage should match snapshot 1`] = `
   margin: 0;
 }
 
-.c13 {
+.c14 {
   background-color: #FFFCAF;
-  width: 275px;
+  min-width: 275px;
   height: 500px;
 }
 
-.c14 {
+.c15 {
   font-size: 1.5rem;
   margin: 1.25rem 0;
   text-align: center;
 }
 
-.c17 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 0 0.75rem;
-  border-left: 1px solid #77CBFF;
-  margin: 0 0.75rem;
-  margin-top: 0.5rem;
-}
-
-.c17:hover {
-  cursor: pointer;
-}
-
-.c18 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-  margin-top: 0;
-}
-
-.c19 {
-  color: gray;
-  margin-bottom: 0.5rem;
-}
-
-.c20 {
-  text-align: justify;
+  max-width: 100%;
+  overflow-x: scroll;
 }
 
 @media (min-width:768px) {
@@ -377,306 +318,6 @@ exports[`CalendarPage should match snapshot 1`] = `
             1
           </p>
         </button>
-        <button
-          class="c8"
-        >
-          <p
-            class="c9"
-            data-testid="day"
-          >
-            2
-          </p>
-        </button>
-        <button
-          class="c8"
-        >
-          <p
-            class="c9"
-            data-testid="day"
-          >
-            3
-          </p>
-        </button>
-        <button
-          class="c8"
-        >
-          <p
-            class="c9"
-            data-testid="day"
-          >
-            4
-          </p>
-        </button>
-        <button
-          class="c8"
-        >
-          <p
-            class="c9"
-            data-testid="day"
-          >
-            5
-          </p>
-        </button>
-        <button
-          class="c8"
-        >
-          <p
-            class="c9"
-            data-testid="day"
-          >
-            6
-          </p>
-        </button>
-        <button
-          class="c8"
-        >
-          <p
-            class="c9"
-            data-testid="day"
-          >
-            7
-          </p>
-        </button>
-        <button
-          class="c8"
-        >
-          <p
-            class="c9"
-            data-testid="day"
-          >
-            8
-          </p>
-        </button>
-        <button
-          class="c8"
-        >
-          <p
-            class="c9"
-            data-testid="day"
-          >
-            9
-          </p>
-        </button>
-        <button
-          class="c8"
-        >
-          <p
-            class="c9"
-            data-testid="day"
-          >
-            10
-          </p>
-        </button>
-        <button
-          class="c8"
-        >
-          <p
-            class="c9"
-            data-testid="day"
-          >
-            11
-          </p>
-        </button>
-        <button
-          class="c8"
-        >
-          <p
-            class="c9"
-            data-testid="day"
-          >
-            12
-          </p>
-        </button>
-        <button
-          class="c8"
-        >
-          <p
-            class="c9"
-            data-testid="day"
-          >
-            13
-          </p>
-        </button>
-        <button
-          class="c8"
-        >
-          <p
-            class="c9"
-            data-testid="day"
-          >
-            14
-          </p>
-        </button>
-        <button
-          class="c8"
-        >
-          <p
-            class="c9"
-            data-testid="day"
-          >
-            15
-          </p>
-        </button>
-        <button
-          class="c8"
-        >
-          <p
-            class="c9"
-            data-testid="day"
-          >
-            16
-          </p>
-        </button>
-        <button
-          class="c8"
-        >
-          <p
-            class="c9"
-            data-testid="day"
-          >
-            17
-          </p>
-        </button>
-        <button
-          class="c8"
-        >
-          <p
-            class="c9"
-            data-testid="day"
-          >
-            18
-          </p>
-        </button>
-        <button
-          class="c8"
-        >
-          <p
-            class="c9"
-            data-testid="day"
-          >
-            19
-          </p>
-        </button>
-        <button
-          class="c8"
-        >
-          <p
-            class="c9"
-            data-testid="day"
-          >
-            20
-          </p>
-        </button>
-        <button
-          class="c8"
-        >
-          <p
-            class="c9"
-            data-testid="day"
-          >
-            21
-          </p>
-        </button>
-        <button
-          class="c8"
-        >
-          <p
-            class="c9"
-            data-testid="day"
-          >
-            22
-          </p>
-        </button>
-        <button
-          class="c8"
-        >
-          <p
-            class="c9"
-            data-testid="day"
-          >
-            23
-          </p>
-        </button>
-        <button
-          class="c8"
-        >
-          <p
-            class="c9"
-            data-testid="day"
-          >
-            24
-          </p>
-        </button>
-        <button
-          class="c8"
-        >
-          <p
-            class="c9"
-            data-testid="day"
-          >
-            25
-          </p>
-        </button>
-        <button
-          class="c8"
-        >
-          <p
-            class="c9"
-            data-testid="day"
-          >
-            26
-          </p>
-        </button>
-        <button
-          class="c8"
-        >
-          <p
-            class="c9"
-            data-testid="day"
-          >
-            27
-          </p>
-        </button>
-        <button
-          class="c8"
-        >
-          <p
-            class="c9"
-            data-testid="day"
-          >
-            28
-          </p>
-        </button>
-        <button
-          class="c8"
-        >
-          <p
-            class="c9"
-            data-testid="day"
-          >
-            29
-          </p>
-        </button>
-        <button
-          class="c8"
-        >
-          <p
-            class="c9"
-            data-testid="day"
-          >
-            30
-          </p>
-        </button>
-        <button
-          class="c8"
-        >
-          <p
-            class="c9"
-            data-testid="day"
-          >
-            31
-          </p>
-        </button>
       </div>
     </div>
     <div
@@ -754,41 +395,68 @@ exports[`CalendarPage should match snapshot 1`] = `
     <div
       class="c13"
     >
-      <h3
+      <div
         class="c14"
       >
-        Saturday
-      </h3>
-      <button
-        class="c15"
-        data-testid="edit"
-      >
-        Edit habbit
-      </button>
-      <button
-        class="c16"
-        data-testid="delete"
-      >
-        X
-      </button>
+        <h3
+          class="c15"
+        >
+          Saturday
+        </h3>
+      </div>
       <div
-        class="c17"
+        class="c14"
       >
-        <h2
-          class="c18"
+        <h3
+          class="c15"
         >
-          xdd
-        </h2>
-        <p
-          class="c19"
+          Sunday
+        </h3>
+      </div>
+      <div
+        class="c14"
+      >
+        <h3
+          class="c15"
         >
-          undefined-undefined
-        </p>
-        <p
-          class="c20"
+          Monday
+        </h3>
+      </div>
+      <div
+        class="c14"
+      >
+        <h3
+          class="c15"
         >
-          opis
-        </p>
+          Tuesday
+        </h3>
+      </div>
+      <div
+        class="c14"
+      >
+        <h3
+          class="c15"
+        >
+          Wednesday
+        </h3>
+      </div>
+      <div
+        class="c14"
+      >
+        <h3
+          class="c15"
+        >
+          Thursday
+        </h3>
+      </div>
+      <div
+        class="c14"
+      >
+        <h3
+          class="c15"
+        >
+          Friday
+        </h3>
       </div>
     </div>
   </div>

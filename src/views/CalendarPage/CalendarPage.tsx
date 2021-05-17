@@ -4,9 +4,9 @@ import { useUserContext } from 'context';
 import { getISODate, months } from 'constants/calendar';
 import { useQuery, useWindowSize } from 'hooks';
 import { SIDES } from 'utils';
-import { Event } from 'utils/types';
+import { DateTuple, Event } from 'utils/types';
 import { StyledButtonWrapper, StyledCenter } from './CalendarPage.css';
-import { CalendarGrid, DayCard, CalendarNavigation } from './components';
+import { CalendarGrid, CalendarNavigation, DayCardWrapper } from './components';
 import { getEvents } from './CalendarPage.api';
 
 /* eslint-disable */
@@ -23,8 +23,8 @@ const CalendarPage = () => {
   const [width] = useWindowSize();
 
   const [openCard, setOpenCard] = useState(false);
-  const [day, setDay] = useState(`${actualYear}-${actualMonth}-${date.getDate()}`);
-  const [year, month, dayNumber] = day.split('-');
+  const [day, setDay] = useState<DateTuple>([actualYear, actualMonth, date.getDate()]);
+  const [year, month, dayNumber] = day;
 
   const [events, loadingE, errorE] = useQuery<Event>([from, to, token], () =>
     getEvents(token, from, to),
@@ -49,36 +49,34 @@ const CalendarPage = () => {
   };
 
   const moveDateDay = (side: SIDES) => {
-    const [year, month, dayNumber] = day.split('-');
-    const numericYear = parseInt(year, 10);
-    const numericMonth = parseInt(month, 10);
-    const numericDay = parseInt(dayNumber, 10);
+    const [numericYear, numericMonth, numericDay] = day;
+
     const daysInMonth = new Date(numericYear, numericMonth + 1, 0).getDate();
     if (side === SIDES.RIGHT) {
       if (numericDay === daysInMonth) {
         if (numericMonth === 11) {
-          setDay(`${numericYear + 1}-0-1`);
+          setDay([numericYear + 1, 0, 1]);
         } else {
-          setDay(`${numericYear}-${numericMonth + 1}-1`);
+          setDay([numericYear, numericMonth + 1, 1]);
         }
       } else {
-        setDay(`${numericYear}-${numericMonth}-${numericDay + 1}`);
+        setDay([numericYear, numericMonth, numericDay + 1]);
       }
     } else {
       if (numericDay === 1) {
         if (numericMonth === 0) {
-          setDay(`${numericYear - 1}-11-31`);
+          setDay([numericYear - 1, 11, 31]);
         } else {
           const daysInMonth = new Date(numericYear, numericMonth, 0).getDate();
-          setDay(`${numericYear}-${numericMonth - 1}-${daysInMonth}`);
+          setDay([numericYear, numericMonth - 1, daysInMonth]);
         }
       } else {
-        setDay(`${numericYear}-${numericMonth}-${numericDay - 1}`);
+        setDay([numericYear, numericMonth, numericDay - 1]);
       }
     }
   };
 
-  const handleChangeView = (day?: string) => {
+  const handleChangeView = (day?: DateTuple) => {
     setOpenCard((prevState) => !prevState);
     if (day) {
       setDay(day);
@@ -118,10 +116,14 @@ const CalendarPage = () => {
           {CalendarGridView}
           <CalendarNavigation
             navId="desktopDay"
-            header={`${dayNumber} ${months[parseInt(month, 10)]} ${year}`}
+            header={`${dayNumber} ${months[month]} ${year}`}
             moveDate={moveDateDay}
           />
-          <DayCard day={day} token={token} />
+          <DayCardWrapper
+            from={[year, month, dayNumber - 3]}
+            to={[year, month, dayNumber + 3]}
+            token={token}
+          />
         </>
       ) : !openCard ? (
         CalendarGridView
@@ -129,11 +131,11 @@ const CalendarPage = () => {
         <>
           <CalendarNavigation
             navId="mobileDay"
-            header={`${dayNumber} ${months[parseInt(month, 10)]} ${year}`}
+            header={`${dayNumber} ${months[month]} ${year}`}
             moveDate={moveDateDay}
             backToCalendar={() => setOpenCard(false)}
           />
-          <DayCard day={day} token={token} />
+          <DayCardWrapper from={day} to={day} token={token} />
         </>
       )}
     </StyledCenter>

@@ -6,6 +6,7 @@ export const StyledCenter = styled.div`
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  max-width: 100%;
   @media (min-width: ${({ theme }) => theme.media.tablet.s}) {
     justify-content: flex-start;
   }

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const StyledCard = styled.div`
   background-color: ${({ theme }) => theme.colors.tile.background};
-  width: 275px;
+  min-width: 275px;
   height: 500px;
 `;
 

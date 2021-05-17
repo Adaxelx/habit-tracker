@@ -62,6 +62,10 @@ export type NavProps = {
 };
 
 export interface DayCardProps {
-  day: string;
-  token: string | undefined;
+  events: Event[];
+  header: string;
 }
+
+export type DateTuple = [number, number, number];
+
+export type TokenType = string | undefined;
