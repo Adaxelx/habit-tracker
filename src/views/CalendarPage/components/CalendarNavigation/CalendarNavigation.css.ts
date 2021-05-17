@@ -4,7 +4,7 @@ export const StyledNavigation = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: ${({ theme }) => theme.margin.s};
+  margin: ${({ theme }) => theme.margin.s} 0;
 `;
 
 export const StyledButton = styled.button`

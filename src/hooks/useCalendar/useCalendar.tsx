@@ -10,12 +10,9 @@ const useCalendar = (events: Event[], from: DateTuple, to: DateTuple, shift?: bo
   const [yearFrom, monthFrom, dayFrom] = from;
 
   useEffect(() => {
-    let firstDay = getDayParsed(new Date(yearFrom, monthFrom, dayFrom));
+    const firstDay = getDayParsed(new Date(yearFrom, monthFrom, dayFrom));
     const endDay = getDayOfYear(to);
     let startDay = getDayOfYear(from);
-    if (firstDay === 0) {
-      firstDay = 7;
-    }
 
     let dayOfWeek = firstDay;
     let eventsCopy: EventLoop[] = [];
@@ -34,7 +31,7 @@ const useCalendar = (events: Event[], from: DateTuple, to: DateTuple, shift?: bo
     for (let i = 0; i < Math.ceil(difference / 7); i++) {
       for (let j = 0; j < 7; j++) {
         eventsArray = eventsArray.filter(
-          (event) => event.numericEnd > dayInYear && event.daysOfWeek.includes(dayOfWeek),
+          (event) => event.numericEnd > endDay && event.daysOfWeek.includes(dayOfWeek),
         );
 
         const day = dayFrom + i * 7 + j;
@@ -45,8 +42,8 @@ const useCalendar = (events: Event[], from: DateTuple, to: DateTuple, shift?: bo
 
         eventsCopy = eventsCopy.filter((event) => {
           if (
-            event.numericStart <= dayInYear &&
-            dayInYear <= event.numericEnd &&
+            event.numericStart <= endDay &&
+            startDay <= event.numericEnd &&
             !eventsArray.includes(event) &&
             event.daysOfWeek.includes(dayOfWeek)
           ) {
@@ -60,7 +57,7 @@ const useCalendar = (events: Event[], from: DateTuple, to: DateTuple, shift?: bo
         dayInYear += 1;
         dayOfWeek++;
         startDay++;
-        if (dayOfWeek === 7) {
+        if (dayOfWeek >= 7) {
           dayOfWeek = 0;
         }
       }

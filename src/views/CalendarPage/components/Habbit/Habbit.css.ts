@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+export const StyledContainer = styled.div`
+  margin-bottom: ${({ theme }) => theme.margin.xs};
+`;
+
 export const StyledHabbit = styled.div`
   display: flex;
   flex-direction: column;
@@ -7,6 +11,7 @@ export const StyledHabbit = styled.div`
   border-left: 1px solid ${({ theme }) => theme.colors.tile.border};
   margin: 0 ${({ theme }) => theme.margin.s};
   margin-top: ${({ theme }) => theme.margin.xs};
+  overflow-y: scroll;
   &:hover {
     cursor: pointer;
   }

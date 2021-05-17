@@ -20,6 +20,7 @@ const DayCardWrapper = ({ from, to, token }: DayCardWrapperProps) => {
   const toParsed = generateParsedDate(to);
 
   const [events] = useQuery<Event>([from, to, token], () => getEvents(token, fromParsed, toParsed));
+
   const [days] = useCalendar(events, from, to);
 
   useLayoutEffect(() => {
@@ -34,12 +35,26 @@ const DayCardWrapper = ({ from, to, token }: DayCardWrapperProps) => {
   }, [days, wrapper]);
 
   const firstDayOfWeek = getDayParsed(new Date(fromParsed));
-
+  let startDate = new Date(fromParsed).getTime();
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const todayTime = today.getTime();
   return (
     <StyledWrapper ref={wrapper}>
       {days.map(({ events: eventsArr, id }, i) => {
         const index = firstDayOfWeek + i > 6 ? (firstDayOfWeek + i) % 7 : firstDayOfWeek + i;
-        return <DayCard key={id} header={weekDaysFull[index]} events={eventsArr} />;
+        const cardDate = new Date(startDate);
+        cardDate.setHours(0, 0, 0, 0);
+        const cardTime = cardDate.getTime();
+        startDate += 24 * 60 * 60 * 1000;
+        return (
+          <DayCard
+            active={todayTime === cardTime}
+            key={id}
+            header={weekDaysFull[index]}
+            events={eventsArr}
+          />
+        );
       })}
     </StyledWrapper>
   );
