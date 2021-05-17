@@ -1,7 +1,14 @@
 import React, { useState, useMemo } from 'react';
 import { Alert, Button } from 'components';
 import { useUserContext } from 'context';
-import { getISODate, months, moveDateDay, moveDateWeek } from 'constants/calendar';
+import {
+  getISODate,
+  months,
+  moveDateDay,
+  moveDateWeek,
+  generateWeek,
+  reversedParsedDate,
+} from 'constants/calendar';
 import { useQuery, useWindowSize } from 'hooks';
 import { SIDES } from 'utils';
 import { DateTuple, Event } from 'utils/types';
@@ -55,6 +62,8 @@ const CalendarPage = () => {
     }
   };
 
+  const [fromWeek, toWeek] = generateWeek(day);
+
   const CalendarGridView = useMemo(() => {
     return (
       <>
@@ -88,14 +97,10 @@ const CalendarPage = () => {
           {CalendarGridView}
           <CalendarNavigation
             navId="desktopDay"
-            header={`${dayNumber} ${months[month]} ${year}`}
+            header={`${reversedParsedDate(fromWeek)} - ${reversedParsedDate(toWeek)}`}
             moveDate={(side: SIDES) => moveDateWeek(side, day, setDay)}
           />
-          <DayCardWrapper
-            from={[year, month, dayNumber - 3]}
-            to={[year, month, dayNumber + 3]}
-            token={token}
-          />
+          <DayCardWrapper from={fromWeek} to={toWeek} token={token} />
         </>
       ) : !openCard ? (
         CalendarGridView

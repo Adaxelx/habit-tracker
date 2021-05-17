@@ -2,17 +2,17 @@
 /* eslint-disable no-loop-func */
 import { useEffect, useState } from 'react';
 import { Event, EventLoop, CalendarTile, DateTuple } from 'utils';
-import { calculateDayInYear, getDayParsed } from 'constants/calendar';
+import { calculateDayInYear, getDayOfYear, getDayParsed } from 'constants/calendar';
 
 const useCalendar = (events: Event[], from: DateTuple, to: DateTuple, shift?: boolean) => {
   const [days, setDays] = useState<CalendarTile[]>([]);
 
   const [yearFrom, monthFrom, dayFrom] = from;
-  const [, , dayTo] = to;
 
   useEffect(() => {
     let firstDay = getDayParsed(new Date(yearFrom, monthFrom, dayFrom));
-    const daysInMonth = dayTo;
+    const endDay = getDayOfYear(to);
+    let startDay = getDayOfYear(from);
     if (firstDay === 0) {
       firstDay = 7;
     }
@@ -29,7 +29,7 @@ const useCalendar = (events: Event[], from: DateTuple, to: DateTuple, shift?: bo
     const daysArray: CalendarTile[] = [];
     let dayInYear = calculateDayInYear(`${yearFrom}-${monthFrom + 1}-${dayFrom}`);
 
-    const difference = dayTo + 1 - dayFrom;
+    const difference = endDay + 1 - startDay;
 
     for (let i = 0; i < Math.ceil(difference / 7); i++) {
       for (let j = 0; j < 7; j++) {
@@ -39,7 +39,7 @@ const useCalendar = (events: Event[], from: DateTuple, to: DateTuple, shift?: bo
 
         const day = dayFrom + i * 7 + j;
 
-        if (day > daysInMonth) {
+        if (endDay < startDay) {
           break;
         }
 
@@ -59,6 +59,7 @@ const useCalendar = (events: Event[], from: DateTuple, to: DateTuple, shift?: bo
 
         dayInYear += 1;
         dayOfWeek++;
+        startDay++;
         if (dayOfWeek === 7) {
           dayOfWeek = 0;
         }

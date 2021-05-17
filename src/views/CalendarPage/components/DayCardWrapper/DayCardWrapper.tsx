@@ -2,7 +2,7 @@ import React, { useLayoutEffect, useRef } from 'react';
 import { DateTuple, Event, TokenType } from 'utils';
 import { useCalendar, useQuery, useWindowSize } from 'hooks';
 import { getEvents } from 'views/CalendarPage/CalendarPage.api';
-import { weekDaysFull, getDayParsed } from 'constants/calendar';
+import { weekDaysFull, getDayParsed, generateParsedDate } from 'constants/calendar';
 import { StyledWrapper } from './DayCardWrapper.css';
 import { DayCard } from '..';
 
@@ -11,11 +11,6 @@ interface DayCardWrapperProps {
   to: DateTuple;
   token: TokenType;
 }
-
-const generateParsedDate = (date: DateTuple) => {
-  const [year, month, day] = date;
-  return `${year}-${month < 10 ? `0${month + 1}` : month + 1}-${day < 10 ? `0${day}` : day}`;
-};
 
 const DayCardWrapper = ({ from, to, token }: DayCardWrapperProps) => {
   const wrapper = useRef<HTMLDivElement>(null);

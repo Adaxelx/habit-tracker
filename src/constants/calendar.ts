@@ -1,3 +1,5 @@
+/* eslint-disable prefer-const */
+
 import { DateTuple, SIDES } from 'utils/types';
 
 export const weekDays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
@@ -97,4 +99,62 @@ export const moveDateWeek = (side: SIDES, day: DateTuple, setDay: Function) => {
   } else {
     setDay([numericYear, numericMonth, numericDay - 7]);
   }
+};
+
+export const generateParsedDate = (date: DateTuple) => {
+  const [year, month, day] = date;
+  return `${year}-${month < 9 ? `0${month + 1}` : month + 1}-${day < 10 ? `0${day}` : day}`;
+};
+
+export const reversedParsedDate = (date: DateTuple) =>
+  generateParsedDate(date).split('-').reverse().join('.');
+
+export const generateWeek = (day: DateTuple): [DateTuple, DateTuple] => {
+  const [year, month, dayNumber] = day;
+
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+  let [yearFrom, monthFrom, dayFrom] = [...day];
+  let [yearTo, monthTo, dayTo] = [...day];
+  if (dayNumber + 3 > daysInMonth) {
+    const returnedDay = dayNumber + 3 - daysInMonth;
+    if (month === 11) {
+      monthTo = 0;
+    } else {
+      monthTo = month + 1;
+    }
+    dayTo = returnedDay;
+  } else {
+    dayTo = dayNumber + 3;
+  }
+  if (dayNumber - 3 < 1) {
+    const daysInPrevMonth = new Date(year, month, 0).getDate();
+    const returnedDay = dayNumber - 3 + daysInPrevMonth;
+    if (month === 0) {
+      monthFrom = 11;
+    } else {
+      monthFrom = month - 1;
+    }
+    dayFrom = returnedDay;
+  } else {
+    dayFrom = dayNumber - 3;
+  }
+
+  return [
+    [yearFrom, monthFrom, dayFrom],
+    [yearTo, monthTo, dayTo],
+  ];
+};
+
+export const getDayOfYear = (date: DateTuple) => {
+  const parsed = generateParsedDate(date);
+  const now = new Date(parsed);
+  const start = new Date(now.getFullYear(), 0, 0);
+  const diff =
+    now.getTime() -
+    start.getTime() +
+    (start.getTimezoneOffset() - now.getTimezoneOffset()) * 60 * 1000;
+  const oneDay = 1000 * 60 * 60 * 24;
+  const day = Math.floor(diff / oneDay);
+  return day;
 };
