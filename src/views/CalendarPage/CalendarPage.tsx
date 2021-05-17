@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { Alert, Button } from 'components';
 import { useUserContext } from 'context';
-import { getISODate, months } from 'constants/calendar';
+import { getISODate, months, moveDateDay, moveDateWeek } from 'constants/calendar';
 import { useQuery, useWindowSize } from 'hooks';
 import { SIDES } from 'utils';
 import { DateTuple, Event } from 'utils/types';
@@ -48,34 +48,6 @@ const CalendarPage = () => {
     }
   };
 
-  const moveDateDay = (side: SIDES) => {
-    const [numericYear, numericMonth, numericDay] = day;
-
-    const daysInMonth = new Date(numericYear, numericMonth + 1, 0).getDate();
-    if (side === SIDES.RIGHT) {
-      if (numericDay === daysInMonth) {
-        if (numericMonth === 11) {
-          setDay([numericYear + 1, 0, 1]);
-        } else {
-          setDay([numericYear, numericMonth + 1, 1]);
-        }
-      } else {
-        setDay([numericYear, numericMonth, numericDay + 1]);
-      }
-    } else {
-      if (numericDay === 1) {
-        if (numericMonth === 0) {
-          setDay([numericYear - 1, 11, 31]);
-        } else {
-          const daysInMonth = new Date(numericYear, numericMonth, 0).getDate();
-          setDay([numericYear, numericMonth - 1, daysInMonth]);
-        }
-      } else {
-        setDay([numericYear, numericMonth, numericDay - 1]);
-      }
-    }
-  };
-
   const handleChangeView = (day?: DateTuple) => {
     setOpenCard((prevState) => !prevState);
     if (day) {
@@ -117,7 +89,7 @@ const CalendarPage = () => {
           <CalendarNavigation
             navId="desktopDay"
             header={`${dayNumber} ${months[month]} ${year}`}
-            moveDate={moveDateDay}
+            moveDate={(side: SIDES) => moveDateWeek(side, day, setDay)}
           />
           <DayCardWrapper
             from={[year, month, dayNumber - 3]}
@@ -132,7 +104,7 @@ const CalendarPage = () => {
           <CalendarNavigation
             navId="mobileDay"
             header={`${dayNumber} ${months[month]} ${year}`}
-            moveDate={moveDateDay}
+            moveDate={(side: SIDES) => moveDateDay(side, day, setDay)}
             backToCalendar={() => setOpenCard(false)}
           />
           <DayCardWrapper from={day} to={day} token={token} />

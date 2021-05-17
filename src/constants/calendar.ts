@@ -1,3 +1,5 @@
+import { DateTuple, SIDES } from 'utils/types';
+
 export const weekDays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 export const weekDaysFull = [
   'Monday',
@@ -41,4 +43,58 @@ export const getDayParsed = (date: Date) => {
   }
   firstDay -= 1;
   return firstDay;
+};
+
+export const moveDateDay = (side: SIDES, day: DateTuple, setDay: Function) => {
+  const [numericYear, numericMonth, numericDay] = day;
+
+  const daysInMonth = new Date(numericYear, numericMonth + 1, 0).getDate();
+  if (side === SIDES.RIGHT) {
+    if (numericDay === daysInMonth) {
+      if (numericMonth === 11) {
+        setDay([numericYear + 1, 0, 1]);
+      } else {
+        setDay([numericYear, numericMonth + 1, 1]);
+      }
+    } else {
+      setDay([numericYear, numericMonth, numericDay + 1]);
+    }
+  } else if (numericDay === 1) {
+    if (numericMonth === 0) {
+      setDay([numericYear - 1, 11, 31]);
+    } else {
+      const daysInMonthCount = new Date(numericYear, numericMonth, 0).getDate();
+      setDay([numericYear, numericMonth - 1, daysInMonthCount]);
+    }
+  } else {
+    setDay([numericYear, numericMonth, numericDay - 1]);
+  }
+};
+
+export const moveDateWeek = (side: SIDES, day: DateTuple, setDay: Function) => {
+  const [numericYear, numericMonth, numericDay] = day;
+
+  const daysInMonth = new Date(numericYear, numericMonth + 1, 0).getDate();
+  if (side === SIDES.RIGHT) {
+    if (numericDay + 7 > daysInMonth) {
+      const returnedDay = numericDay + 7 - daysInMonth;
+      if (numericMonth === 11) {
+        setDay([numericYear + 1, 0, returnedDay]);
+      } else {
+        setDay([numericYear, numericMonth + 1, returnedDay]);
+      }
+    } else {
+      setDay([numericYear, numericMonth, numericDay + 7]);
+    }
+  } else if (numericDay - 7 < 1) {
+    const daysInPreviousMonth = new Date(numericYear, numericMonth, 0).getDate();
+    const returnedDay = numericDay - 7 + daysInPreviousMonth;
+    if (numericMonth === 0) {
+      setDay([numericYear - 1, 11, returnedDay]);
+    } else {
+      setDay([numericYear, numericMonth - 1, returnedDay]);
+    }
+  } else {
+    setDay([numericYear, numericMonth, numericDay - 7]);
+  }
 };
