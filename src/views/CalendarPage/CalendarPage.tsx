@@ -13,7 +13,7 @@ import { useQuery, useWindowSize } from 'hooks';
 import { SIDES } from 'utils';
 import { DateTuple, Event } from 'utils/types';
 import { StyledButtonWrapper, StyledCenter } from './CalendarPage.css';
-import { CalendarGrid, CalendarNavigation, DayCardWrapper } from './components';
+import { CalendarGrid, CalendarNavigation, DayCardWrapper, HabbitForm } from './components';
 import { getEvents } from './CalendarPage.api';
 
 /* eslint-disable */
@@ -36,6 +36,8 @@ const CalendarPage = () => {
   const [events, loadingE, errorE] = useQuery<Event>([from, to, token], () =>
     getEvents(token, from, to),
   );
+
+  const [openHabbitForm, setOpenHabbitForm] = useState(false);
 
   const moveDate = (side: SIDES) => {
     if (side === SIDES.LEFT) {
@@ -76,7 +78,13 @@ const CalendarPage = () => {
         />
         <Alert loading={loadingE} error={errorE} />
         <StyledButtonWrapper>
-          <Button size="s" noMaxWidth mt="16px" data-testid="addh">
+          <Button
+            size="s"
+            noMaxWidth
+            mt="16px"
+            data-testid="addh"
+            onClick={() => setOpenHabbitForm(true)}
+          >
             Add habbit
           </Button>
           <Button size="s" noMaxWidth mt="16px" my="16px" data-testid="addl">
@@ -86,9 +94,10 @@ const CalendarPage = () => {
             Label list
           </Button>
         </StyledButtonWrapper>
+        <HabbitForm open={openHabbitForm} handleClose={() => setOpenHabbitForm(false)} />
       </>
     );
-  }, [events, actualMonth, actualYear, loadingE, errorE]);
+  }, [events, actualMonth, actualYear, loadingE, errorE, openHabbitForm]);
 
   return (
     <StyledCenter>
