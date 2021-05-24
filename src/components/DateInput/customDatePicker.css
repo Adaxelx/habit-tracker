@@ -1,0 +1,8 @@
+.react-datepicker-wrapper,
+.react-datepicker-wrapper > div,
+.react-datepicker-wrapper > div > input {
+  width: 100%;
+  font-size: 1.25rem;
+  width: 100%;
+  max-width: 300px;
+}
