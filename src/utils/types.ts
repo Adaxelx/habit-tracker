@@ -8,17 +8,24 @@ export type GridProps = {
   handleDayChange: Function;
 };
 
-export interface Event {
-  _id: string;
+export interface EventInterface {
   daysOfWeek: number[];
   title: string;
   timeStart?: string;
   timeEnd?: string;
   dateStart: string;
   dateEnd: string;
-  label?: Label;
   description?: string;
+}
+
+export interface EventSend extends EventInterface {
+  label?: string;
+}
+
+export interface Event extends EventInterface {
+  _id: string;
   userId: string;
+  label?: Label;
   checked?: [
     {
       day: number;

@@ -11,17 +11,15 @@ export const StyledBacground = styled.div`
 `;
 
 export const StyledWrapper = styled.div`
+  position: fixed;
   width: ${({ theme }) => `calc(100% - ${theme.margin.sm} - ${theme.margin.sm})`};
   height: ${({ theme }) => `calc(100vh - ${theme.margin.sm} -  ${theme.margin.sm})`};
   top: ${({ theme }) => theme.margin.sm};
-  left: 50%;
-  transform: translateX(-50%);
-  position: fixed;
+  padding: ${({ theme }) => theme.margin.sm} 0;
   background-color: ${({ theme }) => theme.colors.modalBackground};
   z-index: ${({ theme }) => theme.zIndex.max};
-  display: flex;
-  flex-direction: column;
   max-width: 350px;
+  overflow: scroll;
 `;
 
 export const StyledHeader = styled.h2`
@@ -34,7 +32,9 @@ export const StyledCloseButton = styled.button`
   width: 50px;
   height: 50px;
   position: relative;
-  align-self: flex-end;
+  display: block;
+  margin-left: auto;
+  margin-right: 0;
   border: none;
   background-color: transparent;
   &:hover {

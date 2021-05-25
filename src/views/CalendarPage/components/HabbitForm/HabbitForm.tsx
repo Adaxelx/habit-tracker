@@ -1,8 +1,12 @@
 import React, { MouseEventHandler } from 'react';
-import { PopUp, Input, Button, DateInput } from 'components';
+import { PopUp, Input, Button, DateInput, Alert, Select } from 'components';
 import { useForm } from 'react-hook-form';
-import { Event, createRestrictedLengthObject } from 'utils';
+import { EventSend, createRestrictedLengthObject, Label } from 'utils';
+import { useQuery } from 'hooks';
+import { useUserContext } from 'context';
+import { getLabels, postEvent } from 'views/CalendarPage/CalendarPage.api';
 import { StyledWrapper } from './HabbitForm.css';
+import { WeekDaysInput } from '..';
 
 interface HabbitFormProps {
   open: boolean;
@@ -10,10 +14,22 @@ interface HabbitFormProps {
 }
 
 const HabbitForm = (props: HabbitFormProps) => {
-  const { register, handleSubmit, errors, control } = useForm<Event>();
+  const { register, handleSubmit, errors, control } = useForm<EventSend>({
+    defaultValues: { label: '' },
+  });
 
-  const onSubmit = async (data: Event) => {
-    console.log(data);
+  const { token } = useUserContext();
+
+  const [labels, loading, error] = useQuery<Label>([token], () => getLabels(token));
+
+  console.log(labels);
+
+  const onSubmit = async (data: EventSend) => {
+    try {
+      await postEvent(token, data);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
@@ -38,6 +54,7 @@ const HabbitForm = (props: HabbitFormProps) => {
           data-testid="description"
           type="textarea"
         />
+        <WeekDaysInput control={control} />
         <DateInput control={control} name="dateStart" header="Date start" />
         <DateInput control={control} name="dateEnd" header="Date end" />
         <Input
@@ -58,6 +75,13 @@ const HabbitForm = (props: HabbitFormProps) => {
           type="time"
           data-testid="timeEnd"
         />
+        <Select
+          name="label"
+          label="Label"
+          control={control}
+          options={labels.map(({ _id, title, ...rest }) => ({ key: _id, value: title, ...rest }))}
+        />
+        <Alert loading={loading} error={error} />
         <Button size="s" mt="16px" type="submit" data-testid="submit" noMaxWidth>
           Send
         </Button>
