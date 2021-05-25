@@ -27,6 +27,16 @@ export const StyledInput = styled.input<InputProps>`
   }
 `;
 
+export const StyledTextArea = styled.textarea<InputProps>`
+  font-size: ${({ theme }) => theme.font.sizes.sm};
+  width: 100%;
+  max-width: 300px;
+  border: ${({ error, theme }) => error && `1px solid ${theme.colors.error.main}`};
+  &:focus {
+    outline: thin dotted;
+  }
+`;
+
 export const StyledMessage = styled.p`
   margin-top: ${({ theme }) => theme.margin.xs};
   color: ${({ theme }) => theme.colors.error.main};

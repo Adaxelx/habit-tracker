@@ -23,11 +23,20 @@ const HabbitForm = (props: HabbitFormProps) => {
           name="title"
           label="Title"
           id="title"
-          refVal={register(createRestrictedLengthObject('login'))}
+          refVal={register(createRestrictedLengthObject('title'))}
           minLength={6}
           maxLength={30}
           error={errors.title}
-          data-testid="login"
+          data-testid="title"
+        />
+        <Input
+          name="description"
+          label="Description"
+          id="description"
+          refVal={register()}
+          error={errors.description}
+          data-testid="description"
+          type="textarea"
         />
         <DateInput control={control} name="dateStart" header="Date start" />
         <DateInput control={control} name="dateEnd" header="Date end" />
@@ -35,7 +44,7 @@ const HabbitForm = (props: HabbitFormProps) => {
           name="timeStart"
           label="Time start"
           id="timeStart"
-          refVal={register('timeStart')}
+          refVal={register()}
           error={errors.timeStart}
           type="time"
           data-testid="timeStart"
@@ -44,7 +53,7 @@ const HabbitForm = (props: HabbitFormProps) => {
           name="timeEnd"
           label="Time end"
           id="timeEnd"
-          refVal={register('timeEnd')}
+          refVal={register()}
           error={errors.timeStart}
           type="time"
           data-testid="timeEnd"

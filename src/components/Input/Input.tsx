@@ -1,7 +1,13 @@
 /* eslint-disable react/require-default-props */
-import React, { InputHTMLAttributes } from 'react';
+import React, { InputHTMLAttributes, TextareaHTMLAttributes } from 'react';
 import { FieldError } from 'react-hook-form';
-import { StyledInputWrapper, StyledInput, StyledLabel, StyledMessage } from './Input.css';
+import {
+  StyledInputWrapper,
+  StyledInput,
+  StyledLabel,
+  StyledMessage,
+  StyledTextArea,
+} from './Input.css';
 
 interface InputProps {
   label: string;
@@ -21,10 +27,16 @@ const Input = ({
   error,
   type = 'text',
   ...rest
-}: InputProps & InputHTMLAttributes<HTMLInputElement>) => (
+}: InputProps &
+  InputHTMLAttributes<HTMLInputElement> &
+  TextareaHTMLAttributes<HTMLTextAreaElement>) => (
   <StyledInputWrapper>
     <StyledLabel htmlFor={id}>{label}</StyledLabel>
-    <StyledInput error={!!error} id={id} type={type} {...rest} ref={refVal} />
+    {type === 'textarea' ? (
+      <StyledTextArea error={!!error} id={id} {...rest} ref={refVal} />
+    ) : (
+      <StyledInput error={!!error} id={id} type={type} {...rest} ref={refVal} />
+    )}
     {error && <StyledMessage>{error?.message}</StyledMessage>}
   </StyledInputWrapper>
 );
