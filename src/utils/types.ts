@@ -41,12 +41,15 @@ export interface EventLoop extends Event {
   numericEnd: number;
 }
 
-export type Label = {
-  _id: string;
+export interface LabelSend {
   title: string;
   color: string;
+}
+
+export interface Label extends LabelSend {
+  _id: string;
   userId: string;
-};
+}
 
 export type CalendarTile = {
   day: number;
@@ -81,4 +84,11 @@ export type TokenType = string | undefined;
 export enum AlertTypes {
   ERROR,
   SUCCESS,
+}
+
+export interface FormProps {
+  open: boolean;
+  handleClose: any;
+  handleRefresh: Function;
+  refresh?: boolean;
 }

@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { PopUp, Input, Button, DateInput, Alert, Select } from 'components';
 import { useForm } from 'react-hook-form';
-import { EventSend, createRestrictedLengthObject, Label, AlertTypes } from 'utils';
+import { EventSend, createRestrictedLengthObject, Label, AlertTypes, FormProps } from 'utils';
 import { useQuery } from 'hooks';
 import { useAlertContext, useUserContext } from 'context';
 import { getLabels, postEvent } from 'views/CalendarPage/CalendarPage.api';
@@ -10,13 +10,7 @@ import { WeekDaysInput } from '..';
 
 const { SUCCESS } = AlertTypes;
 
-interface HabbitFormProps {
-  open: boolean;
-  handleClose: any;
-  handleRefresh: Function;
-}
-
-const HabbitForm = ({ handleRefresh, handleClose, open }: HabbitFormProps) => {
+const HabbitForm = ({ handleRefresh, handleClose, open, refresh }: FormProps) => {
   const { register, handleSubmit, errors, control } = useForm<EventSend>({
     defaultValues: { label: '' },
   });
@@ -25,7 +19,7 @@ const HabbitForm = ({ handleRefresh, handleClose, open }: HabbitFormProps) => {
 
   const { token } = useUserContext();
 
-  const [labels, loading, error] = useQuery<Label>([token], () => getLabels(token));
+  const [labels, loading, error] = useQuery<Label>([token, refresh], () => getLabels(token));
 
   const onSubmit = async (data: EventSend) => {
     try {
@@ -88,7 +82,7 @@ const HabbitForm = ({ handleRefresh, handleClose, open }: HabbitFormProps) => {
           options={labels.map(({ _id, title, ...rest }) => ({ key: _id, value: title, ...rest }))}
         />
         <Alert loading={loading} error={error} />
-        <Button size="s" mt="16px" type="submit" data-testid="submit" noMaxWidth>
+        <Button size="s" mt="16px" type="submit" data-testid="submit">
           Send
         </Button>
       </StyledWrapper>

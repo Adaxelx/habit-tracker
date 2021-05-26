@@ -13,7 +13,13 @@ import { useQuery, useWindowSize } from 'hooks';
 import { SIDES } from 'utils';
 import { DateTuple, Event } from 'utils/types';
 import { StyledButtonWrapper, StyledCenter } from './CalendarPage.css';
-import { CalendarGrid, CalendarNavigation, DayCardWrapper, HabbitForm } from './components';
+import {
+  CalendarGrid,
+  CalendarNavigation,
+  DayCardWrapper,
+  HabbitForm,
+  LabelForm,
+} from './components';
 import { getEvents } from './CalendarPage.api';
 
 /* eslint-disable */
@@ -38,6 +44,7 @@ const CalendarPage = () => {
   );
 
   const [openHabbitForm, setOpenHabbitForm] = useState(false);
+  const [openLabelForm, setOpenLabelForm] = useState(false);
 
   const handleRefresh = () => setRefresh((prev) => !prev);
 
@@ -66,7 +73,7 @@ const CalendarPage = () => {
     }
   };
 
-  const [fromWeek, toWeek] = generateWeek(day);
+  const [fromWeek, toWeek] = useMemo(() => generateWeek(day), [day]);
 
   const CalendarGridView = useMemo(() => {
     return (
@@ -89,7 +96,14 @@ const CalendarPage = () => {
           >
             Add habbit
           </Button>
-          <Button size="s" noMaxWidth mt="16px" my="16px" data-testid="addl">
+          <Button
+            size="s"
+            noMaxWidth
+            mt="16px"
+            my="16px"
+            data-testid="addl"
+            onClick={() => setOpenLabelForm(true)}
+          >
             Add label
           </Button>
           <Button size="s" noMaxWidth mt="16px" data-testid="labell">
@@ -100,10 +114,16 @@ const CalendarPage = () => {
           open={openHabbitForm}
           handleClose={() => setOpenHabbitForm(false)}
           handleRefresh={handleRefresh}
+          refresh={refresh}
+        />
+        <LabelForm
+          open={openLabelForm}
+          handleClose={() => setOpenLabelForm(false)}
+          handleRefresh={handleRefresh}
         />
       </>
     );
-  }, [events, actualMonth, actualYear, loadingE, errorE, openHabbitForm]);
+  }, [events, actualMonth, actualYear, loadingE, errorE, openHabbitForm, openLabelForm]);
 
   return (
     <StyledCenter>

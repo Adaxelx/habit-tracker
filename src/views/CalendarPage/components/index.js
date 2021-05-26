@@ -6,3 +6,4 @@ export { default as Habbit } from './Habbit';
 export { default as DayCardWrapper } from './DayCardWrapper';
 export { default as HabbitForm } from './HabbitForm';
 export { default as WeekDaysInput } from './WeekDaysInput';
+export { default as LabelForm } from './LabelForm';
