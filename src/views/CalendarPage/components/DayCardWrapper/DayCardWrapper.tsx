@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef } from 'react';
+import React, { useLayoutEffect, useRef, useState } from 'react';
 import { DateTuple, Event, TokenType } from 'utils';
 import { useCalendar, useQuery, useWindowSize } from 'hooks';
 import { getEvents } from 'views/CalendarPage/CalendarPage.api';
@@ -19,7 +19,13 @@ const DayCardWrapper = ({ from, to, token }: DayCardWrapperProps) => {
   const fromParsed = generateParsedDate(from);
   const toParsed = generateParsedDate(to);
 
-  const [events] = useQuery<Event>([from, to, token], () => getEvents(token, fromParsed, toParsed));
+  const [refresh, setRefresh] = useState(false);
+
+  const handleRefresh = () => setRefresh((prev) => !prev);
+
+  const [events] = useQuery<Event>([from, to, token, refresh], () =>
+    getEvents(token, fromParsed, toParsed),
+  );
 
   const [days] = useCalendar(events, from, to);
 
@@ -54,6 +60,7 @@ const DayCardWrapper = ({ from, to, token }: DayCardWrapperProps) => {
             key={id}
             header={weekDaysFull[index]}
             events={eventsArr}
+            handleRefresh={handleRefresh}
           />
         );
       })}

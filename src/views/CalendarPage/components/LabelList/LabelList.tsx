@@ -20,7 +20,6 @@ const LabelList = ({ handleClose, open, handleRefresh, labels }: FormWithLabels)
     } catch (err) {
       alertC.current.showAlert(err.message);
     }
-    handleRefresh();
   };
 
   return (

@@ -75,6 +75,7 @@ export interface DayCardProps {
   events: Event[];
   header: string;
   active: boolean;
+  handleRefresh: Function;
 }
 
 export type DateTuple = [number, number, number];

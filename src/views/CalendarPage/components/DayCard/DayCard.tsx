@@ -3,11 +3,11 @@ import { DayCardProps } from 'utils';
 import { StyledCard, StyledWeekDay } from './DayCard.css';
 import { Habbit } from '..';
 
-const DayCard = ({ events, header, active }: DayCardProps) => (
+const DayCard = ({ events, header, active, handleRefresh }: DayCardProps) => (
   <StyledCard active={active}>
     <StyledWeekDay>{header}</StyledWeekDay>
     {events.map((event) => (
-      <Habbit key={event._id} habbit={event} />
+      <Habbit key={event._id} habbit={event} handleRefresh={handleRefresh} />
     ))}
   </StyledCard>
 );
