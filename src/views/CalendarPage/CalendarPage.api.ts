@@ -58,3 +58,17 @@ export const postLabel = async (token: string | undefined, label: LabelSend) => 
   const { message } = await response.json();
   throw new Error(message);
 };
+
+export const deleteLabel = async (token: string | undefined, id: string) => {
+  const response = await fetch(`${APIpaths.LABELS}${id}`, {
+    headers: { 'Content-Type': 'application/json', Authorization: `${token}` },
+    method: 'DELETE',
+  });
+
+  if (response.status === 204) {
+    return true;
+  }
+
+  const { message } = await response.json();
+  throw new Error(message);
+};
