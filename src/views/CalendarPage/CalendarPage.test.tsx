@@ -106,7 +106,7 @@ describe('CalendarPage', () => {
       util = new TestUtil(<CalendarPage />);
     });
 
-    await waitFor(() => expect(fetch).toHaveBeenCalledTimes(5));
+    await waitFor(() => expect(fetch).toHaveBeenCalledTimes(4));
     expect(util.render.asFragment()).toMatchSnapshot();
     spy.mockRestore();
   });
@@ -117,7 +117,7 @@ describe('CalendarPage', () => {
       util = new TestUtil(<CalendarPage />);
     });
 
-    await waitFor(() => expect(fetch).toHaveBeenCalledTimes(4));
+    await waitFor(() => expect(fetch).toHaveBeenCalledTimes(3));
     expect(util.get('alert').textContent).toBe('failEvent');
   });
 
@@ -126,7 +126,7 @@ describe('CalendarPage', () => {
       util = new TestUtil(<CalendarPage />);
     });
 
-    await waitFor(() => expect(fetch).toHaveBeenCalledTimes(4));
+    await waitFor(() => expect(fetch).toHaveBeenCalledTimes(3));
     const [month, year] = util.get('dateCalendar-main')?.textContent?.split(' ') as [
       string,
       string,

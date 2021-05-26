@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import { Alert } from 'components';
 import { useUserContext } from 'context';
 import {
   getISODate,
@@ -78,6 +79,7 @@ const CalendarPage = () => {
             actualYear={actualYear}
             handleChangeView={handleChangeView}
           />
+          <Alert loading={loadingE} error={errorE} />
           <CalendarNavigation
             navId="desktopDay"
             header={`${reversedParsedDate(fromWeek)} - ${reversedParsedDate(toWeek)}`}
@@ -86,15 +88,18 @@ const CalendarPage = () => {
           <DayCardWrapper from={fromWeek} to={toWeek} token={token} />
         </>
       ) : !openCard ? (
-        <CalendarGridView
-          refresh={refresh}
-          handleRefresh={handleRefresh}
-          moveDate={moveDate}
-          events={events}
-          actualMonth={actualMonth}
-          actualYear={actualYear}
-          handleChangeView={handleChangeView}
-        />
+        <>
+          <CalendarGridView
+            refresh={refresh}
+            handleRefresh={handleRefresh}
+            moveDate={moveDate}
+            events={events}
+            actualMonth={actualMonth}
+            actualYear={actualYear}
+            handleChangeView={handleChangeView}
+          />
+          <Alert loading={loadingE} error={errorE} />
+        </>
       ) : (
         <>
           <CalendarNavigation
