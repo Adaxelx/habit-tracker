@@ -14,7 +14,7 @@ const Habbit = ({ habbit }: { habbit: Event }) => {
   const { title, timeEnd, timeStart, description, label } = habbit;
   return (
     <StyledContainer>
-      <Button size="s" my="0.75rem" noMaxWidth data-testid="edit">
+      <Button size="s" mx="0.75rem" noMaxWidth data-testid="edit">
         Edit habbit
       </Button>
       <Button size="s" close noMaxWidth data-testid="delete">

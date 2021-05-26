@@ -92,3 +92,7 @@ export interface FormProps {
   handleRefresh: Function;
   refresh?: boolean;
 }
+
+export interface FormWithLabels extends FormProps {
+  labels: Label[];
+}

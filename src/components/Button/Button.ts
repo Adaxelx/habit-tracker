@@ -5,7 +5,8 @@ interface ButtonProps {
   noMaxWidth?: boolean;
   as?: any;
   mt?: string;
-  my?: string;
+  mx?: string;
+  mr?: string;
   close?: boolean;
 }
 
@@ -20,8 +21,8 @@ const Button = styled.button<ButtonProps>`
   display: inline-block;
   text-align: center;
   margin-top: ${({ mt }) => mt || 0};
-  margin-left: ${({ my }) => my || 0};
-  margin-right: ${({ my }) => my || 0};
+  margin-left: ${({ mx }) => mx || 0};
+  margin-right: ${({ mx, mr }) => mr || mx || 0};
   &:hover {
     cursor: pointer;
   }

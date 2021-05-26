@@ -1,5 +1,4 @@
 import React, { useState, useMemo } from 'react';
-import { Alert, Button } from 'components';
 import { useUserContext } from 'context';
 import {
   getISODate,
@@ -12,14 +11,8 @@ import {
 import { useQuery, useWindowSize } from 'hooks';
 import { SIDES } from 'utils';
 import { DateTuple, Event } from 'utils/types';
-import { StyledButtonWrapper, StyledCenter } from './CalendarPage.css';
-import {
-  CalendarGrid,
-  CalendarNavigation,
-  DayCardWrapper,
-  HabbitForm,
-  LabelForm,
-} from './components';
+import { StyledCenter } from './CalendarPage.css';
+import { CalendarNavigation, DayCardWrapper, CalendarGridView } from './components';
 import { getEvents } from './CalendarPage.api';
 
 /* eslint-disable */
@@ -42,9 +35,6 @@ const CalendarPage = () => {
   const [events, loadingE, errorE] = useQuery<Event>([from, to, token, refresh], () =>
     getEvents(token, from, to),
   );
-
-  const [openHabbitForm, setOpenHabbitForm] = useState(false);
-  const [openLabelForm, setOpenLabelForm] = useState(false);
 
   const handleRefresh = () => setRefresh((prev) => !prev);
 
@@ -75,61 +65,19 @@ const CalendarPage = () => {
 
   const [fromWeek, toWeek] = useMemo(() => generateWeek(day), [day]);
 
-  const CalendarGridView = useMemo(() => {
-    return (
-      <>
-        <CalendarGrid
-          events={events}
-          month={actualMonth}
-          moveDate={moveDate}
-          year={actualYear}
-          handleDayChange={handleChangeView}
-        />
-        <Alert loading={loadingE} error={errorE} />
-        <StyledButtonWrapper>
-          <Button
-            size="s"
-            noMaxWidth
-            mt="16px"
-            data-testid="addh"
-            onClick={() => setOpenHabbitForm(true)}
-          >
-            Add habbit
-          </Button>
-          <Button
-            size="s"
-            noMaxWidth
-            mt="16px"
-            my="16px"
-            data-testid="addl"
-            onClick={() => setOpenLabelForm(true)}
-          >
-            Add label
-          </Button>
-          <Button size="s" noMaxWidth mt="16px" data-testid="labell">
-            Label list
-          </Button>
-        </StyledButtonWrapper>
-        <HabbitForm
-          open={openHabbitForm}
-          handleClose={() => setOpenHabbitForm(false)}
-          handleRefresh={handleRefresh}
-          refresh={refresh}
-        />
-        <LabelForm
-          open={openLabelForm}
-          handleClose={() => setOpenLabelForm(false)}
-          handleRefresh={handleRefresh}
-        />
-      </>
-    );
-  }, [events, actualMonth, actualYear, loadingE, errorE, openHabbitForm, openLabelForm]);
-
   return (
     <StyledCenter>
       {width >= 768 ? (
         <>
-          {CalendarGridView}
+          <CalendarGridView
+            refresh={refresh}
+            handleRefresh={handleRefresh}
+            moveDate={moveDate}
+            events={events}
+            actualMonth={actualMonth}
+            actualYear={actualYear}
+            handleChangeView={handleChangeView}
+          />
           <CalendarNavigation
             navId="desktopDay"
             header={`${reversedParsedDate(fromWeek)} - ${reversedParsedDate(toWeek)}`}
@@ -138,7 +86,15 @@ const CalendarPage = () => {
           <DayCardWrapper from={fromWeek} to={toWeek} token={token} />
         </>
       ) : !openCard ? (
-        CalendarGridView
+        <CalendarGridView
+          refresh={refresh}
+          handleRefresh={handleRefresh}
+          moveDate={moveDate}
+          events={events}
+          actualMonth={actualMonth}
+          actualYear={actualYear}
+          handleChangeView={handleChangeView}
+        />
       ) : (
         <>
           <CalendarNavigation
