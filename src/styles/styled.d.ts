@@ -100,6 +100,7 @@ declare module 'styled-components' {
         border: string;
       };
       error: AlertType;
+      success: AlertType;
       loading: AlertType;
       modalBackground: string;
       border: string;

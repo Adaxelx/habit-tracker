@@ -77,3 +77,8 @@ export interface DayCardProps {
 export type DateTuple = [number, number, number];
 
 export type TokenType = string | undefined;
+
+export enum AlertTypes {
+  ERROR,
+  SUCCESS,
+}

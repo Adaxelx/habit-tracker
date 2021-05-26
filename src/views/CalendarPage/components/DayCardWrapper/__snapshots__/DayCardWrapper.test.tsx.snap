@@ -14,7 +14,7 @@ exports[`DayCardWrapper should match snapshot 1`] = `
 .c1 {
   background-color: #FFFCAF;
   min-width: 275px;
-  height: 500px;
+  min-height: 500px;
   border: 1px solid #707070;
 }
 

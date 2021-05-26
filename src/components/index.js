@@ -7,3 +7,5 @@ export { default as Alert } from './Alert';
 export { default as PopUp } from './PopUp';
 export { default as DateInput } from './DateInput';
 export { default as Select } from './Select';
+export { default as AlertMessage } from './AlertMessage';
+export { default as AlertsContainer } from './AlertsContainer';

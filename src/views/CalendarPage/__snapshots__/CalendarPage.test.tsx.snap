@@ -148,7 +148,7 @@ exports[`CalendarPage should match snapshot (desktop) 1`] = `
 .c14 {
   background-color: #AFE9FF;
   min-width: 275px;
-  height: 500px;
+  min-height: 500px;
   border: 1px solid #707070;
 }
 

@@ -42,6 +42,11 @@ const defaultTheme: DefaultTheme = {
       border: '#730000',
       text: '#730000',
     },
+    success: {
+      main: '#d9ffd9',
+      border: '#10b9b0',
+      text: '#5cb85c',
+    },
     loading: {
       main: '#a6fff9',
       border: '#1b968e',

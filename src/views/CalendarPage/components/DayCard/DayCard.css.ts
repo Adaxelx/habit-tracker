@@ -8,7 +8,7 @@ export const StyledCard = styled.div<CardProps>`
   background-color: ${({ theme, active }) =>
     active ? theme.colors.tile.backgroundActive : theme.colors.tile.background};
   min-width: 275px;
-  height: 500px;
+  min-height: 500px;
   border: 1px solid ${({ theme }) => theme.colors.border};
 `;
 

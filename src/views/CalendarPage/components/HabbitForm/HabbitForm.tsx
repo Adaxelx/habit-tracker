@@ -1,39 +1,45 @@
-import React, { MouseEventHandler } from 'react';
+import React, { useRef } from 'react';
 import { PopUp, Input, Button, DateInput, Alert, Select } from 'components';
 import { useForm } from 'react-hook-form';
-import { EventSend, createRestrictedLengthObject, Label } from 'utils';
+import { EventSend, createRestrictedLengthObject, Label, AlertTypes } from 'utils';
 import { useQuery } from 'hooks';
-import { useUserContext } from 'context';
+import { useAlertContext, useUserContext } from 'context';
 import { getLabels, postEvent } from 'views/CalendarPage/CalendarPage.api';
 import { StyledWrapper } from './HabbitForm.css';
 import { WeekDaysInput } from '..';
 
+const { SUCCESS } = AlertTypes;
+
 interface HabbitFormProps {
   open: boolean;
-  handleClose: MouseEventHandler<HTMLButtonElement>;
+  handleClose: any;
+  handleRefresh: Function;
 }
 
-const HabbitForm = (props: HabbitFormProps) => {
+const HabbitForm = ({ handleRefresh, handleClose, open }: HabbitFormProps) => {
   const { register, handleSubmit, errors, control } = useForm<EventSend>({
     defaultValues: { label: '' },
   });
+
+  const alertC = useRef(useAlertContext());
 
   const { token } = useUserContext();
 
   const [labels, loading, error] = useQuery<Label>([token], () => getLabels(token));
 
-  console.log(labels);
-
   const onSubmit = async (data: EventSend) => {
     try {
       await postEvent(token, data);
+      alertC.current.showAlert('Succesfuly added habbit to your calendar.', SUCCESS);
+      handleClose();
+      handleRefresh();
     } catch (err) {
-      console.log(err);
+      alertC.current.showAlert(err.message);
     }
   };
 
   return (
-    <PopUp {...props} header="Add habbit">
+    <PopUp open={open} handleClose={handleClose} header="Add habbit">
       <StyledWrapper as="form" onSubmit={handleSubmit(onSubmit)} noValidate>
         <Input
           name="title"

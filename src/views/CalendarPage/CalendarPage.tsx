@@ -19,7 +19,7 @@ import { getEvents } from './CalendarPage.api';
 /* eslint-disable */
 
 const CalendarPage = () => {
-  const [date, setDate] = useState(new Date());
+  const [date] = useState(new Date());
   const [actualMonth, setActualMonth] = useState(date.getMonth());
   const [actualYear, setActualYear] = useState(date.getFullYear());
   const from = getISODate(new Date(actualYear, actualMonth, 2));
@@ -32,12 +32,14 @@ const CalendarPage = () => {
   const [openCard, setOpenCard] = useState(false);
   const [day, setDay] = useState<DateTuple>([actualYear, actualMonth, date.getDate()]);
   const [year, month, dayNumber] = day;
-
-  const [events, loadingE, errorE] = useQuery<Event>([from, to, token], () =>
+  const [refresh, setRefresh] = useState(false);
+  const [events, loadingE, errorE] = useQuery<Event>([from, to, token, refresh], () =>
     getEvents(token, from, to),
   );
 
   const [openHabbitForm, setOpenHabbitForm] = useState(false);
+
+  const handleRefresh = () => setRefresh((prev) => !prev);
 
   const moveDate = (side: SIDES) => {
     if (side === SIDES.LEFT) {
@@ -94,7 +96,11 @@ const CalendarPage = () => {
             Label list
           </Button>
         </StyledButtonWrapper>
-        <HabbitForm open={openHabbitForm} handleClose={() => setOpenHabbitForm(false)} />
+        <HabbitForm
+          open={openHabbitForm}
+          handleClose={() => setOpenHabbitForm(false)}
+          handleRefresh={handleRefresh}
+        />
       </>
     );
   }, [events, actualMonth, actualYear, loadingE, errorE, openHabbitForm]);

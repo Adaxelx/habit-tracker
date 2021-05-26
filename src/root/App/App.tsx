@@ -1,20 +1,23 @@
 import React from 'react';
 import { HashRouter } from 'react-router-dom';
-import { ThemeProvider, UserProvider } from 'context';
-import { Navigation, Logo } from 'components';
+import { ThemeProvider, UserProvider, AlertProvider } from 'context';
+import { Navigation, Logo, AlertsContainer } from 'components';
 import GlobalStyle from 'styles/GlobalStyle';
 import { Router } from '..';
 
 const App = () => (
   <ThemeProvider>
-    <UserProvider>
-      <GlobalStyle />
-      <HashRouter basename={process.env.PUBLIC_URL}>
-        <Logo />
-        <Navigation />
-        <Router />
-      </HashRouter>
-    </UserProvider>
+    <AlertProvider>
+      <UserProvider>
+        <GlobalStyle />
+        <HashRouter basename={process.env.PUBLIC_URL}>
+          <Logo />
+          <AlertsContainer />
+          <Navigation />
+          <Router />
+        </HashRouter>
+      </UserProvider>
+    </AlertProvider>
   </ThemeProvider>
 );
 
