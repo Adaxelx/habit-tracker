@@ -29,10 +29,10 @@ export const getLabels = async (token: string | undefined) => {
   throw new Error(message);
 };
 
-export const postEvent = async (token: string | undefined, event: EventSend) => {
-  const response = await fetch(`${APIpaths.EVENTS}`, {
+export const postEvent = async (token: string | undefined, event: EventSend, id?: string) => {
+  const response = await fetch(`${APIpaths.EVENTS}${id ? `${id}/` : ''}`, {
     headers: { 'Content-Type': 'application/json', Authorization: `${token}` },
-    method: 'POST',
+    method: id ? 'PUT' : 'POST',
     body: JSON.stringify(event),
   });
 

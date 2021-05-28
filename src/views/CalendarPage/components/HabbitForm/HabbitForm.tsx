@@ -1,7 +1,13 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect, useCallback } from 'react';
 import { PopUp, Input, Button, DateInput, Select } from 'components';
-import { useForm } from 'react-hook-form';
-import { EventSend, createRestrictedLengthObject, AlertTypes, FormHabbit } from 'utils';
+import { FieldError, useForm } from 'react-hook-form';
+import {
+  EventSend,
+  createRestrictedLengthObject,
+  AlertTypes,
+  FormHabbit,
+  createTimeValidation,
+} from 'utils';
 import { useAlertContext, useUserContext, useRefreshContext } from 'context';
 import { postEvent } from 'views/CalendarPage/CalendarPage.api';
 import { StyledWrapper } from './HabbitForm.css';
@@ -10,25 +16,49 @@ import { WeekDaysInput } from '..';
 const { SUCCESS } = AlertTypes;
 
 const HabbitForm = ({ handleClose, open, labels, event }: FormHabbit) => {
-  const { register, handleSubmit, errors, control } = useForm<EventSend>({
-    defaultValues: { title: event?.title, label: event?.label?._id },
-  });
+  const { register, handleSubmit, errors, control, reset, watch } = useForm<EventSend>();
 
   const alertC = useRef(useAlertContext());
 
   const { token } = useUserContext();
   const { handleRefHabbit } = useRefreshContext();
 
+  useEffect(() => {
+    let defaultValues = {};
+    if (event) {
+      const { label, dateStart, dateEnd } = event;
+      defaultValues = {
+        ...event,
+        label: label?._id,
+        dateStart: new Date(dateStart),
+        dateEnd: new Date(dateEnd),
+      };
+      reset(defaultValues);
+    }
+  }, [event]);
+
   const onSubmit = async (data: EventSend) => {
     try {
-      await postEvent(token, data);
-      alertC.current.showAlert('Succesfuly added habbit to your calendar.', SUCCESS);
+      await postEvent(token, data, event?._id);
+      alertC.current.showAlert(`Succesfuly ${event?._id ? 'edited' : 'added'} habbit.`, SUCCESS);
       handleClose();
       handleRefHabbit();
     } catch (err) {
       alertC.current.showAlert(err.message);
     }
   };
+
+  const dateStart = watch('dateStart') ? new Date(watch('dateStart')) : undefined;
+  const dateEnd = watch('dateEnd') ? new Date(watch('dateEnd')) : undefined;
+
+  const datePlus7 = useCallback((datePassed, diff) => {
+    if (datePassed) {
+      const date = new Date(datePassed.getTime());
+      date.setDate(date.getDate() + diff);
+      return date;
+    }
+    return undefined;
+  }, []);
 
   return (
     <PopUp open={open} handleClose={handleClose} header="Add habbit">
@@ -52,14 +82,26 @@ const HabbitForm = ({ handleClose, open, labels, event }: FormHabbit) => {
           data-testid="description"
           type="textarea"
         />
-        <WeekDaysInput control={control} />
-        <DateInput control={control} name="dateStart" header="Date start" />
-        <DateInput control={control} name="dateEnd" header="Date end" />
+        <WeekDaysInput control={control} error={(errors.daysOfWeek as unknown) as FieldError} />
+        <DateInput
+          control={control}
+          name="dateStart"
+          header="Date start"
+          maxDate={datePlus7(dateEnd, -7)}
+          error={errors.dateStart}
+        />
+        <DateInput
+          control={control}
+          name="dateEnd"
+          header="Date end"
+          minDate={datePlus7(dateStart, 7)}
+          error={errors.dateEnd}
+        />
         <Input
           name="timeStart"
           label="Time start"
           id="timeStart"
-          refVal={register()}
+          refVal={register(createTimeValidation('00:00', watch('timeEnd')))}
           error={errors.timeStart}
           type="time"
           data-testid="timeStart"
@@ -68,7 +110,7 @@ const HabbitForm = ({ handleClose, open, labels, event }: FormHabbit) => {
           name="timeEnd"
           label="Time end"
           id="timeEnd"
-          refVal={register()}
+          refVal={register(createTimeValidation(watch('timeStart'), '23:59'))}
           error={errors.timeStart}
           type="time"
           data-testid="timeEnd"

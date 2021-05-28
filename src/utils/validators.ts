@@ -25,3 +25,29 @@ export const createRestrictedLengthObject = (name: string) => ({
     message: `Field ${name} must have maximum 30 characters.`,
   },
 });
+
+const timeValidFuntion = (timeLess: string | undefined, time: string | undefined) => {
+  const message = 'Your time is not in boundaries.';
+  if (timeLess && time) {
+    const [hours, minutes] = time.split(':');
+    const [hoursMin, minutesMin] = timeLess.split(':');
+    if (hoursMin < hours) {
+      return true;
+    }
+    if (hoursMin === hours) {
+      if (minutesMin < minutes) {
+        return true;
+      }
+      return message;
+    }
+    return message;
+  }
+  return message;
+};
+
+export const createTimeValidation = (min: string | undefined, max: string | undefined) => ({
+  validate: {
+    min: (value: string) => timeValidFuntion(min, value),
+    max: (value: string) => timeValidFuntion(value, max),
+  },
+});

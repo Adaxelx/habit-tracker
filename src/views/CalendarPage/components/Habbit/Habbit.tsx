@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { Button } from 'components';
-import { Event, AlertTypes } from 'utils';
+import { Event, AlertTypes, Label } from 'utils';
 import { useAlertContext, useUserContext, useRefreshContext } from 'context';
 import { deleteEvent } from 'views/CalendarPage/CalendarPage.api';
 import { HabbitForm } from '..';
@@ -15,7 +15,7 @@ import {
 
 const { SUCCESS } = AlertTypes;
 
-const Habbit = ({ habbit }: { habbit: Event }) => {
+const Habbit = ({ habbit, labels }: { habbit: Event; labels: Label[] }) => {
   const { title, timeEnd, timeStart, description, label, _id } = habbit;
 
   const [open, setOpen] = useState(false);
@@ -53,7 +53,7 @@ const Habbit = ({ habbit }: { habbit: Event }) => {
         open={open}
         handleClose={() => setOpen(false)}
         handleRefresh={() => {}}
-        labels={[{ _id: 'xd', title: 'xd', color: 'xdd', userId: 'DX' }]}
+        labels={labels}
         refresh={false}
         event={habbit}
       />

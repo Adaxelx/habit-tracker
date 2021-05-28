@@ -10,7 +10,9 @@ import { postLabel } from 'views/CalendarPage/CalendarPage.api';
 const { SUCCESS } = AlertTypes;
 
 const LabelForm = ({ handleClose, open }: FormProps) => {
-  const { register, handleSubmit, errors, control } = useForm<LabelSend>();
+  const { register, handleSubmit, errors, control } = useForm<LabelSend>({
+    defaultValues: { color: '#50E3C2' },
+  });
 
   const alertC = useRef(useAlertContext());
   const { token } = useUserContext();

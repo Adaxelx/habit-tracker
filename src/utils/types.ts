@@ -11,8 +11,8 @@ export type GridProps = {
 export interface EventInterface {
   daysOfWeek: number[];
   title: string;
-  timeStart?: string;
-  timeEnd?: string;
+  timeStart: string;
+  timeEnd: string;
   dateStart: string;
   dateEnd: string;
   description?: string;
@@ -75,6 +75,7 @@ export interface DayCardProps {
   events: Event[];
   header: string;
   active: boolean;
+  labels: Label[];
 }
 
 export type DateTuple = [number, number, number];

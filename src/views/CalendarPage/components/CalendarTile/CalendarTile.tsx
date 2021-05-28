@@ -10,12 +10,16 @@ const generateCircles = (colors: Color[], edge: number) => {
   let position = -shift;
   return colors.map((color) => {
     position += shift;
+    let colorVal = color;
+    if (Object.keys(colorVal).length === 0) {
+      colorVal = { color: '#dbdbdb', id: 'empty_color' };
+    }
     return (
       <StyledCircle
         key={color.id}
         position={position}
         alone={colors.length === 1}
-        color={color.color}
+        color={colorVal.color}
         size={size}
       />
     );
