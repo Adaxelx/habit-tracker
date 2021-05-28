@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { Alert } from 'components';
-import { useUserContext } from 'context';
+import { useUserContext, useRefreshContext } from 'context';
 import {
   getISODate,
   months,
@@ -29,11 +29,13 @@ const CalendarPage = () => {
 
   const [width] = useWindowSize();
 
+  const { refHabbit } = useRefreshContext();
+
   const [openCard, setOpenCard] = useState(false);
   const [day, setDay] = useState<DateTuple>([actualYear, actualMonth, date.getDate()]);
   const [year, month, dayNumber] = day;
   const [refresh, setRefresh] = useState(false);
-  const [events, loadingE, errorE] = useQuery<Event>([from, to, token, refresh], () =>
+  const [events, loadingE, errorE] = useQuery<Event>([from, to, token, refHabbit], () =>
     getEvents(token, from, to),
   );
 

@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { PopUp, Button, Input } from 'components';
 import { useForm, Controller } from 'react-hook-form';
-import { useAlertContext, useUserContext } from 'context';
+import { useAlertContext, useUserContext, useRefreshContext } from 'context';
 import { FormProps, LabelSend, createRestrictedLengthObject, AlertTypes } from 'utils';
 import { SketchPicker } from 'react-color';
 import { StyledWrapper } from 'views/CalendarPage/components/HabbitForm/HabbitForm.css';
@@ -9,18 +9,20 @@ import { postLabel } from 'views/CalendarPage/CalendarPage.api';
 
 const { SUCCESS } = AlertTypes;
 
-const LabelForm = ({ handleClose, open, handleRefresh }: FormProps) => {
+const LabelForm = ({ handleClose, open }: FormProps) => {
   const { register, handleSubmit, errors, control } = useForm<LabelSend>();
 
   const alertC = useRef(useAlertContext());
   const { token } = useUserContext();
+
+  const { handleRefLabel } = useRefreshContext();
 
   const onSubmit = async (data: LabelSend) => {
     try {
       await postLabel(token, data);
       alertC.current.showAlert('Succesfuly added label to your calendar.', SUCCESS);
       handleClose();
-      handleRefresh();
+      handleRefLabel();
     } catch (err) {
       alertC.current.showAlert(err.message);
     }

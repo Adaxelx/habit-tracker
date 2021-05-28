@@ -75,7 +75,6 @@ export interface DayCardProps {
   events: Event[];
   header: string;
   active: boolean;
-  handleRefresh: Function;
 }
 
 export type DateTuple = [number, number, number];
@@ -96,4 +95,8 @@ export interface FormProps {
 
 export interface FormWithLabels extends FormProps {
   labels: Label[];
+}
+
+export interface FormHabbit extends FormWithLabels {
+  event?: Event;
 }

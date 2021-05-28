@@ -1,8 +1,9 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { Button } from 'components';
 import { Event, AlertTypes } from 'utils';
-import { useAlertContext, useUserContext } from 'context';
+import { useAlertContext, useUserContext, useRefreshContext } from 'context';
 import { deleteEvent } from 'views/CalendarPage/CalendarPage.api';
+import { HabbitForm } from '..';
 import {
   StyledHabbit,
   StyledTime,
@@ -14,17 +15,21 @@ import {
 
 const { SUCCESS } = AlertTypes;
 
-const Habbit = ({ habbit, handleRefresh }: { habbit: Event; handleRefresh: Function }) => {
+const Habbit = ({ habbit }: { habbit: Event }) => {
   const { title, timeEnd, timeStart, description, label, _id } = habbit;
+
+  const [open, setOpen] = useState(false);
 
   const alertC = useRef(useAlertContext());
   const { token } = useUserContext();
+
+  const { handleRefHabbit } = useRefreshContext();
 
   const handleDelete = async () => {
     try {
       await deleteEvent(token, _id);
       alertC.current.showAlert('Succesfuly deleted habbit.', SUCCESS);
-      handleRefresh();
+      handleRefHabbit();
     } catch (err) {
       alertC.current.showAlert(err.message);
     }
@@ -32,7 +37,7 @@ const Habbit = ({ habbit, handleRefresh }: { habbit: Event; handleRefresh: Funct
 
   return (
     <StyledContainer>
-      <Button size="s" mx="0.75rem" noMaxWidth data-testid="edit">
+      <Button size="s" mx="0.75rem" noMaxWidth data-testid="edit" onClick={() => setOpen(true)}>
         Edit habbit
       </Button>
       <Button size="s" close noMaxWidth data-testid="delete" onClick={handleDelete}>
@@ -44,6 +49,14 @@ const Habbit = ({ habbit, handleRefresh }: { habbit: Event; handleRefresh: Funct
         <StyledTime>{`${timeStart}-${timeEnd}`}</StyledTime>
         <StyledDescription>{description}</StyledDescription>
       </StyledHabbit>
+      <HabbitForm
+        open={open}
+        handleClose={() => setOpen(false)}
+        handleRefresh={() => {}}
+        labels={[{ _id: 'xd', title: 'xd', color: 'xdd', userId: 'DX' }]}
+        refresh={false}
+        event={habbit}
+      />
     </StyledContainer>
   );
 };

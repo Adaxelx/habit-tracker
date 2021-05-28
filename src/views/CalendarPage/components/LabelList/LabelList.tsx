@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { useUserContext, useAlertContext } from 'context';
+import { useUserContext, useAlertContext, useRefreshContext } from 'context';
 import { PopUp, Button } from 'components';
 import { FormWithLabels, AlertTypes } from 'utils';
 import { StyledLabel } from 'views/CalendarPage/components/Habbit/Habbit.css';
@@ -8,15 +8,18 @@ import { StyledButtonContainer, StyledLabelContainer } from './LabelList.css';
 
 const { SUCCESS } = AlertTypes;
 
-const LabelList = ({ handleClose, open, handleRefresh, labels }: FormWithLabels) => {
+const LabelList = ({ handleClose, open, labels }: FormWithLabels) => {
   const { token } = useUserContext();
   const alertC = useRef(useAlertContext());
+
+  const { handleRefHabbit, handleRefLabel } = useRefreshContext();
 
   const handleDelete = async (id: string) => {
     try {
       await deleteLabel(token, id);
       alertC.current.showAlert('Succesfuly deleted label.', SUCCESS);
-      handleRefresh();
+      handleRefLabel();
+      handleRefHabbit();
     } catch (err) {
       alertC.current.showAlert(err.message);
     }

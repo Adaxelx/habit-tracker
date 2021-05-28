@@ -15,6 +15,8 @@ export const StyledWrapper = styled.div`
   width: ${({ theme }) => `calc(100% - ${theme.margin.sm} - ${theme.margin.sm})`};
   height: ${({ theme }) => `calc(100vh - ${theme.margin.sm} -  ${theme.margin.sm})`};
   top: ${({ theme }) => theme.margin.sm};
+  left: 50%;
+  transform: translateX(-50%);
   padding: ${({ theme }) => theme.margin.sm} 0;
   background-color: ${({ theme }) => theme.colors.modalBackground};
   z-index: ${({ theme }) => theme.zIndex.max};

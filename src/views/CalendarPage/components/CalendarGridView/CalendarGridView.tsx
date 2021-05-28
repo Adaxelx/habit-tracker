@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useQuery } from 'hooks';
 import { Button, Alert } from 'components';
-import { useUserContext } from 'context';
+import { useUserContext, useRefreshContext } from 'context';
 import { StyledButtonWrapper } from 'views/CalendarPage/CalendarPage.css';
 import { Event, Label } from 'utils';
 import { getLabels } from 'views/CalendarPage/CalendarPage.api';
@@ -30,8 +30,12 @@ const CalendarGridView = ({
   const [openLabelForm, setOpenLabelForm] = useState(false);
   const [openLabelList, setOpenLabelList] = useState(false);
 
+  const { refLabel } = useRefreshContext();
+
   const { token } = useUserContext();
-  const [labels, loading, error] = useQuery<Label>([token, refresh], () => getLabels(token));
+  const [labels, loading, error] = useQuery<Label>([token, refresh, refLabel], () =>
+    getLabels(token),
+  );
 
   return (
     <>

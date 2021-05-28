@@ -1,7 +1,8 @@
-import React, { useLayoutEffect, useRef, useState } from 'react';
+import React, { useLayoutEffect, useRef } from 'react';
 import { DateTuple, Event, TokenType } from 'utils';
 import { useCalendar, useQuery, useWindowSize } from 'hooks';
 import { getEvents } from 'views/CalendarPage/CalendarPage.api';
+import { useRefreshContext } from 'context';
 import { weekDaysFull, getDayParsed, generateParsedDate } from 'constants/calendar';
 import { StyledWrapper } from './DayCardWrapper.css';
 import { DayCard } from '..';
@@ -19,11 +20,9 @@ const DayCardWrapper = ({ from, to, token }: DayCardWrapperProps) => {
   const fromParsed = generateParsedDate(from);
   const toParsed = generateParsedDate(to);
 
-  const [refresh, setRefresh] = useState(false);
+  const { refHabbit, refLabel } = useRefreshContext();
 
-  const handleRefresh = () => setRefresh((prev) => !prev);
-
-  const [events] = useQuery<Event>([from, to, token, refresh], () =>
+  const [events] = useQuery<Event>([from, to, token, refHabbit, refLabel], () =>
     getEvents(token, fromParsed, toParsed),
   );
 
@@ -60,7 +59,6 @@ const DayCardWrapper = ({ from, to, token }: DayCardWrapperProps) => {
             key={id}
             header={weekDaysFull[index]}
             events={eventsArr}
-            handleRefresh={handleRefresh}
           />
         );
       })}
