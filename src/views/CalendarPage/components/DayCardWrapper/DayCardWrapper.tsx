@@ -3,6 +3,7 @@ import { DateTuple, Event, TokenType, Label } from 'utils';
 import { useCalendar, useQuery, useWindowSize } from 'hooks';
 import { getEvents, getLabels } from 'views/CalendarPage/CalendarPage.api';
 import { useRefreshContext } from 'context';
+import { Alert } from 'components';
 import { weekDaysFull, getDayParsed, generateParsedDate } from 'constants/calendar';
 import { StyledWrapper } from './DayCardWrapper.css';
 import { DayCard } from '..';
@@ -22,11 +23,11 @@ const DayCardWrapper = ({ from, to, token }: DayCardWrapperProps) => {
 
   const { refHabbit, refLabel } = useRefreshContext();
 
-  const [events] = useQuery<Event>([from, to, token, refHabbit, refLabel], () =>
+  const [events, loadingE, errorE] = useQuery<Event>([from, to, token, refHabbit, refLabel], () =>
     getEvents(token, fromParsed, toParsed),
   );
 
-  const [labels] = useQuery<Label>([token, refLabel], () => getLabels(token));
+  const [labels, loadingL, errorL] = useQuery<Label>([token, refLabel], () => getLabels(token));
 
   const [days] = useCalendar(events, from, to);
 
@@ -48,24 +49,27 @@ const DayCardWrapper = ({ from, to, token }: DayCardWrapperProps) => {
   const todayTime = today.getTime();
 
   return (
-    <StyledWrapper ref={wrapper}>
-      {days.map(({ events: eventsArr, id }, i) => {
-        const index = firstDayOfWeek + i > 6 ? (firstDayOfWeek + i) % 7 : firstDayOfWeek + i;
-        const cardDate = new Date(startDate);
-        cardDate.setHours(0, 0, 0, 0);
-        const cardTime = cardDate.getTime();
-        startDate += 24 * 60 * 60 * 1000;
-        return (
-          <DayCard
-            active={todayTime === cardTime}
-            key={id}
-            header={weekDaysFull[index]}
-            events={eventsArr}
-            labels={labels}
-          />
-        );
-      })}
-    </StyledWrapper>
+    <>
+      <StyledWrapper ref={wrapper}>
+        {days.map(({ events: eventsArr, id }, i) => {
+          const index = firstDayOfWeek + i > 6 ? (firstDayOfWeek + i) % 7 : firstDayOfWeek + i;
+          const cardDate = new Date(startDate);
+          cardDate.setHours(0, 0, 0, 0);
+          const cardTime = cardDate.getTime();
+          startDate += 24 * 60 * 60 * 1000;
+          return (
+            <DayCard
+              active={todayTime === cardTime}
+              key={id}
+              header={weekDaysFull[index]}
+              events={eventsArr}
+              labels={labels}
+            />
+          );
+        })}
+      </StyledWrapper>
+      <Alert loading={loadingE || loadingL} error={errorE || errorL} />
+    </>
   );
 };
 

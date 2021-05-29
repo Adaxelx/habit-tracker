@@ -13,8 +13,6 @@ interface GridViewProps {
   moveDate: Function;
   actualYear: number;
   handleChangeView: Function;
-  refresh: boolean;
-  handleRefresh: Function;
 }
 
 const CalendarGridView = ({
@@ -23,8 +21,6 @@ const CalendarGridView = ({
   moveDate,
   actualYear,
   handleChangeView,
-  refresh,
-  handleRefresh,
 }: GridViewProps) => {
   const [openHabbitForm, setOpenHabbitForm] = useState(false);
   const [openLabelForm, setOpenLabelForm] = useState(false);
@@ -33,9 +29,7 @@ const CalendarGridView = ({
   const { refLabel } = useRefreshContext();
 
   const { token } = useUserContext();
-  const [labels, loading, error] = useQuery<Label>([token, refresh, refLabel], () =>
-    getLabels(token),
-  );
+  const [labels, loading, error] = useQuery<Label>([token, refLabel], () => getLabels(token));
 
   return (
     <>
@@ -79,21 +73,10 @@ const CalendarGridView = ({
       <HabbitForm
         open={openHabbitForm}
         handleClose={() => setOpenHabbitForm(false)}
-        handleRefresh={handleRefresh}
-        refresh={refresh}
         labels={labels}
       />
-      <LabelForm
-        open={openLabelForm}
-        handleClose={() => setOpenLabelForm(false)}
-        handleRefresh={handleRefresh}
-      />
-      <LabelList
-        open={openLabelList}
-        handleClose={() => setOpenLabelList(false)}
-        handleRefresh={handleRefresh}
-        labels={labels}
-      />
+      <LabelForm open={openLabelForm} handleClose={() => setOpenLabelForm(false)} />
+      <LabelList open={openLabelList} handleClose={() => setOpenLabelList(false)} labels={labels} />
       <Alert loading={loading} error={error} />
     </>
   );

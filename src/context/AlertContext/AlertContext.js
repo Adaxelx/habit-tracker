@@ -7,9 +7,7 @@ export const AlertContext = createContext({
   setOpen: () => {},
   changeVisibility: () => {},
   changeMessage: () => {},
-  showAlert: (newMessage, newVariant) => {
-    console.log(newMessage, newVariant);
-  },
+  showAlert: () => {},
 });
 
 const AlertProvider = (props) => {

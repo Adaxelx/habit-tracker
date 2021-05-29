@@ -9,3 +9,4 @@ export { default as WeekDaysInput } from './WeekDaysInput';
 export { default as LabelForm } from './LabelForm';
 export { default as LabelList } from './LabelList';
 export { default as CalendarGridView } from './CalendarGridView';
+export { default as Label } from './Label';

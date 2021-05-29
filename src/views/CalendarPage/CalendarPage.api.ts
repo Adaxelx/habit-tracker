@@ -44,13 +44,15 @@ export const postEvent = async (token: string | undefined, event: EventSend, id?
   throw new Error(message);
 };
 
-export const postLabel = async (token: string | undefined, label: LabelSend) => {
-  const response = await fetch(`${APIpaths.LABELS}`, {
+export const postLabel = async (token: string | undefined, label: LabelSend, id?: string) => {
+  const response = await fetch(`${APIpaths.LABELS}${id ? `${id}/` : ''}`, {
     headers: { 'Content-Type': 'application/json', Authorization: `${token}` },
-    method: 'POST',
+    method: id ? 'PUT' : 'POST',
     body: JSON.stringify(label),
   });
-
+  if (response.status === 200 && id) {
+    return response.json();
+  }
   if (response.status === 201) {
     return true;
   }

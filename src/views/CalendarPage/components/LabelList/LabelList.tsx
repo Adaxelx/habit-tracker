@@ -1,10 +1,9 @@
 import React, { useRef } from 'react';
 import { useUserContext, useAlertContext, useRefreshContext } from 'context';
-import { PopUp, Button } from 'components';
-import { FormWithLabels, AlertTypes } from 'utils';
-import { StyledLabel } from 'views/CalendarPage/components/Habbit/Habbit.css';
+import { PopUp } from 'components';
+import { AlertTypes, FormWithLabels } from 'utils';
 import { deleteLabel } from 'views/CalendarPage/CalendarPage.api';
-import { StyledButtonContainer, StyledLabelContainer } from './LabelList.css';
+import { Label } from '..';
 
 const { SUCCESS } = AlertTypes;
 
@@ -28,24 +27,8 @@ const LabelList = ({ handleClose, open, labels }: FormWithLabels) => {
   return (
     <PopUp open={open} handleClose={handleClose} header="Label list">
       <>
-        {labels?.map(({ _id, title, color }) => (
-          <StyledLabelContainer key={_id}>
-            <StyledButtonContainer>
-              <Button size="s" mr="0.75rem" noMaxWidth data-testid="edit">
-                Edit label
-              </Button>
-              <Button
-                size="s"
-                close
-                noMaxWidth
-                data-testid="delete"
-                onClick={() => handleDelete(_id)}
-              >
-                X
-              </Button>
-            </StyledButtonContainer>
-            <StyledLabel color={color}>{title}</StyledLabel>
-          </StyledLabelContainer>
+        {labels?.map((label) => (
+          <Label label={label} key={label._id} handleDelete={handleDelete} />
         ))}
       </>
     </PopUp>

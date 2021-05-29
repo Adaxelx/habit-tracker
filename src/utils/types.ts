@@ -90,8 +90,6 @@ export enum AlertTypes {
 export interface FormProps {
   open: boolean;
   handleClose: any;
-  handleRefresh: Function;
-  refresh?: boolean;
 }
 
 export interface FormWithLabels extends FormProps {
@@ -100,4 +98,8 @@ export interface FormWithLabels extends FormProps {
 
 export interface FormHabbit extends FormWithLabels {
   event?: Event;
+}
+
+export interface FormLabel extends FormProps {
+  label?: Label;
 }

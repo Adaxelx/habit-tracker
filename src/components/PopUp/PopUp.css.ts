@@ -10,15 +10,21 @@ export const StyledBacground = styled.div`
   background-color: rgba(0, 0, 0, 0.3);
 `;
 
-export const StyledWrapper = styled.div`
+interface WrapperProps {
+  fullHeight?: boolean;
+}
+
+export const StyledWrapper = styled.div<WrapperProps>`
   position: fixed;
-  width: ${({ theme }) => `calc(100% - ${theme.margin.sm} - ${theme.margin.sm})`};
+  width: ${({ theme, fullHeight }) =>
+    fullHeight ? '100%' : `calc(100% - ${theme.margin.sm} - ${theme.margin.sm})`};
   height: ${({ theme }) => `calc(100vh - ${theme.margin.sm} -  ${theme.margin.sm})`};
-  top: ${({ theme }) => theme.margin.sm};
+  top: ${({ theme, fullHeight }) => (fullHeight ? '0' : theme.margin.sm)};
   left: 50%;
   transform: translateX(-50%);
   padding: ${({ theme }) => theme.margin.sm} 0;
   background-color: ${({ theme }) => theme.colors.modalBackground};
+  border: 1px solid ${({ theme }) => theme.colors.border};
   z-index: ${({ theme }) => theme.zIndex.max};
   max-width: 350px;
   overflow: scroll;

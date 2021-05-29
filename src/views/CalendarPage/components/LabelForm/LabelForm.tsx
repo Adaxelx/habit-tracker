@@ -2,16 +2,16 @@ import React, { useRef } from 'react';
 import { PopUp, Button, Input } from 'components';
 import { useForm, Controller } from 'react-hook-form';
 import { useAlertContext, useUserContext, useRefreshContext } from 'context';
-import { FormProps, LabelSend, createRestrictedLengthObject, AlertTypes } from 'utils';
+import { FormLabel, LabelSend, createRestrictedLengthObject, AlertTypes } from 'utils';
 import { SketchPicker } from 'react-color';
 import { StyledWrapper } from 'views/CalendarPage/components/HabbitForm/HabbitForm.css';
 import { postLabel } from 'views/CalendarPage/CalendarPage.api';
 
 const { SUCCESS } = AlertTypes;
 
-const LabelForm = ({ handleClose, open }: FormProps) => {
+const LabelForm = ({ handleClose, open, label }: FormLabel) => {
   const { register, handleSubmit, errors, control } = useForm<LabelSend>({
-    defaultValues: { color: '#50E3C2' },
+    defaultValues: { color: '#50E3C2', ...label },
   });
 
   const alertC = useRef(useAlertContext());
@@ -21,8 +21,8 @@ const LabelForm = ({ handleClose, open }: FormProps) => {
 
   const onSubmit = async (data: LabelSend) => {
     try {
-      await postLabel(token, data);
-      alertC.current.showAlert('Succesfuly added label to your calendar.', SUCCESS);
+      await postLabel(token, data, label?._id);
+      alertC.current.showAlert(`Succesfuly ${label?._id ? 'edited' : 'added'} label.`, SUCCESS);
       handleClose();
       handleRefLabel();
     } catch (err) {
@@ -31,7 +31,7 @@ const LabelForm = ({ handleClose, open }: FormProps) => {
   };
 
   return (
-    <PopUp open={open} handleClose={handleClose} header="Add label">
+    <PopUp open={open} handleClose={handleClose} header="Add label" fullHeight={!!label?._id}>
       <StyledWrapper as="form" onSubmit={handleSubmit(onSubmit)} noValidate>
         <Input
           name="title"
@@ -50,7 +50,7 @@ const LabelForm = ({ handleClose, open }: FormProps) => {
             <SketchPicker color={value} onChangeComplete={(color) => onChange(color.hex)} />
           )}
         />
-        <Button size="s" mt="16px" type="submit" data-testid="submit" noMaxWidth>
+        <Button size="s" mt="16px" type="submit" data-testid="submit">
           Send
         </Button>
       </StyledWrapper>

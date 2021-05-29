@@ -29,17 +29,15 @@ const CalendarPage = () => {
 
   const [width] = useWindowSize();
 
-  const { refHabbit } = useRefreshContext();
+  const { refHabbit, refLabel } = useRefreshContext();
 
   const [openCard, setOpenCard] = useState(false);
   const [day, setDay] = useState<DateTuple>([actualYear, actualMonth, date.getDate()]);
   const [year, month, dayNumber] = day;
-  const [refresh, setRefresh] = useState(false);
-  const [events, loadingE, errorE] = useQuery<Event>([from, to, token, refHabbit], () =>
+
+  const [events, loadingE, errorE] = useQuery<Event>([from, to, token, refHabbit, refLabel], () =>
     getEvents(token, from, to),
   );
-
-  const handleRefresh = () => setRefresh((prev) => !prev);
 
   const moveDate = (side: SIDES) => {
     if (side === SIDES.LEFT) {
@@ -73,8 +71,6 @@ const CalendarPage = () => {
       {width >= 768 ? (
         <>
           <CalendarGridView
-            refresh={refresh}
-            handleRefresh={handleRefresh}
             moveDate={moveDate}
             events={events}
             actualMonth={actualMonth}
@@ -92,8 +88,6 @@ const CalendarPage = () => {
       ) : !openCard ? (
         <>
           <CalendarGridView
-            refresh={refresh}
-            handleRefresh={handleRefresh}
             moveDate={moveDate}
             events={events}
             actualMonth={actualMonth}

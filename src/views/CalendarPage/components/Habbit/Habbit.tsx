@@ -49,14 +49,7 @@ const Habbit = ({ habbit, labels }: { habbit: Event; labels: Label[] }) => {
         <StyledTime>{`${timeStart}-${timeEnd}`}</StyledTime>
         <StyledDescription>{description}</StyledDescription>
       </StyledHabbit>
-      <HabbitForm
-        open={open}
-        handleClose={() => setOpen(false)}
-        handleRefresh={() => {}}
-        labels={labels}
-        refresh={false}
-        event={habbit}
-      />
+      <HabbitForm open={open} handleClose={() => setOpen(false)} labels={labels} event={habbit} />
     </StyledContainer>
   );
 };

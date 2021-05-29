@@ -12,13 +12,14 @@ interface PopUpProps {
   handleClose: MouseEventHandler<HTMLButtonElement | HTMLDivElement>;
   header: string;
   children: React.ReactChild;
+  fullHeight?: boolean;
 }
 
-const PopUp = ({ open, handleClose, header, children }: PopUpProps) =>
+const PopUp = ({ open, handleClose, header, children, fullHeight }: PopUpProps) =>
   open ? (
     <>
-      <StyledBacground onClick={handleClose} />
-      <StyledWrapper>
+      {!fullHeight && <StyledBacground onClick={handleClose} />}
+      <StyledWrapper fullHeight={fullHeight}>
         <StyledCloseButton type="button" onClick={handleClose}>
           <StyledLine rotate={45} />
           <StyledLine rotate={-45} />
