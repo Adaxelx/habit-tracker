@@ -2,16 +2,7 @@
 
 exports[`DayCardWrapper should match snapshot 1`] = `
 <DocumentFragment>
-  .c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  max-width: 100%;
-  overflow-x: scroll;
-}
-
-.c1 {
+  .c1 {
   background-color: #FFFCAF;
   min-width: 275px;
   min-height: 500px;
@@ -22,6 +13,15 @@ exports[`DayCardWrapper should match snapshot 1`] = `
   font-size: 1.5rem;
   margin: 1.25rem 0;
   text-align: center;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 100%;
+  overflow-x: scroll;
 }
 
 <div
@@ -89,6 +89,43 @@ exports[`DayCardWrapper should match snapshot 1`] = `
       >
         Thursday
       </h3>
+    </div>
+  </div>
+  .c0 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-top: 0.75rem;
+}
+
+.c1 {
+  border: 1px solid #1b968e;
+  background-color: #a6fff9;
+  color: #1b968e;
+  border-radius: 5px;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1"
+      data-testid="alert"
+      type="loading"
+    >
+      Ładowanie...
     </div>
   </div>
 </DocumentFragment>

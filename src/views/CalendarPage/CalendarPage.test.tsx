@@ -117,8 +117,8 @@ describe('CalendarPage', () => {
       util = new TestUtil(<CalendarPage />);
     });
 
-    await waitFor(() => expect(fetch).toHaveBeenCalledTimes(3));
-    expect(util.get('alert').textContent).toBe('failEvent');
+    await waitFor(() => expect(fetch).toHaveBeenCalledTimes(4));
+    expect(util.getAll('alert')[0].textContent).toBe('failEvent');
   });
 
   it('should move dates', async () => {
@@ -126,7 +126,7 @@ describe('CalendarPage', () => {
       util = new TestUtil(<CalendarPage />);
     });
 
-    await waitFor(() => expect(fetch).toHaveBeenCalledTimes(3));
+    await waitFor(() => expect(fetch).toHaveBeenCalledTimes(4));
     const [month, year] = util.get('dateCalendar-main')?.textContent?.split(' ') as [
       string,
       string,
