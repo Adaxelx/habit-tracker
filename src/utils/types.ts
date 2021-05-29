@@ -71,14 +71,15 @@ export type NavProps = {
   backToCalendar?: MouseEventHandler<HTMLHeadingElement>;
 };
 
+export type DateTuple = [number, number, number];
+
 export interface DayCardProps {
   events: Event[];
   header: string;
   active: boolean;
   labels: Label[];
+  date: DateTuple;
 }
-
-export type DateTuple = [number, number, number];
 
 export type TokenType = string | undefined;
 

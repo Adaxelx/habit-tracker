@@ -20,6 +20,7 @@ export const StyledDayGrid = styled(StyledGrid)`
   background-color: ${({ theme }) => theme.colors.calendar.navigation};
   border-top: 1px solid ${({ theme }) => theme.colors.border};
   border-bottom: none;
+  justify-items: center;
 `;
 
 export const StyledDay = styled.div`

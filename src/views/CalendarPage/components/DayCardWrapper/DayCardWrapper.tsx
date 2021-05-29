@@ -48,15 +48,23 @@ const DayCardWrapper = ({ from, to, token }: DayCardWrapperProps) => {
   today.setHours(0, 0, 0, 0);
   const todayTime = today.getTime();
 
+  const [year, month] = from;
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+
   return (
     <>
       <StyledWrapper ref={wrapper}>
-        {days.map(({ events: eventsArr, id }, i) => {
+        {days.map(({ events: eventsArr, id, day }, i) => {
           const index = firstDayOfWeek + i > 6 ? (firstDayOfWeek + i) % 7 : firstDayOfWeek + i;
           const cardDate = new Date(startDate);
           cardDate.setHours(0, 0, 0, 0);
           const cardTime = cardDate.getTime();
           startDate += 24 * 60 * 60 * 1000;
+          let dayReturned = day;
+          if (day > daysInMonth) {
+            dayReturned = day - daysInMonth;
+          }
+
           return (
             <DayCard
               active={todayTime === cardTime}
@@ -64,6 +72,7 @@ const DayCardWrapper = ({ from, to, token }: DayCardWrapperProps) => {
               header={weekDaysFull[index]}
               events={eventsArr}
               labels={labels}
+              date={[year, month, dayReturned]}
             />
           );
         })}

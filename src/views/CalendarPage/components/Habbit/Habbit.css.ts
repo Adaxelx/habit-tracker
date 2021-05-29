@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const StyledContainer = styled.div`
   margin-bottom: ${({ theme }) => theme.margin.xs};
@@ -15,7 +15,16 @@ export const StyledLabel = styled.small<LabelProps>`
   border-radius: 20px;
 `;
 
-export const StyledHabbit = styled.div`
+interface HabbitProps {
+  checked?: boolean;
+}
+
+const checkedStyles = css`
+  text-decoration: line-through;
+  color: gray;
+`;
+
+export const StyledHabbit = styled.div<HabbitProps>`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -27,6 +36,7 @@ export const StyledHabbit = styled.div`
   &:hover {
     cursor: pointer;
   }
+  ${({ checked }) => checked && checkedStyles}
 `;
 
 export const StyledTitle = styled.h2`

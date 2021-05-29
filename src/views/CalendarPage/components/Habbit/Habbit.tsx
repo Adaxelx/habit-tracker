@@ -15,7 +15,15 @@ import {
 
 const { SUCCESS } = AlertTypes;
 
-const Habbit = ({ habbit, labels }: { habbit: Event; labels: Label[] }) => {
+const Habbit = ({
+  habbit,
+  labels,
+  checked,
+}: {
+  habbit: Event;
+  labels: Label[];
+  checked: boolean;
+}) => {
   const { title, timeEnd, timeStart, description, label, _id } = habbit;
 
   const [open, setOpen] = useState(false);
@@ -43,7 +51,7 @@ const Habbit = ({ habbit, labels }: { habbit: Event; labels: Label[] }) => {
       <Button size="s" close noMaxWidth data-testid="delete" onClick={handleDelete}>
         X
       </Button>
-      <StyledHabbit>
+      <StyledHabbit checked={checked}>
         {label && <StyledLabel color={label.color}>{label.title}</StyledLabel>}
         <StyledTitle>{title}</StyledTitle>
         <StyledTime>{`${timeStart}-${timeEnd}`}</StyledTime>

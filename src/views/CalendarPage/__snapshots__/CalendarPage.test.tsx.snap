@@ -109,6 +109,7 @@ exports[`CalendarPage should match snapshot (desktop) 1`] = `
   background-color: #EDEFFF;
   border-top: 1px solid #707070;
   border-bottom: none;
+  justify-items: center;
 }
 
 .c7 {
@@ -519,6 +520,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
   background-color: #EDEFFF;
   border-top: 1px solid #707070;
   border-bottom: none;
+  justify-items: center;
 }
 
 .c7 {
