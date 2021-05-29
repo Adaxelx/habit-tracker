@@ -31,7 +31,10 @@ const useCalendar = (events: Event[], from: DateTuple, to: DateTuple, shift?: bo
     for (let i = 0; i < Math.ceil(difference / 7); i++) {
       for (let j = 0; j < 7; j++) {
         eventsArray = eventsArray.filter(
-          (event) => event.numericEnd > endDay && event.daysOfWeek.includes(dayOfWeek),
+          (event) =>
+            event.numericStart >= startDay &&
+            event.numericEnd < endDay &&
+            event.daysOfWeek.includes(dayOfWeek),
         );
 
         const day = dayFrom + i * 7 + j;
@@ -42,6 +45,7 @@ const useCalendar = (events: Event[], from: DateTuple, to: DateTuple, shift?: bo
 
         eventsCopy = eventsCopy.filter((event) => {
           if (
+            event.numericStart <= startDay &&
             event.numericStart <= endDay &&
             startDay <= event.numericEnd &&
             !eventsArray.includes(event) &&
