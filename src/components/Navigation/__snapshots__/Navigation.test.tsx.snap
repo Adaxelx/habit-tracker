@@ -70,6 +70,24 @@ exports[`Navigation should match snapshot 1`] = `
   top: 50%;
 }
 
+.c11 {
+  color: #fff;
+  background-color: #FFC136;
+  border: 1px solid #707070;
+  padding: 0.75rem;
+  font-size: 1rem;
+  min-width: 150px;
+  display: inline-block;
+  text-align: center;
+  margin-top: 0;
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+}
+
+.c11:hover {
+  cursor: pointer;
+}
+
 .c8 {
   -webkit-transform: scale(0);
   -ms-transform: scale(0);
@@ -83,6 +101,12 @@ exports[`Navigation should match snapshot 1`] = `
   position: fixed;
   background-color: #A4FF9D;
   z-index: 500;
+}
+
+.c12 {
+  position: absolute;
+  bottom: 1.25rem;
+  right: 1.25rem;
 }
 
 .c9 {
@@ -174,6 +198,12 @@ exports[`Navigation should match snapshot 1`] = `
         Register
       </a>
     </div>
+    <button
+      class="c11 c12"
+      data-testid="edit"
+    >
+      Logout
+    </button>
   </nav>
 </div>
 `;
@@ -251,6 +281,24 @@ exports[`Navigation should open nav and redirect after click 1`] = `
   top: 50%;
 }
 
+.c11 {
+  color: #fff;
+  background-color: #FFC136;
+  border: 1px solid #707070;
+  padding: 0.75rem;
+  font-size: 1rem;
+  min-width: 150px;
+  display: inline-block;
+  text-align: center;
+  margin-top: 0;
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+}
+
+.c11:hover {
+  cursor: pointer;
+}
+
 .c8 {
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
@@ -264,6 +312,12 @@ exports[`Navigation should open nav and redirect after click 1`] = `
   position: fixed;
   background-color: #A4FF9D;
   z-index: 500;
+}
+
+.c12 {
+  position: absolute;
+  bottom: 1.25rem;
+  right: 1.25rem;
 }
 
 .c9 {
@@ -367,6 +421,12 @@ exports[`Navigation should open nav and redirect after click 1`] = `
         Register
       </a>
     </div>
+    <button
+      class="c11 c12"
+      data-testid="edit"
+    >
+      Logout
+    </button>
   </nav>
 </div>
 `;
