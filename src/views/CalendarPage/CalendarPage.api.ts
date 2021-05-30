@@ -1,5 +1,5 @@
 import APIpaths from 'constants/APIpaths';
-import { EventSend, LabelSend } from 'utils';
+import { DateTuple, EventSend, LabelSend } from 'utils';
 
 export const getEvents = async (token: string | undefined, from: string, to: string) => {
   const response = await fetch(`${APIpaths.EVENTS}?from=${from}&to=${to}`, {
@@ -83,6 +83,21 @@ export const deleteEvent = async (token: string | undefined, id: string) => {
 
   if (response.status === 204) {
     return true;
+  }
+
+  const { message } = await response.json();
+  throw new Error(message);
+};
+
+export const checkEvent = async (token: string | undefined, id: string, day: DateTuple) => {
+  const response = await fetch(`${APIpaths.EVENTS}check/${id}/`, {
+    headers: { 'Content-Type': 'application/json', Authorization: `${token}` },
+    method: 'PATCH',
+    body: JSON.stringify(day),
+  });
+
+  if (response.status === 200) {
+    return response.json();
   }
 
   const { message } = await response.json();

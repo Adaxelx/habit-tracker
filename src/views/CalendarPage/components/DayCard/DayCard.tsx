@@ -13,6 +13,7 @@ const DayCard = ({ events, header, active, labels, date }: DayCardProps) => {
           key={event._id}
           habbit={event}
           labels={labels}
+          day={date}
           checked={
             event?.checked?.findIndex(
               ({ day, month, year }) => day === dayA && monthA === month && year === yearA,

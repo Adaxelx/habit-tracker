@@ -1,8 +1,8 @@
 import React, { useRef, useState } from 'react';
 import { Button } from 'components';
-import { Event, AlertTypes, Label } from 'utils';
+import { Event, AlertTypes, Label, DateTuple } from 'utils';
 import { useAlertContext, useUserContext, useRefreshContext } from 'context';
-import { deleteEvent } from 'views/CalendarPage/CalendarPage.api';
+import { checkEvent, deleteEvent } from 'views/CalendarPage/CalendarPage.api';
 import { HabbitForm } from '..';
 import {
   StyledHabbit,
@@ -15,15 +15,14 @@ import {
 
 const { SUCCESS } = AlertTypes;
 
-const Habbit = ({
-  habbit,
-  labels,
-  checked,
-}: {
+interface HabbitProps {
   habbit: Event;
   labels: Label[];
   checked: boolean;
-}) => {
+  day: DateTuple;
+}
+
+const Habbit = ({ habbit, labels, checked, day }: HabbitProps) => {
   const { title, timeEnd, timeStart, description, label, _id } = habbit;
 
   const [open, setOpen] = useState(false);
@@ -43,6 +42,16 @@ const Habbit = ({
     }
   };
 
+  const handleCheck = async () => {
+    try {
+      const response = await checkEvent(token, _id, day);
+      alertC.current.showAlert(response.message, SUCCESS);
+      handleRefHabbit();
+    } catch (err) {
+      alertC.current.showAlert(err.message);
+    }
+  };
+
   return (
     <StyledContainer>
       <Button size="s" mx="0.75rem" noMaxWidth data-testid="edit" onClick={() => setOpen(true)}>
@@ -51,7 +60,7 @@ const Habbit = ({
       <Button size="s" close noMaxWidth data-testid="delete" onClick={handleDelete}>
         X
       </Button>
-      <StyledHabbit checked={checked}>
+      <StyledHabbit checked={checked} onClick={handleCheck}>
         {label && <StyledLabel color={label.color}>{label.title}</StyledLabel>}
         <StyledTitle>{title}</StyledTitle>
         <StyledTime>{`${timeStart}-${timeEnd}`}</StyledTime>
