@@ -27,7 +27,7 @@ const WeekDaysInput = ({ control, error }: WeekInputProps) => (
           value={value}
           required
           onChange={(e) => {
-            const selected = e.target.value;
+            const selected = parseInt(e.target.value, 10);
             if (value) {
               let copy = [...value];
               copy = copy.filter((day) => day !== selected);

@@ -36,7 +36,7 @@ export const StyledHabbit = styled.div<HabbitProps>`
   &:hover {
     cursor: pointer;
   }
-  ${({ checked }) => checked && checkedStyles}
+  ${({ checked }) => checked && checkedStyles};
 `;
 
 export const StyledTitle = styled.h2`

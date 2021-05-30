@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import Button from '../../../Button';
 
 interface ClicableProps {
   open: boolean;
@@ -20,6 +21,12 @@ export const StyledOpenNav = styled.nav<ClicableProps>`
   position: fixed;
   background-color: ${({ theme }) => theme.colors.nav.background};
   z-index: ${({ theme }) => theme.zIndex.medium};
+`;
+
+export const StyledButton = styled(Button)`
+  position: absolute;
+  bottom: ${({ theme }) => theme.margin.m};
+  right: ${({ theme }) => theme.margin.m};
 `;
 
 export const StyledContainner = styled.div`
