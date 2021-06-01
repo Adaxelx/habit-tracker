@@ -35,9 +35,11 @@ const OpenedNavigation = ({ open, handleClose }: OpenNavProps) => {
           </StyledLink>
         ))}
       </StyledContainner>
-      <StyledButton size="s" mx="0.75rem" data-testid="edit" onClick={handleLogout}>
-        Logout
-      </StyledButton>
+      {token && (
+        <StyledButton size="s" mx="0.75rem" data-testid="edit" onClick={handleLogout}>
+          Logout
+        </StyledButton>
+      )}
     </StyledOpenNav>
   );
 };

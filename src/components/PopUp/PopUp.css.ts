@@ -18,7 +18,7 @@ export const StyledWrapper = styled.div<WrapperProps>`
   position: fixed;
   width: ${({ theme, fullHeight }) =>
     fullHeight ? '100%' : `calc(100% - ${theme.margin.sm} - ${theme.margin.sm})`};
-  height: ${({ theme }) => `calc(100vh - ${theme.margin.sm} -  ${theme.margin.sm})`};
+  height: ${({ theme }) => `calc(90vh - ${theme.margin.sm} -  ${theme.margin.sm})`};
   top: ${({ theme, fullHeight }) => (fullHeight ? '0' : theme.margin.sm)};
   left: 50%;
   transform: translateX(-50%);
