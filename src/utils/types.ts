@@ -1,7 +1,7 @@
 import { MouseEventHandler } from 'react';
 
 export type GridProps = {
-  events: Event[];
+  days: CalendarTile[];
   month: number;
   year: number;
   moveDate: Function;
@@ -36,11 +36,6 @@ export interface Event extends EventInterface {
   ];
 }
 
-export interface EventLoop extends Event {
-  numericStart: number;
-  numericEnd: number;
-}
-
 export interface LabelSend {
   title: string;
   color: string;
@@ -53,16 +48,16 @@ export interface Label extends LabelSend {
 
 export type CalendarTile = {
   day: number;
-  events: EventLoop[];
+  events: Event[];
   id: number;
+  active?: boolean;
+  date?: Date;
 };
 
 export enum SIDES {
   LEFT = -1,
   RIGHT = 1,
 }
-
-export type Color = { color?: string; id?: string };
 
 export type NavProps = {
   navId: string;

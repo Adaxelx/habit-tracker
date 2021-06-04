@@ -1,112 +1,97 @@
+/* eslint-disable @typescript-eslint/no-shadow */
 import React, { useState, useMemo } from 'react';
 import { Alert } from 'components';
 import { useUserContext, useRefreshContext } from 'context';
-import {
-  getISODate,
-  months,
-  moveDateDay,
-  moveDateWeek,
-  generateWeek,
-  reversedParsedDate,
-} from 'constants/calendar';
-import { useQuery, useWindowSize } from 'hooks';
+import { getISODate, generateWeek, reversedParsedDate } from 'constants/calendar';
+import { useQuery, useCalendar } from 'hooks';
 import { SIDES } from 'utils';
-import { DateTuple, Event } from 'utils/types';
+import { CalendarTile, Event, Label } from 'utils/types';
 import { StyledCenter } from './CalendarPage.css';
-import { CalendarNavigation, DayCardWrapper, CalendarGridView } from './components';
-import { getEvents } from './CalendarPage.api';
-
-/* eslint-disable */
+import { DayCardWrapper, CalendarGridView } from './components';
+import { getEvents, getLabels } from './CalendarPage.api';
 
 const CalendarPage = () => {
-  const [date] = useState(new Date());
-  const [actualMonth, setActualMonth] = useState(date.getMonth());
-  const [actualYear, setActualYear] = useState(date.getFullYear());
-  const from = getISODate(new Date(actualYear, actualMonth, 2));
-  const daysInMonth = 33 - new Date(actualYear, actualMonth, 32).getDate();
-  const to = getISODate(new Date(actualYear, actualMonth, daysInMonth));
-  const { token } = useUserContext();
+  const [date, setDate] = useState(new Date());
+  const [movingDate, setMovingDate] = useState(new Date());
 
-  const [width] = useWindowSize();
+  const [dateFrom, dateTo, firstDayOfMonth, lastDayOfMonth] = useMemo(() => {
+    const actualMonth = date.getMonth();
+    const actualYear = date.getFullYear();
+    const dateFrom = new Date(actualYear, actualMonth, 1);
+    dateFrom.setDate(dateFrom.getDate() - 7);
+    const daysInMonth = 33 - new Date(actualYear, actualMonth, 32).getDate();
+    const dateTo = new Date(actualYear, actualMonth, daysInMonth);
+    const lastDayOfMonth = new Date(actualYear, actualMonth, daysInMonth);
+    const firstDayOfMonth = new Date(actualYear, actualMonth, 1);
+    dateTo.setDate(dateTo.getDate() + 6);
+    return [dateFrom, dateTo, firstDayOfMonth, lastDayOfMonth];
+  }, [date]);
+
+  const { token } = useUserContext();
 
   const { refHabbit, refLabel } = useRefreshContext();
 
-  const [openCard, setOpenCard] = useState(false);
-  const [day, setDay] = useState<DateTuple>([actualYear, actualMonth, date.getDate()]);
-  const [year, month, dayNumber] = day;
+  const [events, loadingE, errorE] = useQuery<Event>(
+    [firstDayOfMonth, lastDayOfMonth, token, refHabbit, refLabel],
+    () => getEvents(token, getISODate(firstDayOfMonth), getISODate(lastDayOfMonth)),
+  );
 
-  const [events, loadingE, errorE] = useQuery<Event>([from, to, token, refHabbit, refLabel], () =>
-    getEvents(token, from, to),
+  const [labels, loadingL, errorL] = useQuery<Label>([token, refLabel], () => getLabels(token));
+
+  const [days]: [CalendarTile[]] = useCalendar(
+    events,
+    dateFrom,
+    dateTo,
+    firstDayOfMonth,
+    lastDayOfMonth,
   );
 
   const moveDate = (side: SIDES) => {
     if (side === SIDES.LEFT) {
-      if (actualMonth === 0) {
-        setActualMonth(11);
-        setActualYear((prevYear) => prevYear - 1);
-      } else {
-        setActualMonth((prevMonth) => prevMonth + side);
-      }
+      setDate((prevDate) => {
+        const newDate = new Date(prevDate.getTime());
+        return new Date(newDate.setMonth(newDate.getMonth() - 1));
+      });
+      setMovingDate((prevDate) => {
+        const newDate = new Date(prevDate.getTime());
+        return new Date(newDate.setMonth(newDate.getMonth() - 1));
+      });
     } else {
-      if (actualMonth === 11) {
-        setActualMonth(0);
-        setActualYear((prevYear) => prevYear + 1);
-      } else {
-        setActualMonth((prevMonth) => prevMonth + side);
-      }
+      setDate((prevDate) => {
+        const newDate = new Date(prevDate.getTime());
+        return new Date(newDate.setMonth(newDate.getMonth() + 1));
+      });
+      setMovingDate((prevDate) => {
+        const newDate = new Date(prevDate.getTime());
+        return new Date(newDate.setMonth(newDate.getMonth() + 1));
+      });
     }
   };
 
-  const handleChangeView = (day?: DateTuple) => {
-    setOpenCard((prevState) => !prevState);
+  const handleChangeView = (day?: Date) => {
     if (day) {
-      setDay(day);
+      setMovingDate(day);
     }
   };
 
-  const [fromWeek, toWeek] = useMemo(() => generateWeek(day), [day]);
+  const [fromWeek, toWeek] = generateWeek(movingDate);
 
   return (
     <StyledCenter>
-      {width >= 768 ? (
-        <>
-          <CalendarGridView
-            moveDate={moveDate}
-            events={events}
-            actualMonth={actualMonth}
-            actualYear={actualYear}
-            handleChangeView={handleChangeView}
-          />
-          <Alert loading={loadingE} error={errorE} />
-          <CalendarNavigation
-            navId="desktopDay"
-            header={`${reversedParsedDate(fromWeek)} - ${reversedParsedDate(toWeek)}`}
-            moveDate={(side: SIDES) => moveDateWeek(side, day, setDay)}
-          />
-          <DayCardWrapper from={fromWeek} to={toWeek} token={token} />
-        </>
-      ) : !openCard ? (
-        <>
-          <CalendarGridView
-            moveDate={moveDate}
-            events={events}
-            actualMonth={actualMonth}
-            actualYear={actualYear}
-            handleChangeView={handleChangeView}
-          />
-          <Alert loading={loadingE} error={errorE} />
-        </>
-      ) : (
-        <>
-          <CalendarNavigation
-            navId="mobileDay"
-            header={`${dayNumber} ${months[month]} ${year}`}
-            moveDate={(side: SIDES) => moveDateDay(side, day, setDay)}
-            backToCalendar={() => setOpenCard(false)}
-          />
-          <DayCardWrapper from={day} to={day} token={token} />
-        </>
-      )}
+      <CalendarGridView
+        moveDate={moveDate}
+        days={days.filter(({ active }) => active)}
+        actualMonth={date.getMonth()}
+        actualYear={date.getFullYear()}
+        handleChangeView={handleChangeView}
+        labels={labels}
+      />
+      <Alert loading={loadingE || loadingL} error={errorE || errorL} />
+      <h2>{`${reversedParsedDate(fromWeek)} - ${reversedParsedDate(toWeek)}`}</h2>
+      <DayCardWrapper
+        days={days.filter(({ date }) => date && date >= fromWeek && date <= toWeek)}
+        labels={labels}
+      />
     </StyledCenter>
   );
 };

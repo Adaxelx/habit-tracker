@@ -1,40 +1,34 @@
 import React, { useState } from 'react';
-import { useQuery } from 'hooks';
-import { Button, Alert } from 'components';
-import { useUserContext, useRefreshContext } from 'context';
+import { Button } from 'components';
 import { StyledButtonWrapper } from 'views/CalendarPage/CalendarPage.css';
-import { Event, Label } from 'utils';
-import { getLabels } from 'views/CalendarPage/CalendarPage.api';
+import { CalendarTile, Label } from 'utils';
 import { CalendarGrid, HabbitForm, LabelForm, LabelList } from '..';
 
 interface GridViewProps {
-  events: Event[];
+  days: CalendarTile[];
   actualMonth: number;
   moveDate: Function;
   actualYear: number;
   handleChangeView: Function;
+  labels: Label[];
 }
 
 const CalendarGridView = ({
-  events,
+  days,
   actualMonth,
   moveDate,
   actualYear,
   handleChangeView,
+  labels,
 }: GridViewProps) => {
   const [openHabbitForm, setOpenHabbitForm] = useState(false);
   const [openLabelForm, setOpenLabelForm] = useState(false);
   const [openLabelList, setOpenLabelList] = useState(false);
 
-  const { refLabel } = useRefreshContext();
-
-  const { token } = useUserContext();
-  const [labels, loading, error] = useQuery<Label>([token, refLabel], () => getLabels(token));
-
   return (
     <>
       <CalendarGrid
-        events={events}
+        days={days}
         month={actualMonth}
         moveDate={moveDate}
         year={actualYear}
@@ -77,7 +71,6 @@ const CalendarGridView = ({
       />
       <LabelForm open={openLabelForm} handleClose={() => setOpenLabelForm(false)} />
       <LabelList open={openLabelList} handleClose={() => setOpenLabelList(false)} labels={labels} />
-      <Alert loading={loading} error={error} />
     </>
   );
 };

@@ -1,35 +1,19 @@
 import React, { useLayoutEffect, useRef } from 'react';
-import { DateTuple, Event, TokenType, Label } from 'utils';
-import { useCalendar, useQuery, useWindowSize } from 'hooks';
-import { getEvents, getLabels } from 'views/CalendarPage/CalendarPage.api';
-import { useRefreshContext } from 'context';
-import { Alert } from 'components';
-import { weekDaysFull, getDayParsed, generateParsedDate } from 'constants/calendar';
+import { Label, CalendarTile } from 'utils';
+import { useWindowSize } from 'hooks';
+
+import { getDayParsed, weekDaysFull } from 'constants/calendar';
 import { StyledWrapper } from './DayCardWrapper.css';
 import { DayCard } from '..';
 
 interface DayCardWrapperProps {
-  from: DateTuple;
-  to: DateTuple;
-  token: TokenType;
+  days: CalendarTile[];
+  labels: Label[];
 }
 
-const DayCardWrapper = ({ from, to, token }: DayCardWrapperProps) => {
+const DayCardWrapper = ({ days, labels }: DayCardWrapperProps) => {
   const wrapper = useRef<HTMLDivElement>(null);
   const [width] = useWindowSize();
-
-  const fromParsed = generateParsedDate(from);
-  const toParsed = generateParsedDate(to);
-
-  const { refHabbit, refLabel } = useRefreshContext();
-
-  const [events, loadingE, errorE] = useQuery<Event>([from, to, token, refHabbit, refLabel], () =>
-    getEvents(token, fromParsed, toParsed),
-  );
-
-  const [labels, loadingL, errorL] = useQuery<Label>([token, refLabel], () => getLabels(token));
-
-  const [days] = useCalendar(events, from, to);
 
   useLayoutEffect(() => {
     if (days.length > 1) {
@@ -42,42 +26,27 @@ const DayCardWrapper = ({ from, to, token }: DayCardWrapperProps) => {
     }
   }, [days, wrapper]);
 
-  const firstDayOfWeek = getDayParsed(new Date(fromParsed));
-  let startDate = new Date(fromParsed).getTime();
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
-  const todayTime = today.getTime();
-
-  const [year, month] = from;
-  const daysInMonth = new Date(year, month + 1, 0).getDate();
-
   return (
     <>
       <StyledWrapper ref={wrapper}>
-        {days.map(({ events: eventsArr, id, day }, i) => {
-          const index = firstDayOfWeek + i > 6 ? (firstDayOfWeek + i) % 7 : firstDayOfWeek + i;
-          const cardDate = new Date(startDate);
-          cardDate.setHours(0, 0, 0, 0);
-          const cardTime = cardDate.getTime();
-          startDate += 24 * 60 * 60 * 1000;
-          let dayReturned = day;
-          if (day > daysInMonth) {
-            dayReturned = day - daysInMonth;
+        {days.map(({ events: eventsArr, id, date }) => {
+          const today = new Date();
+          today.setHours(0, 0, 0, 0);
+          if (date) {
+            return (
+              <DayCard
+                active={today.getTime() === date?.getTime()}
+                key={id}
+                header={weekDaysFull[getDayParsed(date)]}
+                events={eventsArr}
+                labels={labels}
+                date={[date.getFullYear(), date.getMonth(), date.getDate()]}
+              />
+            );
           }
-
-          return (
-            <DayCard
-              active={todayTime === cardTime}
-              key={id}
-              header={weekDaysFull[index]}
-              events={eventsArr}
-              labels={labels}
-              date={[year, month, dayReturned]}
-            />
-          );
+          return null;
         })}
       </StyledWrapper>
-      <Alert loading={loadingE || loadingL} error={errorE || errorL} />
     </>
   );
 };
