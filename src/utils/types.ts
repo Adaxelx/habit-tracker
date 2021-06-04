@@ -1,7 +1,7 @@
 import { MouseEventHandler } from 'react';
 
 export type GridProps = {
-  events: Event[];
+  days: CalendarTile[];
   month: number;
   year: number;
   moveDate: Function;

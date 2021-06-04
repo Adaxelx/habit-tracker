@@ -1,14 +1,11 @@
 import React from 'react';
 import { weekDays, months } from 'constants/calendar';
-import { useCalendar } from 'hooks';
-import { GridProps, DateTuple } from 'utils';
+import { GridProps } from 'utils';
 import { CalendarTile, CalendarNavigation } from '..';
 import { StyledGrid, StyledDay, StyledDayGrid, StyledCalendar } from './CalendarGrid.css';
 
-const CalendarGrid = ({ events, month, year, moveDate, handleDayChange }: GridProps) => {
-  const from: DateTuple = [year, month, 1];
-  const to: DateTuple = [year, month, new Date(year, month + 1, 0).getDate()];
-  const [days] = useCalendar(events, from, to, true);
+const CalendarGrid = ({ days, month, year, moveDate, handleDayChange }: GridProps) => {
+  console.log('plae');
 
   /* podmienic działanie hooka zeby przyjmował events, date-start, date-end. Tutaj mozna to zrobic tam 1-month-year - new Date(year, month, 0).getDate();(zwraca dni w miesiacu)-month-year */
 

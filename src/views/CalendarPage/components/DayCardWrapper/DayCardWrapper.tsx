@@ -1,9 +1,8 @@
 import React, { useLayoutEffect, useRef } from 'react';
-import { DateTuple, Event, TokenType, Label } from 'utils';
-import { useCalendar, useQuery, useWindowSize } from 'hooks';
-import { getEvents, getLabels } from 'views/CalendarPage/CalendarPage.api';
+import { DateTuple, TokenType, Label, CalendarTile } from 'utils';
+import { useQuery, useWindowSize } from 'hooks';
+import { getLabels } from 'views/CalendarPage/CalendarPage.api';
 import { useRefreshContext } from 'context';
-import { Alert } from 'components';
 import { weekDaysFull, getDayParsed, generateParsedDate } from 'constants/calendar';
 import { StyledWrapper } from './DayCardWrapper.css';
 import { DayCard } from '..';
@@ -12,24 +11,20 @@ interface DayCardWrapperProps {
   from: DateTuple;
   to: DateTuple;
   token: TokenType;
+  days: CalendarTile[];
 }
 
-const DayCardWrapper = ({ from, to, token }: DayCardWrapperProps) => {
+const DayCardWrapper = ({ from, to, days, token }: DayCardWrapperProps) => {
   const wrapper = useRef<HTMLDivElement>(null);
   const [width] = useWindowSize();
 
   const fromParsed = generateParsedDate(from);
-  const toParsed = generateParsedDate(to);
 
-  const { refHabbit, refLabel } = useRefreshContext();
+  console.log(to);
 
-  const [events, loadingE, errorE] = useQuery<Event>([from, to, token, refHabbit, refLabel], () =>
-    getEvents(token, fromParsed, toParsed),
-  );
+  const { refLabel } = useRefreshContext();
 
-  const [labels, loadingL, errorL] = useQuery<Label>([token, refLabel], () => getLabels(token));
-
-  const [days] = useCalendar(events, from, to);
+  const [labels] = useQuery<Label>([token, refLabel], () => getLabels(token));
 
   useLayoutEffect(() => {
     if (days.length > 1) {
@@ -77,7 +72,6 @@ const DayCardWrapper = ({ from, to, token }: DayCardWrapperProps) => {
           );
         })}
       </StyledWrapper>
-      <Alert loading={loadingE || loadingL} error={errorE || errorL} />
     </>
   );
 };

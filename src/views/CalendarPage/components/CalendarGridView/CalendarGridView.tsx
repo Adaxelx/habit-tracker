@@ -3,12 +3,12 @@ import { useQuery } from 'hooks';
 import { Button, Alert } from 'components';
 import { useUserContext, useRefreshContext } from 'context';
 import { StyledButtonWrapper } from 'views/CalendarPage/CalendarPage.css';
-import { Event, Label } from 'utils';
+import { CalendarTile, Label } from 'utils';
 import { getLabels } from 'views/CalendarPage/CalendarPage.api';
 import { CalendarGrid, HabbitForm, LabelForm, LabelList } from '..';
 
 interface GridViewProps {
-  events: Event[];
+  days: CalendarTile[];
   actualMonth: number;
   moveDate: Function;
   actualYear: number;
@@ -16,7 +16,7 @@ interface GridViewProps {
 }
 
 const CalendarGridView = ({
-  events,
+  days,
   actualMonth,
   moveDate,
   actualYear,
@@ -34,7 +34,7 @@ const CalendarGridView = ({
   return (
     <>
       <CalendarGrid
-        events={events}
+        days={days}
         month={actualMonth}
         moveDate={moveDate}
         year={actualYear}
