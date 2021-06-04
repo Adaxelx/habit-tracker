@@ -72,6 +72,8 @@ describe('CalendarPage', () => {
         dateStart: '2021-04-03',
         daysOfWeek: [0, 1, 3],
         description: 'opis',
+        timeStart: '12:12',
+        timeEnd: '12:30',
         label: {
           color: '#fff',
           _id: 'xdd',
@@ -98,26 +100,13 @@ describe('CalendarPage', () => {
     spy.mockRestore();
   });
 
-  it('should match snapshot (desktop)', async () => {
-    global.innerWidth = 1024;
-    const mockDate = new Date('2022-01-01');
-    const spy = jest.spyOn(global, 'Date').mockImplementation(() => mockDate);
-    act(() => {
-      util = new TestUtil(<CalendarPage />);
-    });
-
-    await waitFor(() => expect(fetch).toHaveBeenCalledTimes(4));
-    expect(util.render.asFragment()).toMatchSnapshot();
-    spy.mockRestore();
-  });
-
   it('should show error message event', async () => {
     failE = true;
     act(() => {
       util = new TestUtil(<CalendarPage />);
     });
 
-    await waitFor(() => expect(fetch).toHaveBeenCalledTimes(4));
+    await waitFor(() => expect(fetch).toHaveBeenCalledTimes(2));
     expect(util.getAll('alert')[0].textContent).toBe('failEvent');
   });
 
@@ -126,7 +115,7 @@ describe('CalendarPage', () => {
       util = new TestUtil(<CalendarPage />);
     });
 
-    await waitFor(() => expect(fetch).toHaveBeenCalledTimes(4));
+    await waitFor(() => expect(fetch).toHaveBeenCalledTimes(2));
     const [month, year] = util.get('dateCalendar-main')?.textContent?.split(' ') as [
       string,
       string,
@@ -140,30 +129,5 @@ describe('CalendarPage', () => {
 
     util.click('moveRight-main');
     expect(util.get('dateCalendar-main').textContent).toBe(`${month} ${year}`);
-  });
-
-  it('should move dates on border', async () => {
-    const mockDate = new Date('2022-01-01');
-    const spy = jest.spyOn(global, 'Date').mockImplementation(() => mockDate);
-    act(() => {
-      util = new TestUtil(<CalendarPage />);
-    });
-
-    await waitFor(() => expect(fetch).toHaveBeenCalledTimes(4));
-    const [month, year] = util.get('dateCalendar-main')?.textContent?.split(' ') as [
-      string,
-      string,
-    ];
-    const index = months.findIndex((monthArr) => monthArr === month);
-    const prevIndex = index - 1 < 0 ? 11 : index - 1;
-    const prevYear = index - 1 < 0 ? year - 1 : year;
-
-    util.click('moveLeft-main');
-    expect(util.get('dateCalendar-main').textContent).toBe(`${months[prevIndex]} ${prevYear}`);
-
-    util.click('moveRight-main');
-    expect(util.get('dateCalendar-main').textContent).toBe(`${month} ${year}`);
-
-    spy.mockRestore();
   });
 });
