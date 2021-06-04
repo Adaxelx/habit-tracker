@@ -1,15 +1,14 @@
+/* eslint-disable @typescript-eslint/no-shadow */
 import React, { useState, useMemo } from 'react';
 import { Alert } from 'components';
 import { useUserContext, useRefreshContext } from 'context';
 import { getISODate, generateWeek, reversedParsedDate } from 'constants/calendar';
 import { useQuery, useCalendar } from 'hooks';
 import { SIDES } from 'utils';
-import { CalendarTile, Event } from 'utils/types';
+import { CalendarTile, Event, Label } from 'utils/types';
 import { StyledCenter } from './CalendarPage.css';
 import { DayCardWrapper, CalendarGridView } from './components';
-import { getEvents } from './CalendarPage.api';
-
-/* eslint-disable */
+import { getEvents, getLabels } from './CalendarPage.api';
 
 const CalendarPage = () => {
   const [date, setDate] = useState(new Date());
@@ -32,12 +31,12 @@ const CalendarPage = () => {
 
   const { refHabbit, refLabel } = useRefreshContext();
 
-  const [openCard, setOpenCard] = useState(false);
-
   const [events, loadingE, errorE] = useQuery<Event>(
     [firstDayOfMonth, lastDayOfMonth, token, refHabbit, refLabel],
     () => getEvents(token, getISODate(firstDayOfMonth), getISODate(lastDayOfMonth)),
   );
+
+  const [labels, loadingL, errorL] = useQuery<Label>([token, refLabel], () => getLabels(token));
 
   const [days]: [CalendarTile[]] = useCalendar(
     events,
@@ -70,7 +69,6 @@ const CalendarPage = () => {
   };
 
   const handleChangeView = (day?: Date) => {
-    setOpenCard((prevState) => !prevState);
     if (day) {
       setMovingDate(day);
     }
@@ -86,12 +84,13 @@ const CalendarPage = () => {
         actualMonth={date.getMonth()}
         actualYear={date.getFullYear()}
         handleChangeView={handleChangeView}
+        labels={labels}
       />
-      <Alert loading={loadingE} error={errorE} />
+      <Alert loading={loadingE || loadingL} error={errorE || errorL} />
       <h2>{`${reversedParsedDate(fromWeek)} - ${reversedParsedDate(toWeek)}`}</h2>
       <DayCardWrapper
         days={days.filter(({ date }) => date && date >= fromWeek && date <= toWeek)}
-        token={token}
+        labels={labels}
       />
     </StyledCenter>
   );

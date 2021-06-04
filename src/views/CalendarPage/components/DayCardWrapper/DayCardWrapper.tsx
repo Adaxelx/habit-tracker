@@ -1,24 +1,19 @@
 import React, { useLayoutEffect, useRef } from 'react';
-import { TokenType, Label, CalendarTile } from 'utils';
-import { useQuery, useWindowSize } from 'hooks';
-import { getLabels } from 'views/CalendarPage/CalendarPage.api';
-import { useRefreshContext } from 'context';
+import { Label, CalendarTile } from 'utils';
+import { useWindowSize } from 'hooks';
+
 import { getDayParsed, weekDaysFull } from 'constants/calendar';
 import { StyledWrapper } from './DayCardWrapper.css';
 import { DayCard } from '..';
 
 interface DayCardWrapperProps {
-  token: TokenType;
   days: CalendarTile[];
+  labels: Label[];
 }
 
-const DayCardWrapper = ({ days, token }: DayCardWrapperProps) => {
+const DayCardWrapper = ({ days, labels }: DayCardWrapperProps) => {
   const wrapper = useRef<HTMLDivElement>(null);
   const [width] = useWindowSize();
-
-  const { refLabel } = useRefreshContext();
-
-  const [labels] = useQuery<Label>([token, refLabel], () => getLabels(token));
 
   useLayoutEffect(() => {
     if (days.length > 1) {
