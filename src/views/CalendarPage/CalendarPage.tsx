@@ -1,15 +1,8 @@
 import React, { useState, useMemo } from 'react';
 import { Alert } from 'components';
 import { useUserContext, useRefreshContext } from 'context';
-import {
-  getISODate,
-  months,
-  moveDateDay,
-  moveDateWeek,
-  generateWeek,
-  reversedParsedDate,
-} from 'constants/calendar';
-import { useQuery, useWindowSize } from 'hooks';
+import { getISODate, moveDateWeek, generateWeek, reversedParsedDate } from 'constants/calendar';
+import { useQuery, useWindowSize, useCalendar } from 'hooks';
 import { SIDES } from 'utils';
 import { DateTuple, Event } from 'utils/types';
 import { StyledCenter } from './CalendarPage.css';
@@ -38,6 +31,13 @@ const CalendarPage = () => {
   const [events, loadingE, errorE] = useQuery<Event>([from, to, token, refHabbit, refLabel], () =>
     getEvents(token, from, to),
   );
+  const fromDate: DateTuple = [actualYear, actualMonth, 1];
+  const toDate: DateTuple = [
+    actualYear,
+    actualMonth,
+    new Date(actualYear, actualMonth, 0).getDate(),
+  ];
+  const [days] = useCalendar(events, fromDate, toDate, true);
 
   const moveDate = (side: SIDES) => {
     if (side === SIDES.LEFT) {
@@ -72,7 +72,7 @@ const CalendarPage = () => {
         <>
           <CalendarGridView
             moveDate={moveDate}
-            events={events}
+            days={days}
             actualMonth={actualMonth}
             actualYear={actualYear}
             handleChangeView={handleChangeView}
@@ -83,13 +83,13 @@ const CalendarPage = () => {
             header={`${reversedParsedDate(fromWeek)} - ${reversedParsedDate(toWeek)}`}
             moveDate={(side: SIDES) => moveDateWeek(side, day, setDay)}
           />
-          <DayCardWrapper from={fromWeek} to={toWeek} token={token} />
+          <DayCardWrapper from={fromWeek} token={token} days={days} />
         </>
       ) : !openCard ? (
         <>
           <CalendarGridView
             moveDate={moveDate}
-            events={events}
+            days={days}
             actualMonth={actualMonth}
             actualYear={actualYear}
             handleChangeView={handleChangeView}
@@ -100,11 +100,10 @@ const CalendarPage = () => {
         <>
           <CalendarNavigation
             navId="mobileDay"
-            header={`${dayNumber} ${months[month]} ${year}`}
-            moveDate={(side: SIDES) => moveDateDay(side, day, setDay)}
-            backToCalendar={() => setOpenCard(false)}
+            header={`${reversedParsedDate(fromWeek)} - ${reversedParsedDate(toWeek)}`}
+            moveDate={(side: SIDES) => moveDateWeek(side, day, setDay)}
           />
-          <DayCardWrapper from={day} to={day} token={token} />
+          <DayCardWrapper from={fromWeek} to={toWeek} token={token} days={days} />
         </>
       )}
     </StyledCenter>
