@@ -128,6 +128,10 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
   flex-wrap: wrap;
 }
 
+.c1 {
+  margin-top: 5rem;
+}
+
 .c5 {
   display: grid;
   grid-template-columns: repeat(7,minmax(0,1fr));
@@ -256,12 +260,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
     -webkit-justify-content: flex-start;
     -ms-flex-pack: start;
     justify-content: flex-start;
-  }
-}
-
-@media (min-width:768px) {
-  .c1 {
-    margin-top: 5rem;
+    padding-top: 0;
   }
 }
 
