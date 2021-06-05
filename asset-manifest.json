@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/static/css/main.590ca1a1.chunk.css",
-    "main.js": "/static/js/main.c73c20f0.chunk.js",
-    "main.js.map": "/static/js/main.c73c20f0.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.18505bf4.js",
-    "runtime-main.js.map": "/static/js/runtime-main.18505bf4.js.map",
-    "static/css/2.0cfad52a.chunk.css": "/static/css/2.0cfad52a.chunk.css",
-    "static/js/2.7509e040.chunk.js": "/static/js/2.7509e040.chunk.js",
-    "static/js/2.7509e040.chunk.js.map": "/static/js/2.7509e040.chunk.js.map",
-    "static/js/3.1a7714c5.chunk.js": "/static/js/3.1a7714c5.chunk.js",
-    "static/js/3.1a7714c5.chunk.js.map": "/static/js/3.1a7714c5.chunk.js.map",
-    "index.html": "/index.html",
-    "service-worker.js": "/service-worker.js",
-    "service-worker.js.map": "/service-worker.js.map",
-    "static/css/2.0cfad52a.chunk.css.map": "/static/css/2.0cfad52a.chunk.css.map",
-    "static/css/main.590ca1a1.chunk.css.map": "/static/css/main.590ca1a1.chunk.css.map",
-    "static/js/2.7509e040.chunk.js.LICENSE.txt": "/static/js/2.7509e040.chunk.js.LICENSE.txt"
+    "main.css": "/habbit-tracker/static/css/main.590ca1a1.chunk.css",
+    "main.js": "/habbit-tracker/static/js/main.1fc2f196.chunk.js",
+    "main.js.map": "/habbit-tracker/static/js/main.1fc2f196.chunk.js.map",
+    "runtime-main.js": "/habbit-tracker/static/js/runtime-main.85ddba82.js",
+    "runtime-main.js.map": "/habbit-tracker/static/js/runtime-main.85ddba82.js.map",
+    "static/css/2.0cfad52a.chunk.css": "/habbit-tracker/static/css/2.0cfad52a.chunk.css",
+    "static/js/2.a9a18015.chunk.js": "/habbit-tracker/static/js/2.a9a18015.chunk.js",
+    "static/js/2.a9a18015.chunk.js.map": "/habbit-tracker/static/js/2.a9a18015.chunk.js.map",
+    "static/js/3.1a7714c5.chunk.js": "/habbit-tracker/static/js/3.1a7714c5.chunk.js",
+    "static/js/3.1a7714c5.chunk.js.map": "/habbit-tracker/static/js/3.1a7714c5.chunk.js.map",
+    "index.html": "/habbit-tracker/index.html",
+    "service-worker.js": "/habbit-tracker/service-worker.js",
+    "service-worker.js.map": "/habbit-tracker/service-worker.js.map",
+    "static/css/2.0cfad52a.chunk.css.map": "/habbit-tracker/static/css/2.0cfad52a.chunk.css.map",
+    "static/css/main.590ca1a1.chunk.css.map": "/habbit-tracker/static/css/main.590ca1a1.chunk.css.map",
+    "static/js/2.a9a18015.chunk.js.LICENSE.txt": "/habbit-tracker/static/js/2.a9a18015.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.18505bf4.js",
+    "static/js/runtime-main.85ddba82.js",
     "static/css/2.0cfad52a.chunk.css",
-    "static/js/2.7509e040.chunk.js",
+    "static/js/2.a9a18015.chunk.js",
     "static/css/main.590ca1a1.chunk.css",
-    "static/js/main.c73c20f0.chunk.js"
+    "static/js/main.1fc2f196.chunk.js"
   ]
 }
