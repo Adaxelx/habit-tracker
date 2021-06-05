@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/habbit-tracker/static/css/main.590ca1a1.chunk.css",
-    "main.js": "/habbit-tracker/static/js/main.1fc2f196.chunk.js",
-    "main.js.map": "/habbit-tracker/static/js/main.1fc2f196.chunk.js.map",
+    "main.js": "/habbit-tracker/static/js/main.abe67ebc.chunk.js",
+    "main.js.map": "/habbit-tracker/static/js/main.abe67ebc.chunk.js.map",
     "runtime-main.js": "/habbit-tracker/static/js/runtime-main.85ddba82.js",
     "runtime-main.js.map": "/habbit-tracker/static/js/runtime-main.85ddba82.js.map",
     "static/css/2.0cfad52a.chunk.css": "/habbit-tracker/static/css/2.0cfad52a.chunk.css",
@@ -22,6 +22,6 @@
     "static/css/2.0cfad52a.chunk.css",
     "static/js/2.a9a18015.chunk.js",
     "static/css/main.590ca1a1.chunk.css",
-    "static/js/main.1fc2f196.chunk.js"
+    "static/js/main.abe67ebc.chunk.js"
   ]
 }
