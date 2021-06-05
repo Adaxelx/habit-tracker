@@ -2,7 +2,7 @@ import React from 'react';
 import { Controller, Control, FieldError } from 'react-hook-form';
 import { StyledLabel, StyledInputWrapper, StyledMessage } from 'components/Input/Input.css';
 import { weekDays } from 'constants/calendar';
-import { StyledSelect, StyledWeekDay } from './WeekDaysInput.css';
+import { StyledWeekDay, StyledSelect } from './WeekDaysInput.css';
 
 interface WeekInputProps {
   control: Control<Record<string, any>>;
@@ -22,26 +22,26 @@ const WeekDaysInput = ({ control, error }: WeekInputProps) => (
         },
       }}
       render={({ onChange, value }) => (
-        <StyledSelect
-          multiple
-          value={value}
-          required
-          onChange={(e) => {
-            const selected = parseInt(e.target.value, 10);
-            if (value) {
-              let copy = [...value];
-              copy = copy.filter((day) => day !== selected);
-              if (copy.length === value.length) {
-                copy.push(selected);
-              }
-              onChange(copy);
-            } else {
-              onChange([selected]);
-            }
-          }}
-        >
+        <StyledSelect>
           {weekDays.map((weekDay, i) => (
-            <StyledWeekDay key={weekDay} value={i}>
+            <StyledWeekDay
+              active={value?.includes(i)}
+              onClick={() => {
+                const selected = i;
+                if (value) {
+                  let copy = [...value];
+                  copy = copy.filter((day) => day !== selected);
+                  if (copy.length === value.length) {
+                    copy.push(selected);
+                  }
+
+                  onChange(copy);
+                } else {
+                  onChange([selected]);
+                }
+              }}
+              key={weekDay}
+            >
               {weekDay}
             </StyledWeekDay>
           ))}
