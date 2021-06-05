@@ -183,25 +183,25 @@ exports[`App should match snapshot 1`] = `
     >
       <a
         class="c2"
-        href="/"
+        href="#/"
       >
         Home page
       </a>
       <a
         class="c2"
-        href="/calendar"
+        href="#/calendar"
       >
         Your tracker
       </a>
       <a
         class="c2"
-        href="/login"
+        href="#/login"
       >
         Login
       </a>
       <a
         class="c2"
-        href="/register"
+        href="#/register"
       >
         Register
       </a>
@@ -333,7 +333,7 @@ exports[`App should match snapshot 1`] = `
       >
         <a
           class="c6"
-          href="/register"
+          href="#/register"
         >
           Create account for free
         </a>
@@ -344,7 +344,7 @@ exports[`App should match snapshot 1`] = `
         </p>
         <a
           class="c6"
-          href="/login"
+          href="#/login"
         >
           Log in
         </a>
