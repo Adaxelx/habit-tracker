@@ -34,8 +34,9 @@ export const StyledHabbit = styled.div<HabbitProps>`
   margin-top: ${({ theme }) => theme.margin.xs};
   overflow-y: scroll;
   &:hover {
-    cursor: pointer;
+    ${() => navigator.onLine && 'cursor: pointer'};
   }
+
   ${({ checked }) => checked && checkedStyles};
 `;
 

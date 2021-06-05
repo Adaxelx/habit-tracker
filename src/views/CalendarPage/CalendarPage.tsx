@@ -6,9 +6,10 @@ import { getISODate, generateWeek, reversedParsedDate } from 'constants/calendar
 import { useQuery, useCalendar } from 'hooks';
 import { SIDES } from 'utils';
 import { CalendarTile, Event, Label } from 'utils/types';
+import APIpaths from 'constants/APIpaths';
 import { StyledCenter } from './CalendarPage.css';
 import { DayCardWrapper, CalendarGridView } from './components';
-import { getEvents, getLabels } from './CalendarPage.api';
+import { getData } from './CalendarPage.api';
 
 const CalendarPage = () => {
   const [date, setDate] = useState(new Date());
@@ -30,13 +31,22 @@ const CalendarPage = () => {
   const { token } = useUserContext();
 
   const { refHabbit, refLabel } = useRefreshContext();
+  const urlEvents = useMemo(
+    () => `${APIpaths.EVENTS}?from=${getISODate(firstDayOfMonth)}&to=${getISODate(lastDayOfMonth)}`,
+    [firstDayOfMonth, lastDayOfMonth],
+  );
 
   const [events, loadingE, errorE] = useQuery<Event>(
     [firstDayOfMonth, lastDayOfMonth, token, refHabbit, refLabel],
-    () => getEvents(token, getISODate(firstDayOfMonth), getISODate(lastDayOfMonth)),
+    () => getData(urlEvents, token),
+    urlEvents,
   );
 
-  const [labels, loadingL, errorL] = useQuery<Label>([token, refLabel], () => getLabels(token));
+  const [labels, loadingL, errorL] = useQuery<Label>(
+    [token, refLabel],
+    () => getData(APIpaths.LABELS, token),
+    APIpaths.LABELS,
+  );
 
   const [days]: [CalendarTile[]] = useCalendar(
     events,

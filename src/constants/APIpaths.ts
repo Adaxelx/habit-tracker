@@ -6,6 +6,7 @@ const EVENTS = `${DASHBOARD}events/`;
 const LABELS = `${DASHBOARD}labels/`;
 
 const APIpaths = {
+  DASHBOARD,
   LOGIN: `${USER}login/`,
   REGISTER: `${USER}register/`,
   LOGOUT: `${USER}logout/`,

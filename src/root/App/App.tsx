@@ -8,7 +8,6 @@ import { Router } from '..';
 const App = () => (
   <ThemeProvider>
     <RefreshProvider>
-      {console.log(!navigator.onLine && 'Offline jestem byczku')}
       <AlertProvider>
         <UserProvider>
           <GlobalStyle />

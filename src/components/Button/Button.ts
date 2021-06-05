@@ -26,6 +26,9 @@ const Button = styled.button<ButtonProps>`
   &:hover {
     cursor: pointer;
   }
+  &:disabled {
+    filter: grayscale(1);
+  }
 `;
 
 export default Button;

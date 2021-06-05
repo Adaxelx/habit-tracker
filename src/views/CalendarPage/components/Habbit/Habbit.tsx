@@ -54,13 +54,27 @@ const Habbit = ({ habbit, labels, checked, day }: HabbitProps) => {
 
   return (
     <StyledContainer>
-      <Button size="s" mx="0.75rem" noMaxWidth data-testid="edit" onClick={() => setOpen(true)}>
+      <Button
+        size="s"
+        mx="0.75rem"
+        disabled={!navigator.onLine}
+        noMaxWidth
+        data-testid="edit"
+        onClick={() => setOpen(true)}
+      >
         Edit habbit
       </Button>
-      <Button size="s" close noMaxWidth data-testid="delete" onClick={handleDelete}>
+      <Button
+        size="s"
+        close
+        noMaxWidth
+        disabled={!navigator.onLine}
+        data-testid="delete"
+        onClick={handleDelete}
+      >
         X
       </Button>
-      <StyledHabbit checked={checked} onClick={handleCheck}>
+      <StyledHabbit checked={checked} onClick={navigator.onLine ? () => handleCheck() : () => {}}>
         {label && <StyledLabel color={label.color}>{label.title}</StyledLabel>}
         <StyledTitle>{title}</StyledTitle>
         <StyledTime>{`${timeStart}-${timeEnd}`}</StyledTime>

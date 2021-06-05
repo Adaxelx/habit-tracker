@@ -36,7 +36,13 @@ const OpenedNavigation = ({ open, handleClose }: OpenNavProps) => {
         ))}
       </StyledContainner>
       {token && (
-        <StyledButton size="s" mx="0.75rem" data-testid="edit" onClick={handleLogout}>
+        <StyledButton
+          size="s"
+          disabled={!navigator.onLine}
+          mx="0.75rem"
+          data-testid="edit"
+          onClick={handleLogout}
+        >
           Logout
         </StyledButton>
       )}

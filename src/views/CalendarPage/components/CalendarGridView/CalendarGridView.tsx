@@ -40,6 +40,7 @@ const CalendarGridView = ({
           noMaxWidth
           mt="16px"
           data-testid="addh"
+          disabled={!navigator.onLine}
           onClick={() => setOpenHabbitForm(true)}
         >
           Add habbit
@@ -48,6 +49,7 @@ const CalendarGridView = ({
           size="s"
           noMaxWidth
           mt="16px"
+          disabled={!navigator.onLine}
           mx="16px"
           data-testid="addl"
           onClick={() => setOpenLabelForm(true)}

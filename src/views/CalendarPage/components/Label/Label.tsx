@@ -11,10 +11,24 @@ const Label = ({ label, handleDelete }: { label: LabelType; handleDelete: Functi
   return (
     <StyledLabelContainer key={_id}>
       <StyledButtonContainer>
-        <Button size="s" mr="0.75rem" noMaxWidth data-testid="edit" onClick={() => setOpenL(true)}>
+        <Button
+          size="s"
+          mr="0.75rem"
+          disabled={!navigator.onLine}
+          noMaxWidth
+          data-testid="edit"
+          onClick={() => setOpenL(true)}
+        >
           Edit label
         </Button>
-        <Button size="s" close noMaxWidth data-testid="delete" onClick={() => handleDelete(_id)}>
+        <Button
+          size="s"
+          disabled={!navigator.onLine}
+          close
+          noMaxWidth
+          data-testid="delete"
+          onClick={() => handleDelete(_id)}
+        >
           X
         </Button>
       </StyledButtonContainer>
