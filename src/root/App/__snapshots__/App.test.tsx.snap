@@ -4,64 +4,6 @@ exports[`App should match snapshot 1`] = `
 <DocumentFragment>
   .c0 {
   position: fixed;
-  top: 1rem;
-  width: 100%;
-  text-align: center;
-  height: 50px;
-  line-height: 50px;
-  z-index: 1000;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c1 {
-  color: #000000;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-@media (min-width:768px) {
-
-}
-
-@media (min-width:768px) {
-
-}
-
-@media (max-width:320px) {
-
-}
-
-@media (max-width:320px) {
-
-}
-
-@media (max-width:320px) {
-  .c0 {
-    font-size: 0.75rem;
-  }
-}
-
-<header
-    class="c0"
-  >
-    <a
-      class="c1"
-      href="#/"
-    >
-      <h1>
-        Habbit tracker
-      </h1>
-    </a>
-  </header>
-  .c0 {
-  position: fixed;
   height: 50px;
   width: 50px;
   top: 1rem;
@@ -145,10 +87,6 @@ exports[`App should match snapshot 1`] = `
 
 }
 
-@media (max-width:320px) {
-
-}
-
 <button
     class="c0"
     data-testid="navButton"
@@ -172,25 +110,7 @@ exports[`App should match snapshot 1`] = `
       class="c6 c7"
     />
   </button>
-  .c3 {
-  color: #fff;
-  background-color: #FFC136;
-  border: 1px solid #707070;
-  padding: 0.75rem;
-  font-size: 1rem;
-  min-width: 150px;
-  display: inline-block;
-  text-align: center;
-  margin-top: 0;
-  margin-left: 0.75rem;
-  margin-right: 0.75rem;
-}
-
-.c3:hover {
-  cursor: pointer;
-}
-
-.c0 {
+  .c0 {
   -webkit-transform: scale(0);
   -ms-transform: scale(0);
   transform: scale(0);
@@ -203,12 +123,6 @@ exports[`App should match snapshot 1`] = `
   position: fixed;
   background-color: #A4FF9D;
   z-index: 500;
-}
-
-.c4 {
-  position: absolute;
-  bottom: 1.25rem;
-  right: 1.25rem;
 }
 
 .c1 {
@@ -261,10 +175,6 @@ exports[`App should match snapshot 1`] = `
 
 }
 
-@media (max-width:320px) {
-
-}
-
 <nav
     class="c0"
   >
@@ -273,35 +183,29 @@ exports[`App should match snapshot 1`] = `
     >
       <a
         class="c2"
-        href="#/"
+        href="/"
       >
         Home page
       </a>
       <a
         class="c2"
-        href="#/calendar"
+        href="/calendar"
       >
         Your tracker
       </a>
       <a
         class="c2"
-        href="#/login"
+        href="/login"
       >
         Login
       </a>
       <a
         class="c2"
-        href="#/register"
+        href="/register"
       >
         Register
       </a>
     </div>
-    <button
-      class="c3 c4"
-      data-testid="edit"
-    >
-      Logout
-    </button>
   </nav>
   .c1 {
   display: -webkit-box;
@@ -362,6 +266,11 @@ exports[`App should match snapshot 1`] = `
   cursor: pointer;
 }
 
+.c6:disabled {
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+}
+
 .c0 {
   min-height: 100vh;
   width: 100%;
@@ -399,10 +308,6 @@ exports[`App should match snapshot 1`] = `
   }
 }
 
-@media (max-width:320px) {
-
-}
-
 <main
     class="c0"
   >
@@ -428,7 +333,7 @@ exports[`App should match snapshot 1`] = `
       >
         <a
           class="c6"
-          href="#/register"
+          href="/register"
         >
           Create account for free
         </a>
@@ -439,7 +344,7 @@ exports[`App should match snapshot 1`] = `
         </p>
         <a
           class="c6"
-          href="#/login"
+          href="/login"
         >
           Log in
         </a>

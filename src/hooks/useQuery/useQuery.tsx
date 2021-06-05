@@ -40,7 +40,6 @@ function useQuery<T>(dependency: Array<any>, fn: MultipleFunction, key: string):
       setLoading(false);
     };
     fetchData();
-    fetchData();
   }, dependency);
 
   return [data, loading, error];

@@ -20,6 +20,11 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
   cursor: pointer;
 }
 
+.c9:disabled {
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+}
+
 .c10 {
   color: #fff;
   background-color: #FFC136;
@@ -36,6 +41,11 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
 
 .c10:hover {
   cursor: pointer;
+}
+
+.c10:disabled {
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
 }
 
 .c15 {
@@ -56,6 +66,11 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
   cursor: pointer;
 }
 
+.c15:disabled {
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+}
+
 .c16 {
   color: #000000;
   background-color: #FF9191;
@@ -72,6 +87,11 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
 
 .c16:hover {
   cursor: pointer;
+}
+
+.c16:disabled {
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
 }
 
 .c0 {
