@@ -9,9 +9,10 @@ import { DayCard } from '..';
 interface DayCardWrapperProps {
   days: CalendarTile[];
   labels: Label[];
+  dateClicked: Date;
 }
 
-const DayCardWrapper = ({ days, labels }: DayCardWrapperProps) => {
+const DayCardWrapper = ({ days, labels, dateClicked }: DayCardWrapperProps) => {
   const wrapper = useRef<HTMLDivElement>(null);
   const [width] = useWindowSize();
 
@@ -24,7 +25,7 @@ const DayCardWrapper = ({ days, labels }: DayCardWrapperProps) => {
         }
       }
     }
-  }, [days, wrapper]);
+  }, [dateClicked, wrapper]);
 
   return (
     <>

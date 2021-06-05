@@ -32,7 +32,7 @@ export const StyledHabbit = styled.div<HabbitProps>`
   border-left: 1px solid ${({ theme }) => theme.colors.tile.border};
   margin: 0 ${({ theme }) => theme.margin.s};
   margin-top: ${({ theme }) => theme.margin.xs};
-  overflow-y: scroll;
+
   &:hover {
     ${() => navigator.onLine && 'cursor: pointer'};
   }

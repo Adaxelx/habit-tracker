@@ -101,6 +101,7 @@ const CalendarPage = () => {
       <DayCardWrapper
         days={days.filter(({ date }) => date && date >= fromWeek && date <= toWeek)}
         labels={labels}
+        dateClicked={movingDate}
       />
     </StyledCenter>
   );

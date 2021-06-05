@@ -19,7 +19,7 @@ const OpenedNavigation = ({ open, handleClose }: OpenNavProps) => {
   const handleLogout = async () => {
     try {
       await logoutUser(token);
-      alertC.current.showAlert('Pomyślnie wylogowano', SUCCESS);
+      alertC.current.showAlert('Successfully logged out', SUCCESS);
       logout();
     } catch (err) {
       alertC.current.showAlert(err.message);
