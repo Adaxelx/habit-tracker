@@ -7,7 +7,7 @@ type AlertProps = {
   type?: AlertTypes;
 };
 
-const Alert = ({ children = 'Ładowanie...', type = AlertTypes.ERROR }: AlertProps) => (
+export const Alert = ({ children = 'Ładowanie...', type = AlertTypes.ERROR }: AlertProps) => (
   <StyledWrapper>
     <StyledAlert data-testid="alert" type={type}>
       {children}

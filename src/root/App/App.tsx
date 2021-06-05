@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider, UserProvider, AlertProvider, RefreshProvider } from 'context';
-import { Navigation, AlertsContainer } from 'components';
+import { Navigation, AlertsContainer, OfflineAlert } from 'components';
 import GlobalStyle from 'styles/GlobalStyle';
 import { Router } from '..';
 
@@ -12,6 +12,7 @@ const App = () => (
         <UserProvider>
           <GlobalStyle />
           <BrowserRouter>
+            <OfflineAlert />
             {/* <Logo /> */}
             <AlertsContainer />
             <Navigation />
