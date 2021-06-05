@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import { ThemeProvider, UserProvider, AlertProvider, RefreshProvider } from 'context';
 import { Navigation, AlertsContainer, OfflineAlert } from 'components';
 import GlobalStyle from 'styles/GlobalStyle';
@@ -11,13 +11,13 @@ const App = () => (
       <AlertProvider>
         <UserProvider>
           <GlobalStyle />
-          <BrowserRouter>
+          <HashRouter basename={process.env.PUBLIC_URL}>
             <OfflineAlert />
             {/* <Logo /> */}
             <AlertsContainer />
             <Navigation />
             <Router />
-          </BrowserRouter>
+          </HashRouter>
         </UserProvider>
       </AlertProvider>
     </RefreshProvider>
