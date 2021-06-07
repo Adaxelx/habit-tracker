@@ -26,7 +26,7 @@ const Label = ({ label, handleDelete }: { label: LabelType; handleDelete: Functi
           disabled={!navigator.onLine}
           close
           noMaxWidth
-          data-testid="delete"
+          data-testid={`delete${_id}`}
           onClick={() => handleDelete(_id)}
         >
           X
