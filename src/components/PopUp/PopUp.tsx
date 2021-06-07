@@ -20,11 +20,11 @@ const PopUp = ({ open, handleClose, header, children, fullHeight }: PopUpProps) 
     <>
       {!fullHeight && <StyledBacground onClick={handleClose} />}
       <StyledWrapper fullHeight={fullHeight}>
-        <StyledCloseButton type="button" onClick={handleClose}>
+        <StyledCloseButton type="button" data-testid={`${header}-close`} onClick={handleClose}>
           <StyledLine rotate={45} />
           <StyledLine rotate={-45} />
         </StyledCloseButton>
-        <StyledHeader>{header}</StyledHeader>
+        <StyledHeader data-testid={`${header}-header`}>{header}</StyledHeader>
         {children}
       </StyledWrapper>
     </>

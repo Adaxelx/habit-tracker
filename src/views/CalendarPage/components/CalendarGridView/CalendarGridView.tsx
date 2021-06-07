@@ -1,17 +1,8 @@
 import React, { useState } from 'react';
 import { Button } from 'components';
 import { StyledButtonWrapper } from 'views/CalendarPage/CalendarPage.css';
-import { CalendarTile, Label } from 'utils';
+import { GridViewProps } from 'utils';
 import { CalendarGrid, HabbitForm, LabelForm, LabelList } from '..';
-
-interface GridViewProps {
-  days: CalendarTile[];
-  actualMonth: number;
-  moveDate: Function;
-  actualYear: number;
-  handleChangeView: Function;
-  labels: Label[];
-}
 
 const CalendarGridView = ({
   days,

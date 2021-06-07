@@ -67,8 +67,8 @@ describe('CalendarPage', () => {
     ];
     events = [
       {
-        checked: [{ day: 3, month: 3, year: 2021, _id: 'xdd' }],
-        dateEnd: '2021-04-30',
+        checked: [{ day: 5, month: 4, year: 2021, _id: 'xdd' }],
+        dateEnd: '2026-04-30',
         dateStart: '2021-04-03',
         daysOfWeek: [0, 1, 3],
         description: 'opis',
@@ -82,6 +82,19 @@ describe('CalendarPage', () => {
         },
         _id: '123',
         title: 'xdd',
+        userId: '123',
+      },
+      {
+        checked: [{ day: 3, month: 3, year: 2021, _id: 'xdd' }],
+        dateEnd: '2026-04-30',
+        dateStart: '2021-04-03',
+        daysOfWeek: [0, 1, 3],
+        description: 'opis',
+        timeStart: '12:12',
+        timeEnd: '12:30',
+        label: undefined,
+        _id: '1234',
+        title: 'xdd2',
         userId: '123',
       },
     ];
@@ -129,5 +142,18 @@ describe('CalendarPage', () => {
 
     util.click('moveRight-main');
     expect(util.get('dateCalendar-main').textContent).toBe(`${month} ${year}`);
+  });
+
+  it('should change days wrapper', async () => {
+    act(() => {
+      util = new TestUtil(<CalendarPage />);
+    });
+
+    await waitFor(() => expect(fetch).toHaveBeenCalledTimes(2));
+    const weekAfter = new Date();
+    weekAfter.setDate(weekAfter.getDate() + 7);
+    const [year, month, day] = [weekAfter.getFullYear(), weekAfter.getMonth(), weekAfter.getDate()];
+    util.click(`${weekAfter.getDate()}-tileDay`);
+    util.get(`${year}-${month}-${day}`);
   });
 });

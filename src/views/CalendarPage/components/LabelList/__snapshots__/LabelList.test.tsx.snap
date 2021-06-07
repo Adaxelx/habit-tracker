@@ -155,6 +155,7 @@ exports[`LabelList should match snapshot 1`] = `
   >
     <button
       class="c1"
+      data-testid="Label list-close"
       type="button"
     >
       <div
@@ -168,6 +169,7 @@ exports[`LabelList should match snapshot 1`] = `
     </button>
     <h2
       class="c4"
+      data-testid="Label list-header"
     >
       Label list
     </h2>

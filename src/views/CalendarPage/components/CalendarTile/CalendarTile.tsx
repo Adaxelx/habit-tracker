@@ -35,7 +35,10 @@ const CalendarTile = ({ colors, day, handleDayChange }: TileProps) => {
   const [width] = useWindowSize();
 
   return (
-    <StyledTile onClick={handleDayChange as MouseEventHandler<HTMLButtonElement>}>
+    <StyledTile
+      data-testid={`${day}-tileDay`}
+      onClick={handleDayChange as MouseEventHandler<HTMLButtonElement>}
+    >
       {day === -1 ? null : (
         <>
           {colors && generateCircles(colors, width > 768 ? size * 2 : size)}

@@ -197,6 +197,7 @@ exports[`HabbitForm should match snapshot 1`] = `
   >
     <button
       class="c1"
+      data-testid="Add habbit-close"
       type="button"
     >
       <div
@@ -210,6 +211,7 @@ exports[`HabbitForm should match snapshot 1`] = `
     </button>
     <h2
       class="c4"
+      data-testid="Add habbit-header"
     >
       Add habbit
     </h2>

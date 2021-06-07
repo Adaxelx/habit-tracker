@@ -105,3 +105,12 @@ export interface HabbitProps {
   checked: boolean;
   day: DateTuple;
 }
+
+export interface GridViewProps {
+  days: CalendarTile[];
+  actualMonth: number;
+  moveDate: Function;
+  actualYear: number;
+  handleChangeView: Function;
+  labels: Label[];
+}

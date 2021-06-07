@@ -148,6 +148,7 @@ exports[`LabelForm should match snapshot 1`] = `
   >
     <button
       class="c1"
+      data-testid="Add label-close"
       type="button"
     >
       <div
@@ -161,6 +162,7 @@ exports[`LabelForm should match snapshot 1`] = `
     </button>
     <h2
       class="c4"
+      data-testid="Add label-header"
     >
       Add label
     </h2>

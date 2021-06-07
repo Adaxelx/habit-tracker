@@ -1,9 +1,9 @@
 import React from 'react';
 import 'jest-styled-components';
 import { TestUtil, HabbitProps, AlertTypes } from 'utils';
-import Habbit from './Habbit';
 import { AlertContext } from 'context';
 import { waitFor } from '@testing-library/dom';
+import Habbit from './Habbit';
 
 describe('Habbit', () => {
   let util: TestUtil;

@@ -399,6 +399,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
     >
       <div
         class="c12"
+        data-testid="2022-2-25"
       >
         <h3
           class="c13"
@@ -408,6 +409,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
       </div>
       <div
         class="c12"
+        data-testid="2022-2-25"
       >
         <h3
           class="c13"
@@ -417,6 +419,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
       </div>
       <div
         class="c12"
+        data-testid="2022-2-25"
       >
         <h3
           class="c13"
@@ -426,6 +429,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
       </div>
       <div
         class="c12"
+        data-testid="2022-2-25"
       >
         <h3
           class="c13"
@@ -474,9 +478,46 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
             </p>
           </div>
         </div>
+        <div
+          class="c14"
+        >
+          <button
+            class="c15"
+            data-testid="edit"
+          >
+            Edit habbit
+          </button>
+          <button
+            class="c16"
+            data-testid="delete"
+          >
+            X
+          </button>
+          <div
+            class="c17"
+            data-testid="habbit1234"
+          >
+            <h2
+              class="c19"
+            >
+              xdd2
+            </h2>
+            <p
+              class="c20"
+            >
+              12:12-12:30
+            </p>
+            <p
+              class="c21"
+            >
+              opis
+            </p>
+          </div>
+        </div>
       </div>
       <div
         class="c12"
+        data-testid="2022-2-25"
       >
         <h3
           class="c13"
@@ -525,9 +566,46 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
             </p>
           </div>
         </div>
+        <div
+          class="c14"
+        >
+          <button
+            class="c15"
+            data-testid="edit"
+          >
+            Edit habbit
+          </button>
+          <button
+            class="c16"
+            data-testid="delete"
+          >
+            X
+          </button>
+          <div
+            class="c17"
+            data-testid="habbit1234"
+          >
+            <h2
+              class="c19"
+            >
+              xdd2
+            </h2>
+            <p
+              class="c20"
+            >
+              12:12-12:30
+            </p>
+            <p
+              class="c21"
+            >
+              opis
+            </p>
+          </div>
+        </div>
       </div>
       <div
         class="c12"
+        data-testid="2022-2-25"
       >
         <h3
           class="c13"
@@ -537,6 +615,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
       </div>
       <div
         class="c12"
+        data-testid="2022-2-25"
       >
         <h3
           class="c13"
@@ -585,9 +664,46 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
             </p>
           </div>
         </div>
+        <div
+          class="c14"
+        >
+          <button
+            class="c15"
+            data-testid="edit"
+          >
+            Edit habbit
+          </button>
+          <button
+            class="c16"
+            data-testid="delete"
+          >
+            X
+          </button>
+          <div
+            class="c17"
+            data-testid="habbit1234"
+          >
+            <h2
+              class="c19"
+            >
+              xdd2
+            </h2>
+            <p
+              class="c20"
+            >
+              12:12-12:30
+            </p>
+            <p
+              class="c21"
+            >
+              opis
+            </p>
+          </div>
+        </div>
       </div>
       <div
         class="c12"
+        data-testid="2022-2-25"
       >
         <h3
           class="c13"
@@ -597,6 +713,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
       </div>
       <div
         class="c12"
+        data-testid="2022-2-25"
       >
         <h3
           class="c13"
@@ -606,6 +723,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
       </div>
       <div
         class="c12"
+        data-testid="2022-2-25"
       >
         <h3
           class="c13"
@@ -615,6 +733,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
       </div>
       <div
         class="c12"
+        data-testid="2022-2-25"
       >
         <h3
           class="c13"
@@ -663,9 +782,46 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
             </p>
           </div>
         </div>
+        <div
+          class="c14"
+        >
+          <button
+            class="c15"
+            data-testid="edit"
+          >
+            Edit habbit
+          </button>
+          <button
+            class="c16"
+            data-testid="delete"
+          >
+            X
+          </button>
+          <div
+            class="c17"
+            data-testid="habbit1234"
+          >
+            <h2
+              class="c19"
+            >
+              xdd2
+            </h2>
+            <p
+              class="c20"
+            >
+              12:12-12:30
+            </p>
+            <p
+              class="c21"
+            >
+              opis
+            </p>
+          </div>
+        </div>
       </div>
       <div
         class="c12"
+        data-testid="2022-2-25"
       >
         <h3
           class="c13"
@@ -714,9 +870,46 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
             </p>
           </div>
         </div>
+        <div
+          class="c14"
+        >
+          <button
+            class="c15"
+            data-testid="edit"
+          >
+            Edit habbit
+          </button>
+          <button
+            class="c16"
+            data-testid="delete"
+          >
+            X
+          </button>
+          <div
+            class="c17"
+            data-testid="habbit1234"
+          >
+            <h2
+              class="c19"
+            >
+              xdd2
+            </h2>
+            <p
+              class="c20"
+            >
+              12:12-12:30
+            </p>
+            <p
+              class="c21"
+            >
+              opis
+            </p>
+          </div>
+        </div>
       </div>
       <div
         class="c12"
+        data-testid="2022-2-25"
       >
         <h3
           class="c13"
@@ -726,6 +919,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
       </div>
       <div
         class="c12"
+        data-testid="2022-2-25"
       >
         <h3
           class="c13"
@@ -774,9 +968,46 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
             </p>
           </div>
         </div>
+        <div
+          class="c14"
+        >
+          <button
+            class="c15"
+            data-testid="edit"
+          >
+            Edit habbit
+          </button>
+          <button
+            class="c16"
+            data-testid="delete"
+          >
+            X
+          </button>
+          <div
+            class="c17"
+            data-testid="habbit1234"
+          >
+            <h2
+              class="c19"
+            >
+              xdd2
+            </h2>
+            <p
+              class="c20"
+            >
+              12:12-12:30
+            </p>
+            <p
+              class="c21"
+            >
+              opis
+            </p>
+          </div>
+        </div>
       </div>
       <div
         class="c12"
+        data-testid="2022-2-25"
       >
         <h3
           class="c13"
@@ -786,6 +1017,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
       </div>
       <div
         class="c12"
+        data-testid="2022-2-25"
       >
         <h3
           class="c13"
@@ -795,6 +1027,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
       </div>
       <div
         class="c12"
+        data-testid="2022-2-25"
       >
         <h3
           class="c13"
@@ -804,6 +1037,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
       </div>
       <div
         class="c12"
+        data-testid="2022-2-25"
       >
         <h3
           class="c13"
@@ -852,9 +1086,46 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
             </p>
           </div>
         </div>
+        <div
+          class="c14"
+        >
+          <button
+            class="c15"
+            data-testid="edit"
+          >
+            Edit habbit
+          </button>
+          <button
+            class="c16"
+            data-testid="delete"
+          >
+            X
+          </button>
+          <div
+            class="c17"
+            data-testid="habbit1234"
+          >
+            <h2
+              class="c19"
+            >
+              xdd2
+            </h2>
+            <p
+              class="c20"
+            >
+              12:12-12:30
+            </p>
+            <p
+              class="c21"
+            >
+              opis
+            </p>
+          </div>
+        </div>
       </div>
       <div
         class="c12"
+        data-testid="2022-2-25"
       >
         <h3
           class="c13"
@@ -903,9 +1174,46 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
             </p>
           </div>
         </div>
+        <div
+          class="c14"
+        >
+          <button
+            class="c15"
+            data-testid="edit"
+          >
+            Edit habbit
+          </button>
+          <button
+            class="c16"
+            data-testid="delete"
+          >
+            X
+          </button>
+          <div
+            class="c17"
+            data-testid="habbit1234"
+          >
+            <h2
+              class="c19"
+            >
+              xdd2
+            </h2>
+            <p
+              class="c20"
+            >
+              12:12-12:30
+            </p>
+            <p
+              class="c21"
+            >
+              opis
+            </p>
+          </div>
+        </div>
       </div>
       <div
         class="c12"
+        data-testid="2022-2-25"
       >
         <h3
           class="c13"
@@ -915,6 +1223,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
       </div>
       <div
         class="c12"
+        data-testid="2022-2-25"
       >
         <h3
           class="c13"
@@ -963,9 +1272,46 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
             </p>
           </div>
         </div>
+        <div
+          class="c14"
+        >
+          <button
+            class="c15"
+            data-testid="edit"
+          >
+            Edit habbit
+          </button>
+          <button
+            class="c16"
+            data-testid="delete"
+          >
+            X
+          </button>
+          <div
+            class="c17"
+            data-testid="habbit1234"
+          >
+            <h2
+              class="c19"
+            >
+              xdd2
+            </h2>
+            <p
+              class="c20"
+            >
+              12:12-12:30
+            </p>
+            <p
+              class="c21"
+            >
+              opis
+            </p>
+          </div>
+        </div>
       </div>
       <div
         class="c12"
+        data-testid="2022-2-25"
       >
         <h3
           class="c13"
@@ -975,6 +1321,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
       </div>
       <div
         class="c12"
+        data-testid="2022-2-25"
       >
         <h3
           class="c13"
@@ -984,6 +1331,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
       </div>
       <div
         class="c12"
+        data-testid="2022-2-25"
       >
         <h3
           class="c13"
@@ -993,6 +1341,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
       </div>
       <div
         class="c12"
+        data-testid="2022-2-25"
       >
         <h3
           class="c13"
@@ -1041,9 +1390,46 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
             </p>
           </div>
         </div>
+        <div
+          class="c14"
+        >
+          <button
+            class="c15"
+            data-testid="edit"
+          >
+            Edit habbit
+          </button>
+          <button
+            class="c16"
+            data-testid="delete"
+          >
+            X
+          </button>
+          <div
+            class="c17"
+            data-testid="habbit1234"
+          >
+            <h2
+              class="c19"
+            >
+              xdd2
+            </h2>
+            <p
+              class="c20"
+            >
+              12:12-12:30
+            </p>
+            <p
+              class="c21"
+            >
+              opis
+            </p>
+          </div>
+        </div>
       </div>
       <div
         class="c12"
+        data-testid="2022-2-25"
       >
         <h3
           class="c13"
@@ -1092,9 +1478,46 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
             </p>
           </div>
         </div>
+        <div
+          class="c14"
+        >
+          <button
+            class="c15"
+            data-testid="edit"
+          >
+            Edit habbit
+          </button>
+          <button
+            class="c16"
+            data-testid="delete"
+          >
+            X
+          </button>
+          <div
+            class="c17"
+            data-testid="habbit1234"
+          >
+            <h2
+              class="c19"
+            >
+              xdd2
+            </h2>
+            <p
+              class="c20"
+            >
+              12:12-12:30
+            </p>
+            <p
+              class="c21"
+            >
+              opis
+            </p>
+          </div>
+        </div>
       </div>
       <div
         class="c12"
+        data-testid="2022-2-25"
       >
         <h3
           class="c13"
@@ -1104,6 +1527,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
       </div>
       <div
         class="c12"
+        data-testid="2022-2-25"
       >
         <h3
           class="c13"
@@ -1152,9 +1576,46 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
             </p>
           </div>
         </div>
+        <div
+          class="c14"
+        >
+          <button
+            class="c15"
+            data-testid="edit"
+          >
+            Edit habbit
+          </button>
+          <button
+            class="c16"
+            data-testid="delete"
+          >
+            X
+          </button>
+          <div
+            class="c17"
+            data-testid="habbit1234"
+          >
+            <h2
+              class="c19"
+            >
+              xdd2
+            </h2>
+            <p
+              class="c20"
+            >
+              12:12-12:30
+            </p>
+            <p
+              class="c21"
+            >
+              opis
+            </p>
+          </div>
+        </div>
       </div>
       <div
         class="c12"
+        data-testid="2022-2-25"
       >
         <h3
           class="c13"
@@ -1164,6 +1625,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
       </div>
       <div
         class="c12"
+        data-testid="2022-2-25"
       >
         <h3
           class="c13"
@@ -1173,6 +1635,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
       </div>
       <div
         class="c12"
+        data-testid="2022-2-25"
       >
         <h3
           class="c13"
@@ -1182,6 +1645,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
       </div>
       <div
         class="c12"
+        data-testid="2022-2-25"
       >
         <h3
           class="c13"
@@ -1230,9 +1694,46 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
             </p>
           </div>
         </div>
+        <div
+          class="c14"
+        >
+          <button
+            class="c15"
+            data-testid="edit"
+          >
+            Edit habbit
+          </button>
+          <button
+            class="c16"
+            data-testid="delete"
+          >
+            X
+          </button>
+          <div
+            class="c17"
+            data-testid="habbit1234"
+          >
+            <h2
+              class="c19"
+            >
+              xdd2
+            </h2>
+            <p
+              class="c20"
+            >
+              12:12-12:30
+            </p>
+            <p
+              class="c21"
+            >
+              opis
+            </p>
+          </div>
+        </div>
       </div>
       <div
         class="c12"
+        data-testid="2022-2-25"
       >
         <h3
           class="c13"
@@ -1281,9 +1782,46 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
             </p>
           </div>
         </div>
+        <div
+          class="c14"
+        >
+          <button
+            class="c15"
+            data-testid="edit"
+          >
+            Edit habbit
+          </button>
+          <button
+            class="c16"
+            data-testid="delete"
+          >
+            X
+          </button>
+          <div
+            class="c17"
+            data-testid="habbit1234"
+          >
+            <h2
+              class="c19"
+            >
+              xdd2
+            </h2>
+            <p
+              class="c20"
+            >
+              12:12-12:30
+            </p>
+            <p
+              class="c21"
+            >
+              opis
+            </p>
+          </div>
+        </div>
       </div>
       <div
         class="c12"
+        data-testid="2022-2-25"
       >
         <h3
           class="c13"
@@ -1293,6 +1831,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
       </div>
       <div
         class="c12"
+        data-testid="2022-2-25"
       >
         <h3
           class="c13"
@@ -1341,9 +1880,46 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
             </p>
           </div>
         </div>
+        <div
+          class="c14"
+        >
+          <button
+            class="c15"
+            data-testid="edit"
+          >
+            Edit habbit
+          </button>
+          <button
+            class="c16"
+            data-testid="delete"
+          >
+            X
+          </button>
+          <div
+            class="c17"
+            data-testid="habbit1234"
+          >
+            <h2
+              class="c19"
+            >
+              xdd2
+            </h2>
+            <p
+              class="c20"
+            >
+              12:12-12:30
+            </p>
+            <p
+              class="c21"
+            >
+              opis
+            </p>
+          </div>
+        </div>
       </div>
       <div
         class="c12"
+        data-testid="2022-2-25"
       >
         <h3
           class="c13"
@@ -1353,6 +1929,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
       </div>
       <div
         class="c12"
+        data-testid="2022-2-25"
       >
         <h3
           class="c13"
@@ -1362,6 +1939,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
       </div>
       <div
         class="c12"
+        data-testid="2022-2-25"
       >
         <h3
           class="c13"
@@ -1371,6 +1949,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
       </div>
       <div
         class="c12"
+        data-testid="2022-2-25"
       >
         <h3
           class="c13"
@@ -1419,9 +1998,46 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
             </p>
           </div>
         </div>
+        <div
+          class="c14"
+        >
+          <button
+            class="c15"
+            data-testid="edit"
+          >
+            Edit habbit
+          </button>
+          <button
+            class="c16"
+            data-testid="delete"
+          >
+            X
+          </button>
+          <div
+            class="c17"
+            data-testid="habbit1234"
+          >
+            <h2
+              class="c19"
+            >
+              xdd2
+            </h2>
+            <p
+              class="c20"
+            >
+              12:12-12:30
+            </p>
+            <p
+              class="c21"
+            >
+              opis
+            </p>
+          </div>
+        </div>
       </div>
       <div
         class="c12"
+        data-testid="2022-2-25"
       >
         <h3
           class="c13"
@@ -1470,9 +2086,46 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
             </p>
           </div>
         </div>
+        <div
+          class="c14"
+        >
+          <button
+            class="c15"
+            data-testid="edit"
+          >
+            Edit habbit
+          </button>
+          <button
+            class="c16"
+            data-testid="delete"
+          >
+            X
+          </button>
+          <div
+            class="c17"
+            data-testid="habbit1234"
+          >
+            <h2
+              class="c19"
+            >
+              xdd2
+            </h2>
+            <p
+              class="c20"
+            >
+              12:12-12:30
+            </p>
+            <p
+              class="c21"
+            >
+              opis
+            </p>
+          </div>
+        </div>
       </div>
       <div
         class="c12"
+        data-testid="2022-2-25"
       >
         <h3
           class="c13"
@@ -1482,6 +2135,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
       </div>
       <div
         class="c12"
+        data-testid="2022-2-25"
       >
         <h3
           class="c13"
@@ -1517,6 +2171,42 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
               class="c19"
             >
               xdd
+            </h2>
+            <p
+              class="c20"
+            >
+              12:12-12:30
+            </p>
+            <p
+              class="c21"
+            >
+              opis
+            </p>
+          </div>
+        </div>
+        <div
+          class="c14"
+        >
+          <button
+            class="c15"
+            data-testid="edit"
+          >
+            Edit habbit
+          </button>
+          <button
+            class="c16"
+            data-testid="delete"
+          >
+            X
+          </button>
+          <div
+            class="c17"
+            data-testid="habbit1234"
+          >
+            <h2
+              class="c19"
+            >
+              xdd2
             </h2>
             <p
               class="c20"

@@ -1,0 +1,296 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CalendarGridView should match snapshot 1`] = `
+<DocumentFragment>
+  .c7 {
+  border: none;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  overflow: hidden;
+  background-color: #FFFFFF;
+}
+
+.c7:hover {
+  cursor: pointer;
+}
+
+.c8 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  z-index: 100;
+}
+
+.c0 {
+  margin-top: 5rem;
+}
+
+.c4 {
+  display: grid;
+  grid-template-columns: repeat(7,minmax(0,1fr));
+  grid-template-rows: auto;
+  max-width: 100%;
+  border: 1px solid #707070;
+  border-top: none;
+  background-color: #fff;
+}
+
+.c5 {
+  background-color: #EDEFFF;
+  border-top: 1px solid #707070;
+  border-bottom: none;
+  justify-items: center;
+}
+
+.c6 {
+  width: 50px;
+  padding: 0.75rem;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 0.75rem 0;
+}
+
+.c2 {
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+}
+
+.c3 {
+  width: 200px;
+  text-align: center;
+  line-height: 100%;
+  margin: 0;
+}
+
+@media (min-width:768px) {
+  .c7 {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (min-width:768px) {
+  .c3 {
+    width: 400px;
+    font-size: 2rem;
+  }
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <button
+        class="c2"
+        data-testid="moveLeft-main"
+      >
+        <svg
+          aria-hidden="true"
+          class="svg-inline--fa fa-caret-left fa-w-6 "
+          data-icon="caret-left"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          viewBox="0 0 192 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M192 127.338v257.324c0 17.818-21.543 26.741-34.142 14.142L29.196 270.142c-7.81-7.81-7.81-20.474 0-28.284l128.662-128.662c12.599-12.6 34.142-3.676 34.142 14.142z"
+            fill="currentColor"
+          />
+        </svg>
+      </button>
+      <h3
+        class="c3"
+        data-testid="dateCalendar-main"
+      >
+        February 1
+      </h3>
+      <button
+        class="c2"
+        data-testid="moveRight-main"
+      >
+        <svg
+          aria-hidden="true"
+          class="svg-inline--fa fa-caret-right fa-w-6 "
+          data-icon="caret-right"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          viewBox="0 0 192 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 384.662V127.338c0-17.818 21.543-26.741 34.142-14.142l128.662 128.662c7.81 7.81 7.81 20.474 0 28.284L34.142 398.804C21.543 411.404 0 402.48 0 384.662z"
+            fill="currentColor"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      class="c4 c5"
+    >
+      <div
+        class="c6"
+      >
+        Mon
+      </div>
+      <div
+        class="c6"
+      >
+        Tue
+      </div>
+      <div
+        class="c6"
+      >
+        Wed
+      </div>
+      <div
+        class="c6"
+      >
+        Thu
+      </div>
+      <div
+        class="c6"
+      >
+        Fri
+      </div>
+      <div
+        class="c6"
+      >
+        Sat
+      </div>
+      <div
+        class="c6"
+      >
+        Sun
+      </div>
+    </div>
+    <div
+      class="c4"
+    >
+      <button
+        class="c7"
+        data-testid="1-tileDay"
+      >
+        <p
+          class="c8"
+          data-testid="day"
+        >
+          1
+        </p>
+      </button>
+    </div>
+  </div>
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.c1 {
+  color: #fff;
+  background-color: #FFC136;
+  border: 1px solid #707070;
+  padding: 0.75rem;
+  font-size: 1rem;
+  min-width: none;
+  display: inline-block;
+  text-align: center;
+  margin-top: 16px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.c1:hover {
+  cursor: pointer;
+}
+
+.c1:disabled {
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+}
+
+.c2 {
+  color: #fff;
+  background-color: #FFC136;
+  border: 1px solid #707070;
+  padding: 0.75rem;
+  font-size: 1rem;
+  min-width: none;
+  display: inline-block;
+  text-align: center;
+  margin-top: 16px;
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+.c2:hover {
+  cursor: pointer;
+}
+
+.c2:disabled {
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+<div
+    class="c0"
+  >
+    <button
+      class="c1"
+      data-testid="addh"
+    >
+      Add habbit
+    </button>
+    <button
+      class="c2"
+      data-testid="addl"
+    >
+      Add label
+    </button>
+    <button
+      class="c1"
+      data-testid="labell"
+    >
+      Label list
+    </button>
+  </div>
+</DocumentFragment>
+`;

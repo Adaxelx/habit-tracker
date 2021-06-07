@@ -6,7 +6,7 @@ import { Habbit } from '..';
 const DayCard = ({ events, header, active, labels, date }: DayCardProps) => {
   const [yearA, monthA, dayA] = date;
   return (
-    <StyledCard active={active}>
+    <StyledCard data-testid={`${yearA}-${monthA}-${dayA}`} active={active}>
       <StyledWeekDay>{header}</StyledWeekDay>
       {events.map((event) => (
         <Habbit
