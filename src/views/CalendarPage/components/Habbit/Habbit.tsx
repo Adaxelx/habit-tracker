@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { Button } from 'components';
-import { Event, AlertTypes, Label, DateTuple } from 'utils';
+import { AlertTypes, HabbitProps } from 'utils';
 import { useAlertContext, useUserContext, useRefreshContext } from 'context';
 import { checkEvent, deleteEvent } from 'views/CalendarPage/CalendarPage.api';
 import { HabbitForm } from '..';
@@ -15,13 +15,6 @@ import {
 
 const { SUCCESS } = AlertTypes;
 
-interface HabbitProps {
-  habbit: Event;
-  labels: Label[];
-  checked: boolean;
-  day: DateTuple;
-}
-
 const Habbit = ({ habbit, labels, checked, day }: HabbitProps) => {
   const { title, timeEnd, timeStart, description, label, _id } = habbit;
 
@@ -35,7 +28,7 @@ const Habbit = ({ habbit, labels, checked, day }: HabbitProps) => {
   const handleDelete = async () => {
     try {
       await deleteEvent(token, _id);
-      alertC.current.showAlert('Succesfuly deleted habbit.', SUCCESS);
+      alertC.current.showAlert('Successfully deleted habbit.', SUCCESS);
       handleRefHabbit();
     } catch (err) {
       alertC.current.showAlert(err.message);
@@ -44,8 +37,8 @@ const Habbit = ({ habbit, labels, checked, day }: HabbitProps) => {
 
   const handleCheck = async () => {
     try {
-      const response = await checkEvent(token, _id, day);
-      alertC.current.showAlert(response.message, SUCCESS);
+      await checkEvent(token, _id, day);
+      alertC.current.showAlert('Successful state change.', SUCCESS);
       handleRefHabbit();
     } catch (err) {
       alertC.current.showAlert(err.message);
@@ -74,7 +67,11 @@ const Habbit = ({ habbit, labels, checked, day }: HabbitProps) => {
       >
         X
       </Button>
-      <StyledHabbit checked={checked} onClick={navigator.onLine ? () => handleCheck() : () => {}}>
+      <StyledHabbit
+        data-testid={`habbit${_id}`}
+        checked={checked}
+        onClick={navigator.onLine ? () => handleCheck() : () => {}}
+      >
         {label && <StyledLabel color={label.color}>{label.title}</StyledLabel>}
         <StyledTitle>{title}</StyledTitle>
         <StyledTime>{`${timeStart}-${timeEnd}`}</StyledTime>

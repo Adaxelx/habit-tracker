@@ -99,3 +99,9 @@ export interface FormHabbit extends FormWithLabels {
 export interface FormLabel extends FormProps {
   label?: Label;
 }
+export interface HabbitProps {
+  habbit: Event;
+  labels: Label[];
+  checked: boolean;
+  day: DateTuple;
+}

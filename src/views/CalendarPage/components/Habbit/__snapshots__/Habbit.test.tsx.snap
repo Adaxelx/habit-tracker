@@ -6,6 +6,13 @@ exports[`Habbit should match snapshot 1`] = `
   margin-bottom: 0.5rem;
 }
 
+.c4 {
+  background-color: #676767;
+  padding: 0.75rem;
+  width: auto;
+  border-radius: 20px;
+}
+
 .c3 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -28,18 +35,18 @@ exports[`Habbit should match snapshot 1`] = `
   cursor: pointer;
 }
 
-.c4 {
+.c5 {
   font-size: 2rem;
   margin-bottom: 0.5rem;
   margin-top: 0;
 }
 
-.c5 {
+.c6 {
   color: gray;
   margin-bottom: 0.5rem;
 }
 
-.c6 {
+.c7 {
   text-align: justify;
 }
 
@@ -106,21 +113,28 @@ exports[`Habbit should match snapshot 1`] = `
     </button>
     <div
       class="c3"
+      data-testid="habbit123"
     >
-      <h2
+      <small
         class="c4"
+        color="#676767"
       >
-        Title
-      </h2>
-      <p
+        label
+      </small>
+      <h2
         class="c5"
       >
-        12:00-24:00
-      </p>
+        habbit
+      </h2>
       <p
         class="c6"
       >
-        test
+        06:06-07:07
+      </p>
+      <p
+        class="c7"
+      >
+        desc
       </p>
     </div>
   </div>
