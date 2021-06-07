@@ -223,7 +223,6 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
   border-left: 1px solid #77CBFF;
   margin: 0 0.75rem;
   margin-top: 0.5rem;
-  overflow-y: scroll;
 }
 
 .c17:hover {
