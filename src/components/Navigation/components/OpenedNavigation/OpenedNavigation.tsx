@@ -40,7 +40,7 @@ const OpenedNavigation = ({ open, handleClose }: OpenNavProps) => {
           size="s"
           disabled={!navigator.onLine}
           mx="0.75rem"
-          data-testid="edit"
+          data-testid="logout"
           onClick={handleLogout}
         >
           Logout

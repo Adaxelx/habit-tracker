@@ -9,7 +9,7 @@ interface UserProviderProps {
   logout: Function;
 }
 
-const UserContext = createContext<UserProviderProps>({
+export const UserContext = createContext<UserProviderProps>({
   token: undefined,
   login: () => {},
   logout: () => {},
