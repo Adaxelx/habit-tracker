@@ -64,6 +64,9 @@ describe('HabbitForm', () => {
     util.setValue('title', 'title123');
     util.setValue('description', 'description');
     util.click('Mon');
+    util.click('Mon');
+    util.click('Tue');
+    util.click('Mon');
     util.setValueByL('Date start', new Date('2021-06-06'));
     util.setValueByL('Date end', new Date('2021-06-16'));
     util.setValue('timeStart', '12:15');
