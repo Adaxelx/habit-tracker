@@ -1,3 +1,426 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`HabbitForm should match snapshot 1`] = `<DocumentFragment />`;
+exports[`HabbitForm should match snapshot 1`] = `
+<DocumentFragment>
+  .c0 {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: rgba(0,0,0,0.3);
+}
+
+<div
+    class="c0"
+  />
+  .c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  width: 100%;
+  max-width: 300px;
+}
+
+.c7 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.c8 {
+  font-size: 1.25rem;
+  width: 100%;
+  max-width: 300px;
+}
+
+.c8:focus {
+  outline: thin dotted;
+}
+
+.c9 {
+  font-size: 1.25rem;
+  width: 100%;
+  max-width: 300px;
+}
+
+.c9:focus {
+  outline: thin dotted;
+}
+
+.c10 {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-template-rows: repeat(2,1fr);
+}
+
+.c11 {
+  background-color: #FFFFFF;
+  border: 1px solid black;
+  height: 50px;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.c5 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c14 {
+  color: #fff;
+  background-color: #FFC136;
+  border: 1px solid #707070;
+  padding: 0.75rem;
+  font-size: 1rem;
+  min-width: 150px;
+  display: inline-block;
+  text-align: center;
+  margin-top: 16px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.c14:hover {
+  cursor: pointer;
+}
+
+.c14:disabled {
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+}
+
+.c0 {
+  position: fixed;
+  width: calc(100% - 1rem - 1rem);
+  height: calc(90vh - 1rem - 1rem);
+  top: 1rem;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  padding: 1rem 0;
+  background-color: #AFE9FF;
+  border: 1px solid #707070;
+  z-index: 1000;
+  max-width: 350px;
+  overflow: scroll;
+}
+
+.c4 {
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.c1 {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: 0;
+  border: none;
+  background-color: transparent;
+}
+
+.c1:hover {
+  cursor: pointer;
+}
+
+.c2 {
+  height: 100%;
+  width: 2px;
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  background-color: #FF9191;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.c3 {
+  height: 100%;
+  width: 2px;
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  background-color: #FF9191;
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.c12 {
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 1rem;
+}
+
+.c13 {
+  width: 100%;
+  max-width: 300px;
+  font-size: 1.25rem;
+}
+
+<div
+    class="c0"
+  >
+    <button
+      class="c1"
+      type="button"
+    >
+      <div
+        class="c2"
+        rotate="45"
+      />
+      <div
+        class="c3"
+        rotate="-45"
+      />
+    </button>
+    <h2
+      class="c4"
+    >
+      Add habbit
+    </h2>
+    <form
+      class="c5"
+      novalidate=""
+    >
+      <div
+        class="c6"
+      >
+        <label
+          class="c7"
+          for="title"
+        >
+          Title
+        </label>
+        <input
+          class="c8"
+          data-testid="title"
+          id="title"
+          maxlength="30"
+          minlength="6"
+          name="title"
+          type="text"
+        />
+      </div>
+      <div
+        class="c6"
+      >
+        <label
+          class="c7"
+          for="description"
+        >
+          Description
+        </label>
+        <textarea
+          class="c9"
+          data-testid="description"
+          id="description"
+          name="description"
+        />
+      </div>
+      <div
+        class="c6"
+      >
+        <label
+          class="c7"
+        >
+          Week days
+        </label>
+        <div
+          class="c10"
+        >
+          <div
+            class="c11"
+            data-testid="Mon"
+          >
+            Mon
+          </div>
+          <div
+            class="c11"
+            data-testid="Tue"
+          >
+            Tue
+          </div>
+          <div
+            class="c11"
+            data-testid="Wed"
+          >
+            Wed
+          </div>
+          <div
+            class="c11"
+            data-testid="Thu"
+          >
+            Thu
+          </div>
+          <div
+            class="c11"
+            data-testid="Fri"
+          >
+            Fri
+          </div>
+          <div
+            class="c11"
+            data-testid="Sat"
+          >
+            Sat
+          </div>
+          <div
+            class="c11"
+            data-testid="Sun"
+          >
+            Sun
+          </div>
+        </div>
+      </div>
+      <div
+        class="c12"
+      >
+        <label
+          class="c7"
+          for="dateStart"
+        >
+          Date start
+        </label>
+        <div
+          class="react-datepicker-wrapper"
+        >
+          <div
+            class="react-datepicker__input-container"
+          >
+            <input
+              class=""
+              id="dateStart"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="c12"
+      >
+        <label
+          class="c7"
+          for="dateEnd"
+        >
+          Date end
+        </label>
+        <div
+          class="react-datepicker-wrapper"
+        >
+          <div
+            class="react-datepicker__input-container"
+          >
+            <input
+              class=""
+              id="dateEnd"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="c6"
+      >
+        <label
+          class="c7"
+          for="timeStart"
+        >
+          Time start
+        </label>
+        <input
+          class="c8"
+          data-testid="timeStart"
+          id="timeStart"
+          name="timeStart"
+          type="time"
+        />
+      </div>
+      <div
+        class="c6"
+      >
+        <label
+          class="c7"
+          for="timeEnd"
+        >
+          Time end
+        </label>
+        <input
+          class="c8"
+          data-testid="timeEnd"
+          id="timeEnd"
+          name="timeEnd"
+          type="time"
+        />
+      </div>
+      <div
+        class="c6"
+      >
+        <label
+          class="c7"
+        >
+          Label
+        </label>
+        <select
+          class="c13"
+          data-testid="label"
+        >
+          <option
+            value=""
+          >
+            ----Brak labelu----
+          </option>
+          <option
+            value="1"
+          >
+            label
+          </option>
+        </select>
+      </div>
+      <button
+        class="c14"
+        data-testid="submit"
+        type="submit"
+      >
+        Send
+      </button>
+    </form>
+  </div>
+</DocumentFragment>
+`;

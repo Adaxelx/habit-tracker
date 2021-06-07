@@ -16,7 +16,9 @@ import { WeekDaysInput } from '..';
 const { SUCCESS } = AlertTypes;
 
 const HabbitForm = ({ handleClose, open, labels, event }: FormHabbit) => {
-  const { register, handleSubmit, errors, control, reset, watch } = useForm<EventSend>();
+  const { register, handleSubmit, errors, control, reset, watch } = useForm<EventSend>({
+    defaultValues: { timeStart: '00:00', timeEnd: '23:59' },
+  });
 
   const alertC = useRef(useAlertContext());
 

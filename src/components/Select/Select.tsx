@@ -22,7 +22,7 @@ const Select = <T extends Option>({ options, control, name, label }: SelectProps
       name={name}
       control={control}
       render={({ onChange, value }) => (
-        <StyledSelect value={value} onChange={onChange}>
+        <StyledSelect data-testid={name} value={value} onChange={onChange}>
           <option key="1" value="">
             ----Brak labelu----
           </option>

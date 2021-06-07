@@ -1,1 +1,1 @@
-export { default, useAlertContext } from './AlertContext';
+export { default, useAlertContext, AlertContext } from './AlertContext';

@@ -41,6 +41,7 @@ const WeekDaysInput = ({ control, error }: WeekInputProps) => (
                 }
               }}
               key={weekDay}
+              data-testid={weekDay}
             >
               {weekDay}
             </StyledWeekDay>

@@ -10,8 +10,13 @@ export default class TestUtil {
     this.render = RenderWithRouter(component);
   }
 
-  setValue(testId: string, value: string | number) {
+  setValue(testId: string, value: string | number | Date) {
     const elem = this.render.getByTestId(testId);
+    fireEvent.change(elem, { target: { value } });
+  }
+
+  setValueByL(id: string, value: string | number | Date) {
+    const elem = this.render.getByLabelText(id);
     fireEvent.change(elem, { target: { value } });
   }
 

@@ -28,6 +28,7 @@ export const createRestrictedLengthObject = (name: string) => ({
 
 const timeValidFuntion = (timeLess: string | undefined, time: string | undefined) => {
   const message = 'Your time is not in boundaries.';
+
   if (timeLess && time) {
     const [hours, minutes] = time.split(':');
     const [hoursMin, minutesMin] = timeLess.split(':');

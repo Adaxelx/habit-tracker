@@ -17,13 +17,20 @@ interface DateInputProps {
 
 const DateInput = ({ control, name, header, maxDate, minDate, error }: DateInputProps) => (
   <StyledWrapper>
-    <StyledLabel>{header}</StyledLabel>
+    <StyledLabel htmlFor={name}>{header}</StyledLabel>
     <Controller
       name={name}
       control={control}
       rules={{ required: 'Date is required.' }}
       render={({ onChange, value }) => (
-        <DatePicker maxDate={maxDate} minDate={minDate} selected={value} onChange={onChange} />
+        <DatePicker
+          id={name}
+          data-testid={name}
+          maxDate={maxDate}
+          minDate={minDate}
+          selected={value}
+          onChange={onChange}
+        />
       )}
     />
     {error && <StyledMessage>{error?.message}</StyledMessage>}
