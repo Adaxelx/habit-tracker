@@ -13,7 +13,6 @@ const App = () => (
           <GlobalStyle />
           <HashRouter basename={process.env.PUBLIC_URL}>
             <OfflineAlert />
-            {/* <Logo /> */}
             <AlertsContainer />
             <Navigation />
             <Router />
