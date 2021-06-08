@@ -10,14 +10,23 @@ import {
 } from 'utils';
 import { useAlertContext, useUserContext, useRefreshContext } from 'context';
 import { postEvent } from 'views/CalendarPage/CalendarPage.api';
+// import { getISODate } from 'constants/calendar';
 import { StyledWrapper } from './HabbitForm.css';
 import { WeekDaysInput } from '..';
 
 const { SUCCESS } = AlertTypes;
 
 const HabbitForm = ({ handleClose, open, labels, event }: FormHabbit) => {
+  // const dateStartDefault = new Date();
   const { register, handleSubmit, errors, control, reset, watch } = useForm<EventSend>({
-    defaultValues: { timeStart: '00:00', timeEnd: '23:59' },
+    defaultValues: {
+      timeStart: '00:10',
+      timeEnd: '23:50',
+      label: '',
+      daysOfWeek: [],
+      dateStart: '',
+      dateEnd: '',
+    },
   });
 
   const alertC = useRef(useAlertContext());
@@ -49,7 +58,6 @@ const HabbitForm = ({ handleClose, open, labels, event }: FormHabbit) => {
       alertC.current.showAlert(err.message);
     }
   };
-
   const dateStart = watch('dateStart') ? new Date(watch('dateStart')) : undefined;
   const dateEnd = watch('dateEnd') ? new Date(watch('dateEnd')) : undefined;
 

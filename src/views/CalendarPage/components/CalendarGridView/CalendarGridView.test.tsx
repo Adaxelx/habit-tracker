@@ -1,7 +1,14 @@
 import React from 'react';
 import 'jest-styled-components';
 import { TestUtil, GridViewProps } from 'utils';
+import { act } from 'react-dom/test-utils';
 import CalendarGridView from './CalendarGridView';
+
+jest.mock('react-color', () => ({
+  SketchPicker: ({ onChangeComplete, value }) => (
+    <input data-testid="color" onChange={onChangeComplete} value={value} />
+  ),
+}));
 
 describe('CalendarGridView', () => {
   let util: TestUtil;
@@ -26,23 +33,33 @@ describe('CalendarGridView', () => {
     expect(util.render.asFragment()).toMatchSnapshot();
   });
 
-  it('should close and open event form', () => {
+  it('should close and open event form', async () => {
     const header = 'Add habbit';
-    util.click('addh');
+    await act(async () => {
+      await util.click('addh');
+    });
     util.get(`${header}-header`);
-    util.click(`${header}-close`);
+    await act(async () => {
+      await util.click(`${header}-close`);
+    });
   });
 
-  it('should close and open label form', () => {
+  it('should close and open label form', async () => {
     const header = 'Add label';
-    util.click('addl');
+    await act(async () => {
+      await util.click('addl');
+    });
     util.get(`${header}-header`);
-    util.click(`${header}-close`);
+    await act(async () => {
+      await util.click(`${header}-close`);
+    });
   });
 
-  it('should close and open label list', () => {
+  it('should close and open label list', async () => {
     const header = 'Label list';
-    util.click('labell');
+    await act(async () => {
+      await util.click('labell');
+    });
     util.get(`${header}-header`);
     util.click(`${header}-close`);
   });

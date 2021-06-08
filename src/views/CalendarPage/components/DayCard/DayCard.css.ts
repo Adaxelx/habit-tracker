@@ -9,7 +9,9 @@ export const StyledCard = styled.div<CardProps>`
     active ? theme.colors.tile.backgroundActive : theme.colors.tile.background};
   min-width: 275px;
   min-height: 500px;
+  max-height: 500px;
   border: 1px solid ${({ theme }) => theme.colors.border};
+  overflow-y: scroll;
 `;
 
 export const StyledWeekDay = styled.h3`

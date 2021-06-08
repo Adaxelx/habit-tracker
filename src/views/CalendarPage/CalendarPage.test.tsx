@@ -104,8 +104,9 @@ describe('CalendarPage', () => {
     global.innerWidth = 375;
     const mockDate = new Date('2022-01-01');
     const spy = jest.spyOn(global, 'Date').mockImplementation(() => mockDate);
-    act(() => {
-      util = new TestUtil(<CalendarPage />);
+
+    await act(async () => {
+      util = await new TestUtil(<CalendarPage />);
     });
 
     await waitFor(() => expect(fetch).toHaveBeenCalledTimes(2));
@@ -115,8 +116,9 @@ describe('CalendarPage', () => {
 
   it('should show error message event', async () => {
     failE = true;
-    act(() => {
-      util = new TestUtil(<CalendarPage />);
+
+    await act(async () => {
+      util = await new TestUtil(<CalendarPage />);
     });
 
     await waitFor(() => expect(fetch).toHaveBeenCalledTimes(2));
@@ -124,8 +126,8 @@ describe('CalendarPage', () => {
   });
 
   it('should move dates', async () => {
-    act(() => {
-      util = new TestUtil(<CalendarPage />);
+    await act(async () => {
+      util = await new TestUtil(<CalendarPage />);
     });
 
     await waitFor(() => expect(fetch).toHaveBeenCalledTimes(2));
@@ -137,16 +139,20 @@ describe('CalendarPage', () => {
     const prevIndex = index - 1 < 0 ? 11 : index - 1;
     const prevYear = index - 1 < 0 ? year - 1 : year;
 
-    util.click('moveLeft-main');
+    await act(async () => {
+      await util.click('moveLeft-main');
+    });
     expect(util.get('dateCalendar-main').textContent).toBe(`${months[prevIndex]} ${prevYear}`);
 
-    util.click('moveRight-main');
+    await act(async () => {
+      await util.click('moveRight-main');
+    });
     expect(util.get('dateCalendar-main').textContent).toBe(`${month} ${year}`);
   });
 
   it('should change days wrapper', async () => {
-    act(() => {
-      util = new TestUtil(<CalendarPage />);
+    await act(async () => {
+      util = await new TestUtil(<CalendarPage />);
     });
 
     await waitFor(() => expect(fetch).toHaveBeenCalledTimes(2));

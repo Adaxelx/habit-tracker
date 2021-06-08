@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef } from 'react';
+import React, { useLayoutEffect, useRef, useState } from 'react';
 import { Label, CalendarTile } from 'utils';
 import { useWindowSize } from 'hooks';
 
@@ -12,20 +12,36 @@ interface DayCardWrapperProps {
   dateClicked: Date;
 }
 
+const shouldScroll = (
+  days: CalendarTile[],
+  wrapper: React.RefObject<HTMLDivElement>,
+  width: number,
+) => {
+  if (days.length > 1) {
+    if (wrapper && wrapper.current) {
+      if (wrapper.current.scrollWidth > width) {
+        const scroll = wrapper.current.scrollWidth / 2 - width / 2;
+        wrapper?.current?.scroll(scroll, 0);
+      }
+    }
+  }
+};
+
 const DayCardWrapper = ({ days, labels, dateClicked }: DayCardWrapperProps) => {
   const wrapper = useRef<HTMLDivElement>(null);
   const [width] = useWindowSize();
+  const [prevDaysLength, setPrevDaysLength] = useState(days.length);
 
   useLayoutEffect(() => {
-    if (days.length > 1) {
-      if (wrapper && wrapper.current) {
-        if (wrapper.current.scrollWidth > width) {
-          const scroll = wrapper.current.scrollWidth / 2 - width / 2;
-          wrapper?.current?.scroll(scroll, 0);
-        }
-      }
-    }
+    shouldScroll(days, wrapper, width);
   }, [dateClicked, wrapper]);
+
+  useLayoutEffect(() => {
+    if (prevDaysLength === 0) {
+      shouldScroll(days, wrapper, width);
+    }
+    setPrevDaysLength(days.length);
+  }, [days, wrapper]);
 
   return (
     <>

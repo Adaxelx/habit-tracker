@@ -187,7 +187,9 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
   background-color: #AFE9FF;
   min-width: 275px;
   min-height: 500px;
+  max-height: 500px;
   border: 1px solid #707070;
+  overflow-y: scroll;
 }
 
 .c13 {
