@@ -9,3 +9,4 @@ export { default as Select } from './Select';
 export { default as AlertMessage } from './AlertMessage';
 export { default as AlertsContainer } from './AlertsContainer';
 export { default as OfflineAlert } from './OfflineAlert';
+export { default as DeleteModal } from './DeleteModal';

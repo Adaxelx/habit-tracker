@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DeleteModal should match snapshot 1`] = `
+<DocumentFragment>
+  .c1 {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: 0;
+  border: none;
+  background-color: transparent;
+}
+
+.c1:hover {
+  cursor: pointer;
+}
+
+.c1:disabled {
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+}
+
+.c2 {
+  height: 100%;
+  width: 2px;
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  background-color: #FF9191;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.c3 {
+  height: 100%;
+  width: 2px;
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  background-color: #FF9191;
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.c0 {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 500px;
+  padding: 0.75rem;
+  background-color: white;
+  font-size: 1.25rem;
+  text-align: justify;
+  border: 2px solid #707070;
+  z-index: 9998;
+}
+
+.c5 {
+  border: 1px solid #707070;
+  background-color: #d9ffd9;
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.c5:hover {
+  cursor: pointer;
+}
+
+.c6 {
+  border: 1px solid #707070;
+  background-color: #FF9191;
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.c6:hover {
+  cursor: pointer;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
+}
+
+<div
+    class="c0"
+    open=""
+  >
+    <button
+      class="c1"
+      data-testid="deleteModal-close"
+      type="button"
+    >
+      <div
+        class="c2"
+        rotate="45"
+      />
+      <div
+        class="c3"
+        rotate="-45"
+      />
+    </button>
+    <p>
+      Are you sure to delete this item? This action is not reversible.
+    </p>
+    <div
+      class="c4"
+    >
+      <button
+        class="c5"
+        data-testid="delete-keep"
+      >
+        Keep
+      </button>
+      <button
+        class="c6"
+        data-testid="deleteItem"
+      >
+        Delete
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
