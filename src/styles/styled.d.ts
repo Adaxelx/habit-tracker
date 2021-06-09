@@ -61,7 +61,7 @@ declare module 'styled-components' {
     };
     chooseFS: any;
     media: {
-      phone: { s: string };
+      phone: { s: string; sm: string };
       tablet: MediaType;
       desktop: MediaType;
     };

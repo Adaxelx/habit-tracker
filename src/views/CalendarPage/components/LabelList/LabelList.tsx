@@ -17,7 +17,7 @@ const LabelList = ({ handleClose, open, labels }: FormWithLabels) => {
     messageSuccess: 'Succesfuly deleted label.',
   });
 
-  const handleDelete = async (id: string) => mutate(id);
+  const handleDelete = (id: string) => mutate(id);
 
   return (
     <PopUp open={open} handleClose={handleClose} header="Label list" disabled={loading}>

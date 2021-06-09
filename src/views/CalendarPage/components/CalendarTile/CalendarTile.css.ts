@@ -7,9 +7,14 @@ export const StyledTile = styled.button`
   position: relative;
   overflow: hidden;
   background-color: ${({ theme }) => theme.colors.common.white};
+
+  @media (min-width: ${({ theme }) => theme.media.phone.sm}) {
+    width: ${({ theme }) => `${theme.gridTile.size * 1.25}px`};
+    height: ${({ theme }) => `${theme.gridTile.size * 1.25}px`};
+  }
   @media (min-width: ${({ theme }) => theme.media.tablet.s}) {
-    width: ${({ theme }) => `${theme.gridTile.size * 2}px`};
-    height: ${({ theme }) => `${theme.gridTile.size * 2}px`};
+    width: ${({ theme }) => `${theme.gridTile.size * 2.5}px`};
+    height: ${({ theme }) => `${theme.gridTile.size * 2.5}px`};
   }
   &:hover {
     cursor: pointer;

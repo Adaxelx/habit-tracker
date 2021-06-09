@@ -59,7 +59,7 @@ const core: CoreTheme = {
     dot: '20px',
   },
   media: {
-    phone: { s: '320px' },
+    phone: { s: '320px', sm: '360px' },
     tablet: { s: '768px', l: '1024px' },
     desktop: { s: '1366px', l: '1920px' },
   },

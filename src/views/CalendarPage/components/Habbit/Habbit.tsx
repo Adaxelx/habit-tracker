@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Button } from 'components';
+import { Button, DeleteModal } from 'components';
 import { HabbitProps } from 'utils';
-import { useMutation } from 'hooks';
+import { useMutation, useDelete } from 'hooks';
 import { useUserContext, useRefreshContext } from 'context';
 import { checkEvent, deleteEvent } from 'views/CalendarPage/CalendarPage.api';
 import { HabbitForm } from '..';
@@ -33,40 +33,45 @@ const Habbit = ({ habbit, labels, checked, day }: HabbitProps) => {
     messageSuccess: 'Successful state change.',
   });
 
+  const { handleOpen, show, handleClose, handleDelete } = useDelete(mutate);
+
   return (
-    <StyledContainer>
-      <Button
-        size="s"
-        mx="0.75rem"
-        disabled={!navigator.onLine || loading || loadingC}
-        noMaxWidth
-        data-testid="edit"
-        onClick={() => setOpen(true)}
-      >
-        Edit habbit
-      </Button>
-      <Button
-        size="s"
-        close
-        noMaxWidth
-        disabled={!navigator.onLine || loading || loadingC}
-        data-testid="delete"
-        onClick={mutate}
-      >
-        X
-      </Button>
-      <StyledHabbit
-        data-testid={`habbit${_id}`}
-        checked={checked}
-        onClick={navigator.onLine && !loading && !loadingC ? () => mutateCheck() : () => {}}
-      >
-        {label && <StyledLabel color={label.color}>{label.title}</StyledLabel>}
-        <StyledTitle>{title}</StyledTitle>
-        <StyledTime>{`${timeStart}-${timeEnd}`}</StyledTime>
-        <StyledDescription>{description}</StyledDescription>
-      </StyledHabbit>
-      <HabbitForm open={open} handleClose={() => setOpen(false)} labels={labels} event={habbit} />
-    </StyledContainer>
+    <>
+      <DeleteModal open={show} handleClose={handleClose} handleDelete={handleDelete} />
+      <StyledContainer>
+        <Button
+          size="s"
+          mx="0.75rem"
+          disabled={!navigator.onLine || loading || loadingC}
+          noMaxWidth
+          data-testid="edit"
+          onClick={() => setOpen(true)}
+        >
+          Edit habbit
+        </Button>
+        <Button
+          size="s"
+          close
+          noMaxWidth
+          disabled={!navigator.onLine || loading || loadingC}
+          data-testid="delete"
+          onClick={handleOpen}
+        >
+          X
+        </Button>
+        <StyledHabbit
+          data-testid={`habbit${_id}`}
+          checked={checked}
+          onClick={navigator.onLine && !loading && !loadingC ? () => mutateCheck() : () => {}}
+        >
+          {label && <StyledLabel color={label.color}>{label.title}</StyledLabel>}
+          <StyledTitle>{title}</StyledTitle>
+          <StyledTime>{`${timeStart}-${timeEnd}`}</StyledTime>
+          <StyledDescription>{description}</StyledDescription>
+        </StyledHabbit>
+        <HabbitForm open={open} handleClose={() => setOpen(false)} labels={labels} event={habbit} />
+      </StyledContainer>
+    </>
   );
 };
 

@@ -76,6 +76,9 @@ describe('Habbit', () => {
   it('should delete habbit', async () => {
     util.click('delete');
 
+    await waitFor(() => expect(util.get('deleteModal-close')).toBeInTheDocument());
+    util.click('deleteItem');
+
     await waitFor(() => expect(fetch).toHaveBeenCalledTimes(1));
 
     expect(alertC.showAlert).toHaveBeenCalledWith(
@@ -87,6 +90,8 @@ describe('Habbit', () => {
   it('should not delete habbit if api fails', async () => {
     fail = true;
     util.click('delete');
+    await waitFor(() => expect(util.get('deleteModal-close')).toBeInTheDocument());
+    util.click('deleteItem');
 
     await waitFor(() => expect(fetch).toHaveBeenCalledTimes(1));
 

@@ -41,7 +41,11 @@ const CalendarTile = ({ colors, day, handleDayChange }: TileProps) => {
     >
       {day === -1 ? null : (
         <>
-          {colors && generateCircles(colors, width > 768 ? size * 2 : size)}
+          {colors &&
+            generateCircles(
+              colors,
+              width >= 360 ? (width >= 768 ? size * 2.5 : size * 1.25) : size,
+            )}
           <StyledDay data-testid="day">{day}</StyledDay>
         </>
       )}

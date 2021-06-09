@@ -55,6 +55,11 @@ describe('LabelList', () => {
   it('should delete label', async () => {
     util.click('delete1');
 
+    await waitFor(() => expect(util.get('deleteModal-close')).toBeInTheDocument());
+    util.click('delete-keep');
+    util.click('delete1');
+    await waitFor(() => expect(util.get('deleteModal-close')).toBeInTheDocument());
+    util.click('deleteItem');
     await waitFor(() => expect(fetch).toHaveBeenCalledTimes(1));
 
     expect(alertC.showAlert).toHaveBeenCalledWith('Succesfuly deleted label.', AlertTypes.SUCCESS);
@@ -64,6 +69,11 @@ describe('LabelList', () => {
     fail = true;
     util.click('delete1');
 
+    await waitFor(() => expect(util.get('deleteModal-close')).toBeInTheDocument());
+    util.get('deleteModal-close');
+    util.click('delete1');
+    await waitFor(() => expect(util.get('deleteModal-close')).toBeInTheDocument());
+    util.click('deleteItem');
     await waitFor(() => expect(fetch).toHaveBeenCalledTimes(1));
 
     expect(alertC.showAlert).toHaveBeenCalledWith('error');

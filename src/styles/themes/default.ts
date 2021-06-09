@@ -6,7 +6,7 @@ const lightBlue = '#AFE9FF';
 const defaultTheme: DefaultTheme = {
   ...core,
   gridTile: {
-    size: 50,
+    size: 40,
   },
   colors: {
     ...core.colors,
