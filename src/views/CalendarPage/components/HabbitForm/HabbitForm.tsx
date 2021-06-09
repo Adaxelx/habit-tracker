@@ -1,23 +1,15 @@
-import React, { useRef, useEffect, useCallback } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import { PopUp, Input, Button, DateInput, Select } from 'components';
 import { FieldError, useForm } from 'react-hook-form';
-import {
-  EventSend,
-  createRestrictedLengthObject,
-  AlertTypes,
-  FormHabbit,
-  createTimeValidation,
-} from 'utils';
-import { useAlertContext, useUserContext, useRefreshContext } from 'context';
+import { useMutation } from 'hooks';
+import { EventSend, createRestrictedLengthObject, FormHabbit, createTimeValidation } from 'utils';
+import { useUserContext, useRefreshContext } from 'context';
 import { postEvent } from 'views/CalendarPage/CalendarPage.api';
 // import { getISODate } from 'constants/calendar';
 import { StyledWrapper } from './HabbitForm.css';
 import { WeekDaysInput } from '..';
 
-const { SUCCESS } = AlertTypes;
-
 const HabbitForm = ({ handleClose, open, labels, event }: FormHabbit) => {
-  // const dateStartDefault = new Date();
   const { register, handleSubmit, errors, control, reset, watch } = useForm<EventSend>({
     defaultValues: {
       timeStart: '00:10',
@@ -29,10 +21,14 @@ const HabbitForm = ({ handleClose, open, labels, event }: FormHabbit) => {
     },
   });
 
-  const alertC = useRef(useAlertContext());
-
   const { token } = useUserContext();
   const { handleRefHabbit } = useRefreshContext();
+
+  const [mutate, loading] = useMutation({
+    request: (data: EventSend) => postEvent(token, data, event?._id),
+    refresh: [handleClose, handleRefHabbit],
+    messageSuccess: `Succesfuly ${event?._id ? 'edited' : 'added'} habbit.`,
+  });
 
   useEffect(() => {
     let defaultValues = {};
@@ -48,16 +44,7 @@ const HabbitForm = ({ handleClose, open, labels, event }: FormHabbit) => {
     }
   }, [event]);
 
-  const onSubmit = async (data: EventSend) => {
-    try {
-      await postEvent(token, data, event?._id);
-      alertC.current.showAlert(`Succesfuly ${event?._id ? 'edited' : 'added'} habbit.`, SUCCESS);
-      handleClose();
-      handleRefHabbit();
-    } catch (err) {
-      alertC.current.showAlert(err.message);
-    }
-  };
+  const onSubmit = async (data: EventSend) => mutate(data);
   const dateStart = watch('dateStart') ? new Date(watch('dateStart')) : undefined;
   const dateEnd = watch('dateEnd') ? new Date(watch('dateEnd')) : undefined;
 
@@ -131,7 +118,7 @@ const HabbitForm = ({ handleClose, open, labels, event }: FormHabbit) => {
           control={control}
           options={labels?.map(({ _id, title, ...rest }) => ({ key: _id, value: title, ...rest }))}
         />
-        <Button size="s" mt="16px" type="submit" data-testid="submit">
+        <Button size="s" mt="16px" type="submit" disabled={loading} data-testid="submit">
           Send
         </Button>
       </StyledWrapper>

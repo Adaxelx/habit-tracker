@@ -1,7 +1,8 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { Button } from 'components';
-import { AlertTypes, HabbitProps } from 'utils';
-import { useAlertContext, useUserContext, useRefreshContext } from 'context';
+import { HabbitProps } from 'utils';
+import { useMutation } from 'hooks';
+import { useUserContext, useRefreshContext } from 'context';
 import { checkEvent, deleteEvent } from 'views/CalendarPage/CalendarPage.api';
 import { HabbitForm } from '..';
 import {
@@ -13,44 +14,31 @@ import {
   StyledLabel,
 } from './Habbit.css';
 
-const { SUCCESS } = AlertTypes;
-
 const Habbit = ({ habbit, labels, checked, day }: HabbitProps) => {
   const { title, timeEnd, timeStart, description, label, _id } = habbit;
 
   const [open, setOpen] = useState(false);
-
-  const alertC = useRef(useAlertContext());
   const { token } = useUserContext();
 
   const { handleRefHabbit } = useRefreshContext();
 
-  const handleDelete = async () => {
-    try {
-      await deleteEvent(token, _id);
-      alertC.current.showAlert('Successfully deleted habbit.', SUCCESS);
-      handleRefHabbit();
-    } catch (err) {
-      alertC.current.showAlert(err.message);
-    }
-  };
-
-  const handleCheck = async () => {
-    try {
-      await checkEvent(token, _id, day);
-      alertC.current.showAlert('Successful state change.', SUCCESS);
-      handleRefHabbit();
-    } catch (err) {
-      alertC.current.showAlert(err.message);
-    }
-  };
+  const [mutate, loading] = useMutation({
+    request: () => deleteEvent(token, _id),
+    refresh: handleRefHabbit,
+    messageSuccess: 'Successfully deleted habbit.',
+  });
+  const [mutateCheck, loadingC] = useMutation({
+    request: () => checkEvent(token, _id, day),
+    refresh: handleRefHabbit,
+    messageSuccess: 'Successful state change.',
+  });
 
   return (
     <StyledContainer>
       <Button
         size="s"
         mx="0.75rem"
-        disabled={!navigator.onLine}
+        disabled={!navigator.onLine || loading || loadingC}
         noMaxWidth
         data-testid="edit"
         onClick={() => setOpen(true)}
@@ -61,16 +49,16 @@ const Habbit = ({ habbit, labels, checked, day }: HabbitProps) => {
         size="s"
         close
         noMaxWidth
-        disabled={!navigator.onLine}
+        disabled={!navigator.onLine || loading || loadingC}
         data-testid="delete"
-        onClick={handleDelete}
+        onClick={mutate}
       >
         X
       </Button>
       <StyledHabbit
         data-testid={`habbit${_id}`}
         checked={checked}
-        onClick={navigator.onLine ? () => handleCheck() : () => {}}
+        onClick={navigator.onLine && !loading && !loadingC ? () => mutateCheck() : () => {}}
       >
         {label && <StyledLabel color={label.color}>{label.title}</StyledLabel>}
         <StyledTitle>{title}</StyledTitle>
