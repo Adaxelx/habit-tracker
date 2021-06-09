@@ -41,6 +41,7 @@ jobs:
       - name: Build
         run: npm run build
         env:
+          CI: false
           REACT_APP_BACKEND: ${{ secrets.REACT_APP_BACKEND }}
 
       - name: Deploy
