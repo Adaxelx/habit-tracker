@@ -48,6 +48,9 @@ export const StyledCloseButton = styled.button`
   &:hover {
     cursor: pointer;
   }
+  &:disabled {
+    filter: grayscale(1);
+  }
 `;
 
 interface Line {

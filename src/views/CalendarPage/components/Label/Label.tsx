@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Button } from 'components';
 import { StyledLabel } from 'views/CalendarPage/components/Habbit/Habbit.css';
-import { Label as LabelType } from 'utils';
+import { LabelProps } from 'utils';
 import { LabelForm } from '..';
 import { StyledButtonContainer, StyledLabelContainer } from './Label.css';
 
-const Label = ({ label, handleDelete }: { label: LabelType; handleDelete: Function }) => {
+const Label = ({ label, handleDelete, disabled }: LabelProps) => {
   const { _id, color, title } = label;
   const [openL, setOpenL] = useState(false);
   return (
@@ -14,7 +14,7 @@ const Label = ({ label, handleDelete }: { label: LabelType; handleDelete: Functi
         <Button
           size="s"
           mr="0.75rem"
-          disabled={!navigator.onLine}
+          disabled={!navigator.onLine || disabled}
           noMaxWidth
           data-testid="edit"
           onClick={() => setOpenL(true)}
@@ -23,7 +23,7 @@ const Label = ({ label, handleDelete }: { label: LabelType; handleDelete: Functi
         </Button>
         <Button
           size="s"
-          disabled={!navigator.onLine}
+          disabled={!navigator.onLine || disabled}
           close
           noMaxWidth
           data-testid={`delete${_id}`}

@@ -114,3 +114,9 @@ export interface GridViewProps {
   handleChangeView: Function;
   labels: Label[];
 }
+
+export interface LabelProps {
+  label: Label;
+  handleDelete: Function;
+  disabled: boolean;
+}

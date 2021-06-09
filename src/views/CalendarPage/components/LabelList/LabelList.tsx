@@ -1,34 +1,29 @@
-import React, { useRef } from 'react';
-import { useUserContext, useAlertContext, useRefreshContext } from 'context';
+import React from 'react';
+import { useUserContext, useRefreshContext } from 'context';
 import { PopUp } from 'components';
-import { AlertTypes, FormWithLabels } from 'utils';
+import { FormWithLabels } from 'utils';
 import { deleteLabel } from 'views/CalendarPage/CalendarPage.api';
+import { useMutation } from 'hooks';
 import { Label } from '..';
-
-const { SUCCESS } = AlertTypes;
 
 const LabelList = ({ handleClose, open, labels }: FormWithLabels) => {
   const { token } = useUserContext();
-  const alertC = useRef(useAlertContext());
 
   const { handleRefHabbit, handleRefLabel } = useRefreshContext();
 
-  const handleDelete = async (id: string) => {
-    try {
-      await deleteLabel(token, id);
-      alertC.current.showAlert('Succesfuly deleted label.', SUCCESS);
-      handleRefLabel();
-      handleRefHabbit();
-    } catch (err) {
-      alertC.current.showAlert(err.message);
-    }
-  };
+  const [mutate, loading] = useMutation({
+    request: (id: string) => deleteLabel(token, id),
+    refresh: [handleRefLabel, handleRefHabbit],
+    messageSuccess: 'Succesfuly deleted label.',
+  });
+
+  const handleDelete = async (id: string) => mutate(id);
 
   return (
-    <PopUp open={open} handleClose={handleClose} header="Label list">
+    <PopUp open={open} handleClose={handleClose} header="Label list" disabled={loading}>
       <>
         {labels?.map((label) => (
-          <Label label={label} key={label._id} handleDelete={handleDelete} />
+          <Label label={label} key={label._id} disabled={loading} handleDelete={handleDelete} />
         ))}
       </>
     </PopUp>

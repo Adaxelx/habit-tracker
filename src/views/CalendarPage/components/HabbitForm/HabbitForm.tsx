@@ -5,7 +5,6 @@ import { useMutation } from 'hooks';
 import { EventSend, createRestrictedLengthObject, FormHabbit, createTimeValidation } from 'utils';
 import { useUserContext, useRefreshContext } from 'context';
 import { postEvent } from 'views/CalendarPage/CalendarPage.api';
-// import { getISODate } from 'constants/calendar';
 import { StyledWrapper } from './HabbitForm.css';
 import { WeekDaysInput } from '..';
 
@@ -45,6 +44,7 @@ const HabbitForm = ({ handleClose, open, labels, event }: FormHabbit) => {
   }, [event]);
 
   const onSubmit = async (data: EventSend) => mutate(data);
+
   const dateStart = watch('dateStart') ? new Date(watch('dateStart')) : undefined;
   const dateEnd = watch('dateEnd') ? new Date(watch('dateEnd')) : undefined;
 
@@ -58,7 +58,7 @@ const HabbitForm = ({ handleClose, open, labels, event }: FormHabbit) => {
   }, []);
 
   return (
-    <PopUp open={open} handleClose={handleClose} header="Add habbit">
+    <PopUp open={open} handleClose={handleClose} header="Add habbit" disabled={loading}>
       <StyledWrapper as="form" onSubmit={handleSubmit(onSubmit)} noValidate>
         <Input
           name="title"

@@ -13,14 +13,20 @@ interface PopUpProps {
   header: string;
   children: React.ReactChild;
   fullHeight?: boolean;
+  disabled?: boolean;
 }
 
-const PopUp = ({ open, handleClose, header, children, fullHeight }: PopUpProps) =>
+const PopUp = ({ open, handleClose, header, children, fullHeight, disabled }: PopUpProps) =>
   open ? (
     <>
       {!fullHeight && <StyledBacground onClick={handleClose} />}
       <StyledWrapper fullHeight={fullHeight}>
-        <StyledCloseButton type="button" data-testid={`${header}-close`} onClick={handleClose}>
+        <StyledCloseButton
+          disabled={disabled}
+          type="button"
+          data-testid={`${header}-close`}
+          onClick={handleClose}
+        >
           <StyledLine rotate={45} />
           <StyledLine rotate={-45} />
         </StyledCloseButton>

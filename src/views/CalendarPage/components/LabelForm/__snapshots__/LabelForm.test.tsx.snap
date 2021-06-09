@@ -119,6 +119,11 @@ exports[`LabelForm should match snapshot 1`] = `
   cursor: pointer;
 }
 
+.c1:disabled {
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+}
+
 .c2 {
   height: 100%;
   width: 2px;

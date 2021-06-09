@@ -1,37 +1,37 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { PopUp, Button, Input } from 'components';
 import { useForm, Controller } from 'react-hook-form';
-import { useAlertContext, useUserContext, useRefreshContext } from 'context';
-import { FormLabel, LabelSend, createRestrictedLengthObject, AlertTypes } from 'utils';
+import { useUserContext, useRefreshContext } from 'context';
+import { FormLabel, LabelSend, createRestrictedLengthObject } from 'utils';
 import { SketchPicker } from 'react-color';
 import { StyledWrapper } from 'views/CalendarPage/components/HabbitForm/HabbitForm.css';
 import { postLabel } from 'views/CalendarPage/CalendarPage.api';
-
-const { SUCCESS } = AlertTypes;
+import { useMutation } from 'hooks';
 
 const LabelForm = ({ handleClose, open, label }: FormLabel) => {
   const { register, handleSubmit, errors, control } = useForm<LabelSend>({
     defaultValues: { color: '#50E3C2', ...label },
   });
-
-  const alertC = useRef(useAlertContext());
   const { token } = useUserContext();
 
   const { handleRefLabel } = useRefreshContext();
 
-  const onSubmit = async (data: LabelSend) => {
-    try {
-      await postLabel(token, data, label?._id);
-      alertC.current.showAlert(`Succesfuly ${label?._id ? 'edited' : 'added'} label.`, SUCCESS);
-      handleClose();
-      handleRefLabel();
-    } catch (err) {
-      alertC.current.showAlert(err.message);
-    }
-  };
+  const [mutate, loading] = useMutation({
+    request: (data: LabelSend) => postLabel(token, data, label?._id),
+    refresh: [handleClose, handleRefLabel],
+    messageSuccess: `Succesfuly ${label?._id ? 'edited' : 'added'} label.`,
+  });
+
+  const onSubmit = async (data: LabelSend) => mutate(data);
 
   return (
-    <PopUp open={open} handleClose={handleClose} header="Add label" fullHeight={!!label?._id}>
+    <PopUp
+      open={open}
+      handleClose={handleClose}
+      header="Add label"
+      fullHeight={!!label?._id}
+      disabled={loading}
+    >
       <StyledWrapper as="form" onSubmit={handleSubmit(onSubmit)} noValidate>
         <Input
           name="title"
@@ -50,7 +50,7 @@ const LabelForm = ({ handleClose, open, label }: FormLabel) => {
             <SketchPicker color={value} onChangeComplete={(color) => onChange(color.hex)} />
           )}
         />
-        <Button size="s" mt="16px" type="submit" data-testid="submit">
+        <Button disabled={loading} size="s" mt="16px" type="submit" data-testid="submit">
           Send
         </Button>
       </StyledWrapper>
