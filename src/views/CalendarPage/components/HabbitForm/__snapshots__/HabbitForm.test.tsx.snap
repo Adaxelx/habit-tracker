@@ -96,7 +96,7 @@ exports[`HabbitForm should match snapshot 1`] = `
 }
 
 .c14 {
-  color: #fff;
+  color: #000000;
   background-color: #FFC136;
   border: 1px solid #707070;
   padding: 0.75rem;

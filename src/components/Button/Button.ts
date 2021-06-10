@@ -11,7 +11,7 @@ interface ButtonProps {
 }
 
 const Button = styled.button<ButtonProps>`
-  color: ${({ theme, close }) => (close ? theme.colors.common.black : theme.colors.button.text)};
+  color: ${({ theme }) => theme.colors.common.black};
   background-color: ${({ theme, close }) =>
     close ? theme.colors.error.main : theme.colors.button.background};
   border: 1px solid ${({ theme }) => theme.colors.border};
