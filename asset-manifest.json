@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/habbit-tracker/static/css/main.590ca1a1.chunk.css",
-    "main.js": "/habbit-tracker/static/js/main.f82481d6.chunk.js",
-    "main.js.map": "/habbit-tracker/static/js/main.f82481d6.chunk.js.map",
-    "runtime-main.js": "/habbit-tracker/static/js/runtime-main.85ddba82.js",
-    "runtime-main.js.map": "/habbit-tracker/static/js/runtime-main.85ddba82.js.map",
-    "static/css/2.0cfad52a.chunk.css": "/habbit-tracker/static/css/2.0cfad52a.chunk.css",
-    "static/js/2.233fdb55.chunk.js": "/habbit-tracker/static/js/2.233fdb55.chunk.js",
-    "static/js/2.233fdb55.chunk.js.map": "/habbit-tracker/static/js/2.233fdb55.chunk.js.map",
-    "static/js/3.1a7714c5.chunk.js": "/habbit-tracker/static/js/3.1a7714c5.chunk.js",
-    "static/js/3.1a7714c5.chunk.js.map": "/habbit-tracker/static/js/3.1a7714c5.chunk.js.map",
-    "index.html": "/habbit-tracker/index.html",
-    "service-worker.js": "/habbit-tracker/service-worker.js",
-    "service-worker.js.map": "/habbit-tracker/service-worker.js.map",
-    "static/css/2.0cfad52a.chunk.css.map": "/habbit-tracker/static/css/2.0cfad52a.chunk.css.map",
-    "static/css/main.590ca1a1.chunk.css.map": "/habbit-tracker/static/css/main.590ca1a1.chunk.css.map",
-    "static/js/2.233fdb55.chunk.js.LICENSE.txt": "/habbit-tracker/static/js/2.233fdb55.chunk.js.LICENSE.txt"
+    "main.css": "/habit-tracker/static/css/main.590ca1a1.chunk.css",
+    "main.js": "/habit-tracker/static/js/main.9c07fd01.chunk.js",
+    "main.js.map": "/habit-tracker/static/js/main.9c07fd01.chunk.js.map",
+    "runtime-main.js": "/habit-tracker/static/js/runtime-main.a641df7b.js",
+    "runtime-main.js.map": "/habit-tracker/static/js/runtime-main.a641df7b.js.map",
+    "static/css/2.0cfad52a.chunk.css": "/habit-tracker/static/css/2.0cfad52a.chunk.css",
+    "static/js/2.679ea061.chunk.js": "/habit-tracker/static/js/2.679ea061.chunk.js",
+    "static/js/2.679ea061.chunk.js.map": "/habit-tracker/static/js/2.679ea061.chunk.js.map",
+    "static/js/3.d3abd8af.chunk.js": "/habit-tracker/static/js/3.d3abd8af.chunk.js",
+    "static/js/3.d3abd8af.chunk.js.map": "/habit-tracker/static/js/3.d3abd8af.chunk.js.map",
+    "index.html": "/habit-tracker/index.html",
+    "service-worker.js": "/habit-tracker/service-worker.js",
+    "service-worker.js.map": "/habit-tracker/service-worker.js.map",
+    "static/css/2.0cfad52a.chunk.css.map": "/habit-tracker/static/css/2.0cfad52a.chunk.css.map",
+    "static/css/main.590ca1a1.chunk.css.map": "/habit-tracker/static/css/main.590ca1a1.chunk.css.map",
+    "static/js/2.679ea061.chunk.js.LICENSE.txt": "/habit-tracker/static/js/2.679ea061.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.85ddba82.js",
+    "static/js/runtime-main.a641df7b.js",
     "static/css/2.0cfad52a.chunk.css",
-    "static/js/2.233fdb55.chunk.js",
+    "static/js/2.679ea061.chunk.js",
     "static/css/main.590ca1a1.chunk.css",
-    "static/js/main.f82481d6.chunk.js"
+    "static/js/main.9c07fd01.chunk.js"
   ]
 }
