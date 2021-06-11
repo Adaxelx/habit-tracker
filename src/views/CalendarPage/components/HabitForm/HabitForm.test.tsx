@@ -2,12 +2,12 @@ import React from 'react';
 import 'jest-styled-components';
 import { waitFor } from '@testing-library/dom';
 import { AlertContext } from 'context';
-import { AlertTypes, FormHabbit, TestUtil } from 'utils';
-import HabbitForm from './HabbitForm';
+import { AlertTypes, FormHabit, TestUtil } from 'utils';
+import HabitForm from './HabitForm';
 
-describe('HabbitForm', () => {
+describe('HabitForm', () => {
   let util: TestUtil;
-  let props: FormHabbit;
+  let props: FormHabit;
   let fail: boolean;
   const alertC = { showAlert: jest.fn() };
 
@@ -45,18 +45,18 @@ describe('HabbitForm', () => {
     util = new TestUtil(
       (
         <AlertContext.Provider value={alertC}>
-          <HabbitForm {...props} />
+          <HabitForm {...props} />
         </AlertContext.Provider>
       ),
     );
     expect(util.render.asFragment()).toMatchSnapshot();
   });
 
-  it('should send habbit', async () => {
+  it('should send Habit', async () => {
     util = new TestUtil(
       (
         <AlertContext.Provider value={alertC}>
-          <HabbitForm {...props} />
+          <HabitForm {...props} />
         </AlertContext.Provider>
       ),
     );
@@ -76,16 +76,16 @@ describe('HabbitForm', () => {
 
     await waitFor(() => expect(fetch).toHaveBeenCalledTimes(1));
 
-    expect(alertC.showAlert).toHaveBeenCalledWith('Succesfuly added habbit.', AlertTypes.SUCCESS);
+    expect(alertC.showAlert).toHaveBeenCalledWith('Succesfuly added Habit.', AlertTypes.SUCCESS);
   });
 
-  it('should not send habbit if api fails', async () => {
+  it('should not send Habit if api fails', async () => {
     fail = true;
 
     util = new TestUtil(
       (
         <AlertContext.Provider value={alertC}>
-          <HabbitForm {...props} />
+          <HabitForm {...props} />
         </AlertContext.Provider>
       ),
     );
@@ -105,7 +105,7 @@ describe('HabbitForm', () => {
     expect(alertC.showAlert).toHaveBeenCalledWith('error');
   });
 
-  it('should send edited habbit', async () => {
+  it('should send edited Habit', async () => {
     props = {
       ...props,
       event: {
@@ -125,7 +125,7 @@ describe('HabbitForm', () => {
     util = new TestUtil(
       (
         <AlertContext.Provider value={alertC}>
-          <HabbitForm {...props} />
+          <HabitForm {...props} />
         </AlertContext.Provider>
       ),
     );
@@ -135,6 +135,6 @@ describe('HabbitForm', () => {
 
     await waitFor(() => expect(fetch).toHaveBeenCalledTimes(1));
 
-    expect(alertC.showAlert).toHaveBeenCalledWith('Succesfuly edited habbit.', AlertTypes.SUCCESS);
+    expect(alertC.showAlert).toHaveBeenCalledWith('Succesfuly edited Habit.', AlertTypes.SUCCESS);
   });
 });

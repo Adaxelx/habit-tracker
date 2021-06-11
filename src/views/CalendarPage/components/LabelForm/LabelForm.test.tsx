@@ -74,7 +74,7 @@ describe('LabelForm', () => {
     expect(alertC.showAlert).toHaveBeenCalledWith('Succesfuly added label.', AlertTypes.SUCCESS);
   });
 
-  it('should not send habbit if api fails', async () => {
+  it('should not send Habit if api fails', async () => {
     fail = true;
 
     util = new TestUtil(
@@ -94,7 +94,7 @@ describe('LabelForm', () => {
     expect(alertC.showAlert).toHaveBeenCalledWith('error');
   });
 
-  it('should send edited habbit', async () => {
+  it('should send edited Habit', async () => {
     props = {
       ...props,
       label: { _id: '1', userId: '123', color: '#fffffff', title: 'label' },

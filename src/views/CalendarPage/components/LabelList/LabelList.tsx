@@ -9,11 +9,11 @@ import { Label } from '..';
 const LabelList = ({ handleClose, open, labels }: FormWithLabels) => {
   const { token } = useUserContext();
 
-  const { handleRefHabbit, handleRefLabel } = useRefreshContext();
+  const { handleRefHabit, handleRefLabel } = useRefreshContext();
 
   const [mutate, loading] = useMutation({
     request: (id: string) => deleteLabel(token, id),
-    refresh: [handleRefLabel, handleRefHabbit],
+    refresh: [handleRefLabel, handleRefHabit],
     messageSuccess: 'Succesfuly deleted label.',
   });
 

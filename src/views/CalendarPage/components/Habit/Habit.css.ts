@@ -15,7 +15,7 @@ export const StyledLabel = styled.small<LabelProps>`
   border-radius: 20px;
 `;
 
-interface HabbitProps {
+interface HabitProps {
   checked?: boolean;
 }
 
@@ -24,7 +24,7 @@ const checkedStyles = css`
   color: gray;
 `;
 
-export const StyledHabbit = styled.div<HabbitProps>`
+export const StyledHabit = styled.div<HabitProps>`
   display: flex;
   flex-direction: column;
   align-items: flex-start;

@@ -4,7 +4,7 @@ import { useForm, Controller } from 'react-hook-form';
 import { useUserContext, useRefreshContext } from 'context';
 import { FormLabel, LabelSend, createRestrictedLengthObject } from 'utils';
 import { SketchPicker } from 'react-color';
-import { StyledWrapper } from 'views/CalendarPage/components/HabbitForm/HabbitForm.css';
+import { StyledWrapper } from 'views/CalendarPage/components/HabitForm/HabitForm.css';
 import { postLabel } from 'views/CalendarPage/CalendarPage.api';
 import { useMutation } from 'hooks';
 

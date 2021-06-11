@@ -378,7 +378,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
         class="c9"
         data-testid="addh"
       >
-        Add habbit
+        Add Habit
       </button>
       <button
         class="c10"
@@ -394,49 +394,29 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
       </button>
     </div>
     <h2>
-      25.03.2022 - 25.03.2022
+      27.03.2022 - 27.03.2022
     </h2>
     <div
       class="c11"
     >
       <div
         class="c12"
-        data-testid="2022-2-25"
+        data-testid="2022-2-27"
       >
         <h3
           class="c13"
         >
-          Friday
+          Sunday
         </h3>
       </div>
       <div
         class="c12"
-        data-testid="2022-2-25"
+        data-testid="2022-2-27"
       >
         <h3
           class="c13"
         >
-          Friday
-        </h3>
-      </div>
-      <div
-        class="c12"
-        data-testid="2022-2-25"
-      >
-        <h3
-          class="c13"
-        >
-          Friday
-        </h3>
-      </div>
-      <div
-        class="c12"
-        data-testid="2022-2-25"
-      >
-        <h3
-          class="c13"
-        >
-          Friday
+          Sunday
         </h3>
         <div
           class="c14"
@@ -445,7 +425,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
             class="c15"
             data-testid="edit"
           >
-            Edit habbit
+            Edit Habit
           </button>
           <button
             class="c16"
@@ -455,7 +435,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
           </button>
           <div
             class="c17"
-            data-testid="habbit123"
+            data-testid="habit123"
           >
             <small
               class="c18"
@@ -487,7 +467,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
             class="c15"
             data-testid="edit"
           >
-            Edit habbit
+            Edit Habit
           </button>
           <button
             class="c16"
@@ -497,7 +477,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
           </button>
           <div
             class="c17"
-            data-testid="habbit1234"
+            data-testid="habit1234"
           >
             <h2
               class="c19"
@@ -519,12 +499,12 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
       </div>
       <div
         class="c12"
-        data-testid="2022-2-25"
+        data-testid="2022-2-27"
       >
         <h3
           class="c13"
         >
-          Friday
+          Sunday
         </h3>
         <div
           class="c14"
@@ -533,7 +513,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
             class="c15"
             data-testid="edit"
           >
-            Edit habbit
+            Edit Habit
           </button>
           <button
             class="c16"
@@ -543,7 +523,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
           </button>
           <div
             class="c17"
-            data-testid="habbit123"
+            data-testid="habit123"
           >
             <small
               class="c18"
@@ -575,7 +555,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
             class="c15"
             data-testid="edit"
           >
-            Edit habbit
+            Edit Habit
           </button>
           <button
             class="c16"
@@ -585,7 +565,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
           </button>
           <div
             class="c17"
-            data-testid="habbit1234"
+            data-testid="habit1234"
           >
             <h2
               class="c19"
@@ -607,22 +587,22 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
       </div>
       <div
         class="c12"
-        data-testid="2022-2-25"
+        data-testid="2022-2-27"
       >
         <h3
           class="c13"
         >
-          Friday
+          Sunday
         </h3>
       </div>
       <div
         class="c12"
-        data-testid="2022-2-25"
+        data-testid="2022-2-27"
       >
         <h3
           class="c13"
         >
-          Friday
+          Sunday
         </h3>
         <div
           class="c14"
@@ -631,7 +611,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
             class="c15"
             data-testid="edit"
           >
-            Edit habbit
+            Edit Habit
           </button>
           <button
             class="c16"
@@ -641,7 +621,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
           </button>
           <div
             class="c17"
-            data-testid="habbit123"
+            data-testid="habit123"
           >
             <small
               class="c18"
@@ -673,7 +653,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
             class="c15"
             data-testid="edit"
           >
-            Edit habbit
+            Edit Habit
           </button>
           <button
             class="c16"
@@ -683,7 +663,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
           </button>
           <div
             class="c17"
-            data-testid="habbit1234"
+            data-testid="habit1234"
           >
             <h2
               class="c19"
@@ -705,42 +685,42 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
       </div>
       <div
         class="c12"
-        data-testid="2022-2-25"
+        data-testid="2022-2-27"
       >
         <h3
           class="c13"
         >
-          Friday
+          Sunday
         </h3>
       </div>
       <div
         class="c12"
-        data-testid="2022-2-25"
+        data-testid="2022-2-27"
       >
         <h3
           class="c13"
         >
-          Friday
+          Sunday
         </h3>
       </div>
       <div
         class="c12"
-        data-testid="2022-2-25"
+        data-testid="2022-2-27"
       >
         <h3
           class="c13"
         >
-          Friday
+          Sunday
         </h3>
       </div>
       <div
         class="c12"
-        data-testid="2022-2-25"
+        data-testid="2022-2-27"
       >
         <h3
           class="c13"
         >
-          Friday
+          Sunday
         </h3>
         <div
           class="c14"
@@ -749,7 +729,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
             class="c15"
             data-testid="edit"
           >
-            Edit habbit
+            Edit Habit
           </button>
           <button
             class="c16"
@@ -759,7 +739,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
           </button>
           <div
             class="c17"
-            data-testid="habbit123"
+            data-testid="habit123"
           >
             <small
               class="c18"
@@ -791,7 +771,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
             class="c15"
             data-testid="edit"
           >
-            Edit habbit
+            Edit Habit
           </button>
           <button
             class="c16"
@@ -801,7 +781,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
           </button>
           <div
             class="c17"
-            data-testid="habbit1234"
+            data-testid="habit1234"
           >
             <h2
               class="c19"
@@ -823,12 +803,12 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
       </div>
       <div
         class="c12"
-        data-testid="2022-2-25"
+        data-testid="2022-2-27"
       >
         <h3
           class="c13"
         >
-          Friday
+          Sunday
         </h3>
         <div
           class="c14"
@@ -837,7 +817,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
             class="c15"
             data-testid="edit"
           >
-            Edit habbit
+            Edit Habit
           </button>
           <button
             class="c16"
@@ -847,7 +827,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
           </button>
           <div
             class="c17"
-            data-testid="habbit123"
+            data-testid="habit123"
           >
             <small
               class="c18"
@@ -879,7 +859,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
             class="c15"
             data-testid="edit"
           >
-            Edit habbit
+            Edit Habit
           </button>
           <button
             class="c16"
@@ -889,7 +869,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
           </button>
           <div
             class="c17"
-            data-testid="habbit1234"
+            data-testid="habit1234"
           >
             <h2
               class="c19"
@@ -911,22 +891,22 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
       </div>
       <div
         class="c12"
-        data-testid="2022-2-25"
+        data-testid="2022-2-27"
       >
         <h3
           class="c13"
         >
-          Friday
+          Sunday
         </h3>
       </div>
       <div
         class="c12"
-        data-testid="2022-2-25"
+        data-testid="2022-2-27"
       >
         <h3
           class="c13"
         >
-          Friday
+          Sunday
         </h3>
         <div
           class="c14"
@@ -935,7 +915,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
             class="c15"
             data-testid="edit"
           >
-            Edit habbit
+            Edit Habit
           </button>
           <button
             class="c16"
@@ -945,7 +925,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
           </button>
           <div
             class="c17"
-            data-testid="habbit123"
+            data-testid="habit123"
           >
             <small
               class="c18"
@@ -977,7 +957,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
             class="c15"
             data-testid="edit"
           >
-            Edit habbit
+            Edit Habit
           </button>
           <button
             class="c16"
@@ -987,7 +967,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
           </button>
           <div
             class="c17"
-            data-testid="habbit1234"
+            data-testid="habit1234"
           >
             <h2
               class="c19"
@@ -1009,42 +989,42 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
       </div>
       <div
         class="c12"
-        data-testid="2022-2-25"
+        data-testid="2022-2-27"
       >
         <h3
           class="c13"
         >
-          Friday
+          Sunday
         </h3>
       </div>
       <div
         class="c12"
-        data-testid="2022-2-25"
+        data-testid="2022-2-27"
       >
         <h3
           class="c13"
         >
-          Friday
+          Sunday
         </h3>
       </div>
       <div
         class="c12"
-        data-testid="2022-2-25"
+        data-testid="2022-2-27"
       >
         <h3
           class="c13"
         >
-          Friday
+          Sunday
         </h3>
       </div>
       <div
         class="c12"
-        data-testid="2022-2-25"
+        data-testid="2022-2-27"
       >
         <h3
           class="c13"
         >
-          Friday
+          Sunday
         </h3>
         <div
           class="c14"
@@ -1053,7 +1033,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
             class="c15"
             data-testid="edit"
           >
-            Edit habbit
+            Edit Habit
           </button>
           <button
             class="c16"
@@ -1063,7 +1043,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
           </button>
           <div
             class="c17"
-            data-testid="habbit123"
+            data-testid="habit123"
           >
             <small
               class="c18"
@@ -1095,7 +1075,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
             class="c15"
             data-testid="edit"
           >
-            Edit habbit
+            Edit Habit
           </button>
           <button
             class="c16"
@@ -1105,7 +1085,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
           </button>
           <div
             class="c17"
-            data-testid="habbit1234"
+            data-testid="habit1234"
           >
             <h2
               class="c19"
@@ -1127,12 +1107,12 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
       </div>
       <div
         class="c12"
-        data-testid="2022-2-25"
+        data-testid="2022-2-27"
       >
         <h3
           class="c13"
         >
-          Friday
+          Sunday
         </h3>
         <div
           class="c14"
@@ -1141,7 +1121,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
             class="c15"
             data-testid="edit"
           >
-            Edit habbit
+            Edit Habit
           </button>
           <button
             class="c16"
@@ -1151,7 +1131,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
           </button>
           <div
             class="c17"
-            data-testid="habbit123"
+            data-testid="habit123"
           >
             <small
               class="c18"
@@ -1183,7 +1163,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
             class="c15"
             data-testid="edit"
           >
-            Edit habbit
+            Edit Habit
           </button>
           <button
             class="c16"
@@ -1193,7 +1173,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
           </button>
           <div
             class="c17"
-            data-testid="habbit1234"
+            data-testid="habit1234"
           >
             <h2
               class="c19"
@@ -1215,22 +1195,22 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
       </div>
       <div
         class="c12"
-        data-testid="2022-2-25"
+        data-testid="2022-2-27"
       >
         <h3
           class="c13"
         >
-          Friday
+          Sunday
         </h3>
       </div>
       <div
         class="c12"
-        data-testid="2022-2-25"
+        data-testid="2022-2-27"
       >
         <h3
           class="c13"
         >
-          Friday
+          Sunday
         </h3>
         <div
           class="c14"
@@ -1239,7 +1219,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
             class="c15"
             data-testid="edit"
           >
-            Edit habbit
+            Edit Habit
           </button>
           <button
             class="c16"
@@ -1249,7 +1229,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
           </button>
           <div
             class="c17"
-            data-testid="habbit123"
+            data-testid="habit123"
           >
             <small
               class="c18"
@@ -1281,7 +1261,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
             class="c15"
             data-testid="edit"
           >
-            Edit habbit
+            Edit Habit
           </button>
           <button
             class="c16"
@@ -1291,7 +1271,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
           </button>
           <div
             class="c17"
-            data-testid="habbit1234"
+            data-testid="habit1234"
           >
             <h2
               class="c19"
@@ -1313,42 +1293,42 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
       </div>
       <div
         class="c12"
-        data-testid="2022-2-25"
+        data-testid="2022-2-27"
       >
         <h3
           class="c13"
         >
-          Friday
+          Sunday
         </h3>
       </div>
       <div
         class="c12"
-        data-testid="2022-2-25"
+        data-testid="2022-2-27"
       >
         <h3
           class="c13"
         >
-          Friday
+          Sunday
         </h3>
       </div>
       <div
         class="c12"
-        data-testid="2022-2-25"
+        data-testid="2022-2-27"
       >
         <h3
           class="c13"
         >
-          Friday
+          Sunday
         </h3>
       </div>
       <div
         class="c12"
-        data-testid="2022-2-25"
+        data-testid="2022-2-27"
       >
         <h3
           class="c13"
         >
-          Friday
+          Sunday
         </h3>
         <div
           class="c14"
@@ -1357,7 +1337,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
             class="c15"
             data-testid="edit"
           >
-            Edit habbit
+            Edit Habit
           </button>
           <button
             class="c16"
@@ -1367,7 +1347,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
           </button>
           <div
             class="c17"
-            data-testid="habbit123"
+            data-testid="habit123"
           >
             <small
               class="c18"
@@ -1399,7 +1379,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
             class="c15"
             data-testid="edit"
           >
-            Edit habbit
+            Edit Habit
           </button>
           <button
             class="c16"
@@ -1409,7 +1389,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
           </button>
           <div
             class="c17"
-            data-testid="habbit1234"
+            data-testid="habit1234"
           >
             <h2
               class="c19"
@@ -1431,12 +1411,12 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
       </div>
       <div
         class="c12"
-        data-testid="2022-2-25"
+        data-testid="2022-2-27"
       >
         <h3
           class="c13"
         >
-          Friday
+          Sunday
         </h3>
         <div
           class="c14"
@@ -1445,7 +1425,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
             class="c15"
             data-testid="edit"
           >
-            Edit habbit
+            Edit Habit
           </button>
           <button
             class="c16"
@@ -1455,7 +1435,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
           </button>
           <div
             class="c17"
-            data-testid="habbit123"
+            data-testid="habit123"
           >
             <small
               class="c18"
@@ -1487,7 +1467,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
             class="c15"
             data-testid="edit"
           >
-            Edit habbit
+            Edit Habit
           </button>
           <button
             class="c16"
@@ -1497,7 +1477,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
           </button>
           <div
             class="c17"
-            data-testid="habbit1234"
+            data-testid="habit1234"
           >
             <h2
               class="c19"
@@ -1519,22 +1499,22 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
       </div>
       <div
         class="c12"
-        data-testid="2022-2-25"
+        data-testid="2022-2-27"
       >
         <h3
           class="c13"
         >
-          Friday
+          Sunday
         </h3>
       </div>
       <div
         class="c12"
-        data-testid="2022-2-25"
+        data-testid="2022-2-27"
       >
         <h3
           class="c13"
         >
-          Friday
+          Sunday
         </h3>
         <div
           class="c14"
@@ -1543,7 +1523,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
             class="c15"
             data-testid="edit"
           >
-            Edit habbit
+            Edit Habit
           </button>
           <button
             class="c16"
@@ -1553,7 +1533,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
           </button>
           <div
             class="c17"
-            data-testid="habbit123"
+            data-testid="habit123"
           >
             <small
               class="c18"
@@ -1585,7 +1565,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
             class="c15"
             data-testid="edit"
           >
-            Edit habbit
+            Edit Habit
           </button>
           <button
             class="c16"
@@ -1595,7 +1575,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
           </button>
           <div
             class="c17"
-            data-testid="habbit1234"
+            data-testid="habit1234"
           >
             <h2
               class="c19"
@@ -1617,42 +1597,42 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
       </div>
       <div
         class="c12"
-        data-testid="2022-2-25"
+        data-testid="2022-2-27"
       >
         <h3
           class="c13"
         >
-          Friday
+          Sunday
         </h3>
       </div>
       <div
         class="c12"
-        data-testid="2022-2-25"
+        data-testid="2022-2-27"
       >
         <h3
           class="c13"
         >
-          Friday
+          Sunday
         </h3>
       </div>
       <div
         class="c12"
-        data-testid="2022-2-25"
+        data-testid="2022-2-27"
       >
         <h3
           class="c13"
         >
-          Friday
+          Sunday
         </h3>
       </div>
       <div
         class="c12"
-        data-testid="2022-2-25"
+        data-testid="2022-2-27"
       >
         <h3
           class="c13"
         >
-          Friday
+          Sunday
         </h3>
         <div
           class="c14"
@@ -1661,7 +1641,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
             class="c15"
             data-testid="edit"
           >
-            Edit habbit
+            Edit Habit
           </button>
           <button
             class="c16"
@@ -1671,7 +1651,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
           </button>
           <div
             class="c17"
-            data-testid="habbit123"
+            data-testid="habit123"
           >
             <small
               class="c18"
@@ -1703,7 +1683,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
             class="c15"
             data-testid="edit"
           >
-            Edit habbit
+            Edit Habit
           </button>
           <button
             class="c16"
@@ -1713,7 +1693,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
           </button>
           <div
             class="c17"
-            data-testid="habbit1234"
+            data-testid="habit1234"
           >
             <h2
               class="c19"
@@ -1735,12 +1715,12 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
       </div>
       <div
         class="c12"
-        data-testid="2022-2-25"
+        data-testid="2022-2-27"
       >
         <h3
           class="c13"
         >
-          Friday
+          Sunday
         </h3>
         <div
           class="c14"
@@ -1749,7 +1729,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
             class="c15"
             data-testid="edit"
           >
-            Edit habbit
+            Edit Habit
           </button>
           <button
             class="c16"
@@ -1759,7 +1739,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
           </button>
           <div
             class="c17"
-            data-testid="habbit123"
+            data-testid="habit123"
           >
             <small
               class="c18"
@@ -1791,7 +1771,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
             class="c15"
             data-testid="edit"
           >
-            Edit habbit
+            Edit Habit
           </button>
           <button
             class="c16"
@@ -1801,7 +1781,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
           </button>
           <div
             class="c17"
-            data-testid="habbit1234"
+            data-testid="habit1234"
           >
             <h2
               class="c19"
@@ -1823,22 +1803,22 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
       </div>
       <div
         class="c12"
-        data-testid="2022-2-25"
+        data-testid="2022-2-27"
       >
         <h3
           class="c13"
         >
-          Friday
+          Sunday
         </h3>
       </div>
       <div
         class="c12"
-        data-testid="2022-2-25"
+        data-testid="2022-2-27"
       >
         <h3
           class="c13"
         >
-          Friday
+          Sunday
         </h3>
         <div
           class="c14"
@@ -1847,7 +1827,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
             class="c15"
             data-testid="edit"
           >
-            Edit habbit
+            Edit Habit
           </button>
           <button
             class="c16"
@@ -1857,7 +1837,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
           </button>
           <div
             class="c17"
-            data-testid="habbit123"
+            data-testid="habit123"
           >
             <small
               class="c18"
@@ -1889,7 +1869,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
             class="c15"
             data-testid="edit"
           >
-            Edit habbit
+            Edit Habit
           </button>
           <button
             class="c16"
@@ -1899,7 +1879,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
           </button>
           <div
             class="c17"
-            data-testid="habbit1234"
+            data-testid="habit1234"
           >
             <h2
               class="c19"
@@ -1921,42 +1901,42 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
       </div>
       <div
         class="c12"
-        data-testid="2022-2-25"
+        data-testid="2022-2-27"
       >
         <h3
           class="c13"
         >
-          Friday
+          Sunday
         </h3>
       </div>
       <div
         class="c12"
-        data-testid="2022-2-25"
+        data-testid="2022-2-27"
       >
         <h3
           class="c13"
         >
-          Friday
+          Sunday
         </h3>
       </div>
       <div
         class="c12"
-        data-testid="2022-2-25"
+        data-testid="2022-2-27"
       >
         <h3
           class="c13"
         >
-          Friday
+          Sunday
         </h3>
       </div>
       <div
         class="c12"
-        data-testid="2022-2-25"
+        data-testid="2022-2-27"
       >
         <h3
           class="c13"
         >
-          Friday
+          Sunday
         </h3>
         <div
           class="c14"
@@ -1965,7 +1945,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
             class="c15"
             data-testid="edit"
           >
-            Edit habbit
+            Edit Habit
           </button>
           <button
             class="c16"
@@ -1975,7 +1955,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
           </button>
           <div
             class="c17"
-            data-testid="habbit123"
+            data-testid="habit123"
           >
             <small
               class="c18"
@@ -2007,7 +1987,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
             class="c15"
             data-testid="edit"
           >
-            Edit habbit
+            Edit Habit
           </button>
           <button
             class="c16"
@@ -2017,7 +1997,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
           </button>
           <div
             class="c17"
-            data-testid="habbit1234"
+            data-testid="habit1234"
           >
             <h2
               class="c19"
@@ -2039,12 +2019,12 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
       </div>
       <div
         class="c12"
-        data-testid="2022-2-25"
+        data-testid="2022-2-27"
       >
         <h3
           class="c13"
         >
-          Friday
+          Sunday
         </h3>
         <div
           class="c14"
@@ -2053,7 +2033,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
             class="c15"
             data-testid="edit"
           >
-            Edit habbit
+            Edit Habit
           </button>
           <button
             class="c16"
@@ -2063,7 +2043,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
           </button>
           <div
             class="c17"
-            data-testid="habbit123"
+            data-testid="habit123"
           >
             <small
               class="c18"
@@ -2095,7 +2075,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
             class="c15"
             data-testid="edit"
           >
-            Edit habbit
+            Edit Habit
           </button>
           <button
             class="c16"
@@ -2105,7 +2085,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
           </button>
           <div
             class="c17"
-            data-testid="habbit1234"
+            data-testid="habit1234"
           >
             <h2
               class="c19"
@@ -2127,22 +2107,22 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
       </div>
       <div
         class="c12"
-        data-testid="2022-2-25"
+        data-testid="2022-2-27"
       >
         <h3
           class="c13"
         >
-          Friday
+          Sunday
         </h3>
       </div>
       <div
         class="c12"
-        data-testid="2022-2-25"
+        data-testid="2022-2-27"
       >
         <h3
           class="c13"
         >
-          Friday
+          Sunday
         </h3>
         <div
           class="c14"
@@ -2151,7 +2131,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
             class="c15"
             data-testid="edit"
           >
-            Edit habbit
+            Edit Habit
           </button>
           <button
             class="c16"
@@ -2161,7 +2141,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
           </button>
           <div
             class="c17"
-            data-testid="habbit123"
+            data-testid="habit123"
           >
             <small
               class="c18"
@@ -2193,7 +2173,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
             class="c15"
             data-testid="edit"
           >
-            Edit habbit
+            Edit Habit
           </button>
           <button
             class="c16"
@@ -2203,7 +2183,7 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
           </button>
           <div
             class="c17"
-            data-testid="habbit1234"
+            data-testid="habit1234"
           >
             <h2
               class="c19"
@@ -2222,6 +2202,26 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
             </p>
           </div>
         </div>
+      </div>
+      <div
+        class="c12"
+        data-testid="2022-2-27"
+      >
+        <h3
+          class="c13"
+        >
+          Sunday
+        </h3>
+      </div>
+      <div
+        class="c12"
+        data-testid="2022-2-27"
+      >
+        <h3
+          class="c13"
+        >
+          Sunday
+        </h3>
       </div>
     </div>
   </div>

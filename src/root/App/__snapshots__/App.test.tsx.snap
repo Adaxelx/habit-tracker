@@ -320,7 +320,7 @@ exports[`App should match snapshot 1`] = `
         <h2
           class="c4"
         >
-          Habbit tracker
+          Habit tracker
         </h2>
         <p
           class="c5"

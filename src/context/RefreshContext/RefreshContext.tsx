@@ -1,16 +1,16 @@
 import React, { createContext, useContext, useState } from 'react';
 
 interface RefProviderProps {
-  refHabbit: boolean;
+  refHabit: boolean;
   refLabel: boolean;
-  handleRefHabbit: Function;
+  handleRefHabit: Function;
   handleRefLabel: Function;
 }
 
 const RefreshContext = createContext<RefProviderProps>({
-  refHabbit: false,
+  refHabit: false,
   refLabel: false,
-  handleRefHabbit: () => {},
+  handleRefHabit: () => {},
   handleRefLabel: () => {},
 });
 
@@ -21,13 +21,13 @@ type RefProps = {
 };
 
 const RefreshProvider = ({ children }: RefProps) => {
-  const [refHabbit, setRefHabbit] = useState(false);
+  const [refHabit, setRefHabit] = useState(false);
   const [refLabel, setRefLabel] = useState(false);
 
   const refresh: RefProviderProps = {
-    refHabbit,
+    refHabit,
     refLabel,
-    handleRefHabbit: () => setRefHabbit((prev) => !prev),
+    handleRefHabit: () => setRefHabit((prev) => !prev),
     handleRefLabel: () => setRefLabel((prev) => !prev),
   };
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button, DeleteModal } from 'components';
-import { StyledLabel } from 'views/CalendarPage/components/Habbit/Habbit.css';
+import { StyledLabel } from 'views/CalendarPage/components/Habit/Habit.css';
 import { useDelete } from 'hooks';
 import { LabelProps } from 'utils';
 import { LabelForm } from '..';

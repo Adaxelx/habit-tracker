@@ -92,15 +92,15 @@ export interface FormWithLabels extends FormProps {
   labels: Label[];
 }
 
-export interface FormHabbit extends FormWithLabels {
+export interface FormHabit extends FormWithLabels {
   event?: Event;
 }
 
 export interface FormLabel extends FormProps {
   label?: Label;
 }
-export interface HabbitProps {
-  habbit: Event;
+export interface HabitProps {
+  habit: Event;
   labels: Label[];
   checked: boolean;
   day: DateTuple;

@@ -1,14 +1,14 @@
 import React from 'react';
 import 'jest-styled-components';
-import { TestUtil, HabbitProps, AlertTypes } from 'utils';
+import { TestUtil, HabitProps, AlertTypes } from 'utils';
 import { AlertContext } from 'context';
 import { waitFor } from '@testing-library/dom';
-import Habbit from './Habbit';
+import Habit from './Habit';
 
-describe('Habbit', () => {
+describe('Habit', () => {
   let util: TestUtil;
   const alertC = { showAlert: jest.fn() };
-  let props: HabbitProps;
+  let props: HabitProps;
   let fail: boolean;
   const mockedFetch = (input: string, init: { method: string }) => {
     if (fail) {
@@ -43,10 +43,10 @@ describe('Habbit', () => {
     jest.clearAllMocks();
     fail = false;
     props = {
-      habbit: {
+      habit: {
         _id: '123',
         userId: '123',
-        title: 'habbit',
+        title: 'habit',
         description: 'desc',
         daysOfWeek: [0, 2, 4, 6],
         dateStart: '2021-06-06',
@@ -62,7 +62,7 @@ describe('Habbit', () => {
     util = new TestUtil(
       (
         <AlertContext.Provider value={alertC}>
-          <Habbit {...props} />
+          <Habit {...props} />
         </AlertContext.Provider>
       ),
     );
@@ -73,7 +73,7 @@ describe('Habbit', () => {
     expect(util.render.asFragment()).toMatchSnapshot();
   });
 
-  it('should delete habbit', async () => {
+  it('should delete habit', async () => {
     util.click('delete');
 
     await waitFor(() => expect(util.get('deleteModal-close')).toBeInTheDocument());
@@ -82,12 +82,12 @@ describe('Habbit', () => {
     await waitFor(() => expect(fetch).toHaveBeenCalledTimes(1));
 
     expect(alertC.showAlert).toHaveBeenCalledWith(
-      'Successfully deleted habbit.',
+      'Successfully deleted habit.',
       AlertTypes.SUCCESS,
     );
   });
 
-  it('should not delete habbit if api fails', async () => {
+  it('should not delete habit if api fails', async () => {
     fail = true;
     util.click('delete');
     await waitFor(() => expect(util.get('deleteModal-close')).toBeInTheDocument());
@@ -98,17 +98,17 @@ describe('Habbit', () => {
     expect(alertC.showAlert).toHaveBeenCalledWith('error');
   });
 
-  it('should check habbit', async () => {
-    util.click('habbit123');
+  it('should check habit', async () => {
+    util.click('habit123');
 
     await waitFor(() => expect(fetch).toHaveBeenCalledTimes(1));
 
     expect(alertC.showAlert).toHaveBeenCalledWith('Successful state change.', AlertTypes.SUCCESS);
   });
 
-  it('should not check habbit if api fails', async () => {
+  it('should not check habit if api fails', async () => {
     fail = true;
-    util.click('habbit123');
+    util.click('habit123');
 
     await waitFor(() => expect(fetch).toHaveBeenCalledTimes(1));
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { DayCardProps } from 'utils';
 import { StyledCard, StyledWeekDay } from './DayCard.css';
-import { Habbit } from '..';
+import { Habit } from '..';
 
 const DayCard = ({ events, header, active, labels, date }: DayCardProps) => {
   const [yearA, monthA, dayA] = date;
@@ -9,9 +9,9 @@ const DayCard = ({ events, header, active, labels, date }: DayCardProps) => {
     <StyledCard data-testid={`${yearA}-${monthA}-${dayA}`} active={active}>
       <StyledWeekDay>{header}</StyledWeekDay>
       {events.map((event) => (
-        <Habbit
+        <Habit
           key={event._id}
-          habbit={event}
+          habit={event}
           labels={labels}
           day={date}
           checked={

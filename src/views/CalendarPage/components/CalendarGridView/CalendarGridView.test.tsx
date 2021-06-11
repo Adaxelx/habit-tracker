@@ -34,7 +34,7 @@ describe('CalendarGridView', () => {
   });
 
   it('should close and open event form', async () => {
-    const header = 'Add habbit';
+    const header = 'Add Habit';
     await act(async () => {
       await util.click('addh');
     });

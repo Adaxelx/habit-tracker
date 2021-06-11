@@ -1,35 +1,35 @@
 import React, { useState } from 'react';
 import { Button, DeleteModal } from 'components';
-import { HabbitProps } from 'utils';
+import { HabitProps } from 'utils';
 import { useMutation, useDelete } from 'hooks';
 import { useUserContext, useRefreshContext } from 'context';
 import { checkEvent, deleteEvent } from 'views/CalendarPage/CalendarPage.api';
-import { HabbitForm } from '..';
+import { HabitForm } from '..';
 import {
-  StyledHabbit,
+  StyledHabit,
   StyledTime,
   StyledDescription,
   StyledTitle,
   StyledContainer,
   StyledLabel,
-} from './Habbit.css';
+} from './Habit.css';
 
-const Habbit = ({ habbit, labels, checked, day }: HabbitProps) => {
-  const { title, timeEnd, timeStart, description, label, _id } = habbit;
+const Habit = ({ habit, labels, checked, day }: HabitProps) => {
+  const { title, timeEnd, timeStart, description, label, _id } = habit;
 
   const [open, setOpen] = useState(false);
   const { token } = useUserContext();
 
-  const { handleRefHabbit } = useRefreshContext();
+  const { handleRefHabit } = useRefreshContext();
 
   const [mutate, loading] = useMutation({
     request: () => deleteEvent(token, _id),
-    refresh: handleRefHabbit,
-    messageSuccess: 'Successfully deleted habbit.',
+    refresh: handleRefHabit,
+    messageSuccess: 'Successfully deleted habit.',
   });
   const [mutateCheck, loadingC] = useMutation({
     request: () => checkEvent(token, _id, day),
-    refresh: handleRefHabbit,
+    refresh: handleRefHabit,
     messageSuccess: 'Successful state change.',
   });
 
@@ -47,7 +47,7 @@ const Habbit = ({ habbit, labels, checked, day }: HabbitProps) => {
           data-testid="edit"
           onClick={() => setOpen(true)}
         >
-          Edit habbit
+          Edit Habit
         </Button>
         <Button
           size="s"
@@ -59,8 +59,8 @@ const Habbit = ({ habbit, labels, checked, day }: HabbitProps) => {
         >
           X
         </Button>
-        <StyledHabbit
-          data-testid={`habbit${_id}`}
+        <StyledHabit
+          data-testid={`habit${_id}`}
           checked={checked}
           onClick={navigator.onLine && !loading && !loadingC ? () => mutateCheck() : () => {}}
         >
@@ -68,11 +68,11 @@ const Habbit = ({ habbit, labels, checked, day }: HabbitProps) => {
           <StyledTitle>{title}</StyledTitle>
           <StyledTime>{`${timeStart}-${timeEnd}`}</StyledTime>
           <StyledDescription>{description}</StyledDescription>
-        </StyledHabbit>
-        <HabbitForm open={open} handleClose={() => setOpen(false)} labels={labels} event={habbit} />
+        </StyledHabit>
+        <HabitForm open={open} handleClose={() => setOpen(false)} labels={labels} event={habit} />
       </StyledContainer>
     </>
   );
 };
 
-export default Habbit;
+export default Habit;

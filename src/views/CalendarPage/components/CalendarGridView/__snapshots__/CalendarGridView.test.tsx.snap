@@ -288,7 +288,7 @@ exports[`CalendarGridView should match snapshot 1`] = `
       class="c1"
       data-testid="addh"
     >
-      Add habbit
+      Add Habit
     </button>
     <button
       class="c2"

@@ -15,7 +15,7 @@ const Dashboard = () => (
   <Container>
     <StyledWrapper>
       <StyledContentWrapper>
-        <StyledHeader>Habbit tracker</StyledHeader>
+        <StyledHeader>Habit tracker</StyledHeader>
         <StyledDescription>
           Track your progress in very simple and personalized app
         </StyledDescription>

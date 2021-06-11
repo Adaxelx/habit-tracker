@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`HabbitForm should match snapshot 1`] = `
+exports[`HabitForm should match snapshot 1`] = `
 <DocumentFragment>
   .c0 {
   width: 100%;
@@ -202,7 +202,7 @@ exports[`HabbitForm should match snapshot 1`] = `
   >
     <button
       class="c1"
-      data-testid="Add habbit-close"
+      data-testid="Add Habit-close"
       type="button"
     >
       <div
@@ -216,9 +216,9 @@ exports[`HabbitForm should match snapshot 1`] = `
     </button>
     <h2
       class="c4"
-      data-testid="Add habbit-header"
+      data-testid="Add Habit-header"
     >
-      Add habbit
+      Add Habit
     </h2>
     <form
       class="c5"

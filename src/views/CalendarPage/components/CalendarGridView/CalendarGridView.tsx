@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button } from 'components';
 import { StyledButtonWrapper } from 'views/CalendarPage/CalendarPage.css';
 import { GridViewProps } from 'utils';
-import { CalendarGrid, HabbitForm, LabelForm, LabelList } from '..';
+import { CalendarGrid, HabitForm, LabelForm, LabelList } from '..';
 
 const CalendarGridView = ({
   days,
@@ -12,7 +12,7 @@ const CalendarGridView = ({
   handleChangeView,
   labels,
 }: GridViewProps) => {
-  const [openHabbitForm, setOpenHabbitForm] = useState(false);
+  const [openHabitForm, setOpenHabitForm] = useState(false);
   const [openLabelForm, setOpenLabelForm] = useState(false);
   const [openLabelList, setOpenLabelList] = useState(false);
 
@@ -32,9 +32,9 @@ const CalendarGridView = ({
           mt="16px"
           data-testid="addh"
           disabled={!navigator.onLine}
-          onClick={() => setOpenHabbitForm(true)}
+          onClick={() => setOpenHabitForm(true)}
         >
-          Add habbit
+          Add Habit
         </Button>
         <Button
           size="s"
@@ -57,11 +57,7 @@ const CalendarGridView = ({
           Label list
         </Button>
       </StyledButtonWrapper>
-      <HabbitForm
-        open={openHabbitForm}
-        handleClose={() => setOpenHabbitForm(false)}
-        labels={labels}
-      />
+      <HabitForm open={openHabitForm} handleClose={() => setOpenHabitForm(false)} labels={labels} />
       <LabelForm open={openLabelForm} handleClose={() => setOpenLabelForm(false)} />
       <LabelList open={openLabelList} handleClose={() => setOpenLabelList(false)} labels={labels} />
     </>

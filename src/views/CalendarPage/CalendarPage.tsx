@@ -19,25 +19,25 @@ const CalendarPage = () => {
     const actualMonth = date.getMonth();
     const actualYear = date.getFullYear();
     const dateFrom = new Date(actualYear, actualMonth, 1);
-    dateFrom.setDate(dateFrom.getDate() - 7);
+    dateFrom.setDate(dateFrom.getDate() - 3);
     const daysInMonth = 33 - new Date(actualYear, actualMonth, 32).getDate();
     const dateTo = new Date(actualYear, actualMonth, daysInMonth);
     const lastDayOfMonth = new Date(actualYear, actualMonth, daysInMonth);
     const firstDayOfMonth = new Date(actualYear, actualMonth, 1);
-    dateTo.setDate(dateTo.getDate() + 6);
+    dateTo.setDate(dateTo.getDate() + 4);
     return [dateFrom, dateTo, firstDayOfMonth, lastDayOfMonth];
   }, [date]);
 
   const { token } = useUserContext();
 
-  const { refHabbit, refLabel } = useRefreshContext();
+  const { refHabit, refLabel } = useRefreshContext();
   const urlEvents = useMemo(
     () => `${APIpaths.EVENTS}?from=${getISODate(dateFrom)}&to=${getISODate(dateTo)}`,
     [firstDayOfMonth, lastDayOfMonth],
   );
 
   const [events, loadingE, errorE] = useQuery<Event>(
-    [firstDayOfMonth, lastDayOfMonth, token, refHabbit, refLabel],
+    [firstDayOfMonth, lastDayOfMonth, token, refHabit, refLabel],
     () => getData(urlEvents, token),
     urlEvents,
   );

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Habbit should match snapshot 1`] = `
+exports[`Habit should match snapshot 1`] = `
 <DocumentFragment>
   .c0 {
   margin-bottom: 0.5rem;
@@ -103,7 +103,7 @@ exports[`Habbit should match snapshot 1`] = `
       class="c1"
       data-testid="edit"
     >
-      Edit habbit
+      Edit Habit
     </button>
     <button
       class="c2"
@@ -113,7 +113,7 @@ exports[`Habbit should match snapshot 1`] = `
     </button>
     <div
       class="c3"
-      data-testid="habbit123"
+      data-testid="habit123"
     >
       <small
         class="c4"
@@ -124,7 +124,7 @@ exports[`Habbit should match snapshot 1`] = `
       <h2
         class="c5"
       >
-        habbit
+        habit
       </h2>
       <p
         class="c6"

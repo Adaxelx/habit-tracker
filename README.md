@@ -1,4 +1,4 @@
-# Habbit tracker app
+# Habit tracker app
 
 ## 1. Cel projektu
 

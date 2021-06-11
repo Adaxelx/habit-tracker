@@ -2,13 +2,13 @@ import React, { useEffect, useCallback } from 'react';
 import { PopUp, Input, Button, DateInput, Select } from 'components';
 import { FieldError, useForm } from 'react-hook-form';
 import { useMutation } from 'hooks';
-import { EventSend, createRestrictedLengthObject, FormHabbit, createTimeValidation } from 'utils';
+import { EventSend, createRestrictedLengthObject, FormHabit, createTimeValidation } from 'utils';
 import { useUserContext, useRefreshContext } from 'context';
 import { postEvent } from 'views/CalendarPage/CalendarPage.api';
-import { StyledWrapper } from './HabbitForm.css';
+import { StyledWrapper } from './HabitForm.css';
 import { WeekDaysInput } from '..';
 
-const HabbitForm = ({ handleClose, open, labels, event }: FormHabbit) => {
+const HabitForm = ({ handleClose, open, labels, event }: FormHabit) => {
   const { register, handleSubmit, errors, control, reset, watch } = useForm<EventSend>({
     defaultValues: {
       timeStart: '00:10',
@@ -21,12 +21,12 @@ const HabbitForm = ({ handleClose, open, labels, event }: FormHabbit) => {
   });
 
   const { token } = useUserContext();
-  const { handleRefHabbit } = useRefreshContext();
+  const { handleRefHabit } = useRefreshContext();
 
   const [mutate, loading] = useMutation({
     request: (data: EventSend) => postEvent(token, data, event?._id),
-    refresh: [handleClose, handleRefHabbit],
-    messageSuccess: `Succesfuly ${event?._id ? 'edited' : 'added'} habbit.`,
+    refresh: [handleClose, handleRefHabit],
+    messageSuccess: `Succesfuly ${event?._id ? 'edited' : 'added'} Habit.`,
   });
 
   useEffect(() => {
@@ -58,7 +58,7 @@ const HabbitForm = ({ handleClose, open, labels, event }: FormHabbit) => {
   }, []);
 
   return (
-    <PopUp open={open} handleClose={handleClose} header="Add habbit" disabled={loading}>
+    <PopUp open={open} handleClose={handleClose} header="Add Habit" disabled={loading}>
       <StyledWrapper as="form" onSubmit={handleSubmit(onSubmit)} noValidate>
         <Input
           name="title"
@@ -126,4 +126,4 @@ const HabbitForm = ({ handleClose, open, labels, event }: FormHabbit) => {
   );
 };
 
-export default HabbitForm;
+export default HabitForm;

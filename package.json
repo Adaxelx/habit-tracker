@@ -1,6 +1,6 @@
 {
-  "homepage": "https://adaxelx.github.io/habbit-tracker/",
-  "name": "habbit-tracker",
+  "homepage": "https://adaxelx.github.io/habit-tracker/",
+  "name": "habit-tracker",
   "version": "0.1.5",
   "private": true,
   "dependencies": {
