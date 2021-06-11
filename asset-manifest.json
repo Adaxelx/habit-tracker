@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/habbit-tracker/static/css/main.590ca1a1.chunk.css",
-    "main.js": "/habbit-tracker/static/js/main.459ce6eb.chunk.js",
-    "main.js.map": "/habbit-tracker/static/js/main.459ce6eb.chunk.js.map",
+    "main.js": "/habbit-tracker/static/js/main.5f7491b4.chunk.js",
+    "main.js.map": "/habbit-tracker/static/js/main.5f7491b4.chunk.js.map",
     "runtime-main.js": "/habbit-tracker/static/js/runtime-main.85ddba82.js",
     "runtime-main.js.map": "/habbit-tracker/static/js/runtime-main.85ddba82.js.map",
     "static/css/2.0cfad52a.chunk.css": "/habbit-tracker/static/css/2.0cfad52a.chunk.css",
-    "static/js/2.4dc6439b.chunk.js": "/habbit-tracker/static/js/2.4dc6439b.chunk.js",
-    "static/js/2.4dc6439b.chunk.js.map": "/habbit-tracker/static/js/2.4dc6439b.chunk.js.map",
+    "static/js/2.90fbd6b2.chunk.js": "/habbit-tracker/static/js/2.90fbd6b2.chunk.js",
+    "static/js/2.90fbd6b2.chunk.js.map": "/habbit-tracker/static/js/2.90fbd6b2.chunk.js.map",
     "static/js/3.1a7714c5.chunk.js": "/habbit-tracker/static/js/3.1a7714c5.chunk.js",
     "static/js/3.1a7714c5.chunk.js.map": "/habbit-tracker/static/js/3.1a7714c5.chunk.js.map",
     "index.html": "/habbit-tracker/index.html",
@@ -15,13 +15,13 @@
     "service-worker.js.map": "/habbit-tracker/service-worker.js.map",
     "static/css/2.0cfad52a.chunk.css.map": "/habbit-tracker/static/css/2.0cfad52a.chunk.css.map",
     "static/css/main.590ca1a1.chunk.css.map": "/habbit-tracker/static/css/main.590ca1a1.chunk.css.map",
-    "static/js/2.4dc6439b.chunk.js.LICENSE.txt": "/habbit-tracker/static/js/2.4dc6439b.chunk.js.LICENSE.txt"
+    "static/js/2.90fbd6b2.chunk.js.LICENSE.txt": "/habbit-tracker/static/js/2.90fbd6b2.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.85ddba82.js",
     "static/css/2.0cfad52a.chunk.css",
-    "static/js/2.4dc6439b.chunk.js",
+    "static/js/2.90fbd6b2.chunk.js",
     "static/css/main.590ca1a1.chunk.css",
-    "static/js/main.459ce6eb.chunk.js"
+    "static/js/main.5f7491b4.chunk.js"
   ]
 }
