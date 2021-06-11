@@ -32,7 +32,7 @@ const CalendarPage = () => {
 
   const { refHabbit, refLabel } = useRefreshContext();
   const urlEvents = useMemo(
-    () => `${APIpaths.EVENTS}?from=${getISODate(firstDayOfMonth)}&to=${getISODate(lastDayOfMonth)}`,
+    () => `${APIpaths.EVENTS}?from=${getISODate(dateFrom)}&to=${getISODate(dateTo)}`,
     [firstDayOfMonth, lastDayOfMonth],
   );
 
