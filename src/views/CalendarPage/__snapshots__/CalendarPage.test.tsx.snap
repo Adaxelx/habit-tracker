@@ -198,6 +198,15 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
   text-align: center;
 }
 
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 100%;
+  overflow-x: scroll;
+}
+
 .c14 {
   margin-bottom: 0.5rem;
 }
@@ -244,15 +253,6 @@ exports[`CalendarPage should match snapshot (mobile) 1`] = `
 
 .c21 {
   text-align: justify;
-}
-
-.c11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  max-width: 100%;
-  overflow-x: scroll;
 }
 
 @media (min-width:768px) {
