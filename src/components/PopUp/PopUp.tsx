@@ -1,5 +1,5 @@
 import { ClickOutside, Portal } from 'components';
-import React, { MouseEventHandler } from 'react';
+import React from 'react';
 import {
   StyledWrapper,
   StyledHeader,
@@ -10,7 +10,7 @@ import {
 
 interface PopUpProps {
   open: boolean;
-  handleClose: MouseEventHandler<HTMLButtonElement | HTMLDivElement>;
+  handleClose: () => void;
   header: string;
   children: React.ReactChild;
   fullHeight?: boolean;
