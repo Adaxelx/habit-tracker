@@ -1,3 +1,4 @@
+import { ClickOutside, Portal } from 'components';
 import React, { MouseEventHandler } from 'react';
 import {
   StyledWrapper,
@@ -16,24 +17,29 @@ interface PopUpProps {
   disabled?: boolean;
 }
 
-const PopUp = ({ open, handleClose, header, children, fullHeight, disabled }: PopUpProps) =>
-  open ? (
-    <>
-      {!fullHeight && <StyledBacground onClick={handleClose} />}
-      <StyledWrapper fullHeight={fullHeight}>
-        <StyledCloseButton
-          disabled={disabled}
-          type="button"
-          data-testid={`${header}-close`}
-          onClick={handleClose}
-        >
-          <StyledLine rotate={45} />
-          <StyledLine rotate={-45} />
-        </StyledCloseButton>
-        <StyledHeader data-testid={`${header}-header`}>{header}</StyledHeader>
-        {children}
-      </StyledWrapper>
-    </>
-  ) : null;
+const PopUp = ({ open, handleClose, header, children, fullHeight, disabled }: PopUpProps) => (
+  <Portal>
+    {open ? (
+      <>
+        {!fullHeight && <StyledBacground />}
+        <ClickOutside onOutsideClick={handleClose}>
+          <StyledWrapper fullHeight={fullHeight}>
+            <StyledCloseButton
+              disabled={disabled}
+              type="button"
+              data-testid={`${header}-close`}
+              onClick={handleClose}
+            >
+              <StyledLine rotate={45} />
+              <StyledLine rotate={-45} />
+            </StyledCloseButton>
+            <StyledHeader data-testid={`${header}-header`}>{header}</StyledHeader>
+            {children}
+          </StyledWrapper>
+        </ClickOutside>
+      </>
+    ) : null}
+  </Portal>
+);
 
 export default PopUp;

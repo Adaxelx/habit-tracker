@@ -12,10 +12,14 @@ exports[`HabbitForm should match snapshot 1`] = `
   background-color: rgba(0,0,0,0.3);
 }
 
+@media (min-width:768px) {
+
+}
+
 <div
     class="c0"
   />
-  .c6 {
+  .c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -28,19 +32,9 @@ exports[`HabbitForm should match snapshot 1`] = `
   max-width: 300px;
 }
 
-.c7 {
+.c8 {
   font-size: 1.5rem;
   margin-bottom: 0.75rem;
-}
-
-.c8 {
-  font-size: 1.25rem;
-  width: 100%;
-  max-width: 300px;
-}
-
-.c8:focus {
-  outline: thin dotted;
 }
 
 .c9 {
@@ -54,13 +48,23 @@ exports[`HabbitForm should match snapshot 1`] = `
 }
 
 .c10 {
+  font-size: 1.25rem;
+  width: 100%;
+  max-width: 300px;
+}
+
+.c10:focus {
+  outline: thin dotted;
+}
+
+.c11 {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(4,1fr);
   grid-template-rows: repeat(2,1fr);
 }
 
-.c11 {
+.c12 {
   background-color: #FFFFFF;
   border: 1px solid black;
   height: 50px;
@@ -80,7 +84,7 @@ exports[`HabbitForm should match snapshot 1`] = `
   font-size: 1.5rem;
 }
 
-.c5 {
+.c6 {
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -95,7 +99,7 @@ exports[`HabbitForm should match snapshot 1`] = `
   align-items: center;
 }
 
-.c14 {
+.c15 {
   color: #fff;
   background-color: #FFC136;
   border: 1px solid #707070;
@@ -109,16 +113,16 @@ exports[`HabbitForm should match snapshot 1`] = `
   margin-right: 0;
 }
 
-.c14:hover {
+.c15:hover {
   cursor: pointer;
 }
 
-.c14:disabled {
+.c15:disabled {
   -webkit-filter: grayscale(1);
   filter: grayscale(1);
 }
 
-.c0 {
+.c1 {
   position: fixed;
   width: calc(100% - 1rem - 1rem);
   height: calc(90vh - 1rem - 1rem);
@@ -135,13 +139,13 @@ exports[`HabbitForm should match snapshot 1`] = `
   overflow: scroll;
 }
 
-.c4 {
+.c5 {
   width: 100%;
   text-align: center;
   font-size: 2rem;
 }
 
-.c1 {
+.c2 {
   width: 50px;
   height: 50px;
   position: relative;
@@ -152,16 +156,16 @@ exports[`HabbitForm should match snapshot 1`] = `
   background-color: transparent;
 }
 
-.c1:hover {
+.c2:hover {
   cursor: pointer;
 }
 
-.c1:disabled {
+.c2:disabled {
   -webkit-filter: grayscale(1);
   filter: grayscale(1);
 }
 
-.c2 {
+.c3 {
   height: 100%;
   width: 2px;
   position: absolute;
@@ -173,7 +177,7 @@ exports[`HabbitForm should match snapshot 1`] = `
   transform: rotate(45deg);
 }
 
-.c3 {
+.c4 {
   height: 100%;
   width: 2px;
   position: absolute;
@@ -185,249 +189,266 @@ exports[`HabbitForm should match snapshot 1`] = `
   transform: rotate(-45deg);
 }
 
-.c12 {
+.c13 {
   width: 100%;
   max-width: 300px;
   margin-bottom: 1rem;
 }
 
-.c13 {
+.c14 {
   width: 100%;
   max-width: 300px;
   font-size: 1.25rem;
 }
 
+.c0 {
+  cursor: pointer;
+}
+
+@media (min-width:768px) {
+  .c1 {
+    width: calc(100% - 1rem - 1rem);
+    height: calc(100vh - 32px);
+    top: 16px;
+  }
+}
+
 <div
     class="c0"
+    data-testid="clickOutside:wrapper"
   >
-    <button
+    <div
       class="c1"
-      data-testid="Add habbit-close"
-      type="button"
     >
-      <div
-        class="c2"
-        rotate="45"
-      />
-      <div
-        class="c3"
-        rotate="-45"
-      />
-    </button>
-    <h2
-      class="c4"
-      data-testid="Add habbit-header"
-    >
-      Add habbit
-    </h2>
-    <form
-      class="c5"
-      novalidate=""
-    >
-      <div
-        class="c6"
-      >
-        <label
-          class="c7"
-          for="title"
-        >
-          Title
-        </label>
-        <input
-          class="c8"
-          data-testid="title"
-          id="title"
-          maxlength="30"
-          minlength="6"
-          name="title"
-          type="text"
-        />
-      </div>
-      <div
-        class="c6"
-      >
-        <label
-          class="c7"
-          for="description"
-        >
-          Description
-        </label>
-        <textarea
-          class="c9"
-          data-testid="description"
-          id="description"
-          name="description"
-        />
-      </div>
-      <div
-        class="c6"
-      >
-        <label
-          class="c7"
-        >
-          Week days
-        </label>
-        <div
-          class="c10"
-        >
-          <div
-            class="c11"
-            data-testid="Mon"
-          >
-            Mon
-          </div>
-          <div
-            class="c11"
-            data-testid="Tue"
-          >
-            Tue
-          </div>
-          <div
-            class="c11"
-            data-testid="Wed"
-          >
-            Wed
-          </div>
-          <div
-            class="c11"
-            data-testid="Thu"
-          >
-            Thu
-          </div>
-          <div
-            class="c11"
-            data-testid="Fri"
-          >
-            Fri
-          </div>
-          <div
-            class="c11"
-            data-testid="Sat"
-          >
-            Sat
-          </div>
-          <div
-            class="c11"
-            data-testid="Sun"
-          >
-            Sun
-          </div>
-        </div>
-      </div>
-      <div
-        class="c12"
-      >
-        <label
-          class="c7"
-          for="dateStart"
-        >
-          Date start
-        </label>
-        <div
-          class="react-datepicker-wrapper"
-        >
-          <div
-            class="react-datepicker__input-container"
-          >
-            <input
-              class=""
-              id="dateStart"
-              type="text"
-              value=""
-            />
-          </div>
-        </div>
-      </div>
-      <div
-        class="c12"
-      >
-        <label
-          class="c7"
-          for="dateEnd"
-        >
-          Date end
-        </label>
-        <div
-          class="react-datepicker-wrapper"
-        >
-          <div
-            class="react-datepicker__input-container"
-          >
-            <input
-              class=""
-              id="dateEnd"
-              type="text"
-              value=""
-            />
-          </div>
-        </div>
-      </div>
-      <div
-        class="c6"
-      >
-        <label
-          class="c7"
-          for="timeStart"
-        >
-          Time start
-        </label>
-        <input
-          class="c8"
-          data-testid="timeStart"
-          id="timeStart"
-          name="timeStart"
-          type="time"
-        />
-      </div>
-      <div
-        class="c6"
-      >
-        <label
-          class="c7"
-          for="timeEnd"
-        >
-          Time end
-        </label>
-        <input
-          class="c8"
-          data-testid="timeEnd"
-          id="timeEnd"
-          name="timeEnd"
-          type="time"
-        />
-      </div>
-      <div
-        class="c6"
-      >
-        <label
-          class="c7"
-        >
-          Label
-        </label>
-        <select
-          class="c13"
-          data-testid="label"
-        >
-          <option
-            value=""
-          >
-            ----Brak labelu----
-          </option>
-          <option
-            value="1"
-          >
-            label
-          </option>
-        </select>
-      </div>
       <button
-        class="c14"
-        data-testid="submit"
-        type="submit"
+        class="c2"
+        data-testid="Add habbit-close"
+        type="button"
       >
-        Send
+        <div
+          class="c3"
+          rotate="45"
+        />
+        <div
+          class="c4"
+          rotate="-45"
+        />
       </button>
-    </form>
+      <h2
+        class="c5"
+        data-testid="Add habbit-header"
+      >
+        Add habbit
+      </h2>
+      <form
+        class="c6"
+        novalidate=""
+      >
+        <div
+          class="c7"
+        >
+          <label
+            class="c8"
+            for="title"
+          >
+            Title
+          </label>
+          <input
+            class="c9"
+            data-testid="title"
+            id="title"
+            maxlength="30"
+            minlength="6"
+            name="title"
+            type="text"
+          />
+        </div>
+        <div
+          class="c7"
+        >
+          <label
+            class="c8"
+            for="description"
+          >
+            Description
+          </label>
+          <textarea
+            class="c10"
+            data-testid="description"
+            id="description"
+            name="description"
+          />
+        </div>
+        <div
+          class="c7"
+        >
+          <label
+            class="c8"
+          >
+            Week days
+          </label>
+          <div
+            class="c11"
+          >
+            <div
+              class="c12"
+              data-testid="Mon"
+            >
+              Mon
+            </div>
+            <div
+              class="c12"
+              data-testid="Tue"
+            >
+              Tue
+            </div>
+            <div
+              class="c12"
+              data-testid="Wed"
+            >
+              Wed
+            </div>
+            <div
+              class="c12"
+              data-testid="Thu"
+            >
+              Thu
+            </div>
+            <div
+              class="c12"
+              data-testid="Fri"
+            >
+              Fri
+            </div>
+            <div
+              class="c12"
+              data-testid="Sat"
+            >
+              Sat
+            </div>
+            <div
+              class="c12"
+              data-testid="Sun"
+            >
+              Sun
+            </div>
+          </div>
+        </div>
+        <div
+          class="c13"
+        >
+          <label
+            class="c8"
+            for="dateStart"
+          >
+            Date start
+          </label>
+          <div
+            class="react-datepicker-wrapper"
+          >
+            <div
+              class="react-datepicker__input-container"
+            >
+              <input
+                class=""
+                id="dateStart"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="c13"
+        >
+          <label
+            class="c8"
+            for="dateEnd"
+          >
+            Date end
+          </label>
+          <div
+            class="react-datepicker-wrapper"
+          >
+            <div
+              class="react-datepicker__input-container"
+            >
+              <input
+                class=""
+                id="dateEnd"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="c7"
+        >
+          <label
+            class="c8"
+            for="timeStart"
+          >
+            Time start
+          </label>
+          <input
+            class="c9"
+            data-testid="timeStart"
+            id="timeStart"
+            name="timeStart"
+            type="time"
+          />
+        </div>
+        <div
+          class="c7"
+        >
+          <label
+            class="c8"
+            for="timeEnd"
+          >
+            Time end
+          </label>
+          <input
+            class="c9"
+            data-testid="timeEnd"
+            id="timeEnd"
+            name="timeEnd"
+            type="time"
+          />
+        </div>
+        <div
+          class="c7"
+        >
+          <label
+            class="c8"
+          >
+            Label
+          </label>
+          <select
+            class="c14"
+            data-testid="label"
+          >
+            <option
+              value=""
+            >
+              ----Brak labelu----
+            </option>
+            <option
+              value="1"
+            >
+              label
+            </option>
+          </select>
+        </div>
+        <button
+          class="c15"
+          data-testid="submit"
+          type="submit"
+        >
+          Send
+        </button>
+      </form>
+    </div>
   </div>
 </DocumentFragment>
 `;

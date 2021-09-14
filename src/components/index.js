@@ -10,3 +10,5 @@ export { default as AlertMessage } from './AlertMessage';
 export { default as AlertsContainer } from './AlertsContainer';
 export { default as OfflineAlert } from './OfflineAlert';
 export { default as DeleteModal } from './DeleteModal';
+export { default as Portal } from './Portal';
+export { default as ClickOutside } from './ClickOutside';

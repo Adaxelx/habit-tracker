@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ClickOutside should match snapshot 1`] = `
+<DocumentFragment>
+  .c0 {
+  cursor: pointer;
+}
+
+<div>
+    <div
+      data-testid="somethingOutside"
+    />
+    <div
+      class="c0"
+      data-testid="clickOutside:wrapper"
+    >
+      <div />
+    </div>
+  </div>
+</DocumentFragment>
+`;

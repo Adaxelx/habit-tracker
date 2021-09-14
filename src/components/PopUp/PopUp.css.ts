@@ -28,6 +28,13 @@ export const StyledWrapper = styled.div<WrapperProps>`
   z-index: ${({ theme }) => theme.zIndex.max};
   max-width: 350px;
   overflow: scroll;
+
+  @media (min-width: 768px) {
+    width: ${({ theme, fullHeight }) =>
+      fullHeight ? '100%' : `calc(100% - ${theme.margin.sm} - ${theme.margin.sm})`};
+    height: calc(100vh - 32px);
+    top: 16px;
+  }
 `;
 
 export const StyledHeader = styled.h2`
