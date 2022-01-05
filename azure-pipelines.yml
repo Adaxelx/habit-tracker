@@ -20,5 +20,5 @@ steps:
       npm run build
     displayName: 'npm install and build'
   - script: |
-      npm test -- --coverage --watchAll
+      jest --verbose --coverage --ci --testResultsProcessor='jest-junit'
     displayName: 'run tests'
