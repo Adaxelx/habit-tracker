@@ -48,7 +48,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "test:ci": "npm run test -- --coverage --watchAll=false"
   },
   "eslintConfig": {
     "extends": [
