@@ -6,8 +6,8 @@
     "runtime-main.js": "/habit-tracker/static/js/runtime-main.a641df7b.js",
     "runtime-main.js.map": "/habit-tracker/static/js/runtime-main.a641df7b.js.map",
     "static/css/2.0cfad52a.chunk.css": "/habit-tracker/static/css/2.0cfad52a.chunk.css",
-    "static/js/2.679ea061.chunk.js": "/habit-tracker/static/js/2.679ea061.chunk.js",
-    "static/js/2.679ea061.chunk.js.map": "/habit-tracker/static/js/2.679ea061.chunk.js.map",
+    "static/js/2.40fc0d7f.chunk.js": "/habit-tracker/static/js/2.40fc0d7f.chunk.js",
+    "static/js/2.40fc0d7f.chunk.js.map": "/habit-tracker/static/js/2.40fc0d7f.chunk.js.map",
     "static/js/3.d3abd8af.chunk.js": "/habit-tracker/static/js/3.d3abd8af.chunk.js",
     "static/js/3.d3abd8af.chunk.js.map": "/habit-tracker/static/js/3.d3abd8af.chunk.js.map",
     "index.html": "/habit-tracker/index.html",
@@ -15,12 +15,12 @@
     "service-worker.js.map": "/habit-tracker/service-worker.js.map",
     "static/css/2.0cfad52a.chunk.css.map": "/habit-tracker/static/css/2.0cfad52a.chunk.css.map",
     "static/css/main.590ca1a1.chunk.css.map": "/habit-tracker/static/css/main.590ca1a1.chunk.css.map",
-    "static/js/2.679ea061.chunk.js.LICENSE.txt": "/habit-tracker/static/js/2.679ea061.chunk.js.LICENSE.txt"
+    "static/js/2.40fc0d7f.chunk.js.LICENSE.txt": "/habit-tracker/static/js/2.40fc0d7f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.a641df7b.js",
     "static/css/2.0cfad52a.chunk.css",
-    "static/js/2.679ea061.chunk.js",
+    "static/js/2.40fc0d7f.chunk.js",
     "static/css/main.590ca1a1.chunk.css",
     "static/js/main.9c07fd01.chunk.js"
   ]
