@@ -49,7 +49,7 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "test:ci": "npm run test -- --coverage --watchAll=false"
+    "test:ci": "npm run test -- --coverage --watchAll=false --reporters=default --reporters=jest-junit"
   },
   "eslintConfig": {
     "extends": [
@@ -76,6 +76,7 @@
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.1.0",
     "husky": "^5.1.3",
+    "jest-junit": "^13.0.0",
     "jest-styled-components": "^7.0.3",
     "lint-staged": "^10.5.4",
     "prettier": "^2.2.1",
@@ -93,5 +94,10 @@
       "eslint --cache --fix",
       "git add"
     ]
+  },
+  "jest-junit": {
+    "suiteNameTemplate": "{filepath}",
+    "outputDirectory": ".",
+    "outputName": "junit.xml"
   }
 }

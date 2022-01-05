@@ -22,3 +22,8 @@ steps:
   - script: |
       npm run test:ci
     displayName: 'run tests'
+  - task: PublishTestResults@2
+    displayName: 'supply npm test results to pipelines'
+    condition: succeededOrFailed()
+    inputs:
+      testResultsFiles: 'src/junit.xml'
